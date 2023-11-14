@@ -14,8 +14,9 @@ class ComplainController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.complains');
     }
+    
 
     /**
      * Show the form for creating a new resource.
