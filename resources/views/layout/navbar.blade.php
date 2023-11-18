@@ -80,7 +80,10 @@
             <nav class="main-menu">
                 <div class="main-menu__wrapper">
                     <div class="main-menu__wrapper-inner">
-
+                        <div class="main-menu__logo">
+                            <a href="index.html"><img src="{{ asset('assets/images/ramtha-logo-rbg.png') }}"
+                                    alt="" width="100px"></a>
+                        </div>
                         <div class="main-menu__top">
                             <div class="main-menu__top-inner">
                                 <div class="main-menu__top-left">

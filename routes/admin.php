@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
+use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\NewController as BackendNewController;
 
@@ -19,6 +20,9 @@ Route::prefix('admin')->middleware('auth')->group(
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
         Route::resource('news-admin', BackendNewController::class);
+        //Investment opportunities Route
+        Route::resource('investments-admin', BackendInvestmentController::class);
+
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
         Route::post('/profile-update/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');

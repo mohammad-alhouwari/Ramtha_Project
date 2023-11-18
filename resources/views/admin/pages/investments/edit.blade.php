@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
-@section('title', 'Edit Project')
+@section('title', 'Edit Investment Opportunities')
 @section('content')
     <div class="content-wrapper">
         <div class="content">
             <div class="card card-default">
                 <div class="card-header">
-                    <h2>Edit Project</h2>
+                    <h2>Edit Investment Opportunities</h2>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('projects-admin.update', $project->id) }}" method="POST"
+                    <form action="{{ route('investments-admin.update', $investment->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -16,19 +16,19 @@
                             <div class="col-xl-2">
                                 <div class="mb-5">
                                     <img id="showImage" width="100px"
-                                        src="{{ $project->preview_image == '' ? url('no-image.jpg') : asset($project->preview_image) }}">
+                                        src="{{ $investment->image == '' ? url('no-image.jpg') : asset($investment->image) }}">
                                 </div>
                             </div>
                             <div class="col-xl-10">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium" for="">Upload Image</label>
+                                    <label class="text-dark font-weight-medium" for="">Image</label>
                                     <div class="mb-5">
                                         {{-- <label class="text-dark font-weight-medium">Prject Title</label> --}}
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text mdi mdi-folder-image" id="mdi-account"></span>
                                             </div>
-                                            <input type="file" class="form-control" name="preview_image" id="image">
+                                            <input type="file" class="form-control" name="image" id="image">
                                         </div>
                                     </div>
                                 </div>
@@ -37,37 +37,25 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Project Title</label>
+                                    <label class="text-dark font-weight-medium">Investment opportunity Name</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text mdi mdi-message-text" id="mdi-account"></span>
                                         </div>
-                                        <input type="text" class="form-control" name="title"
-                                            value="{{ $project->title }}">
+                                        <input type="text" class="form-control" name="name"
+                                            value="{{ $investment->name }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Project Description</label>
+                                    <label class="text-dark font-weight-medium">Investment opportunity Description</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text mdi  mdi-clipboard-text" id="mdi-account"></span>
                                         </div>
                                         <input type="text" class="form-control" name="description"
-                                            value="{{ $project->description }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Project completion rate</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text mdi mdi-numeric" id="mdi-account"></span>
-                                        </div>
-                                        <input type="text" class="form-control" name="percentage"
-                                            value="{{ $project->percentage }}">
+                                            value="{{ $investment->description }}">
                                     </div>
                                 </div>
                             </div>

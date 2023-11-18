@@ -530,8 +530,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--govity-black);
-    padding: 49px 80px;
+    /* background-color: var(--govity-black); */
+    padding: 20px 80px;
 }
 
 .main-menu {
