@@ -14,6 +14,9 @@ use App\Http\Controllers\ComplainController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 /*-----------------------------Projects Routes-----------------------------*/
 
