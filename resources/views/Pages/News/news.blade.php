@@ -18,7 +18,7 @@
                 <ul class="thm-breadcrumb list-unstyled">
                     <li><a href="index.html">الرئيسية</a></li>
                     <li><span>/</span></li>
-                    <li>الأخبار</li>
+                    <li ><a href="{{ route('showAllNews') }}">الأخبار</a></li>
                 </ul>
             </div>
         </div>
@@ -28,29 +28,30 @@
         <div class="container">
             <div class="row">
                 <!--News One Single Start-->
-                
+                @foreach ($news as $new)
                 <div class="col-xl-4 col-lg-4">
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
-                                <img src="assets/images/News/اجتماع موقع الاكتروني.JFIF " alt="">
+                                <img src="{{$new->preview_image}}" alt="">
                             </div>
                             <div class="news-one__date">
                                 <p>6 <br> NOV</p>
                             </div>
                         </div>
                         <div class="news-one__content">
-                            <h3 class="news-one__title"><a href="{{route('news-details')}}">جلسة عصف ذهني لبناء مشروع الموقع
+                            <h3 class="news-one__title"><a href="{{route('showDetailsNews', $new->id)}}">جلسة عصف ذهني لبناء مشروع الموقع
                                     الإلكتروني
                                 </a>
                             </h3>
                             <div class="news-one__btn">
-                                <a href="{{route('news-details')}}">اقرأ المزيد<i class="icon-left-arrow"></i></a>
+                                <a href="{{route('showDetailsNews', $new->id)}}">اقرأ المزيد<i class="icon-left-arrow"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4">
+                @endforeach
+                {{-- <div class="col-xl-4 col-lg-4">
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
@@ -88,7 +89,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

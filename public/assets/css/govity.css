@@ -695,6 +695,7 @@ ul {
 
 .main-menu__main-menu-box {
     display: block;
+    direction: rtl;
 }
 
 .main-menu__right {

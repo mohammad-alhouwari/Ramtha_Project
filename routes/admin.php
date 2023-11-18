@@ -4,7 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Backend\NewController as BackendNewController;
 
 /*-----------------------------Marah Routes-----------------------------*/
 
@@ -18,7 +18,7 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::resource('projects-admin', BackendProjectController::class);
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
-
+        Route::resource('news-admin', BackendNewController::class);
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
         Route::post('/profile-update/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
