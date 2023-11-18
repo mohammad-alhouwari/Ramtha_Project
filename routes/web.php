@@ -23,3 +23,7 @@ Route::controller(FrontendProjectController::class)->group(function () {
 });
 
 Route::resource('complains', ComplainController::class);
+
+Route::get('/', function () {
+    return view('welcome');
+});
