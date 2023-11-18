@@ -9651,10 +9651,11 @@ ul {
 # News Details
 --------------------------------------------------------------*/
 .news-details {
+    direction: rtl;
     position: relative;
     display: block;
     padding: 120px 0 120px;
-}
+  }  
 
 .news-details__left {
     position: relative;

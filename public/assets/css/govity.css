@@ -445,9 +445,9 @@ ul {
 .preloader__image {
     animation-fill-mode: both;
     animation-name: flipInY;
-    animation-duration: 2s;
+    animation-duration:2s;
     animation-iteration-count: infinite;
-    background-image: url(../images/loader.png);
+    background-image: url(../images/backgrounds/logoload.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 60px auto;
@@ -5180,6 +5180,7 @@ ul {
     padding-bottom: 22px;
     margin-bottom: 13px;
     border-bottom: 1px solid var(--govity-bdr-color);
+    direction: rtl;
 }
 
 .news-one__title a {
@@ -5194,6 +5195,7 @@ ul {
 .news-one__btn {
     position: relative;
     display: block;
+    direction: rtl;
 }
 
 .news-one__btn a {
@@ -5215,7 +5217,8 @@ ul {
 .news-one__btn a i {
     position: relative;
     top: 1px;
-    left: 9px;
+    right: 9px;
+    
 }
 
 /*--------------------------------------------------------------
@@ -9579,6 +9582,7 @@ ul {
     display: block;
     background-color: #000000;
     z-index: 1;
+    height: 258px;
 }
 
 .page-header-bg {
@@ -9592,6 +9596,7 @@ ul {
     background-position: center;
     background-size: cover;
     z-index: -1;
+    /* height: 258px; */
 }
 
 .page-header__inner {
@@ -9607,6 +9612,7 @@ ul {
     color: var(--govity-white);
     line-height: 50px;
     font-weight: 700;
+    margin-top: -32px;
 }
 
 .thm-breadcrumb {
@@ -9647,13 +9653,12 @@ ul {
     font-size: 14px;
 }
 
-/*--------------------------------------------------------------
-# News Details
---------------------------------------------------------------*/
+
 .news-details {
     position: relative;
     display: block;
     padding: 120px 0 120px;
+    direction: rtl;
 }
 
 .news-details__left {
@@ -10113,6 +10118,7 @@ ul {
     align-items: center;
     padding: 17px 20px 17px;
     transition: all 500ms ease;
+    direction: rtl;
 }
 
 .sidebar__post-list li:hover {
@@ -10130,6 +10136,8 @@ ul {
 
 .sidebar__post-image > img {
     width: 70px;
+    direction: rtl;
+ 
 }
 
 .sidebar__post-content {
@@ -10164,6 +10172,8 @@ ul {
     font-size: 16px;
     font-weight: 700;
     letter-spacing: var(--govity-letter-spacing-two);
+    direction: rtl;
+    margin-right: 10px;
 }
 
 .sidebar__category {
@@ -14237,6 +14247,7 @@ ul {
     display: block;
     padding: 120px 0 90px;
     z-index: 1;
+    direction: rtl;
 }
 
 /*--------------------------------------------------------------

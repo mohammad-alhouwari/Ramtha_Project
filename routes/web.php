@@ -16,5 +16,10 @@ use App\Http\Controllers\ComplainController;
 Route::get('/', function () {
     return view('Pages.projects');
 });
-
+Route::get('/news', function () {
+    return view('Pages.News.news');
+});
+Route::get('/new-details', function () {
+    return view('Pages.News.newsDetails');
+})->name('news-details');
 Route::resource('complains', ComplainController::class);

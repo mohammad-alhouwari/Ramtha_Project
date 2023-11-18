@@ -9178,6 +9178,7 @@ mark,
 .list-unstyled {
     padding-left: 0;
     list-style: none;
+    direction: rtl;
 }
 
 .list-inline {

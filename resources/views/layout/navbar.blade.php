@@ -7,13 +7,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Home One || govity || govity HTML 5 Template </title>
+    <title>@yield('title')</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+
+    <link rel="icon" type="assets/images/backgrounds/logo.jpg" sizes="32x32"
+        href="assets/images/backgrounds/logo.jpg" />
+    <link rel="icon" type="assets/images/backgrounds/logo.jpg" sizes="16x16"
+        href="assets/images/backgrounds/logo.jpg" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="govity HTML 5 Template " />
+    <meta name="description" content="بلدية الرمثا الكبرى " />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -71,9 +73,7 @@
             <nav class="main-menu">
                 <div class="main-menu__wrapper">
                     <div class="main-menu__wrapper-inner">
-                        <div class="main-menu__logo">
-                            <a href="index.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
-                        </div>
+
                         <div class="main-menu__top">
                             <div class="main-menu__top-inner">
                                 <div class="main-menu__top-left">
@@ -245,26 +245,12 @@
                                         <a href="#"
                                             class="main-menu__search search-toggler icon-magnifying-glass"></a>
                                     </div>
-                                    <div class="language-switcher">
-                                        <select class="selectpicker">
-                                            <option
-                                                data-content="<span class='lang-en'><img src='assets/images/lang-flag/en.png' alt=''>English</span>"
-                                                value="en" selected>English</option>
-                                            <option
-                                                data-content="<span class='lang-fr'><img src='assets/images/lang-flag/fr.png' alt=''>French</span>"
-                                                value="fr">French
-                                            </option>
 
-                                            <option
-                                                data-content="<span class='lang-it'><img src='assets/images/lang-flag/it.png' alt=''>Italian</span>"
-                                                value="it">
-                                                Italian</option>
-                                        </select>
 
-                                    </div>
-                                    <div class="main-menu__btn-box">
-                                        <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
-                                    </div>
+                                </div>
+                                <div class="">
+                                    <img style="width: 100px" src="assets/images/backgrounds/logoload.png"
+                                        alt="">
                                 </div>
                             </div>
                         </div>
