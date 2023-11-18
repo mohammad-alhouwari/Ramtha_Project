@@ -145,7 +145,7 @@
         margin-bottom: 31px;
     }
 
-    .event-two__points li+li {
+    .event-two__points li + li {
         margin-left: 30px;
     }
 
@@ -251,7 +251,6 @@
         right: 15px;
     }
 
-
     .testimonial-three__shape-2 {
         display: none;
     }
@@ -326,11 +325,7 @@
         margin: 60px auto 0;
     }
 
-
-
-
-
-    .news-details__pagenation li+li {
+    .news-details__pagenation li + li {
         margin-left: 0;
         margin-top: 30px;
     }
@@ -353,7 +348,7 @@
         font-size: 17px;
     }
 
-    .team-details__contact p+p {
+    .team-details__contact p + p {
         margin-top: 3px;
     }
 
@@ -405,31 +400,7 @@
     .footer-widget__subscribe-box:before {
         display: none;
     }
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Tablet Layout: 768px. */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -593,7 +564,7 @@
         text-align: center;
     }
 
-    .counter-two__list li+li {
+    .counter-two__list li + li {
         margin-top: 20px;
     }
 
@@ -719,7 +690,6 @@
         right: 15px;
     }
 
-
     .testimonial-three__shape-2 {
         display: none;
     }
@@ -813,11 +783,7 @@
         margin-top: 50px;
     }
 
-
-
-
-
-    .news-details__pagenation li+li {
+    .news-details__pagenation li + li {
         margin-left: 0;
         margin-top: 30px;
     }
@@ -880,7 +846,6 @@
         margin-left: auto;
     }
 
-
     .why-choose-one__right {
         margin-left: 0;
         margin-top: 50px;
@@ -908,47 +873,7 @@
     .footer-widget__subscribe-box:before {
         display: none;
     }
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Mobile Layout: 320px. */
 @media only screen and (max-width: 767px) {
@@ -1100,7 +1025,7 @@
         flex-direction: column;
     }
 
-    .counter-one__list li+li {
+    .counter-one__list li + li {
         margin-top: 20px;
     }
 
@@ -1109,7 +1034,7 @@
         line-height: 40px !important;
     }
 
-    .counter-one__count>span {
+    .counter-one__count > span {
         font-size: 40px;
         line-height: 40px !important;
         top: 9px;
@@ -1237,7 +1162,7 @@
         align-items: baseline;
     }
 
-    .about-two__points li+li {
+    .about-two__points li + li {
         margin-top: 30px;
     }
 
@@ -1262,7 +1187,7 @@
         flex-direction: column;
     }
 
-    .counter-two__list li+li {
+    .counter-two__list li + li {
         margin-top: 20px;
     }
 
@@ -1298,7 +1223,7 @@
         flex-direction: column;
     }
 
-    .event-two__points li+li {
+    .event-two__points li + li {
         margin-left: 0;
     }
 
@@ -1313,7 +1238,7 @@
         flex-direction: column;
     }
 
-    .event-two__meta>li+li {
+    .event-two__meta > li + li {
         margin-left: 0;
     }
 
@@ -1368,7 +1293,6 @@
     .social-one__text-two a {
         margin-right: 0;
     }
-
 
     .site-footer__top {
         flex-direction: column;
@@ -1508,7 +1432,6 @@
         right: 20px;
     }
 
-
     .testimonial-three__shape-2 {
         display: none;
     }
@@ -1561,7 +1484,7 @@
         align-items: baseline;
     }
 
-    .history-one__poins li+li {
+    .history-one__poins li + li {
         margin-left: 0;
         margin-top: 10px;
     }
@@ -1641,7 +1564,7 @@
         align-items: baseline;
     }
 
-    .contact-page__bottom-content li+li {
+    .contact-page__bottom-content li + li {
         margin-left: 0;
     }
 
@@ -1756,7 +1679,7 @@
         margin-top: 30px;
     }
 
-    .news-details__pagenation li+li {
+    .news-details__pagenation li + li {
         margin-left: 0;
         margin-top: 30px;
     }
@@ -1975,13 +1898,7 @@
     .footer-widget__subscribe-box:before {
         display: none;
     }
-
-
-
-
 }
-
-
 
 @media only screen and (min-width: 1200px) and (max-width: 1550px) {
     .news-three .news-two__single {
@@ -1996,22 +1913,6 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*--------------------------------------------------------------
 # Slider All Responsice Css
 --------------------------------------------------------------*/
@@ -2021,8 +1922,6 @@
         right: 100px;
     }
 }
-
-
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .main-slider-two__img-box {
@@ -2038,8 +1937,6 @@
     }
 }
 
-
-
 @media only screen and (max-width: 767px) {
     .main-slider__title {
         font-size: 48px;
@@ -2051,7 +1948,7 @@
         align-items: baseline;
     }
 
-    .main-slider__meta li+li {
+    .main-slider__meta li + li {
         margin-left: 0;
     }
 
@@ -2084,7 +1981,6 @@
         line-height: 44px;
     }
 
-
     .main-slider-three .owl-theme .owl-nav {
         display: none;
     }
@@ -2099,17 +1995,11 @@
     }
 }
 
-
-
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
     .main-slider-two__img-box {
         right: 200px;
     }
 }
-
-
-
-
 
 /*--------------------------------------------------------------
 # Main Menu All Responsice Css
@@ -2133,8 +2023,6 @@
         padding: 28px 80px;
     }
 
-
-
     .main-header-three__search-box {
         display: none;
     }
@@ -2152,9 +2040,6 @@
     }
 }
 
-
-
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .main-menu__top {
         display: none;
@@ -2171,18 +2056,20 @@
     }
 
     .main-menu__logo a {
-        padding: 28px 80px;
+        padding: 10px 80px;
+    }
+
+    .main-menu__logo img {
+        width: 80px;
     }
 
     .main-menu__right {
         display: none;
     }
 
-
     .main-header-two__top {
         display: none;
     }
-
 
     .main-header-three__content-box {
         display: none;
@@ -2196,7 +2083,6 @@
         padding: 18px 0;
     }
 }
-
 
 @media (max-width: 767px) {
     .main-menu__top {
@@ -2216,7 +2102,11 @@
     }
 
     .main-menu__logo a {
-        padding: 28px 60px;
+        padding: 1px 60px;
+    }
+
+    .main-menu__logo img {
+        width: 90px;
     }
 
     .main-menu__right {
@@ -2235,8 +2125,6 @@
         padding: 22px 20px;
     }
 
-
-
     .main-header-three__content-box {
         display: none;
     }
@@ -2248,13 +2136,7 @@
     .main-menu-three__wrapper-inner {
         padding: 18px 0;
     }
-
-
-
 }
-
-
-
 
 @media only screen and (min-width: 1400px) and (max-width: 1760px) {
     .language-switcher {
