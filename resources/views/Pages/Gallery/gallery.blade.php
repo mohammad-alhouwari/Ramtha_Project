@@ -1,0 +1,304 @@
+@extends('Layout.master')
+@section('title', 'معرض الصور')
+
+@section('content')
+
+
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <h2>معرض الصور</h2>
+            <ul class="thm-breadcrumb list-unstyled">
+                <li>معرض الصور</li>
+                <li><span>/</span></li>
+                <li><a href="index.html">الرئيسية</a></li>
+
+            </ul>
+        </div>
+    </div>
+</section>
+<!--Page Header End-->
+
+<!--Portfolio Page Start-->
+<section class="portfolio-page">
+
+    {{-- <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="assets/images/project/portfolio-page-1-1.jpg" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">صور</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">مدينة الرمثا</a></h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="assets/images/project/portfolio-page-1-2.jpg" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">صور</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">مدينة الرمثا</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="https://www.ahdath24.com/image.php?token=f1affdf90dbbeb394fcf8a8edd05e5e6&size=" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">صور</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">مدينة الرمثا</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="assets/images/project/portfolio-page-1-4.jpg" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">Culture</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">Town of
+                                    Rome</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="assets/images/project/portfolio-page-1-5.jpg" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">Culture</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">Town of
+                                    Rome</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="assets/images/project/portfolio-page-1-6.jpg" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">Culture</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">Town of
+                                    Rome</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="assets/images/project/portfolio-page-1-7.jpg" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">Culture</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">Town of
+                                    Rome</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="assets/images/project/portfolio-page-1-8.jpg" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">Culture</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">Town of
+                                    Rome</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="portfolio-page__single">
+                    <div class="portfolio-page__img-box">
+                        <div class="portfolio-page__img">
+                            <img src="assets/images/project/portfolio-page-1-9.jpg" alt="">
+                        </div>
+                        <div class="portfolio-page__content">
+                            <p class="portfolio-page__sub-title">Culture</p>
+                            <h4 class="portfolio-page__title"><a href="portfolio-details.html">Town of
+                                    Rome</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+        <!--Portfolio Three Start-->
+        {{-- <section class="portfolio-three"> --}}
+            <div class="container">
+                {{-- <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">Recent work</span>
+                    <h2 class="section-title__title">Explore city beautiful
+                        <br> highlights portfolio</h2>
+                </div> --}}
+                <div class="row">
+                    <!--Portfolio Three Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="portfolio-three__single">
+                            <div class="portfolio-three__img-box">
+                                <div class="portfolio-three__img">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Reservoir_%28Jordan_University_of_Science_and_Technology%29.jpg" alt="">
+                                </div>
+                                <div class="portfolio-three__content">
+                                    <h3 class="portfolio-three__title"><a href="portfolio-details.html"> مدينة الرمثا</a></h3>
+                                    <span style="display: block; font-size: 14px; color: #999;">تصفح الصور 
+                                        <i style="display: inline-block; width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid #999; margin-left: 5px;"></i>
+                                    </span>
+                                </div>
+                                <div class="portfolio-three__arrow">
+                                    <a class="img-popup" href="https://upload.wikimedia.org/wikipedia/commons/4/49/Reservoir_%28Jordan_University_of_Science_and_Technology%29.jpg"><span
+                                            class="icon-right-arrow"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Portfolio Three Single End-->
+                    <!--Portfolio Three Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="portfolio-three__single">
+                            <div class="portfolio-three__img-box">
+                                <div class="portfolio-three__img">
+                                    <img src="assets/images/project/portfolio-3-2.jpg" alt="">
+                                </div>
+                                <div class="portfolio-three__content">
+                                    <h3 class="portfolio-three__title"><a href="portfolio-details.html"> مدينة الرمثا</a></h3>
+                                    <span style="display: block; font-size: 14px; color: #999;">تصفح الصور 
+                                        <i style="display: inline-block; width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid #999; margin-left: 5px;"></i>
+                                    </span>
+                                </div>
+                                <div class="portfolio-three__arrow">
+                                    <a class="img-popup" href="assets/images/project/portfolio-page-1-9.jpg"><span
+                                            class="icon-right-arrow"></span></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Portfolio Three Single End-->
+                    <!--Portfolio Three Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="portfolio-three__single">
+                            <div class="portfolio-three__img-box">
+                                <div class="portfolio-three__img">
+                                    <img src="assets/images/project/portfolio-3-3.jpg" alt="">
+                                </div>
+                                <div class="portfolio-three__content">
+                                    <h3 class="portfolio-three__title"><a href="portfolio-details.html"> مدينة الرمثا</a></h3>
+                                    <span style="display: block; font-size: 14px; color: #999;">تصفح الصور 
+                                        <i style="display: inline-block; width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid #999; margin-left: 5px;"></i>
+                                    </span>
+                                </div>
+                                <div class="portfolio-three__arrow">
+                                    <a class="img-popup" href="assets/images/project/portfolio-3-3.jpg"><span
+                                            class="icon-right-arrow"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Portfolio Three Single End-->
+                    <!--Portfolio Three Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="portfolio-three__single">
+                            <div class="portfolio-three__img-box">
+                                <div class="portfolio-three__img">
+                                    <img src="assets/images/project/portfolio-3-4.jpg" alt="">
+                                </div>
+                                <div class="portfolio-three__content">
+                                    <h3 class="portfolio-three__title"><a href="portfolio-details.html"> مدينة الرمثا</a></h3>
+                                    <span style="display: block; font-size: 14px; color: #999;">تصفح الصور 
+                                        <i style="display: inline-block; width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid #999; margin-left: 5px;"></i>
+                                    </span>
+                                </div>
+                                
+                                <div class="portfolio-three__arrow">
+                                    <a class="img-popup" href="assets/images/project/portfolio-3-4.jpg"><span
+                                            class="icon-right-arrow"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Portfolio Three Single End-->
+                </div>
+            </div>
+        {{-- </section> --}}
+        <!--Portfolio Three End-->
+
+    <br>
+    <div class="container">
+        <ul class="pagination">
+          <li>
+            <a href="#">التالي</a>
+          </li>
+          <li>
+            <a href="#">4</a>
+          </li>
+          <li class="active">
+            <a href="#">3</a>
+          </li>
+          <li>
+            <a href="#">2</a>
+          </li>
+          <li>
+            <a href="#">1</a>
+          </li>
+          <li>
+            <a href="#">السابق</a>
+          </li>
+        </ul>
+      </div>
+      
+      
+      
+      
+</section>
+<!--Portfolio Page End-->
+
+
+
+
+
+
+
+@endsection

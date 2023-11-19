@@ -18,3 +18,14 @@ Route::get('/', function () {
 });
 
 Route::resource('complains', ComplainController::class);
+
+
+// ------------------Gallery Pages--------------------//
+
+Route::get('/gallery', function () {
+return view('Pages.Gallery.gallery');
+});
+
+Route::get('/single_gallery', function () {
+    return view('Pages.Gallery.single_gallery');
+});

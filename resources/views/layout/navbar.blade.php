@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="govity HTML 5 Template " />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -45,10 +46,15 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/jquery-ui/jquery-ui.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/timepicker/timePicker.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/nice-select/nice-select.css') }}" />
-
+<!-- Fancybox CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/govity.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/govity-responsive.css') }}" />
+
+    <!-- Fancybox JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </head>
 
 <body class="custom-cursor">
