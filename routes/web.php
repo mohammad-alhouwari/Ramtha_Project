@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('Pages.projects');
 });
 
+Route::get('/', function () {
+    return view('index');
+});
 Route::resource('complains', ComplainController::class);
