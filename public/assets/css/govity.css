@@ -447,12 +447,12 @@ ul {
     animation-name: flipInY;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    background-image: url(../images/loader.png);
+    background-image: url(../images/loader.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 60px auto;
-    width: 100%;
-    height: 100%;
+    width: 1000%;
+    height: 1000%;
 }
 
 /* scroll to top */
@@ -530,8 +530,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--govity-black);
-    padding: 49px 80px;
+    /* background-color: var(--govity-black); */
+    padding: 20px 80px;
 }
 
 .main-menu {
@@ -5822,6 +5822,7 @@ ul {
 }
 
 .about-two__progress {
+    margin-top: 10px;
     position: relative;
     display: block;
     width: 100%;
@@ -5851,6 +5852,7 @@ ul {
 }
 
 .about-two__progress .bar-inner {
+    margin-top: 25px;
     position: relative;
     display: block;
     width: 0px;
@@ -12268,6 +12270,10 @@ ul {
     padding-right: 40px;
 }
 
+.project-details__img {
+    width: 100%;
+}
+
 .project-details__info-list::before {
     content: "";
     position: absolute;
@@ -15740,3 +15746,21 @@ body.boxed-wrapper .main-menu__call {
     background-color: #fff;
     box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.08);
 } /*# sourceMappingURL=govity.css.map */
+
+.department-two__icon {
+    float: left;
+    margin-right: 135px;
+}
+.department-two__icon-two {
+    float: left;
+    margin-right: 170px;
+}
+
+#owl-demo .item {
+    margin: 3px;
+}
+#owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}

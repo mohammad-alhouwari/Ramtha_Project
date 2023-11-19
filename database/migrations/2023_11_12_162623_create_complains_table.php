@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('complains', function (Blueprint $table) {
             $table->id();
             $table->text('name');
+            $table->text('email');
             $table->text('phone');
             $table->text('national_id');
+            $table->text('complain_type');
+            $table->text('complain_details');
             $table->text('image')->nullable();
             $table->text('address')->nullable();
-            $table->date('birthdate');
             $table->timestamps();
         });
     }
