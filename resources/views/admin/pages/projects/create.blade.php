@@ -20,7 +20,6 @@
                                 <div class="mb-5">
                                     <label class="text-dark font-weight-medium" for="">Image</label>
                                     <div class="mb-5">
-                                        <label class="text-dark font-weight-medium">Prject Title</label>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text mdi mdi-folder-image" id="mdi-account"></span>

@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Project;
+use App\Models\Media;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,34 +12,42 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class ProjectDataTable extends DataTable
+class MediaDataTable extends DataTable
 {
+
+    protected $projectId;
+
+    public function setProjectId($projectId)
+    {
+        $this->projectId = $projectId;
+
+        return $this;
+    }
+
 
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
+        $query->where('project_id', $this->projectId);
+
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
-                $mediaBtn = "<a href='" . route('medias-admin.index', ['project_id' => $query->id]) . "' class='btn btn-info my-2'><i class='far fa-image'></i></a>";
-                $editBtn = "<a href='" . route('projects-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='" . route('projects-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
+                $editBtn = "<a href='" . route('medias-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='" . route('medias-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
 
-                return $mediaBtn . $editBtn . $deleteBtn;
-            })
-            ->addColumn('preview_image', function ($query) {
-                return "<img width='100px' src='" . asset($query->preview_image) . "'></img>";
+                return $editBtn . $deleteBtn;
             })
 
-            ->addColumn('percentage', function ($query) {
-                return $query->percentage . " %";
+            ->addColumn('media', function ($query) {
+                return "<img width='100px' src='" . asset($query->media) . "' alt='" . $query->id . "'></img>";
             })
 
-            ->rawColumns(['action', 'preview_image'])
-
+            ->rawColumns(['action', 'media'])
             ->setRowId('id');
     }
 
 
-    public function query(Project $model): QueryBuilder
+
+    public function query(Media $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -48,7 +56,7 @@ class ProjectDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('project-table')
+            ->setTableId('media-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             //->dom('Bfrtip')
@@ -68,10 +76,7 @@ class ProjectDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('title'),
-            Column::make('description'),
-            Column::make('percentage'),
-            Column::make('preview_image'),
+            Column::make('media'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
@@ -83,6 +88,6 @@ class ProjectDataTable extends DataTable
 
     protected function filename(): string
     {
-        return 'Project_' . date('YmdHis');
+        return 'Media_' . date('YmdHis');
     }
 }
