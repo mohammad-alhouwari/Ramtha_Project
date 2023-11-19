@@ -29,7 +29,12 @@
                         <span class="nav-text">Projects</span>
                     </a>
                 </li>
-
+                <li class="{{ set_active(['complain-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('complain-admin.index') }}">
+                        <i class="mdi mdi-alert-octagon"></i>
+                        <span class="nav-text">Complain</span>
+                    </a>
+                </li>
                 {{-- <li class="{{ set_active(['teams.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('teams.index') }}">
                         <i class="mdi mdi-account-group"></i>

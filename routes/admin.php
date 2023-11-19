@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
+use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,7 +19,8 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::resource('projects-admin', BackendProjectController::class);
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
-
+        // Complain Route
+        Route::resource('complain-admin', BackendComplainController::class);
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
         Route::post('/profile-update/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
