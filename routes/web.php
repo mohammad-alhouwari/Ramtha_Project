@@ -25,4 +25,7 @@ Route::controller(FrontendProjectController::class)->group(function () {
     Route::get('project/{id}', 'showProject')->name('showProject');
 });
 
+Route::get('/', function () {
+    return view('index');
+});
 Route::resource('complains', ComplainController::class);

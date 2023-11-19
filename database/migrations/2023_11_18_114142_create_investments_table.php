@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('complains', function (Blueprint $table) {
+        Schema::create('investments', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
-            $table->text('email');
-            $table->text('phone');
-            $table->text('national_id');
-            $table->text('complain_type');
-            $table->text('complain_details');
-            $table->text('image')->nullable();
-            $table->text('address')->nullable();
+            $table->string('name');
+            $table->string('image')->nullable();
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('complains');
+        Schema::dropIfExists('investments');
     }
 };

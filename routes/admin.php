@@ -4,6 +4,8 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
 use App\Http\Controllers\Backend\MediaController as BackendMediaController;
+use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
+use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,6 +26,10 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
+        // Complain Route
+        Route::resource('complain-admin', BackendComplainController::class);
+        //Investment opportunities Route
+        Route::resource('investments-admin', BackendInvestmentController::class);
 
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
