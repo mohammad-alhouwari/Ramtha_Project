@@ -29,6 +29,12 @@
                         <span class="nav-text">Projects</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['investments-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('investments-admin.index') }}">
+                        <i class="mdi mdi-chart-line"></i>
+                        <span class="nav-text">Investment opportunities</span>
+                    </a>
+                </li>
                 <li class="{{ set_active(['complain-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('complain-admin.index') }}">
                         <i class="mdi mdi-alert-octagon"></i>
