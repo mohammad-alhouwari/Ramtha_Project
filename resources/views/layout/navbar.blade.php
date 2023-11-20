@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" >
 
 
 <!-- Mirrored from layerdrops.com/govity/main-html/index-one-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:16:05 GMT -->
@@ -7,13 +7,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Home One || govity || govity HTML 5 Template </title>
+    <title> @yield('title')</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/ramtha-logo-rbg.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/ramtha-logo-rbg.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/ramtha-logo-rbg.png') }}" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="govity HTML 5 Template " />
+    <meta name="description" content="بلدية الرمثا الكبرى " />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -38,8 +38,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/govity-icons/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/tiny-slider/tiny-slider.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/reey-font/stylesheet.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/vendors/owl-carousel/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/vendors/owl-carousel/owl.theme.default.min.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('assets/vendors/owl-carousel/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendors/owl-carousel/owl.theme.default.min.css') }}" /> --}}
     <link rel="stylesheet" href="{{ asset('assets/vendors/bxslider/jquery.bxslider.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-select/css/bootstrap-select.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/vegas/vegas.min.css') }}" />
@@ -50,6 +50,16 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/govity.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/govity-responsive.css') }}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 
 </head>
 
@@ -74,7 +84,8 @@
                 <div class="main-menu__wrapper">
                     <div class="main-menu__wrapper-inner">
                         <div class="main-menu__logo">
-                            <a href="index.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                            <a href="index.html"><img src="{{ asset('assets/images/ramtha-logo-rbg.png') }}"
+                                    alt="" width="100px"></a>
                         </div>
                         <div class="main-menu__top">
                             <div class="main-menu__top-inner">
@@ -247,27 +258,13 @@
                                         <a href="#"
                                             class="main-menu__search search-toggler icon-magnifying-glass"></a>
                                     </div>
-                                    <div class="language-switcher">
-                                        <select class="selectpicker">
-                                            <option
-                                                data-content="<span class='lang-en'><img src='assets/images/lang-flag/en.png' alt=''>English</span>"
-                                                value="en" selected>English</option>
-                                            <option
-                                                data-content="<span class='lang-fr'><img src='assets/images/lang-flag/fr.png' alt=''>French</span>"
-                                                value="fr">French
-                                            </option>
 
-                                            <option
-                                                data-content="<span class='lang-it'><img src='assets/images/lang-flag/it.png' alt=''>Italian</span>"
-                                                value="it">
-                                                Italian</option>
-                                        </select>
 
-                                    </div>
-                                    <div class="main-menu__btn-box">
-                                        <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
-                                    </div>
                                 </div>
+                                {{-- <div class="">
+                                    <img style="width: 100px" src="assets/images/backgrounds/logoload.png"
+                                        alt="">
+                                </div> --}}
                             </div>
                         </div>
                     </div>

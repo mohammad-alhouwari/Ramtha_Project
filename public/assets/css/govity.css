@@ -445,14 +445,14 @@ ul {
 .preloader__image {
     animation-fill-mode: both;
     animation-name: flipInY;
-    animation-duration: 2s;
+    animation-duration:2s;
     animation-iteration-count: infinite;
-    background-image: url(../images/loader.png);
+    background-image: url(../images/backgrounds/logoload.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 60px auto;
-    width: 100%;
-    height: 100%;
+    width: 1000%;
+    height: 1000%;
 }
 
 /* scroll to top */
@@ -530,8 +530,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--govity-black);
-    padding: 49px 80px;
+    /* background-color: var(--govity-black); */
+    padding: 20px 80px;
 }
 
 .main-menu {
@@ -695,6 +695,7 @@ ul {
 
 .main-menu__main-menu-box {
     display: block;
+    direction: rtl;
 }
 
 .main-menu__right {
@@ -2023,7 +2024,7 @@ ul {
 .main-slider__bg {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 100;
     right: 0;
     bottom: 0;
     background-size: cover;
@@ -2518,6 +2519,7 @@ ul {
 .owl-item.active .main-slider-three__bg {
     transform: scale(1.15);
     transition: transform 7000ms linear;
+    direction:rtl;
 }
 
 .main-slider-three__bg:before {
@@ -2591,6 +2593,8 @@ ul {
     visibility: visible;
     opacity: 1;
     transform: translateY(0) translateX(0);
+    direction:rtl;
+    
 }
 
 .main-slider-three__weather-box {
@@ -2628,7 +2632,7 @@ ul {
 
 .main-slider-three__weather-list li .icon {
     position: absolute;
-    top: 30px;
+    top: 10px;
     right: 30px;
 }
 
@@ -2649,7 +2653,7 @@ ul {
 }
 
 .main-slider-three__weather-list li .text span {
-    font-size: 14px;
+    font-size: 25px;
     font-weight: 500;
     color: var(--govity-black);
 }
@@ -2676,11 +2680,11 @@ ul {
     height: 0;
     line-height: 0;
 }
-
+/* Updated CSS for the owl carousel navigation buttons */
 .main-slider-three .owl-theme .owl-nav [class*="owl-"] {
     position: relative;
     top: auto;
-    left: auto;
+    left: 100px; /* Adjust the left position as needed */
     right: auto;
     bottom: auto;
     z-index: 100;
@@ -2695,6 +2699,7 @@ ul {
     border: none;
     border-radius: 50%;
     margin: 0;
+    margin-right:1250px;
     text-align: center;
     transition: all 500ms ease;
     padding: 23px 0 !important;
@@ -2707,7 +2712,9 @@ ul {
 
 .main-slider-three .owl-theme .owl-nav [class*="owl-"] + [class*="owl-"] {
     margin-top: 10px;
+    margin-left: 100px; /* Adjust the margin-left as needed */
 }
+
 
 /*--------------------------------------------------------------
 # Update One
@@ -5180,6 +5187,7 @@ ul {
     padding-bottom: 22px;
     margin-bottom: 13px;
     border-bottom: 1px solid var(--govity-bdr-color);
+    direction: rtl;
 }
 
 .news-one__title a {
@@ -5194,6 +5202,7 @@ ul {
 .news-one__btn {
     position: relative;
     display: block;
+    direction: rtl;
 }
 
 .news-one__btn a {
@@ -5215,7 +5224,8 @@ ul {
 .news-one__btn a i {
     position: relative;
     top: 1px;
-    left: 9px;
+    right: 9px;
+    
 }
 
 /*--------------------------------------------------------------
@@ -5816,6 +5826,7 @@ ul {
 }
 
 .about-two__progress {
+    margin-top: 10px;
     position: relative;
     display: block;
     width: 100%;
@@ -5845,6 +5856,7 @@ ul {
 }
 
 .about-two__progress .bar-inner {
+    margin-top: 25px;
     position: relative;
     display: block;
     width: 0px;
@@ -9592,6 +9604,7 @@ ul {
     display: block;
     background-color: #000000;
     z-index: 1;
+    height: 258px;
 }
 
 .page-header-bg {
@@ -9605,6 +9618,7 @@ ul {
     background-position: center;
     background-size: cover;
     z-index: -1;
+    /* height: 258px; */
 }
 
 .page-header__inner {
@@ -9620,6 +9634,7 @@ ul {
     color: var(--govity-white);
     line-height: 50px;
     font-weight: 700;
+    margin-top: -32px;
 }
 
 .thm-breadcrumb {
@@ -9660,13 +9675,12 @@ ul {
     font-size: 14px;
 }
 
-/*--------------------------------------------------------------
-# News Details
---------------------------------------------------------------*/
+
 .news-details {
     position: relative;
     display: block;
     padding: 120px 0 120px;
+    direction: rtl;
 }
 
 .news-details__left {
@@ -10126,6 +10140,7 @@ ul {
     align-items: center;
     padding: 17px 20px 17px;
     transition: all 500ms ease;
+    direction: rtl;
 }
 
 .sidebar__post-list li:hover {
@@ -10143,6 +10158,8 @@ ul {
 
 .sidebar__post-image > img {
     width: 70px;
+    direction: rtl;
+ 
 }
 
 .sidebar__post-content {
@@ -10177,6 +10194,8 @@ ul {
     font-size: 16px;
     font-weight: 700;
     letter-spacing: var(--govity-letter-spacing-two);
+    direction: rtl;
+    margin-right: 10px;
 }
 
 .sidebar__category {
@@ -12275,6 +12294,10 @@ ul {
     padding-right: 40px;
 }
 
+.project-details__img {
+    width: 100%;
+}
+
 .project-details__info-list::before {
     content: "";
     position: absolute;
@@ -14250,6 +14273,7 @@ ul {
     display: block;
     padding: 120px 0 90px;
     z-index: 1;
+    direction: rtl;
 }
 
 /*--------------------------------------------------------------
@@ -15747,3 +15771,21 @@ body.boxed-wrapper .main-menu__call {
     background-color: #fff;
     box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.08);
 } /*# sourceMappingURL=govity.css.map */
+
+.department-two__icon {
+    float: left;
+    margin-right: 135px;
+}
+.department-two__icon-two {
+    float: left;
+    margin-right: 170px;
+}
+
+#owl-demo .item {
+    margin: 3px;
+}
+#owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}

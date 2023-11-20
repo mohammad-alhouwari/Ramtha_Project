@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
+    protected $table = "projects";
+
+    protected $fillable = [
+        'title',
+        'description',
+        'percentage',
+        'preview_image'
+    ];
+
+    public function media()
+    {
+        return $this->hasMany(Media::class);
+    }
 }

@@ -226,6 +226,10 @@ body.boxed-wrapper .page-wrapper,
 
 
 
+/* Add this to your CSS */
+.no-shadow {
+    box-shadow: none;
+}
 
 
 
