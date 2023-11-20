@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'title',
+        'description',
+        'preview_image',
+        'date',
+        'status',
+    ];
 
     public function media()
     {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" >
 
 
 <!-- Mirrored from layerdrops.com/govity/main-html/index-one-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:16:05 GMT -->
@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/ramtha-logo-rbg.png') }}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/ramtha-logo-rbg.png') }}" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="govity HTML 5 Template " />
+    <meta name="description" content="بلدية الرمثا الكبرى " />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -257,27 +257,13 @@
                                         <a href="#"
                                             class="main-menu__search search-toggler icon-magnifying-glass"></a>
                                     </div>
-                                    <div class="language-switcher">
-                                        <select class="selectpicker">
-                                            <option
-                                                data-content="<span class='lang-en'><img src='assets/images/lang-flag/en.png' alt=''>English</span>"
-                                                value="en" selected>English</option>
-                                            <option
-                                                data-content="<span class='lang-fr'><img src='assets/images/lang-flag/fr.png' alt=''>French</span>"
-                                                value="fr">French
-                                            </option>
 
-                                            <option
-                                                data-content="<span class='lang-it'><img src='assets/images/lang-flag/it.png' alt=''>Italian</span>"
-                                                value="it">
-                                                Italian</option>
-                                        </select>
 
-                                    </div>
-                                    <div class="main-menu__btn-box">
-                                        <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
-                                    </div>
                                 </div>
+                                {{-- <div class="">
+                                    <img style="width: 100px" src="assets/images/backgrounds/logoload.png"
+                                        alt="">
+                                </div> --}}
                             </div>
                         </div>
                     </div>

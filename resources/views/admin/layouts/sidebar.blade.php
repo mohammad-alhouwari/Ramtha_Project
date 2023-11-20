@@ -29,6 +29,10 @@
                         <span class="nav-text">Projects</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['news-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('news-admin.index') }}">
+                        <i class="mdi mdi-newspaper"></i>
+                        <span class="nav-text">News</span>
                 <li class="{{ set_active(['investments-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('investments-admin.index') }}">
                         <i class="mdi mdi-chart-line"></i>
