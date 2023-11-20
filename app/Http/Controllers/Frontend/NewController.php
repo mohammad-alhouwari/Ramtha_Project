@@ -14,6 +14,8 @@ class NewController extends Controller
         $news = News::where('status', 'on')->get();
         return view('Pages.News.news', compact('news'));
     }
+
+
     public function showDetailsNews($id)
     {
         $news = News::where('id', $id)->where('status', 'on')->first();
