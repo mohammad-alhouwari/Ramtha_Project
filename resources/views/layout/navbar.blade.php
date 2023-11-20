@@ -24,6 +24,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
         rel="stylesheet">
 
+
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/animate/custom-animate.css') }}" />
@@ -49,6 +50,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/govity.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/govity-responsive.css') }}" />
+
 </head>
 
 <body class="custom-cursor">

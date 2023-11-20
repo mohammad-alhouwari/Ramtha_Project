@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\TenderController;
+use App\Http\Controllers\TendersDetailesController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +22,5 @@ Route::get('/', function () {
 });
 
 Route::resource('complains', ComplainController::class);
+Route::resource('tenders', TenderController::class);
+Route::resource('tendersDetailes', TendersDetailesController::class);

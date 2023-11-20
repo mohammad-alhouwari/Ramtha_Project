@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tender;
-use Illuminate\Http\Request;
+use App\Models\TendersDetailes;
+use App\Http\Requests\StoreTendersDetailesRequest;
+use App\Http\Requests\UpdateTendersDetailesRequest;
 
-class TenderController extends Controller
+class TendersDetailesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class TenderController extends Controller
      */
     public function index()
     {
-        return view('lama.tenders');
+        return view('lama.tedersDetailes');
+
     }
 
     /**
@@ -30,10 +32,10 @@ class TenderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreTendersDetailesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTendersDetailesRequest $request)
     {
         //
     }
@@ -41,10 +43,10 @@ class TenderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tender  $tender
+     * @param  \App\Models\TendersDetailes  $tendersDetailes
      * @return \Illuminate\Http\Response
      */
-    public function show(Tender $tender)
+    public function show(TendersDetailes $tendersDetailes)
     {
         //
     }
@@ -52,10 +54,10 @@ class TenderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tender  $tender
+     * @param  \App\Models\TendersDetailes  $tendersDetailes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tender $tender)
+    public function edit(TendersDetailes $tendersDetailes)
     {
         //
     }
@@ -63,11 +65,11 @@ class TenderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tender  $tender
+     * @param  \App\Http\Requests\UpdateTendersDetailesRequest  $request
+     * @param  \App\Models\TendersDetailes  $tendersDetailes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tender $tender)
+    public function update(UpdateTendersDetailesRequest $request, TendersDetailes $tendersDetailes)
     {
         //
     }
@@ -75,10 +77,10 @@ class TenderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tender  $tender
+     * @param  \App\Models\TendersDetailes  $tendersDetailes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tender $tender)
+    public function destroy(TendersDetailes $tendersDetailes)
     {
         //
     }
