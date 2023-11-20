@@ -21,4 +21,7 @@ Route::controller(FrontendNewsController::class)->group(function () {
 });
 
 
+Route::get('/', function () {
+    return view('index');
+});
 Route::resource('complains', ComplainController::class);

@@ -2024,7 +2024,7 @@ ul {
 .main-slider__bg {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 100;
     right: 0;
     bottom: 0;
     background-size: cover;
@@ -2519,6 +2519,7 @@ ul {
 .owl-item.active .main-slider-three__bg {
     transform: scale(1.15);
     transition: transform 7000ms linear;
+    direction:rtl;
 }
 
 .main-slider-three__bg:before {
@@ -2592,6 +2593,8 @@ ul {
     visibility: visible;
     opacity: 1;
     transform: translateY(0) translateX(0);
+    direction:rtl;
+    
 }
 
 .main-slider-three__weather-box {
@@ -2629,7 +2632,7 @@ ul {
 
 .main-slider-three__weather-list li .icon {
     position: absolute;
-    top: 30px;
+    top: 10px;
     right: 30px;
 }
 
@@ -2650,7 +2653,7 @@ ul {
 }
 
 .main-slider-three__weather-list li .text span {
-    font-size: 14px;
+    font-size: 25px;
     font-weight: 500;
     color: var(--govity-black);
 }
@@ -2677,11 +2680,11 @@ ul {
     height: 0;
     line-height: 0;
 }
-
+/* Updated CSS for the owl carousel navigation buttons */
 .main-slider-three .owl-theme .owl-nav [class*="owl-"] {
     position: relative;
     top: auto;
-    left: auto;
+    left: 100px; /* Adjust the left position as needed */
     right: auto;
     bottom: auto;
     z-index: 100;
@@ -2696,6 +2699,7 @@ ul {
     border: none;
     border-radius: 50%;
     margin: 0;
+    margin-right:1250px;
     text-align: center;
     transition: all 500ms ease;
     padding: 23px 0 !important;
@@ -2708,7 +2712,9 @@ ul {
 
 .main-slider-three .owl-theme .owl-nav [class*="owl-"] + [class*="owl-"] {
     margin-top: 10px;
+    margin-left: 100px; /* Adjust the margin-left as needed */
 }
+
 
 /*--------------------------------------------------------------
 # Update One

@@ -2518,6 +2518,7 @@ ul {
 .owl-item.active .main-slider-three__bg {
     transform: scale(1.15);
     transition: transform 7000ms linear;
+    direction:rtl;
 }
 
 .main-slider-three__bg:before {
@@ -2591,6 +2592,7 @@ ul {
     visibility: visible;
     opacity: 1;
     transform: translateY(0) translateX(0);
+    direction:rtl;
 }
 
 .main-slider-three__weather-box {

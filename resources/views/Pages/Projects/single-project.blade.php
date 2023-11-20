@@ -56,12 +56,12 @@
                     </div>
                     @if ($projectImages && count($projectImages) > 0)
                         <h4 class="about-two__progress-title"> صور عن المشروع:</h4>
-                        <div class="owl-carousel owl-theme">
-                            @foreach ($projectImages as $projectImage)
-                                <div class="item"><img src="{{ asset($projectImage->media) }}" alt="Image1"
-                                        style="margin: 10px" /></div>
-                            @endforeach
-                        </div>
+                        {{-- <div class="owl-carousel owl-theme"> --}}
+                        @foreach ($projectImages as $projectImage)
+                            <img src="{{ asset($projectImage->media) }}" alt="Image1" style="margin: 10px"
+                                width="100px" />
+                        @endforeach
+                        {{-- </div> --}}
                     @endif
                 </div>
 
