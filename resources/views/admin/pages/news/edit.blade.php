@@ -74,10 +74,10 @@
                                     <label class="text-dark font-weight-medium">News Status</label>
                                     <div class="input-group mb-3">
                                         <div class="custom-control custom-switch">
-                                            <input type="hidden" name="status" value="0">
+                                            <input type="hidden" name="status" value="off">
                                             <input type="checkbox" class="custom-control-input" id="statusSwitch"
-                                                name="status" value="1" {{ old('status') ? 'checked' : '' }}
-                                                {{ $news->status == '1' ? 'checked' : '' }}>
+                                                name="status" value="on" {{ old('status') ? 'checked' : '' }}
+                                                {{ $news->status == 'on' ? 'checked' : '' }}>
                                             <label class="custom-control-label" for="statusSwitch"></label>
                                         </div>
                                     </div>
