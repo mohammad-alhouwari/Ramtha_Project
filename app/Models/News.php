@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
     
     protected $fillable = [
         'title',
@@ -17,11 +16,9 @@ class News extends Model
         'date',
         'status',
     ];
-=======
 
     public function media()
     {
         return $this->hasMany(Media::class, 'news_id');
     }
->>>>>>> 67ddd24882182fefb0e6e96cd4bc6705c9708ccd
 }
