@@ -16,9 +16,9 @@ class NewController extends Controller
     }
     public function showDetailsNews($id)
     {
-        $news = News::where('id', $id)->where('status', 1)->first();
+        $news = News::where('id', $id)->where('status', 'on')->first();
         $latestNews = News::where('created_at', '>', Carbon::now()->subDays(3))
-            ->where('status', 1)->where('id', '!=', $id)
+            ->where('status', 'on')->where('id', '!=', $id)
             ->take(3)
             ->get();
         return view('Pages.News.newsDetails', compact('news', 'latestNews'));
