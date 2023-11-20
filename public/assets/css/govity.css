@@ -14490,14 +14490,11 @@ ul {
 
 
 
-
 .gallery {
     display: block !important;
     width: 80%;
-    margin-left:10%
+    margin: 0 auto; /* Center the .gallery horizontally */
   }
-  
- 
   
   .gallery-container {
     display: grid;
@@ -14505,6 +14502,7 @@ ul {
     gap: 20px;
     padding: 20px;
     direction: rtl;
+    justify-items: center; /* Center items horizontally within the grid */
   }
   
   .gallery-item {

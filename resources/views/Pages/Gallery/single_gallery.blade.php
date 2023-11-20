@@ -14,7 +14,7 @@
     <h2 class="section-title__title">صور مدينة الرمثا </h2>
 </div>
 <main class="gallery" >
-  <div class="gallery-container">
+  <div class="gallery-container" >
       <div class="gallery-item">
           <div class="gallery-image">
               <a href="https://www.ahdath24.com/image.php?token=f1affdf90dbbeb394fcf8a8edd05e5e6&size=" data-fancybox="gallery" data-caption="Caption Images 1">
@@ -51,7 +51,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> 
 
 </main>
 
