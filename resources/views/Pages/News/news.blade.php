@@ -18,7 +18,7 @@
                 <ul class="thm-breadcrumb list-unstyled">
                     <li><a href="index.html">الرئيسية</a></li>
                     <li><span>/</span></li>
-                    <li ><a href="{{ route('showAllNews') }}">الأخبار</a></li>
+                    <li><a href="{{ route('showAllNews') }}">الأخبار</a></li>
                 </ul>
             </div>
         </div>
@@ -29,29 +29,30 @@
             <div class="row">
                 <!--News One Single Start-->
                 @foreach ($news as $new)
-                <div class="col-xl-4 col-lg-4">
-                    <div class="news-one__single">
-                        <div class="news-one__img-box">
-                            <div class="news-one__img">
-                                <img src="{{$new->preview_image}}" alt="">
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="news-one__single">
+                            <div class="news-one__img-box">
+                                <div class="news-one__img">
+                                    <img src="{{ $new->preview_image }}" alt="">
+                                </div>
+
+                                <div class="news-one__date">
+                                    <p>{{ \Illuminate\Support\Carbon::parse($new->date)->format(' M d ') }}</p>
+                                </div>
+
                             </div>
-                           
-                            <div class="news-one__date">
-                                <p>{{ \Illuminate\Support\Carbon::parse($new->date)->format(' M d ') }}</p>
-                            </div>
-                            
-                        </div>
-                        <div class="news-one__content">
-                            <h3 class="news-one__title"><a href="{{route('showDetailsNews', $new->id)}}">
-                                {{$new->title}}
-                                </a>
-                            </h3>
-                            <div class="news-one__btn">
-                                <a href="{{route('showDetailsNews', $new->id)}}">اقرأ المزيد<i class="icon-left-arrow"></i></a>
+                            <div class="news-one__content">
+                                <h3 class="news-one__title"><a href="{{ route('showDetailsNews', $new->id) }}">
+                                        {{ $new->title }}
+                                    </a>
+                                </h3>
+                                <div class="news-one__btn">
+                                    <a href="{{ route('showDetailsNews', $new->id) }}">اقرأ المزيد<i
+                                            class="icon-left-arrow"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
                 {{-- <div class="col-xl-4 col-lg-4">
                     <div class="news-one__single">
