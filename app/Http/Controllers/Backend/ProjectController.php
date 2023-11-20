@@ -89,6 +89,13 @@ class ProjectController extends Controller
     }
 
 
+    public function addProjectPhotos($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('admin.pages.projects.projectPhotos', compact('project'));
+    }
+
+
     public function destroy($id)
     {
         $event = Project::findOrFail($id);

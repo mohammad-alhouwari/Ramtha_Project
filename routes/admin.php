@@ -3,12 +3,11 @@
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
+use App\Http\Controllers\Backend\MediaController as BackendMediaController;
 use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
 use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
+use App\Http\Controllers\Backend\NewController as BackendNewController;
 use Illuminate\Support\Facades\Route;
-
-
-/*-----------------------------Marah Routes-----------------------------*/
 
 Route::prefix('admin')->middleware('auth')->group(
     function () {
@@ -18,12 +17,25 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Projects Route
         Route::resource('projects-admin', BackendProjectController::class);
+
+        //Project Medias Route
+        Route::resource('medias-admin', BackendMediaController::class);
+        Route::get('medias-admin/create/{project_id}', [BackendMediaController::class, 'create'])->name('medias-admin.create.project');
+
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
+
         // Complain Route
         Route::resource('complain-admin', BackendComplainController::class);
+
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
+
+        // News Route
+        Route::resource('news-admin', BackendNewController::class);
+
+        //Admins Route
+        Route::resource('admin-users', BackendUserController::class);
 
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');

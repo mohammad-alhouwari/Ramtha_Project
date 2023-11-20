@@ -37,6 +37,7 @@
     <!-- FAVICON -->
     <link href="{{ asset('assets/images/ramtha-logo-rbg.png') }}" rel="shortcut icon" />
     <script src="{{ asset('admin/plugins/nprogress/nprogress.js') }}"></script>
+    
 </head>
 
 <body class="navbar-fixed sidebar-fixed" id="body">
