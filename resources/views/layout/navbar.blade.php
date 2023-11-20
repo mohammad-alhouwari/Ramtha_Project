@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html>
 
 
 <!-- Mirrored from layerdrops.com/govity/main-html/index-one-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:16:05 GMT -->

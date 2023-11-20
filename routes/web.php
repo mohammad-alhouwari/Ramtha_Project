@@ -3,6 +3,8 @@
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
+
+use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +15,19 @@ use App\Http\Controllers\ComplainController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+/*-----------------------------Home Routes-----------------------------*/
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/', [HomeController::class, 'president'])->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(FrontendHomeController::class)->group(function () {
+Route::get('/', 'index');
+
 });
+
+/*-----------------------------Home Routes End-----------------------------*/
+
 
 /*-----------------------------Projects Routes-----------------------------*/
 
@@ -25,7 +36,4 @@ Route::controller(FrontendProjectController::class)->group(function () {
     Route::get('project/{id}', 'showProject')->name('showProject');
 });
 
-Route::get('/', function () {
-    return view('index');
-});
 Route::resource('complains', ComplainController::class);
