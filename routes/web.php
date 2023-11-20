@@ -24,8 +24,7 @@ use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 // Route::get('/', [HomeController::class, 'president'])->name('home');
 
 Route::controller(FrontendHomeController::class)->group(function () {
-Route::get('/', 'index');
-
+    Route::get('/', 'index');
 });
 
 /*-----------------------------Home Routes End-----------------------------*/
