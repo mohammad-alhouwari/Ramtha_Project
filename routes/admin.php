@@ -24,12 +24,14 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::resource('medias-admin', BackendMediaController::class);
         Route::get('medias-admin/create/{project_id}', [BackendMediaController::class, 'create'])->name('medias-admin.create.project');
 
-        //Admins Route
-        Route::resource('admin-users', BackendUserController::class);
         // Complain Route
         Route::resource('complain-admin', BackendComplainController::class);
+
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
+
+        //Admins Route
+        Route::resource('admin-users', BackendUserController::class);
 
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
