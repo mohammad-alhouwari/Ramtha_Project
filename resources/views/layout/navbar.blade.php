@@ -258,10 +258,10 @@
 
 
                                 </div>
-                                <div class="">
+                                {{-- <div class="">
                                     <img style="width: 100px" src="assets/images/backgrounds/logoload.png"
                                         alt="">
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
