@@ -32,9 +32,9 @@ class NewsDataTable extends DataTable
             })
 
             ->addColumn('status', function ($query) {
-                $checked = $query->status ? '1' : '0';
+                $checked = $query->status=='on' ? 'on' : 'off';
 
-                if ($checked == '1') {
+                if ($checked == 'on') {
                     return "<span class='badge badge-success'>Active</span>";
                 } else {
                     return "<span class='badge badge-danger'>Inactive</span>";
