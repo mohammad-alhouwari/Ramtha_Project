@@ -58,6 +58,8 @@
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+
 </head>
 
 <body class="custom-cursor">
@@ -255,13 +257,31 @@
                                         <a href="#"
                                             class="main-menu__search search-toggler icon-magnifying-glass"></a>
                                     </div>
+                                    <div class="language-switcher">
+                                        <select class="selectpicker">
+                                            <option
+                                                data-content="<span class='lang-en'><img src='assets/images/lang-flag/en.png' alt=''>English</span>"
+                                                value="en" selected>English</option>
+                                            <option
+                                                data-content="<span class='lang-fr'><img src='assets/images/lang-flag/fr.png' alt=''>French</span>"
+                                                value="fr">French
+                                            </option>
 
+                                            <option
+                                                data-content="<span class='lang-it'><img src='assets/images/lang-flag/it.png' alt=''>Italian</span>"
+                                                value="it">
+                                                Italian</option>
+                                        </select>
 
+                                    </div>
+                                    <div class="main-menu__btn-box">
+                                        <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
+                                    </div>
                                 </div>
-                                <div class="">
+                                {{-- <div class="">
                                     <img style="width: 100px" src="assets/images/backgrounds/logoload.png"
                                         alt="">
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

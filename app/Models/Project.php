@@ -17,4 +17,9 @@ class Project extends Model
         'percentage',
         'preview_image'
     ];
+
+    public function media()
+    {
+        return $this->hasMany(Media::class);
+    }
 }
