@@ -56,3 +56,5 @@ Route::controller(FrontendNewsController::class)->group(function () {
 
 
 Route::resource('complains', ComplainController::class);
+Route::resource('tenders', TenderController::class);
+Route::resource('tendersDetailes', TendersDetailesController::class);
