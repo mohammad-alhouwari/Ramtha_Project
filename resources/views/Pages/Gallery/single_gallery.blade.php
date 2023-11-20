@@ -6,7 +6,7 @@
 <br>
 <div class="section-title text-center">
     <div class="section-title__icon">
-        <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
     </div>
     <span class="section-title__tagline">معرض الصور</span>
     <br>
