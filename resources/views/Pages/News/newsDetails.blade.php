@@ -9,7 +9,7 @@
 
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg );opacity:0.3">
+        <div class="page-header-bg" style="background-image: url({{asset('assets/images/backgrounds/page-header-bg.jpg')}} );opacity:0.3">
         </div>
         <div class="container">
             <div class="page-header__inner">
@@ -32,21 +32,19 @@
                     <div class="news-details__left">
                         <div class="news-details__img-box">
                             <div class="news-details__img">
-                                <img src="assets/images/News/اجتماع موقع الاكتروني.JFIF" alt="">
+                                <img src="{{ asset($news->preview_image) }}" alt="">
                             </div>
                             <div class="news-details__date">
-                                <p>6 <br> Nov</p>
+
+                                <p>{{ \Illuminate\Support\Carbon::parse($news->date)->format('d M') }}</p>
+
+
                             </div>
                         </div>
                         <div class="news-details__content">
 
-                            <h3 class="news-details__title-1">جلسة عصف ذهني لبناء مشروع الموقع
-                                الإلكتروني</h3>
-                            <p class="news-details__text-1">بتوجيه من رئيس بلدية الرمثا الكبرى سعادة أحمد الخزاعلة قام فريق
-                                تكنولوجيا المعلومات في بلدية الرمثا صباح اليوم
-                                بمشاركة Coding Academy By Orange في جلسة عصف ذهني تشاركية لإعداد خطة متكاملة لبناء مشروع
-                                الموقع الإلكتروني الشامل لجميع خدمات البلدية .
-                                نشكر مدير أكاديمية البرمجة في أورانج السيد محمد فريحات والفريق الرائع على حسن التعاون
+                            <h3 class="news-details__title-1">{{ $news->title }}</h3>
+                            <p class="news-details__text-1">{{ $news->description }}
                         </div>
 
                     </div>
@@ -56,31 +54,21 @@
                         <div class="sidebar__single sidebar__post">
                             <h3 class="sidebar__title">آخر الأخبار</h3>
                             <ul class="sidebar__post-list list-unstyled">
-                                <li>
-                                    <div class="sidebar__post-image">
-                                        <img src="assets/images/News/دوار القبة.jpg" alt="">
-                                    </div>
-                                    <div class="sidebar__post-content">
-                                        <h3>
-                                           
-                                            <a href="news-details.html">الإنتهاء من أعمال تصميم دوار القبة <br>
+                                @foreach ($latestNews as $latest)
+                                    <li>
+                                        <div class="sidebar__post-image">
+                                            <img src="{{asset($latest->preview_image)}}" alt="">
+                                        </div>
+                                        <div class="sidebar__post-content">
+                                            <h3>
+
+                                                <a href="{{route('showDetailsNews', $latest->id)}}"> {{$latest->title}} <br>
                                                 </a>
-                                        </h3>
-                                    </div>
-                                </li>
-                             
-                                <li>
-                                    <div class="sidebar__post-image">
-                                        <img src="assets/images/News/توقيع.jpg" alt="">
-                                    </div>
-                                    <div class="sidebar__post-content">
-                                        <h3>
-                                            
-                                            <a href="news-details.html">وقع رئيس بلدية الرمثا الكبرى إتفاقية مع
-                                                شركة الدقامسة للمقاولات </a>
-                                        </h3>
-                                    </div>
-                                </li>
+                                            </h3>
+                                        </div>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div>
 

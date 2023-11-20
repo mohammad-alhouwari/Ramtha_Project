@@ -35,13 +35,15 @@
                             <div class="news-one__img">
                                 <img src="{{$new->preview_image}}" alt="">
                             </div>
+                           
                             <div class="news-one__date">
-                                <p>6 <br> NOV</p>
+                                <p>{{ \Illuminate\Support\Carbon::parse($new->date)->format(' M d ') }}</p>
                             </div>
+                            
                         </div>
                         <div class="news-one__content">
-                            <h3 class="news-one__title"><a href="{{route('showDetailsNews', $new->id)}}">جلسة عصف ذهني لبناء مشروع الموقع
-                                    الإلكتروني
+                            <h3 class="news-one__title"><a href="{{route('showDetailsNews', $new->id)}}">
+                                {{$new->title}}
                                 </a>
                             </h3>
                             <div class="news-one__btn">
