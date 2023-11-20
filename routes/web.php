@@ -6,10 +6,32 @@ use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
 
-Route::get('/', function () {
-    return view('welcome');
+use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+/*-----------------------------Home Routes-----------------------------*/
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/', [HomeController::class, 'president'])->name('home');
+
+Route::controller(FrontendHomeController::class)->group(function () {
+Route::get('/', 'index');
+
 });
 
+/*-----------------------------Home Routes End-----------------------------*/
+
+
+/*-----------------------------Projects Routes-----------------------------*/
 /*----------------------------- Projects Routes Start -----------------------------*/
 
 Route::controller(FrontendProjectController::class)->group(function () {
@@ -26,7 +48,4 @@ Route::controller(FrontendNewsController::class)->group(function () {
 /*------------------------------- News Routes End -------------------------------*/
 
 
-Route::get('/', function () {
-    return view('index');
-});
 Route::resource('complains', ComplainController::class);
