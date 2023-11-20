@@ -9,8 +9,6 @@ use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentContro
 use App\Http\Controllers\Backend\NewController as BackendNewController;
 use Illuminate\Support\Facades\Route;
 
-/*-----------------------------Marah Routes-----------------------------*/
-
 Route::prefix('admin')->middleware('auth')->group(
     function () {
         Route::get('/dashboard', function () {
