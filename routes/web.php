@@ -1,14 +1,34 @@
 <?php
 
+use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
-
+use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
 
-Route::get('/', function () {
-    return view('welcome');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+/*-----------------------------Home Routes-----------------------------*/
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/', [HomeController::class, 'president'])->name('home');
+
+Route::controller(FrontendHomeController::class)->group(function () {
+    Route::get('/', 'index');
 });
+
+/*-----------------------------Home Routes End-----------------------------*/
+
 
 /*----------------------------- Projects Routes Start -----------------------------*/
 
@@ -18,7 +38,16 @@ Route::controller(FrontendProjectController::class)->group(function () {
 });
 /*----------------------------- Projects Routes End -----------------------------*/
 
-/*------------------------------ News Routes Start ------------------------------*/
+/*--------------------- Investment-Opportunity Routes Start ---------------------*/
+
+Route::controller(FrontendInvestmentsController::class)->group(function () {
+    Route::get('investments', 'showAllInvestments')->name('showAllInvestments');
+    Route::get('investment/{id}', 'showInvestment')->name('showInvestment');
+});
+
+/*--------------------- Investment-Opportunity Routes End ----------------------*/
+
+/*------------------------------ News Routes Start -----------------------------*/
 Route::controller(FrontendNewsController::class)->group(function () {
     Route::get('news', 'showAllNews')->name('showAllNews');
     Route::get('new-details/{id}', 'showDetailsNews')->name('showDetailsNews');
@@ -26,7 +55,6 @@ Route::controller(FrontendNewsController::class)->group(function () {
 /*------------------------------- News Routes End -------------------------------*/
 
 
-Route::get('/', function () {
-    return view('index');
-});
 Route::resource('complains', ComplainController::class);
+Route::resource('tenders', TenderController::class);
+Route::resource('tendersDetailes', TendersDetailesController::class);
