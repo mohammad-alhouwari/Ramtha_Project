@@ -230,40 +230,7 @@ ul {
     z-index: -1;
 }
 
-/*--------------------------------------------------------------
-# Custom Cursor
---------------------------------------------------------------*/
-.custom-cursor__cursor {
-    width: 25px;
-    height: 25px;
-    border-radius: 100%;
-    border: 1px solid var(--govity-base);
-    transition: all 200ms ease-out;
-    position: fixed;
-    pointer-events: none;
-    left: 0;
-    top: 0;
-    transform: translate(calc(-50% + 5px), -50%);
-    z-index: 999991;
-}
 
-.custom-cursor__cursor-two {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: var(--govity-base);
-    opacity: 0.3;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    transition: width 0.3s, height 0.3s, opacity 0.3s;
-    z-index: 999991;
-}
-
-.custom-cursor__hover {
-    background-color: var(--govity-base);
-    opacity: 0.4;
-}
 
 .custom-cursor__innerhover {
     width: 25px;

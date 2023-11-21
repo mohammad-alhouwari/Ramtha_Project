@@ -20,7 +20,11 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Project Medias Route
         Route::resource('medias-admin', BackendMediaController::class);
-        Route::get('medias-admin/create/{project_id}', [BackendMediaController::class, 'create'])->name('medias-admin.create.project');
+
+        Route::get('medias-admin/create/project/{project_id}', [BackendMediaController::class, 'createProject'])->name('medias-admin.create.project');
+
+        //News Medias Route
+        Route::get('medias-admin/create/news/{news_id}', [BackendMediaController::class, 'createNews'])->name('medias-admin.create.news');
 
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
