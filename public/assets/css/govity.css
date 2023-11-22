@@ -8729,6 +8729,7 @@ ul {
 /*--------------------------------------------------------------
 # Portfolio Three
 --------------------------------------------------------------*/
+
 .portfolio-three {
     position: relative;
     display: block;
@@ -8794,7 +8795,7 @@ ul {
 
 .portfolio-three__content {
     position: absolute;
-    right: 40px;
+    right: 0px;
     bottom: 33px;
     z-index: 2;
 }
@@ -14507,52 +14508,32 @@ ul {
 }
 
 
-
-.gallery {
-    display: block !important;
-    width: 80%;
-    margin: 0 auto; /* Center the .gallery horizontally */
+  .gallery {
+    margin: 20px;
   }
   
-  .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-    padding: 20px;
-    direction: rtl;
-    justify-items: center; /* Center items horizontally within the grid */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-bottom: 10px; /* Adjust margin between rows */
   }
   
   .gallery-item {
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    overflow: hidden;
+    width: 320px; /* 25% width for each item with margin */
+    margin: 5px; /* Adjust margin for spacing */
+    box-sizing: border-box;
   }
   
-  .gallery-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .gallery-image img {
-    width: 100%;
-    height: 100%;
+  .gallery-item img {
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
+    /* Define the size you want for the images */
+    width: 320px; /* Adjust the width for smaller images */
+    height: 280px; /* Adjust the height for smaller images */
   }
   
-  /* Media query for responsiveness */
-  @media only screen and (max-width: 600px) {
-    .gallery-container {
-      display: block;
-      grid-template-columns: 1fr;
-      grid-gap: 1rem;
-    }
-  }
-
   
 /*--------------------------------------------------------------
 # pagination

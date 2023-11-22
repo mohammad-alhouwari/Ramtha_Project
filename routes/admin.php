@@ -32,6 +32,11 @@ Route::prefix('admin')->middleware('auth')->group(
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
 
+
+        // All Medias Route 
+
+        Route::get('medias', [BackendMediaController::class, 'showAllMedia']);
+
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
         Route::post('/profile-update/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
