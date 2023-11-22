@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\MediaController as BackendMediaController;
 use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
 use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
 use App\Http\Controllers\Backend\NewController as BackendNewController;
+use App\Http\Controllers\Backend\JobController as BackendJobController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
