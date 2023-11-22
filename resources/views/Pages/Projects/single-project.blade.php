@@ -52,69 +52,57 @@
                         <p class="department-details__text-1">
                             {{ $project->description }}
                         </p>
-
                     </div>
                     @if ($projectImages && count($projectImages) > 0)
                         <h4 class="about-two__progress-title"> صور عن المشروع:</h4>
-                        <div class="owl-carousel owl-theme">
+                        <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel" lang="en"
+                            dir="ltr"
+                            data-owl-options='{
+                                    "items": 3,
+                                    "margin": 30,
+                                    "smartSpeed": 3000,
+                                    "loop": true,
+                                    "autoplay": false,  <!-- Change this line to enable autoplay -->
+                                    "autoplayTimeout": 6000,  <!-- Set the autoplay timeout (in milliseconds) -->
+                                    "nav": false,
+                                    "dots": false,
+                                    "navText": ["<span class=\"fa fa-angle-left\"></span>", "<span class=\"fa fa-angle-right\"></span>"],
+                                    "responsive": {
+                                        "0": {
+                                            "items": 1
+                                        },
+                                        "768": {
+                                            "items": 3
+                                        },
+                                        
+                                    }
+                                }'>
                             @foreach ($projectImages as $projectImage)
-                                <div class="item"><img src="{{ asset($projectImage->media) }}" alt="Image1"
-                                        style="margin: 10px" /></div>
+                                <div class="brand-one__single">
+                                    <div class=" items">
+                                        <img src="{{ asset($projectImage->media) }}" alt="Image1" style="margin: 10px"
+                                            width="200px" />
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                     @endif
                 </div>
-
-
                 <div class="col-xl-4 col-lg-5">
                     <div class="department-details__right">
                         <div class="department-details__services-box">
                             <ul class="department-details__services-list list-unstyled">
-                                <li>
-                                    <a href="#">Your Government<span class="icon-right-arrow"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Jobs & Unemployment<span class="icon-right-arrow"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Business & Industrials<span class="icon-right-arrow"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Roads & Transportation<span class="icon-right-arrow"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Art & Culture<span class="icon-right-arrow"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Policing & Crimes<span class="icon-right-arrow"></span></a>
-                                </li>
+                                @foreach ($allProjects as $project)
+                                    <li>
+                                        <a href="{{ route('showProject', $project->id) }}">{{ $project->title }}<span
+                                                class="icon-left-arrow"></span></a>
+                                    </li>
+                                @endforeach
                             </ul>
-                        </div>
-                        <div class="department-details__great-place">
-                            <div class="department-details__great-place-bg"
-                                style="background-image: url(assets/images/backgrounds/department-details-great-place-bg.jpg);">
-                            </div>
-                            <div class="department-details__great-place-icon">
-                                <span class="icon-cityscape "></span>
-                            </div>
-                            <p class="department-details__great-place-text">Great city & place
-                                to develop your
-                                career</p>
-                            <a href="#" class="department-details__great-place-btn thm-btn">Join Now</a>
-                        </div>
-                        <div class="department-details__call-box">
-                            <div class="department-details__call-box-icon">
-                                <span class="icon-phone-call"></span>
-                            </div>
-                            <div class="department-details__call-box-content">
-                                <p>Have any Question?</p>
-                                <h3><span>Free </span><a href="tel:+9212340800">+92 (1234) 0800</a></h3>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!--Project Details End-->
 

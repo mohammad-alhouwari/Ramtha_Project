@@ -2,8 +2,8 @@
 <footer class="footer mt-auto">
     <div class="copyright bg-white">
         <p>
-            </span> Powerd by <a class="text-primary" href="" target="_blank">Coding
-                Academy By Orange | Irbid Branch</a> &copy; <span id="copy-year">.
+            </span> Powerd by <a class="text-primary" href="{{ route('team') }}" target="_blank">Coding
+                Academy By Orange | Irbid Bransh</a> &copy; <span id="copy-year">.
         </p>
     </div>
     <script>
@@ -11,4 +11,6 @@
         var year = d.getFullYear();
         document.getElementById("copy-year").innerHTML = year;
     </script>
+
+
 </footer>

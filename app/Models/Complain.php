@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Complain extends Model
 {
     use HasFactory;
+
+    protected $table = 'complains';
+
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'national_id',
+        'complain_type',
+        'address',
+        'complain_details',
+        'image',
+    ];
 }
