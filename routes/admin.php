@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
 use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
+use App\Http\Controllers\Backend\JobController as BackendJobController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,6 +22,8 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::resource('admin-users', BackendUserController::class);
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
+        //jobs opportunities Route
+        Route::resource('jobs-admin', BackendJobController::class);
 
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
