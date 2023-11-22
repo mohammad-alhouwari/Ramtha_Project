@@ -18,42 +18,68 @@
                 <ul class="thm-breadcrumb list-unstyled">
                     <li><a href="index.html">الرئيسية</a></li>
                     <li><span>/</span></li>
-                    <li ><a href="{{ route('showAllNews') }}">الأخبار</a></li>
+                    <li><a href="{{ route('showAllNews') }}">الأخبار</a></li>
                 </ul>
             </div>
         </div>
     </section>
     <!--News Page Start-->
-    <section class="news-page">
-        <div class="container">
-            <div class="row">
-                <!--News One Single Start-->
-                @foreach ($news as $new)
-                <div class="col-xl-4 col-lg-4">
-                    <div class="news-one__single">
-                        <div class="news-one__img-box">
-                            <div class="news-one__img">
-                                <img src="{{$new->preview_image}}" alt="">
-                            </div>
-                           
-                            <div class="news-one__date">
-                                <p>{{ \Illuminate\Support\Carbon::parse($new->date)->format(' M d ') }}</p>
-                            </div>
-                            
-                        </div>
-                        <div class="news-one__content">
-                            <h3 class="news-one__title"><a href="{{route('showDetailsNews', $new->id)}}">
-                                {{$new->title}}
-                                </a>
-                            </h3>
-                            <div class="news-one__btn">
-                                <a href="{{route('showDetailsNews', $new->id)}}">اقرأ المزيد<i class="icon-left-arrow"></i></a>
-                            </div>
-                        </div>
+    @if ($news->isEmpty())
+        <section class="department-page">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">أخبارُنا</span>
+                    <h2 class="section-title__title">لا يوجد أخبار لعرضها</h2>
+                </div>
+                <div class="row">
+                    <div class="text-center">
+                        <a href="{{ url('/') }}" class="btn thm-btn">العودة الى الصفحة الرئيسية</a>
                     </div>
                 </div>
-                @endforeach
-                {{-- <div class="col-xl-4 col-lg-4">
+            </div>
+        </section>
+    @else
+        <section class="news-page">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">أخبارُنا</span>
+                    <h2 class="section-title__title">اكتشف أخبار بلدية <br>الرمثا</h2>
+                </div>
+                <div class="row">
+                    <!--News One Single Start-->
+                    @foreach ($news as $new)
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="news-one__single">
+                                <div class="news-one__img-box">
+                                    <div class="news-one__img">
+                                        <img src="{{ $new->preview_image }}" alt="">
+                                    </div>
+
+                                    <div class="news-one__date">
+                                        <p>{{ \Illuminate\Support\Carbon::parse($new->date)->format(' M d ') }}</p>
+                                    </div>
+
+                                </div>
+                                <div class="news-one__content">
+                                    <h3 class="news-one__title"><a href="{{ route('showDetailsNews', $new->id) }}">
+                                            {{ $new->title }}
+                                        </a>
+                                    </h3>
+                                    <div class="news-one__btn">
+                                        <a href="{{ route('showDetailsNews', $new->id) }}">اقرأ المزيد<i
+                                                class="icon-left-arrow"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    {{-- <div class="col-xl-4 col-lg-4">
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
@@ -92,8 +118,9 @@
                         </div>
                     </div>
                 </div> --}}
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
     <!--News Page End-->
 @endsection

@@ -6,10 +6,8 @@ use App\Http\Controllers\Backend\UserController as BackendUserController;
 use App\Http\Controllers\Backend\MediaController as BackendMediaController;
 use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
 use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\NewController as BackendNewController;
-
-/*-----------------------------Marah Routes-----------------------------*/
+use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
     function () {
@@ -22,13 +20,18 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Project Medias Route
         Route::resource('medias-admin', BackendMediaController::class);
-        Route::get('medias-admin/create/{project_id}', [BackendMediaController::class, 'create'])->name('medias-admin.create.project');
+
+        Route::get('medias-admin/create/project/{project_id}', [BackendMediaController::class, 'createProject'])->name('medias-admin.create.project');
+
+        //News Medias Route
+        Route::get('medias-admin/create/news/{news_id}', [BackendMediaController::class, 'createNews'])->name('medias-admin.create.news');
 
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
-        Route::resource('news-admin', BackendNewController::class);
+
         // Complain Route
         Route::resource('complain-admin', BackendComplainController::class);
+
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
 
@@ -36,6 +39,11 @@ Route::prefix('admin')->middleware('auth')->group(
         // All Medias Route 
 
         Route::get('medias', [BackendMediaController::class, 'showAllMedia']);
+        // News Route
+        Route::resource('news-admin', BackendNewController::class);
+
+        //Admins Route
+        Route::resource('admin-users', BackendUserController::class);
 
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');

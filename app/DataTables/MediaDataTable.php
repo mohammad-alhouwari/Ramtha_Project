@@ -23,11 +23,23 @@ class MediaDataTable extends DataTable
 
         return $this;
     }
+    public function setNewsId($newsId)
+    {
+        $this->newsId = $newsId;
 
+        return $this;
+    }
 
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
-        $query->where('project_id', $this->projectId);
+        if (!is_null($this->projectId)) {
+            $query->where('project_id', $this->projectId);
+        }
+    
+
+        if (!is_null($this->newsId)) {
+            $query->where('news_id', $this->newsId);
+        }
 
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {

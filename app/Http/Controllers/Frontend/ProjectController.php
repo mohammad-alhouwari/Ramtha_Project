@@ -20,6 +20,7 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id);
         $projectImages = Media::where('project_id', $id)->where('media_type', 'image')->get();
-        return view('Pages.Projects.single-project', compact('project', 'projectImages'));
+        $allProjects = Project::where('id', '!=', $id)->get();
+        return view('Pages.Projects.single-project', compact('project', 'projectImages', 'allProjects'));
     }
 }

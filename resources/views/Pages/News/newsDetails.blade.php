@@ -9,7 +9,8 @@
 
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header-bg" style="background-image: url({{asset('assets/images/backgrounds/page-header-bg.jpg')}} );opacity:0.3">
+        <div class="page-header-bg"
+            style="background-image: url({{ asset('assets/images/backgrounds/page-header-bg.jpg') }} );opacity:0.3">
         </div>
         <div class="container">
             <div class="page-header__inner">
@@ -35,18 +36,13 @@
                                 <img src="{{ asset($news->preview_image) }}" alt="">
                             </div>
                             <div class="news-details__date">
-
                                 <p>{{ \Illuminate\Support\Carbon::parse($news->date)->format('d M') }}</p>
-
-
                             </div>
                         </div>
                         <div class="news-details__content">
-
                             <h3 class="news-details__title-1">{{ $news->title }}</h3>
                             <p class="news-details__text-1">{{ $news->description }}
                         </div>
-
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5">
@@ -57,21 +53,19 @@
                                 @foreach ($latestNews as $latest)
                                     <li>
                                         <div class="sidebar__post-image">
-                                            <img src="{{asset($latest->preview_image)}}" alt="">
+                                            <img src="{{ asset($latest->preview_image) }}" alt="">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
-
-                                                <a href="{{route('showDetailsNews', $latest->id)}}"> {{$latest->title}} <br>
+                                                <a href="{{ route('showDetailsNews', $latest->id) }}"> {{ $latest->title }}
+                                                    <br>
                                                 </a>
                                             </h3>
                                         </div>
                                     </li>
                                 @endforeach
-
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>

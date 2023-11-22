@@ -22,19 +22,20 @@ class NewsDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
+                $mediaBtn = "<a href='" . route('medias-admin.index', ['news_id' => $query->id]) . "' class='btn btn-info my-2'><i class='far fa-image'></i></a>";
                 $editBtn = "<a href='" . route('news-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
                 $deleteBtn = "<a href='" . route('news-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
 
-                return $editBtn . $deleteBtn;
+                return $mediaBtn.$editBtn . $deleteBtn;
             })
             ->addColumn('preview_image', function ($query) {
                 return "<img width='100px' src='" . asset($query->preview_image) . "'></img>";
             })
 
             ->addColumn('status', function ($query) {
-                $checked = $query->status ? '1' : '0';
+                $checked = $query->status=='on' ? 'on' : 'off';
 
-                if ($checked == '1') {
+                if ($checked == 'on') {
                     return "<span class='badge badge-success'>Active</span>";
                 } else {
                     return "<span class='badge badge-danger'>Inactive</span>";

@@ -12,44 +12,65 @@ class MediaController extends Controller
 {
     use ImageUploadTrait;
 
-
     public function index(MediaDataTable $dataTables, Request $request)
     {
         $projectId = $request->get('project_id');
+        $newsId = $request->get('news_id');
 
-        $dataTables->setProjectId($projectId);
+        if ($newsId != null) {
+            $dataTables->setNewsId($newsId);
+            return $dataTables->render('admin.pages.medias.index', compact('newsId'));
+        } elseif ($projectId != null) {
+            $dataTables->setProjectId($projectId);
+            return $dataTables->render('admin.pages.medias.index', compact('projectId'));
+        }
 
-        return $dataTables->render('admin.pages.medias.index', compact('projectId'));
     }
 
-
-    public function create($project_id)
+    public function createProject($project_id)
     {
-        return view('admin.pages.medias.create', compact('project_id'));
+        return view('admin.pages.medias.create', compact('project_id'))->with('type', 'project');
     }
 
+    public function createNews($news_id)
+    {
+        return view('admin.pages.medias.create', compact('news_id'))->with('type', 'news');
+    }
 
     public function store(Request $request)
     {
-        // Data Validate
         $request->validate([
-            'media' => ['required'],
+            'media.*' => 'required',
         ]);
 
-        $imagePath = $this->uploadImage($request, 'media', 'uploads');
+        $imagePath = $this->uploadMulImage($request, 'media', 'uploads');
 
-        Media::create([
-            'project_id' => $request->input('project_id'),
-            'media_type' => 'image',
-            'media' => $imagePath,
-        ]);
-
-        $notification = array(
+        $notification = [
             'message' => 'Media Created Successfully!!',
             'alert-type' => 'success',
-        );
-
-        return redirect()->route('medias-admin.index', ['project_id' => $request->input('project_id')])->with($notification);
+        ];
+        //** Add medias in Projects */
+        if ($projectId = $request->input('project_id')) {
+            foreach ($imagePath as $imagePath) {
+                Media::create([
+                    'project_id' => $projectId,
+                    'media_type' => 'image',
+                    'media' => $imagePath,
+                ]);
+            }
+            return redirect()->route('medias-admin.index', ['project_id' => $projectId])->with($notification);
+        }
+        //** Add medias in News */
+        if ($newsId = $request->input('news_id')) {
+            foreach ($imagePath as $imagePath) {
+            Media::create([
+                'news_id' => $newsId,
+                'media_type' => 'image',
+                'media' => $imagePath,
+            ]); }
+            return redirect()->route('medias-admin.index', ['news_id' => $newsId])->with($notification);
+        }
+        return redirect()->route('medias-admin.index')->withErrors(['error' => 'Invalid request']);
     }
 
 
@@ -68,6 +89,7 @@ class MediaController extends Controller
 
     public function update(Request $request, $id)
     {
+
         // Data Validate
         $request->validate([
             'media' => ['required'],
@@ -76,6 +98,10 @@ class MediaController extends Controller
         $data = $request->except(['_token', '_method']);
 
         $media = Media::findOrFail($id);
+        //check if project
+        $projectId = $media->project_id;
+        //check if news
+        $newsId = $media->news_id;
 
         $imagePath = $this->updateImage($request, 'media', 'uploads', $media->media);
 
@@ -87,8 +113,11 @@ class MediaController extends Controller
             'message' => 'Project Updated Successfully!!',
             'alert-type' => 'success',
         );
-
-        return redirect()->route('medias-admin.index', ['project_id' => $media->project_id])->with($notification);
+        if (!is_null($projectId)) {
+            return redirect()->route('medias-admin.index', ['project_id' => $projectId])->with($notification);
+        } elseif (!is_null($newsId)) {
+            return redirect()->route('medias-admin.index', ['news_id' => $newsId])->with($notification);
+        }
     }
 
 
