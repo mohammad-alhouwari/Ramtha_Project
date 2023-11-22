@@ -1,9 +1,10 @@
- <section class="brand-one">
-            <div class="container">
-                <div class="brand-one__title" dir="ltr">
-                    <p style="font-size: 25px;">شركاؤنا</p>
-                </div>
-                <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+ <section class="brand-one" lang="en" dir="ltr">
+     <div class="container">
+         <div class="brand-one__title" dir="ltr">
+             <p style="font-size: 25px;">شركاؤنا</p>
+         </div>
+         <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel"
+             data-owl-options='{
                     "items": 3,
                     "margin": 30,
                     "smartSpeed": 700,
@@ -25,23 +26,23 @@
                         }
                     }
                 }'>
-                    <!--Brand One Single-->
-                    <div class="brand-one__single">
-                        <div class="brand-one__img">
-                            <img src="assets/images/brand/giz.png" alt="">
-                        </div>
-                    </div>
-                    <!--Brand One Single-->
-                    <div class="brand-one__single">
-                        <div class="brand-one__img">
-                            <img src="assets/images/brand/bdc.png" alt="">
-                        </div>
-                    </div>
-                    <!--Brand One Single-->
-                    <div class="brand-one__single">
-                        <div class="brand-one__img">
-                            <img src="assets/images/brand/usaid.png" alt="">
-                        </div>
-                    </div>
-            </div>
-        </section>
+             <!--Brand One Single-->
+             <div class="brand-one__single">
+                 <div>
+                     <img src="assets/images/brand/giz.png" alt="">
+                 </div>
+             </div>
+             <!--Brand One Single-->
+             <div class="brand-one__single">
+                 <div>
+                     <img src="assets/images/brand/bdc.png" alt="">
+                 </div>
+             </div>
+             <!--Brand One Single-->
+             <div class="brand-one__single">
+                 <div>
+                     <img src="assets/images/brand/usaid.png" alt="">
+                 </div>
+             </div>
+         </div>
+ </section>

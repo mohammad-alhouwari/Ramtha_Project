@@ -47,8 +47,13 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::get('/profile/change-password', [AdminController::class, 'changePassword'])->name('profile.change-password');
         Route::post('/profile/update-password/{id}', [AdminController::class, 'updatePassword'])->name('profile.update-password');
     }
+
 );
 
+//Team 
+Route::get('team', function () {
+    return view('Pages.team');
+})->name('team');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
