@@ -23,7 +23,30 @@ class PartnersDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'partners.action')
+            ->addColumn('action', function ($query) {
+                $editBtn = "<a href='" . route('partners-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='" . route('partners-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
+
+                return $editBtn . $deleteBtn;
+            })
+            ->addColumn('logo', function ($query) {
+                return "<img width='100px' src='" . asset($query->logo) . "'></img>";
+            })
+            ->addColumn('link', function ($query) {
+                return "<a href='" . $query->link . "'>" . $query->link . "</a>";
+            })
+
+
+            ->addColumn('status', function ($query) {
+                $checked = $query->status == 'on' ? 'on' : 'off';
+
+                if ($checked == 'on') {
+                    return "<span class='badge badge-success'>Active</span>";
+                } else {
+                    return "<span class='badge badge-danger'>Inactive</span>";
+                }
+            })
+            ->rawColumns(['action', 'logo', 'status'])
             ->setRowId('id');
     }
 
@@ -46,20 +69,20 @@ class PartnersDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('partners-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    //->dom('Bfrtip')
-                    ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+            ->setTableId('partners-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            //->dom('Bfrtip')
+            ->orderBy(1)
+            ->selectStyleSingle()
+            ->buttons([
+                Button::make('excel'),
+                Button::make('csv'),
+                Button::make('pdf'),
+                Button::make('print'),
+                Button::make('reset'),
+                Button::make('reload')
+            ]);
     }
 
     /**
@@ -70,15 +93,15 @@ class PartnersDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+
+            Column::make('logo'),
+            Column::make('link'),
+            Column::make('status'),
             Column::computed('action')
-                    ->exportable(false)
-                    ->printable(false)
-                    ->width(60)
-                    ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('add your columns'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center'),
         ];
     }
 

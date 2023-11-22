@@ -1,4 +1,3 @@
-index.blade 
 @extends('Layout.master')
 @section('title', 'Home')
 @section('content')
@@ -129,136 +128,78 @@ index.blade
 
 <br>
 <br>
-        <!--Services Two Start-->
-        <section class="services-two">
-            <div class="services-two__inner">
-                <div class="container" >
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="services-two__left">
-                                <div class="services-two__shape-1 float-bob-y">
-                                    <img src="assets/images/shapes/services-two-shape-1.png" alt="">
-                                </div>
-                                <div class="section-title text-left">
-                                    <div class="section-title__icon">
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                    <span class="section-title__tagline">الخدمات الالكترونيه</span>
-                                    <h2 class="section-title__title">اكتشف الخدمات الالكترونية المقدمة
-                                        <br> من بلدية مدينة الرمثا</h2>
-                                </div>
-                            </div>
+
+<section class="services-two">
+    <div class="services-two__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="section-title">
+                        <div class="section-title__icon">
+                            <span class="fa fa-star"></span>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="services-two__right">
-                                <div class="row">
-                                    <!--Services Two Single Start-->
-                                    <div class="col-xl-4 col-lg-4 col-md-4">
-                                        <div class="services-two__single">
-                                            <h3 class="services-two__title"><a href="building-permission.html">خدمة الكترونيه
-                                                    <br> خدمة الكترونية</a></h3>
-                                            <div class="services-two__icon">
-                                                <span class="icon-accept"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Services Two Single End-->
-                                    <!--Services Two Single Start-->
-                                    <div class="col-xl-4 col-lg-4 col-md-4">
-                                        <div class="services-two__single">
-                                            <h3 class="services-two__title"><a href="driving-license.html">خدمة الكترونيه
-                                                    <br> خدمة الكترونيه</a></h3>
-                                            <div class="services-two__icon">
-                                                <span class="icon-accept"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Services Two Single End-->
-                                    <!--Services Two Single Start-->
-                                    <div class="col-xl-4 col-lg-4 col-md-4">
-                                        <div class="services-two__single">
-                                            <h3 class="services-two__title"><a href="report-polution.html">خدمة الكترونيه
-                                                    <br> خدمة الكترونيه</a></h3>
-                                            <div class="services-two__icon">
-                                                <span class="icon-accept"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Services Two Single End-->
-                                </div>
-                            </div>
-                        </div>
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-2 col-lg-4 col-md-4">
-                            <div class="services-two__single">
-                                <h3 class="services-two__title"><a href="parking-permission.html">خدمة الكترونيه
-                                        <br> خدمة الكترونيه</a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-2 col-lg-4 col-md-4">
-                            <div class="services-two__single">
-                                <h3 class="services-two__title"><a href="tax-return.html">خدمة الكترونيه
-                                        <br> خدمة الكترونيه</a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-2 col-lg-4 col-md-4">
-                            <div class="services-two__single">
-                                <h3 class="services-two__title"><a href="birth-certificate.html">خدمة الكترونيه
-                                        <br> خدمة الكترونيه</a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-2 col-lg-4 col-md-4">
-                            <div class="services-two__single">
-                                <h3 class="services-two__title"><a href="report-polution.html">خدمة الكترونيه
-                                        <br> خدمة الكترونيه</a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-2 col-lg-4 col-md-4">
-                            <div class="services-two__single">
-                                <h3 class="services-two__title"><a href="building-permission.html">خدمة الكترونيه
-                                        <br> خدمة الكترونيه</a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
-                        <!--Services Two Single Start-->
-                        <div class="col-xl-2 col-lg-4 col-md-4">
-                            <div class="services-two__single">
-                                <h3 class="services-two__title"><a href="driving-license.html">خدمة الكترونيه
-                                        <br> خدمة الكترونيه</a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Services Two Single End-->
+                        <span class="section-title__tagline">الخدمات الالكترونيه</span>
+                        <h2 class="section-title__title">اكتشف الخدمات الالكترونية المقدمة
+                            <br> من بلدية مدينة الرمثا</h2>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--Services Two End-->
+            <div class="row mt-4">
+                <!-- Services Two Single Start -->
+                <div class="col-md-4" style="height: 100%;">
+                    <div class="services-two__single text-center" style="height: 100%;">
+                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
+                            <h3 class="services-two__title"><a href="building-permission.html">ضريبة الابنية و الاراضي
+                                    <br> "المسقفات" </a></h3>
+                            <div class="services-two__icon">
+                                <span class="icon-accept"></span>
+                            </div>
+                        </div>
+                        <!-- Button below h3 -->
+                        <a href="link-to-page-1.html" class="btn btn-primary mt-2">المزيد</a>
+                    </div>
+                </div>
+                <!-- Services Two Single End -->
+
+                <!-- Services Two Single Start -->
+                <div class="col-md-4" style="height: 100%;">
+                    <div class="services-two__single text-center" style="height: 100%;">
+                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
+                            <h3 class="services-two__title"><a href="driving-license.html">طلب نقل ملكية 
+                                    <br>  </a></h3>
+                            <div class="services-two__icon">
+                                <span class="icon-accept"></span>
+                            </div>
+                        </div>
+                        <!-- Button below h3 -->
+                        <a href="link-to-page-2.html" class="btn btn-primary mt-2">المزيد</a>
+                    </div>
+                </div>
+                <!-- Services Two Single End -->
+
+                <!-- Services Two Single Start -->
+                <div class="col-md-4" style="height: 100%;">
+                    <div class="services-two__single text-center" style="height: 100%;">
+                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
+                            <h3 class="services-two__title"><a href="report-pollution.html">مخالفات السير 
+                                    <br> </a></h3>
+                            <div class="services-two__icon">
+                                <span class="icon-accept"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Button below h3 -->
+                        <a href="link-to-page-3.html" class="btn btn-primary mt-2">المزيد</a>
+                    </div>
+                </div>
+                <!-- Services Two Single End -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 
 
 @include('Pages.Home.presidants')
