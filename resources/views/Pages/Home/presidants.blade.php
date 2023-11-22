@@ -1,6 +1,6 @@
 <!-- كلمة الرئيس -->
-    <section class="history-one">
-        @foreach($presidents as $president)
+<section class="history-one">
+    @foreach ($presidents as $president)
         <div class="history-one__top">
             <div class="container" dir="rtl">
                 <div class="section-title text-center">
@@ -23,7 +23,8 @@
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="history-one__content-left">
-                                        <img src="{{ asset('storage/' . $president->image) }}" alt="{{ $president->name }}" style="width: 100%;">
+                                        <img src="{{ asset('storage/' . $president->image) }}"
+                                            alt="{{ $president->name }}" style="width: 100%;">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6" dir="rtl">
@@ -41,7 +42,7 @@
                 </div>
             </div>
         </div>
-    @endforeach    
-    </section>
+    @endforeach
+</section>
 
 <!-- كلمة الرئيس -->

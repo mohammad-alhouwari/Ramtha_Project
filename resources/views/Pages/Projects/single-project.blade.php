@@ -55,12 +55,37 @@
                     </div>
                     @if ($projectImages && count($projectImages) > 0)
                         <h4 class="about-two__progress-title"> صور عن المشروع:</h4>
-                        {{-- <div class="owl-carousel owl-theme"> --}}
-                        @foreach ($projectImages as $projectImage)
-                            <img src="{{ asset($projectImage->media) }}" alt="Image1" style="margin: 10px"
-                                width="100px" />
-                        @endforeach
-                        {{-- </div> --}}
+                        <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel" lang="en"
+                            dir="ltr"
+                            data-owl-options='{
+                                    "items": 3,
+                                    "margin": 30,
+                                    "smartSpeed": 3000,
+                                    "loop": true,
+                                    "autoplay": false,  <!-- Change this line to enable autoplay -->
+                                    "autoplayTimeout": 6000,  <!-- Set the autoplay timeout (in milliseconds) -->
+                                    "nav": false,
+                                    "dots": false,
+                                    "navText": ["<span class=\"fa fa-angle-left\"></span>", "<span class=\"fa fa-angle-right\"></span>"],
+                                    "responsive": {
+                                        "0": {
+                                            "items": 1
+                                        },
+                                        "768": {
+                                            "items": 3
+                                        },
+                                        
+                                    }
+                                }'>
+                            @foreach ($projectImages as $projectImage)
+                                <div class="brand-one__single">
+                                    <div class=" items">
+                                        <img src="{{ asset($projectImage->media) }}" alt="Image1" style="margin: 10px"
+                                            width="200px" />
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     @endif
                 </div>
                 <div class="col-xl-4 col-lg-5">
@@ -78,7 +103,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!--Project Details End-->
 
