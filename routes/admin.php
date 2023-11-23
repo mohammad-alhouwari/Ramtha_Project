@@ -7,13 +7,10 @@ use App\Http\Controllers\Backend\UserController as BackendUserController;
 use App\Http\Controllers\Backend\MediaController as BackendMediaController;
 use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
 use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
-<<<<<<< HEAD
 use App\Http\Controllers\Backend\EventController as BackendEventController;
 use App\Http\Controllers\Backend\EventParticipantController as BackendEventParticipantController;
-=======
 use App\Http\Controllers\Backend\NewController as BackendNewController;
 use App\Http\Controllers\Backend\JobController as BackendJobController;
->>>>>>> 705c2847c769499fa843cabaa8bc426293236797
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
@@ -38,20 +35,22 @@ Route::prefix('admin')->middleware('auth')->group(
         // Complain Route
         Route::resource('complain-admin', BackendComplainController::class);
 
+        //jobs opportunities Route
+        Route::resource('jobs-admin', BackendJobController::class);
+
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
-<<<<<<< HEAD
+
         //Event Route
         Route::resource('Events-admin', BackendEventController::class);
-        //Event Participant Route
+
         // Route::resource('EventParticipant-admin',BackendEventParticipantController::class);
         Route::resource('EventParticipant-admin', BackendEventParticipantController::class)->parameters([
             'EventParticipant-admin' => 'id'
         ]);
-=======
+
 
         //jobs opportunities Route
-        Route::resource('jobs-admin', BackendJobController::class);
 
         // News Route
         Route::resource('news-admin', BackendNewController::class);
@@ -62,10 +61,8 @@ Route::prefix('admin')->middleware('auth')->group(
         //Partners Route
         Route::resource('partners-admin', BackendPartnerController::class);
 
->>>>>>> 705c2847c769499fa843cabaa8bc426293236797
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
-        Route::post('/profile-update/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
         Route::get('/profile/change-password', [AdminController::class, 'changePassword'])->name('profile.change-password');
         Route::post('/profile/update-password/{id}', [AdminController::class, 'updatePassword'])->name('profile.update-password');
     }
