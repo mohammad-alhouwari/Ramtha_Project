@@ -1,27 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
+use App\DataTables\PresidentsDataTable;
 use App\Http\Controllers\Controller;
-use App\Models\Event;
+use App\Models\President;
+use App\Traits\ImageUploadTrait;
+use Illuminate\Http\Request;
 
-class EventController extends Controller
+class PresidentsController extends Controller
 {
+    use ImageUploadTrait;
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PresidentsDataTable $dataTable)
     {
-
-        $events= Event::where('status', 'on')->get();
-        return view('Pages.Events.event',compact('events'));
-
-        $events = Event::all();
-        return view('Pages.Events.event', compact('events'));
-
+        return $dataTable->render('admin.pages.presidents.index');
     }
 
     /**
@@ -31,7 +28,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.presidents.create');
     }
 
     /**
@@ -42,7 +39,27 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Data Validate
+        $request->validate([
+            'image' => ['required', 'image', 'max:4192'],
+            'name' => ['required', 'string'],
+            'speech' => ['required', 'max:200'],
+        ]);
+
+        $imagePath = $this->uploadImage($request, 'image', 'uploads');
+
+        President::create([
+            'image' => $imagePath,
+            'name' => $request->input('name'),
+            'speech' => $request->input('speech'),
+        ]);
+
+        $notification = array(
+            'message' => 'President Created Successfully!!',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->route('president.index')->with($notification);
     }
 
     /**

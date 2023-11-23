@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\PresidentsController as BackendPresidentsController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
 use App\Http\Controllers\Backend\PartnerController as BackendPartnerController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
@@ -37,18 +38,20 @@ Route::prefix('admin')->middleware('auth')->group(
         // Complain Route
         Route::resource('complain-admin', BackendComplainController::class);
 
+        //jobs opportunities Route
+        Route::resource('jobs-admin', BackendJobController::class);
+
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
         //Event Route
         Route::resource('Events-admin', BackendEventController::class);
-        //Event Participant Route
+
         // Route::resource('EventParticipant-admin',BackendEventParticipantController::class);
         Route::resource('EventParticipant-admin', BackendEventParticipantController::class)->parameters([
             'EventParticipant-admin' => 'id'
         ]);
 
         //jobs opportunities Route
-        Route::resource('jobs-admin', BackendJobController::class);
 
 
         // All Medias Route 
@@ -66,9 +69,11 @@ Route::prefix('admin')->middleware('auth')->group(
         //Partners Route
         Route::resource('partners-admin', BackendPartnerController::class);
 
+        //Presidents Route
+        Route::resource('presidents-admin', BackendPresidentsController::class);
+
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
-        Route::post('/profile-update/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
         Route::get('/profile/change-password', [AdminController::class, 'changePassword'])->name('profile.change-password');
         Route::post('/profile/update-password/{id}', [AdminController::class, 'updatePassword'])->name('profile.update-password');
     }
