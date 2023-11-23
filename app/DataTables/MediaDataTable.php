@@ -29,7 +29,12 @@ class MediaDataTable extends DataTable
 
         return $this;
     }
+    public function setEventId($eventId)
+    {
+        $this->eventId = $eventId;
 
+        return $this;
+    }
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         if (!is_null($this->projectId)) {
@@ -40,7 +45,9 @@ class MediaDataTable extends DataTable
         if (!is_null($this->newsId)) {
             $query->where('news_id', $this->newsId);
         }
-
+        if (!is_null($this->eventId)) {
+            $query->where('event_id', $this->eventId);
+        }
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
                 $editBtn = "<a href='" . route('medias-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";

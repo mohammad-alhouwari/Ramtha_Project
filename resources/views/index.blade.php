@@ -1,5 +1,5 @@
 @extends('Layout.master')
-@section('title', 'Home')
+@section('title', 'بلدية الرمثا')
 @section('content')
 
     <!-- Main Slider Three Start -->
@@ -240,7 +240,6 @@
         </div>
     </section>
     <!--statistics End-->
-
 
     @include('Pages.Home.events')
     <!-- Events End -->

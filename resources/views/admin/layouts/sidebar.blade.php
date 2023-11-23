@@ -48,6 +48,7 @@
                         <span class="nav-text">Investment opportunities</span>
                     </a>
                 </li>
+
                 <li class="{{ set_active(['Events-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('Events-admin.index') }}">
                         <i class="fa-regular fa-calendar-days"></i>
@@ -65,6 +66,7 @@
                     <a class="sidenav-item-link" href="{{ route('jobs-admin.index') }}">
                         <i class="fa-solid fa-briefcase"></i>
                         <span class="nav-text">Jobs</span>
+
                     </a>
                 </li>
 

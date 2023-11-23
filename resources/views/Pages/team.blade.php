@@ -194,11 +194,11 @@
                                 <h3 class="team-one__name"><a href="team-details.html">Sajeda Almomani</a></h3>
                                 <p class="team-one__sub-title">Full Satck Web Developer</p>
                                 <div class="team-one__social">
-                                    <a href="https://github.com/MarahAbusaleh" target="blank"><i
+                                    <a href="https://github.com/Sajeda-Momani" target="blank"><i
                                             class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/marah-abusaleh/" target="blank"><i
+                                    <a href="https://www.linkedin.com/in/sajeda-momani/" target="blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:leenaalrababah@gmail.com" target="blank"><i
+                                    <a href="mailto:sajeda.momani20@gmail.com" target="blank"><i
                                             class="fas fa-envelope"></i></i></a>
                                 </div>
                             </div>
@@ -218,11 +218,11 @@
                                 <h3 class="team-one__name"><a href="team-details.html">Omar Migdady</a></h3>
                                 <p class="team-one__sub-title">Full Satck Web Developer</p>
                                 <div class="team-one__social">
-                                    <a href="https://github.com/MarahAbusaleh" target="blank"><i
+                                    <a href="https://github.com/Omaribrahim43" target="blank"><i
                                             class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/marah-abusaleh/" target="blank"><i
+                                    <a href="https://www.linkedin.com/in/omar-migdady-78829913a" target="blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:leenaalrababah@gmail.com" target="blank"><i
+                                    <a href="mailto:omar.migdadi43@gmail.com" target="blank"><i
                                             class="fas fa-envelope"></i></i></a>
                                 </div>
                             </div>
@@ -235,19 +235,18 @@
                             </div>
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="assets\images\developers\QasemAl-Zou'bi.jfif" alt=""
-                                        height="270px">
+                                    <img src="assets\images\developers\QasemAl-Zou'bi.jpg" alt="" height="270px">
                                 </div>
                             </div>
                             <div class="team-one__content">
                                 <h3 class="team-one__name"><a href="team-details.html">Qasem Al-Zou'bi</a></h3>
                                 <p class="team-one__sub-title">Full Satck Web Developer</p>
                                 <div class="team-one__social">
-                                    <a href="https://github.com/MarahAbusaleh" target="blank"><i
+                                    <a href="https://github.com/qasemzoubii" target="blank"><i
                                             class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/marah-abusaleh/" target="blank"><i
+                                    <a href="https://www.linkedin.com/in/qasem-zo3bi" target="blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:leenaalrababah@gmail.com" target="blank"><i
+                                    <a href="mailto:qasem.zoubi2000@gmail.com" target="blank"><i
                                             class="fas fa-envelope"></i></i></a>
                                 </div>
                             </div>
@@ -270,11 +269,11 @@
                                 <h3 class="team-one__name"><a href="team-details.html">Nooraldeen Aloudat</a></h3>
                                 <p class="team-one__sub-title">Full Satck Web Developer</p>
                                 <div class="team-one__social">
-                                    <a href="https://github.com/MarahAbusaleh" target="blank"><i
+                                    <a href="https://github.com/noorodat" target="blank"><i
                                             class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/marah-abusaleh/" target="blank"><i
+                                    <a href="https://www.linkedin.com/in/nooraldeen-aloudat/" target="blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:leenaalrababah@gmail.com" target="blank"><i
+                                    <a href="mailto:nooraldeen.aloudat@gmail.com" target="blank"><i
                                             class="fas fa-envelope"></i></i></a>
                                 </div>
                             </div>
@@ -287,19 +286,18 @@
                             </div>
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="assets\images\developers\MohammadGhzawi.jfif" alt=""
-                                        height="270px">
+                                    <img src="assets\images\developers\MohammadGhzawi.jpg" alt="" height="270px">
                                 </div>
                             </div>
                             <div class="team-one__content">
                                 <h3 class="team-one__name"><a href="team-details.html">Mohammad Ghzawi</a></h3>
                                 <p class="team-one__sub-title">Full Satck Web Developer</p>
                                 <div class="team-one__social">
-                                    <a href="https://github.com/MarahAbusaleh" target="blank"><i
+                                    <a href="https://github.com/Mohammad-alghzawi" target="blank"><i
                                             class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/mohammad-ghzawi/" target="blank"><i
+                                    <a href="https://www.linkedin.com/in/mohammad-al-ghzawi/" target="blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:leenaalrababah@gmail.com" target="blank"><i
+                                    <a href="mailto:mohd.a.ghzawi@gmail.com" target="blank"><i
                                             class="fas fa-envelope"></i></i></a>
                                 </div>
                             </div>
@@ -312,18 +310,19 @@
                             </div>
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="assets/images/team/team-1-1.jpg" alt="" height="270px">
+                                    <img src="assets\images\developers\MohammadAlhouwari.png" alt=""
+                                        height="270px">
                                 </div>
                             </div>
                             <div class="team-one__content">
                                 <h3 class="team-one__name"><a href="team-details.html">Mohammad Alhouwari</a></h3>
                                 <p class="team-one__sub-title">Full Satck Web Developer</p>
                                 <div class="team-one__social">
-                                    <a href="https://github.com/MarahAbusaleh" target="blank"><i
+                                    <a href="https://github.com/mohammad-alhouwari" target="blank"><i
                                             class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/marah-abusaleh/" target="blank"><i
+                                    <a href="https://www.linkedin.com/in/mohammad-alhouwari-131332208/" target="blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:leenaalrababah@gmail.com" target="blank"><i
+                                    <a href="mailto:mohammad.alhouwari.1996@gmail.com" target="blank"><i
                                             class="fas fa-envelope"></i></i></a>
                                 </div>
                             </div>

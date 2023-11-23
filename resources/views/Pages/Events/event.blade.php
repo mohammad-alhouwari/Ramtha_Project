@@ -31,6 +31,14 @@
         <!--Events Page Start-->
         <section style="direction: rtl;" class="events-page">
             <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">فعالياتنا</span>
+                    <h1>اكتشف فعاليات بلديةالرمثا</h1>
+                </div>
+                <br>
                 <div class="row">
                     <!--Event Three Single Start-->
                     @foreach ($events as $event)
@@ -38,7 +46,7 @@
                             <div class="event-three__single">
                                 <div class="event-three__img-box">
                                     <div class="event-three__img">
-                                        <img src="{{ url( $event->preview_image) }}"></a>
+                                        <img class="event-img" src="{{ url( $event->preview_image) }}"></a>
                                     </div>
                                 </div>
                                 <div class="event-three__content">
@@ -48,7 +56,7 @@
                                                 <div class="icon">
                                                     <span class="fa fa-clock"></span>
                                                 </div>
-                                                <div class="text">
+                                                <div class="text" style="margin-left: 20px">
                                                     <p>{{ $event->time }}</p>
                                                 </div>
                                             </li>
@@ -61,9 +69,9 @@
                                                 </div>
                                             </li>
                                         </ul>
-                                        <h3 class="event-three__title"><a href="event-details.html">
+                                        <h4 class="event-three__title" style="font-size: 20px"><a href="{{ route('eventdetail', ['id' => $event->id]) }}">
                                                 {{ $event->title }}</a>
-                                        </h3>
+                                        </h4>
                                     </div>
                                     <div class="event-three__btn-box">
                                         <a href="{{ route('eventdetail', ['id' => $event->id]) }}"
