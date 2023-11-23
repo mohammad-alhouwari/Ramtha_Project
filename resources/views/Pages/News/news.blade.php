@@ -49,16 +49,17 @@
                         <span class="fa fa-star"></span>
                     </div>
                     <span class="section-title__tagline">أخبارُنا</span>
-                    <h2 class="section-title__title">اكتشف أخبار بلدية <br>الرمثا</h2>
+                    <h1>اكتشف أخبار بلديةالرمثا</h1>
                 </div>
+                <br>
                 <div class="row">
                     <!--News One Single Start-->
                     @foreach ($news as $new)
-                        <div class="col-xl-4 col-lg-4">
+                        <div class="col-xl-4 col-lg-4 news-div">
                             <div class="news-one__single">
                                 <div class="news-one__img-box">
                                     <div class="news-one__img">
-                                        <img src="{{ $new->preview_image }}" alt="">
+                                        <img class="news-img" src="{{ $new->preview_image }}" alt="">
                                     </div>
 
                                     <div class="news-one__date">
@@ -79,9 +80,12 @@
                             </div>
                         </div>
                     @endforeach
+<<<<<<< HEAD
+=======
                     
                     
 
+>>>>>>> c0892775f01b354c10d398b3064a3056dc2e9c05
                 </div>
             </div>
         </section>
