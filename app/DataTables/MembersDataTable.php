@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\President;
+use App\Models\Member;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 
-class PresidentsDataTable extends DataTable
+class MembersDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -24,25 +24,34 @@ class PresidentsDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
-                $editBtn = "<a href='" . route('presidents-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='" . route('presidents-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
+                $editBtn = "<a href='" . route('members-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='" . route('members-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
 
                 return $editBtn . $deleteBtn;
             })
             ->addColumn('image', function ($query) {
                 return "<img width='100px' src='" . asset($query->image) . "'></img>";
             })
-            ->rawColumns(['action', 'image'])
+            ->addColumn('status', function ($query) {
+                $checked = $query->status == 'on' ? 'on' : 'off';
+
+                if ($checked == 'on') {
+                    return "<span class='badge badge-success'>Active</span>";
+                } else {
+                    return "<span class='badge badge-danger'>Inactive</span>";
+                }
+            })
+            ->rawColumns(['action', 'image', 'status'])
             ->setRowId('id');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\President $model
+     * @param \App\Models\Member $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(President $model): QueryBuilder
+    public function query(Member $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -55,7 +64,7 @@ class PresidentsDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('presidents-table')
+            ->setTableId('members-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             //->dom('Bfrtip')
@@ -82,7 +91,8 @@ class PresidentsDataTable extends DataTable
             Column::make('id'),
             Column::make('image'),
             Column::make('name'),
-            Column::make('speech'),
+            Column::make('position'),
+            Column::make('status'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
@@ -98,6 +108,6 @@ class PresidentsDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Presidents_' . date('YmdHis');
+        return 'Members_' . date('YmdHis');
     }
 }

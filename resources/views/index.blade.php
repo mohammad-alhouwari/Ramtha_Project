@@ -241,9 +241,6 @@
     </section>
     <!--statistics End-->
 
-
-    @include('Pages.Home.presidants')
-
     @include('Pages.Home.events')
     <!-- Events End -->
 

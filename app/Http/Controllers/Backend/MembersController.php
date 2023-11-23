@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\DataTables\PresidentsDataTable;
+use App\DataTables\MembersDataTable;
 use App\Http\Controllers\Controller;
-use App\Models\President;
+use App\Models\Member;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 
-class PresidentsController extends Controller
+class MembersController extends Controller
 {
     use ImageUploadTrait;
     /**
@@ -16,9 +16,9 @@ class PresidentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(PresidentsDataTable $dataTable)
+    public function index(MembersDataTable $dataTable)
     {
-        return $dataTable->render('admin.pages.presidents.index');
+        return $dataTable->render('admin.pages.members.index');
     }
 
     /**
@@ -28,7 +28,7 @@ class PresidentsController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.presidents.create');
+        return view('admin.pages.members.create');
     }
 
     /**
@@ -39,27 +39,28 @@ class PresidentsController extends Controller
      */
     public function store(Request $request)
     {
-        // Data Validate
         $request->validate([
-            'image' => ['required', 'image', 'max:4192'],
             'name' => ['required', 'string'],
-            'speech' => ['required', 'max:200'],
+            'image' => ['required', 'image', 'max:4192'],
+            'position' => ['required', 'string'],
+            'status' => ['required'],
         ]);
+
+        $member = new Member();
 
         $imagePath = $this->uploadImage($request, 'image', 'uploads');
-
-        President::create([
-            'image' => $imagePath,
-            'name' => $request->input('name'),
-            'speech' => $request->input('speech'),
-        ]);
+        $member->image = $imagePath;
+        $member->name = $request->name;
+        $member->position = $request->position;
+        $member->status = $request->status;
+        $member->save();
 
         $notification = array(
-            'message' => 'President Created Successfully!!',
+            'message' => 'Member Updated Successfully!!',
             'alert-type' => 'success',
         );
 
-        return redirect()->route('presidents-admin.index')->with($notification);
+        return redirect()->route('members-admin.index')->with($notification);
     }
 
     /**
@@ -81,8 +82,8 @@ class PresidentsController extends Controller
      */
     public function edit($id)
     {
-        $president = President::findOrFail($id);
-        return view('admin.pages.presidents.edit', compact('president'));
+        $member = Member::findOrFail($id);
+        return view('admin.pages.members.edit', compact('member'));
     }
 
     /**
@@ -94,28 +95,28 @@ class PresidentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Data Validate
         $request->validate([
-            'image' => ['nullable', 'image', 'max:4192'],
             'name' => ['required', 'string'],
-            'speech' => ['required', 'max:200'],
+            'image' => ['nullable', 'image', 'max:4192'],
+            'position' => ['required', 'string'],
+            'status' => ['required'],
         ]);
 
-        $president = President::findOrFail($id);
+        $member = Member::findOrFail($id);
 
-        $imagePath = $this->updateImage($request, 'image', 'uploads', $president->image);
-
-        $president->image = empty(!$imagePath) ? $imagePath : $president->image;
-        $president->name = $request->name;
-        $president->speech = $request->speech;
-        $president->save();
+        $imagePath = $this->updateImage($request, 'image', 'uploads', $member->image);
+        $member->image = empty(!$imagePath) ? $imagePath : $member->image;
+        $member->name = $request->name;
+        $member->position = $request->position;
+        $member->status = $request->status;
+        $member->save();
 
         $notification = array(
-            'message' => 'President Updated Successfully!!',
+            'message' => 'Member Updated Successfully!!',
             'alert-type' => 'success',
         );
 
-        return redirect()->route('presidents-admin.index')->with($notification);
+        return redirect()->route('members-admin.index')->with($notification);
     }
 
     /**
@@ -126,9 +127,9 @@ class PresidentsController extends Controller
      */
     public function destroy($id)
     {
-        $president = President::findOrFail($id);
-        $this->deleteImage($president->image);
-        $president->delete();
+        $member = Member::findOrFail($id);
+        $this->deleteImage($member->image);
+        $member->delete();
 
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
