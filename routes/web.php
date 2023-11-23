@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController
 use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
+use App\Http\Controllers\Frontend\JobController as FrontendJobController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
 use App\Http\Controllers\TendersDetailesController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
@@ -67,6 +68,11 @@ Route::controller(FrontendProjectController::class)->group(function () {
 Route::controller(FrontendInvestmentsController::class)->group(function () {
     Route::get('investments', 'showAllInvestments')->name('showAllInvestments');
     Route::get('investment/{id}', 'showInvestment')->name('showInvestment');
+});
+
+Route::controller(FrontendJobController::class)->group(function () {
+    Route::get('jobs', 'showAllJobs')->name('showAllJobs');
+    Route::get('job/{id}', 'showJob')->name('showJob');
 });
 
 /*--------------------- Investment-Opportunity Routes End ----------------------*/

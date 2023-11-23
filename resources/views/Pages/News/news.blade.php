@@ -80,12 +80,9 @@
                             </div>
                         </div>
                     @endforeach
-<<<<<<< HEAD
-=======
                     
-                    {{ $news->links() }}
+               
 
->>>>>>> c0892775f01b354c10d398b3064a3056dc2e9c05
                 </div>
             </div>
         </section>
