@@ -14541,7 +14541,7 @@ height: 390px;
   .row {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 40px;
+    row-gap: 60px;
     margin-bottom: 10px; /* Adjust margin between rows */
   }
   
