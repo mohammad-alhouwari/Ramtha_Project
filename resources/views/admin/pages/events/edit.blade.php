@@ -111,18 +111,15 @@
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Event  opportunity status</label>
+                                    <label class="text-dark font-weight-medium">Event Status</label>
                                     <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text mdi mdi-clipboard-text" id="mdi-account"></span>
+                                        <div class="custom-control custom-switch">
+                                            <input type="hidden" name="status" value="off">
+                                            <input type="checkbox" class="custom-control-input" id="statusSwitch"
+                                                name="status" value="on" {{ old('status') ? 'checked' : '' }}
+                                                {{ $event->status == 'on' ? 'checked' : '' }}>
+                                            <label class="custom-control-label" for="statusSwitch"></label>
                                         </div>
-                                        {{-- <input type="select" class="form-control" name="status"
-                                            value="{{ old('status') }}"> --}}
-                                        <select name="status" id="">
-                                            <option selected value="active">Active</option>
-                                            <option value="notactive">not Active</option>
-                                        </select>
-
                                     </div>
                                 </div>
                             </div>

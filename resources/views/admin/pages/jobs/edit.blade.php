@@ -48,15 +48,14 @@
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Status</label>
-                                    <div class="input-group mb-3 d-flex gap-3">
-                                        <div class="d-flex align-items-center gap-1">
-                                            <label for="show" class="m-0">Show</label>
-                                            <input id="show" type="radio" name="status" value="1" {{$job->status ? 'checked' : ''}}>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <label for="hide" class="m-0">Hide</label>
-                                            <input id="hide" type="radio" name="status" value="0" {{!$job->status ? 'checked' : ''}}>
+                                    <label class="text-dark font-weight-medium">Job Status</label>
+                                    <div class="input-group mb-3">
+                                        <div class="custom-control custom-switch">
+                                            <input type="hidden" name="status" value="off">
+                                            <input type="checkbox" class="custom-control-input" id="statusSwitch"
+                                                name="status" value="on" {{ old('status') ? 'checked' : '' }}
+                                                {{ $job->status == 'on' ? 'checked' : '' }}>
+                                            <label class="custom-control-label" for="statusSwitch"></label>
                                         </div>
                                     </div>
                                 </div>

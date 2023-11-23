@@ -29,9 +29,9 @@ class MediaDataTable extends DataTable
 
         return $this;
     }
-    public function setEventsId($eventsId)
+    public function setEventId($eventId)
     {
-        $this->eventsId = $eventsId;
+        $this->eventId = $eventId;
 
         return $this;
     }
@@ -45,8 +45,8 @@ class MediaDataTable extends DataTable
         if (!is_null($this->newsId)) {
             $query->where('news_id', $this->newsId);
         }
-        if (!is_null($this->eventsId)) {
-            $query->where('events_id', $this->newsId);
+        if (!is_null($this->eventId)) {
+            $query->where('event_id', $this->eventId);
         }
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {

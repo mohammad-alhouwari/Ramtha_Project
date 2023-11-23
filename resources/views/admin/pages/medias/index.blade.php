@@ -6,6 +6,7 @@
             <div class="card card-default">
                 <div class="card-header">
                     <h4>Manage Medias</h4>
+        
                     @if (isset($newsId))
                         <a href="{{ route('medias-admin.create.news', ['news_id' => $newsId]) }}"
                             class="mb-1 btn btn-outline-primary">

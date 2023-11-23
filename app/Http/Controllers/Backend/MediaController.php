@@ -16,7 +16,7 @@ class MediaController extends Controller
     {
         $projectId = $request->get('project_id');
         $newsId = $request->get('news_id');
-        $eventId = $request->get('events_id');
+        $eventId = $request->get('event_id');
 
         if ($newsId != null) {
             $dataTables->setNewsId($newsId);
@@ -25,7 +25,7 @@ class MediaController extends Controller
             $dataTables->setProjectId($projectId);
             return $dataTables->render('admin.pages.medias.index', compact('projectId'));
         } elseif ($eventId != null) {
-            $dataTables->setProjectId($projectId);
+            $dataTables->setEventId($eventId);
             return $dataTables->render('admin.pages.medias.index', compact('eventId'));
         }
     }
@@ -39,7 +39,7 @@ class MediaController extends Controller
     {
         return view('admin.pages.medias.create', compact('news_id'))->with('type', 'news');
     }
-    public function createEvents($events_id)
+    public function createEvent($event_id)
     {
         return view('admin.pages.medias.create', compact('event_id'))->with('type', 'event');
     }
@@ -51,7 +51,6 @@ class MediaController extends Controller
         ]);
 
         $imagePath = $this->uploadMulImage($request, 'media', 'uploads');
-
         $notification = [
             'message' => 'Media Created Successfully!!',
             'alert-type' => 'success',
@@ -68,7 +67,7 @@ class MediaController extends Controller
             return redirect()->route('medias-admin.index', ['project_id' => $projectId])->with($notification);
         }
         //** Add medias in News */
-        if ($newsId = $request->input('news_id')) {
+        else if ($newsId = $request->input('news_id')) {
             foreach ($imagePath as $imagePath) {
                 Media::create([
                     'news_id' => $newsId,
@@ -77,8 +76,8 @@ class MediaController extends Controller
                 ]);
             }
             return redirect()->route('medias-admin.index', ['news_id' => $newsId])->with($notification);
-        }
-        if ($eventId = $request->input('event_id')) {
+        } 
+        else if ($eventId = $request->input('event_id')) {
             foreach ($imagePath as $imagePath) {
                 Media::create([
                     'event_id' => $eventId,
@@ -150,9 +149,10 @@ class MediaController extends Controller
 
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
-    public function showAllMedia(){
-        $gallery= Media::with('project','event','news')->get();
+    public function showAllMedia()
+    {
+        $gallery = Media::with('project', 'event', 'news')->get();
         dd($gallery);
-     return view('admin.pages.', compact('gallery'));
+        return view('admin.pages.', compact('gallery'));
     }
 }

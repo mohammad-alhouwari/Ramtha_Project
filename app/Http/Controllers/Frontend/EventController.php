@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
-namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events= Event::all();
+        $events= Event::where('status', 'on')->get();
         return view('Pages.Events.event',compact('events'));
     }
 
