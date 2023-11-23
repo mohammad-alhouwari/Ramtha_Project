@@ -35,6 +35,18 @@
                         <span class="nav-text">Investment opportunities</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['Events-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('Events-admin.index') }}">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <span class="nav-text">Events</span>
+                    </a>
+                </li>
+                <li class="{{ set_active(['EventParticipant-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('EventParticipant-admin.index') }}">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <span class="nav-text">Event Participants</span>
+                    </a>
+                </li>
 
                 {{-- <li class="{{ set_active(['teams.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('teams.index') }}">

@@ -1,20 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\Backendd;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-class EventsController extends Controller
+use App\Models\Event;
+use App\Models\EventParticipant;
+class EventDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function eventdetal($id)
     {
-        //
+        // $eventdetails=Event::all();
+        $eventdetails= Event::find($id);
+        // $category = Category::find($product->category_id);
+
+
+        return view('Pages.Events.event_detail',compact('eventdetails'));
+
     }
 
     /**
@@ -33,9 +40,26 @@ class EventsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $event_id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required'],
+            'email' => ['required']
+        ]);
+
+
+
+        EventParticipant::create([
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'email' => $request->input('email'),
+            'event_id' => $event_id,
+            'status' => 1,
+        ]);
+       
+
+        return redirect()->back()->with('status','تم التسجيل بنجاح');
     }
 
     /**
