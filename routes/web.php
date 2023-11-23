@@ -79,7 +79,7 @@ Route::controller(FrontendJobController::class)->group(function () {
 /*------------------------------ News Routes Start -----------------------------*/
 Route::controller(FrontendNewsController::class)->group(function () {
     Route::get('news', 'showAllNews')->name('showAllNews');
-    Route::get('new-details/{id}', 'showDetailsNews')->name('showDetailsNews');
+    Route::get('news-details/{id}', 'showDetailsNews')->name('showDetailsNews');
 });
 /*------------------------------- News Routes End -------------------------------*/
 

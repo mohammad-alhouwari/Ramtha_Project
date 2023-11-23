@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class NewsSeeder extends Seeder
@@ -34,7 +35,7 @@ class NewsSeeder extends Seeder
                 'description' => 'تابع رئيس بلدية الرمثا سعادة أحمد الخزاعلة منذ  صباح اليوم جهود الكوادر لإنهاء أعمال ( دوار القبة ) دوار الوكالة سابقا . نشكر سعادة أحمد الخزاعلة على الفكرة الرائعة  وكوادر البلدية على جهودهم في إنجاز العمل بشكل جميل  .',
                 'date' => '2023-11-13',
                 'status' => 'on',
-
+                'created_at'=>Carbon::now(),
             ]
         ]);
         DB::table('news')->insert([
@@ -57,6 +58,7 @@ class NewsSeeder extends Seeder
                 'description' => 'رئيس بلدية الرمثا الكبرى سعادة أحمد الخزاعلة يلتقي بسعادة السفير الهولندي السيد هاري فيراري في السفارة الهولندية لدى المملكة الأردنية الهاشمية لبحث سبل التعاون مع بلدية الرمثا الكبرى.',
                 'date' => '2023-10-16',
                 'status' => 'on',
+                'created_at'=>Carbon::now(),
 
             ]
         ]);
