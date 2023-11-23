@@ -8,12 +8,6 @@ use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\JobController as FrontendJobController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ComplainController;
-use App\Http\Controllers\Frontend\EventController as FrontendEventController;
-use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
-=======
 use App\Http\Controllers\TendersDetailesController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
 use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
@@ -22,7 +16,6 @@ use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
->>>>>>> 5560326e96868909994366cb696358d5836fc7c9
 
 
 Route::controller(FrontendHomeController::class)->group(function () {
@@ -76,10 +69,7 @@ Route::controller(FrontendNewsController::class)->group(function () {
 
 /*------------------------------ Complain Routes Start ------------------------------*/
 Route::resource('complains', ComplainController::class);
-<<<<<<< HEAD
-=======
 /*------------------------------ Complain Routes End -------------------------------*/
->>>>>>> 5560326e96868909994366cb696358d5836fc7c9
 
 /*----------------------------- Gallery Routes Start -----------------------------*/
 Route::controller(FrontendMediaController::class)->group(function () {
@@ -92,10 +82,6 @@ Route::controller(FrontendMediaController::class)->group(function () {
 Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
-<<<<<<< HEAD
-Route::resource('tenders', TenderController::class);
-Route::resource('tendersDetailes', TendersDetailesController::class);
-=======
 /*----------------------------- Event Routes End -----------------------------*/
 
 /*------------------------------ Tenders Routes Start ------------------------------*/
@@ -104,4 +90,3 @@ Route::controller(FrontendTendersController::class)->group(function () {
     Route::get('tender-details/{id}', 'showDetailsTenders')->name('showDetailsTenders');
 });
 /*------------------------------ Tenders Routes End ------------------------------*/
->>>>>>> 5560326e96868909994366cb696358d5836fc7c9
