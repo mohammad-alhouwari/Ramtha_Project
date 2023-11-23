@@ -11,7 +11,7 @@
         </div>
         <div class="container" dir="rtl">
             <div class="section-title text-center">
-                <p class="section-title__title">تقدم بشكوى</p>
+                <p class="section-title__title"> تقدم بشكوى</p>
                 <div class="section-title__icon">
                     <span class="fa fa-star"></span>
                 </div>

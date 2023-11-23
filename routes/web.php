@@ -14,9 +14,25 @@ use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailCo
 use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
 use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
+use App\Http\Controllers\Frontend\ComplainController as FrontendComplainController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ComplainController;
 
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+/*-----------------------------Home Routes-----------------------------*/
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/', [HomeController::class, 'president'])->name('home');
 
 Route::controller(FrontendHomeController::class)->group(function () {
     Route::get('/', 'index');
@@ -67,18 +83,10 @@ Route::controller(FrontendNewsController::class)->group(function () {
 });
 /*------------------------------- News Routes End -------------------------------*/
 
-/*------------------------------ Complain Routes Start ------------------------------*/
-Route::resource('complains', ComplainController::class);
-/*------------------------------ Complain Routes End -------------------------------*/
+/*----------------------------- Complain Routes Start -----------------------------*/
+Route::resource('complains',FrontendComplainController ::class);
+/*----------------------------- Complain Routes end -----------------------------*/
 
-/*----------------------------- Gallery Routes Start -----------------------------*/
-Route::controller(FrontendMediaController::class)->group(function () {
-    Route::get('gallery', 'showGallery')->name('showGallery');
-    Route::get('single_gallery/{id}/{type}', 'showSingleGallery')->name('single_gallery');
-});
-/*----------------------------- Gallery Routes End -----------------------------*/
-
-/*----------------------------- Event Routes Start -----------------------------*/
 Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
