@@ -12,6 +12,7 @@ class NewController extends Controller
     public function showAllNews()
     {
         $news = News::where('status', 'on')->get();
+
         return view('Pages.News.news', compact('news'));
     }
 

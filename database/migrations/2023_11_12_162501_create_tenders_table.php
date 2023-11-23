@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('tenders', function (Blueprint $table) {
             $table->id();
-            $table->text('image');
+            $table->text('preview_image');
             $table->text('title');
+            $table->text('value');
             $table->text('description')->nullable();
+            $table->date('date');
             $table->text('status');
             $table->timestamps();
         });
