@@ -45,7 +45,6 @@ class MediaDataTable extends DataTable
             ->addColumn('action', function ($query) {
                 $editBtn = "<a href='" . route('medias-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
                 $deleteBtn = "<a href='" . route('medias-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
-
                 return $editBtn . $deleteBtn;
             })
 
@@ -55,6 +54,7 @@ class MediaDataTable extends DataTable
 
             ->rawColumns(['action', 'media'])
             ->setRowId('id');
+            
     }
 
 

@@ -10,6 +10,8 @@ use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentContro
 use App\Http\Controllers\Backend\EventController as BackendEventController;
 use App\Http\Controllers\Backend\EventParticipantController as BackendEventParticipantController;
 use App\Http\Controllers\Backend\NewController as BackendNewController;
+use App\Http\Controllers\Backend\TenderController as BackendTenderController;
+
 use App\Http\Controllers\Backend\JobController as BackendJobController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,8 +54,15 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //jobs opportunities Route
 
+
+        // All Medias Route 
+
+        Route::get('medias', [BackendMediaController::class, 'showAllMedia']);
         // News Route
         Route::resource('news-admin', BackendNewController::class);
+
+        // Tenders Route
+        Route::resource('tenders-admin', BackendTenderController::class);
 
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
