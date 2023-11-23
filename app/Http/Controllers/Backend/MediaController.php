@@ -150,4 +150,9 @@ class MediaController extends Controller
 
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
+    public function showAllMedia(){
+        $gallery= Media::with('project','event','news')->get();
+        dd($gallery);
+     return view('admin.pages.', compact('gallery'));
+    }
 }

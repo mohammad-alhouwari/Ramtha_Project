@@ -50,6 +50,10 @@ Route::prefix('admin')->middleware('auth')->group(
         //jobs opportunities Route
         Route::resource('jobs-admin', BackendJobController::class);
 
+
+        // All Medias Route 
+
+        Route::get('medias', [BackendMediaController::class, 'showAllMedia']);
         // News Route
         Route::resource('news-admin', BackendNewController::class);
 
