@@ -18,12 +18,8 @@ class EventController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD:app/Http/Controllers/Frontend/EventController.php
         $events= Event::all();
         return view('Pages.Events.event',compact('events'));
-=======
-        return view('lama.tenders');
->>>>>>> 705c2847c769499fa843cabaa8bc426293236797:app/Http/Controllers/Backend/EventsController.php
     }
 
     /**
