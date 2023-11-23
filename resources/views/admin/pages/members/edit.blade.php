@@ -1,51 +1,75 @@
 @extends('admin.layouts.master')
-@section('title', 'Edit Admin')
+@section('title', 'Edit Project')
 @section('content')
     <div class="content-wrapper">
         <div class="content">
             <div class="card card-default">
                 <div class="card-header">
-                    <h2>Edit President: {{ $president->name }}</h2>
+                    <h2>Edit Member: {{ $member->name }}</h2>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('presidents-admin.update', $president->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('members-admin.update', $member->id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
                             <div class="col-xl-2">
                                 <div class="mb-5">
                                     <img id="showImage" width="100px"
-                                        src="{{ $president->image == '' ? url('no-admin-image.png') : asset($president->image) }}">
+                                        src="{{ $member->image == '' ? url('no-admin-image.png') : asset($member->image) }}">
                                 </div>
                             </div>
                             <div class="col-xl-10">
                                 <div class="mb-5">
                                     <label class="text-dark font-weight-medium" for="">Image</label>
-                                    <input type="file" class="form-control" name="image" id="image">
+                                    <div class="mb-5">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text mdi mdi-folder-image" id="mdi-account"></span>
+                                            </div>
+                                            <input type="file" class="form-control" name="image" id="image">
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">President Name</label>
+                                    <label class="text-dark font-weight-medium">Member Name</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text mdi mdi-certificate" id="mdi-account"></span>
+                                            <span class="input-group-text mdi mdi-message-text" id="mdi-account"></span>
                                         </div>
                                         <input type="text" class="form-control" name="name"
-                                            value="{{ $president->name }}">
+                                            value="{{ $member->name }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">President Speech</label>
+                                    <label class="text-dark font-weight-medium">Member Position</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text mdi mdi-certificate" id="mdi-account"></span>
+                                            <span class="input-group-text mdi mdi-clipboard-text" id="mdi-account"></span>
                                         </div>
-                                        <textarea class="form-control" rows="6" name="speech">{{ $president->speech }}</textarea>
+                                        <input type="text" class="form-control" name="position"
+                                            value="{{ $member->position }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium">Member Status</label>
+                                    <div class="input-group mb-3">
+                                        <div class="custom-control custom-switch">
+                                            <input type="hidden" name="status" value="off">
+                                            <input type="checkbox" class="custom-control-input" id="statusSwitch"
+                                                name="status" value="on" {{ old('status') ? 'checked' : '' }}
+                                                {{ $member->status == 'on' ? 'checked' : '' }}>
+                                            <label class="custom-control-label" for="statusSwitch"></label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

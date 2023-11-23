@@ -80,6 +80,12 @@
                         <span class="nav-text">Presidents</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['members-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('members-admin.index') }}">
+                        <i class="mdi mdi-alert-octagon"></i>
+                        <span class="nav-text">Members</span>
+                    </a>
+                </li>
                 <li class="{{ set_active(['tenders-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('tenders-admin.index') }}">
                         <i class="fas fa-file-contract"></i>

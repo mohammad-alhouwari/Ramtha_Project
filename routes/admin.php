@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\NewController as BackendNewController;
 use App\Http\Controllers\Backend\TenderController as BackendTenderController;
 
 use App\Http\Controllers\Backend\JobController as BackendJobController;
+use App\Http\Controllers\Backend\MembersController as BackendMembersController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
@@ -71,6 +72,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Presidents Route
         Route::resource('presidents-admin', BackendPresidentsController::class);
+
+        //Members Route
+        Route::resource('members-admin', BackendMembersController::class);
 
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
