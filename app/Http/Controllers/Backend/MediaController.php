@@ -16,6 +16,7 @@ class MediaController extends Controller
     {
         $projectId = $request->get('project_id');
         $newsId = $request->get('news_id');
+        $eventId = $request->get('events_id');
 
         if ($newsId != null) {
             $dataTables->setNewsId($newsId);
@@ -23,8 +24,10 @@ class MediaController extends Controller
         } elseif ($projectId != null) {
             $dataTables->setProjectId($projectId);
             return $dataTables->render('admin.pages.medias.index', compact('projectId'));
+        } elseif ($eventId != null) {
+            $dataTables->setProjectId($projectId);
+            return $dataTables->render('admin.pages.medias.index', compact('eventId'));
         }
-
     }
 
     public function createProject($project_id)
@@ -35,6 +38,10 @@ class MediaController extends Controller
     public function createNews($news_id)
     {
         return view('admin.pages.medias.create', compact('news_id'))->with('type', 'news');
+    }
+    public function createEvents($events_id)
+    {
+        return view('admin.pages.medias.create', compact('event_id'))->with('type', 'event');
     }
 
     public function store(Request $request)
@@ -63,12 +70,23 @@ class MediaController extends Controller
         //** Add medias in News */
         if ($newsId = $request->input('news_id')) {
             foreach ($imagePath as $imagePath) {
-            Media::create([
-                'news_id' => $newsId,
-                'media_type' => 'image',
-                'media' => $imagePath,
-            ]); }
+                Media::create([
+                    'news_id' => $newsId,
+                    'media_type' => 'image',
+                    'media' => $imagePath,
+                ]);
+            }
             return redirect()->route('medias-admin.index', ['news_id' => $newsId])->with($notification);
+        }
+        if ($eventId = $request->input('event_id')) {
+            foreach ($imagePath as $imagePath) {
+                Media::create([
+                    'event_id' => $eventId,
+                    'media_type' => 'image',
+                    'media' => $imagePath,
+                ]);
+            }
+            return redirect()->route('medias-admin.index', ['event_id' => $eventId])->with($notification);
         }
         return redirect()->route('medias-admin.index')->withErrors(['error' => 'Invalid request']);
     }
@@ -102,7 +120,8 @@ class MediaController extends Controller
         $projectId = $media->project_id;
         //check if news
         $newsId = $media->news_id;
-
+        //check if event
+        $eventId = $media->event_id;
         $imagePath = $this->updateImage($request, 'media', 'uploads', $media->media);
 
         $data['media'] = empty(!$imagePath) ? $imagePath : $media->media;
@@ -117,6 +136,8 @@ class MediaController extends Controller
             return redirect()->route('medias-admin.index', ['project_id' => $projectId])->with($notification);
         } elseif (!is_null($newsId)) {
             return redirect()->route('medias-admin.index', ['news_id' => $newsId])->with($notification);
+        } elseif (!is_null($eventId)) {
+            return redirect()->route('medias-admin.index', ['event_id' => $eventId])->with($notification);
         }
     }
 

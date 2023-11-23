@@ -30,7 +30,7 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //News Medias Route
         Route::get('medias-admin/create/news/{news_id}', [BackendMediaController::class, 'createNews'])->name('medias-admin.create.news');
-
+        Route::get('medias-admin/create/event/{event_id}', [BackendMediaController::class, 'createEvent'])->name('medias-admin.create.event');
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
 
@@ -52,9 +52,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         // News Route
         Route::resource('news-admin', BackendNewController::class);
-        
+
         // Tenders Route
-          Route::resource('tenders-admin', BackendTenderController::class);
+        Route::resource('tenders-admin', BackendTenderController::class);
 
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);

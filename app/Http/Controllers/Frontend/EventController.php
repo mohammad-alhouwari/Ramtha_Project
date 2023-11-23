@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD:app/Http/Controllers/Frontend/EventController.php
 namespace App\Http\Controllers\Frontend;
-=======
 namespace App\Http\Controllers\Backend;
->>>>>>> 705c2847c769499fa843cabaa8bc426293236797:app/Http/Controllers/Backend/EventsController.php
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

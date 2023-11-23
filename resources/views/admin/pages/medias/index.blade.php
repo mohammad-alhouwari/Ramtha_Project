@@ -16,7 +16,13 @@
                             class="mb-1 btn btn-outline-primary">
                             <i class="mdi mdi-checkbox-marked-outline mr-1"></i>Create Media
                         </a>
-                    @endif
+                    
+                    @elseif (isset($eventId))
+                    <a href="{{ route('medias-admin.create.event', ['event_id' => $eventId]) }}"
+                        class="mb-1 btn btn-outline-primary">
+                        <i class="mdi mdi-checkbox-marked-outline mr-1"></i>Create Media
+                    </a>
+                @endif
 
                 </div>
                 <div class="card-body table-responsive">
