@@ -3,8 +3,10 @@
 @section('content')
 
     <!--Contact Page Contact Start-->
-  
+
     <section class="contact-two" dir="rtl">
+        @include('sweetalert::alert')
+
         <div class="contact-two__bg">
         </div>
         <div class="container" dir="rtl">
@@ -23,7 +25,7 @@
 
             </div>
             <div class="contact-two__form-box">
-                <form action="{{ route('complains.store') }}" method="POST" class="contact-two__form contact-form-validated" novalidate="novalidate">
+                <form action="{{ route('complains.store') }}" method="POST">
                     @method('POST')
                     @csrf
                     <div class="row">
