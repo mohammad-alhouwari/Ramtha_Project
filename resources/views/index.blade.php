@@ -1,5 +1,5 @@
 @extends('Layout.master')
-@section('title', 'Home')
+@section('title', 'بلدية الرمثا')
 @section('content')
 
     <!-- Main Slider Three Start -->
