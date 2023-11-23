@@ -19,8 +19,6 @@ class EventController extends Controller
         $events= Event::where('status', 'on')->get();
         return view('Pages.Events.event',compact('events'));
 
-        $events = Event::all();
-        return view('Pages.Events.event', compact('events'));
 
     }
 

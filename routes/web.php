@@ -84,7 +84,11 @@ Route::controller(FrontendNewsController::class)->group(function () {
 });
 /*------------------------------- News Routes End -------------------------------*/
 
+Route::controller(FrontendMediaController::class)->group(function () {
+    Route::get('gallery', 'showGallery')->name('showGallery');
+    Route::get('single_gallery/{id}/{type}', 'showSingleGallery')->name('single_gallery');
 
+});
 Route::resource('complains', ComplainController::class);
 
 Route::get('events', [FrontendEventController::class, 'index']);

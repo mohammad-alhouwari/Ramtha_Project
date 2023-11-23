@@ -57,8 +57,6 @@ class EventDetailController extends Controller
             'event_id' => $event_id,
             'status' => 1,
         ]);
-       
-
         return redirect()->back()->with('status','تم التسجيل بنجاح');
     }
 

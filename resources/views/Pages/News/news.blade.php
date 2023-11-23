@@ -80,12 +80,7 @@
                             </div>
                         </div>
                     @endforeach
-<<<<<<< HEAD
-=======
-                    
-                    
-
->>>>>>> c0892775f01b354c10d398b3064a3056dc2e9c05
+                
                 </div>
             </div>
         </section>

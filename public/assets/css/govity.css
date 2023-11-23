@@ -14532,12 +14532,14 @@ height: 400px;
   .row-gallery {
     display: flex;
     flex-wrap: wrap;
+  
     justify-content:center;
     margin-bottom: 10px; /* Adjust margin between rows */
   }
   .row {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 40px;
     margin-bottom: 10px; /* Adjust margin between rows */
   }
   
