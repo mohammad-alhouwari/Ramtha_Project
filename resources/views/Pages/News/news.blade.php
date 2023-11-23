@@ -10,7 +10,7 @@
 
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg );opacity:0.3">
+        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/banner.jpeg );opacity:0.3">
         </div>
         <div class="container">
             <div class="page-header__inner">
@@ -80,6 +80,12 @@
                             </div>
                         </div>
                     @endforeach
+<<<<<<< HEAD
+=======
+                    
+                    {{ $news->links() }}
+
+>>>>>>> c0892775f01b354c10d398b3064a3056dc2e9c05
                 </div>
             </div>
         </section>

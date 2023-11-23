@@ -16,7 +16,7 @@ class EventDetailController extends Controller
     public function eventdetal($id)
     {
         // $eventdetails=Event::all();
-        $eventdetails= Event::find($id);
+        $eventdetails= Event::where('status', 'on')->find($id);
         // $category = Category::find($product->category_id);
 
 
