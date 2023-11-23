@@ -23,15 +23,18 @@
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="history-one__content-left">
-                                        <img src="{{ asset('storage/' . $president->image) }}"
-                                            alt="{{ $president->name }}" style="width: 100%;">
+                                        <img src="{{ asset($president->image) }}" alt="{{ $president->name }}"
+                                            style="width: 400px; height:400px">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6" dir="rtl">
+                                    <br>
+                                    <br>
+                                    <br>
                                     <div class="history-one__content-right">
                                         <h4 class="history-one__content-title">{{ $president->name }}</h4>
                                         <p class="history-one__content-text">
-                                            {{ $president->speech }}
+                                            {{ \Illuminate\Support\Str::limit($president->speech, 200) }}
                                         </p>
                                         <a href="#" class="btn btn-primary">قراءة كلمة الرئيس</a>
                                     </div>

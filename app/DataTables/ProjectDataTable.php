@@ -32,8 +32,16 @@ class ProjectDataTable extends DataTable
             ->addColumn('percentage', function ($query) {
                 return $query->percentage . " %";
             })
+            ->addColumn('status', function ($query) {
+                $checked = $query->status == 'on' ? 'on' : 'off';
 
-            ->rawColumns(['action', 'preview_image'])
+                if ($checked == 'on') {
+                    return "<span class='badge badge-success'>Active</span>";
+                } else {
+                    return "<span class='badge badge-danger'>Inactive</span>";
+                }
+            })
+            ->rawColumns(['action', 'preview_image','status'])
 
             ->setRowId('id');
     }
@@ -72,6 +80,7 @@ class ProjectDataTable extends DataTable
             Column::make('description'),
             Column::make('percentage'),
             Column::make('preview_image'),
+            Column::make('status'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

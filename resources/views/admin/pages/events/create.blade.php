@@ -113,22 +113,16 @@
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Event status</label>
+                                    <label class="text-dark font-weight-medium">Event Status</label>
                                     <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text mdi mdi-clipboard-text" id="mdi-account"></span>
-                                        </div>
-                                        {{-- <input type="select" class="form-control" name="status"
-                                            value="{{ old('status') }}"> --}}
-                                        <select name="status" id="">
-                                            <option selected value="active">Active</option>
-                                            <option value="notactive">not Active</option>
-                                        </select>
 
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="statusSwitch"
+                                                name="status" {{ old('status') ? 'Checked' : '' }} checked>
+                                            <label class="custom-control-label" for="statusSwitch"></label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-12">
                             </div>
                         </div>
                         <div class="row">

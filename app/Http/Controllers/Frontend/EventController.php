@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
-namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+
 class EventController extends Controller
 {
     /**
@@ -15,8 +15,13 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events= Event::all();
+
+        $events= Event::where('status', 'on')->get();
         return view('Pages.Events.event',compact('events'));
+
+        $events = Event::all();
+        return view('Pages.Events.event', compact('events'));
+
     }
 
     /**

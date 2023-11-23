@@ -16,7 +16,7 @@ class EventDetailController extends Controller
     public function eventdetal($id)
     {
         // $eventdetails=Event::all();
-        $eventdetails= Event::find($id);
+        $eventdetails= Event::where('status', 'on')->find($id);
         // $category = Category::find($product->category_id);
 
 
@@ -48,8 +48,6 @@ class EventDetailController extends Controller
             'email' => ['required']
         ]);
 
-
-
         EventParticipant::create([
             'name' => $request->input('name'),
             'phone' => $request->input('phone'),
@@ -57,6 +55,12 @@ class EventDetailController extends Controller
             'event_id' => $event_id,
             'status' => 1,
         ]);
+
+        $event = Event::findOrFail($event_id);
+
+        $event->capacity--;
+
+        $event->save();
        
 
         return redirect()->back()->with('status','تم التسجيل بنجاح');

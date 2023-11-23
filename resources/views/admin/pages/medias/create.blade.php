@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form action="{{ route('medias-admin.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @if ($type == 'project' || $type == 'news')
+                        @if ($type == 'project' || $type == 'news'|| $type='event')
                             <input type="hidden" name="{{ $type }}_id" value="{{ ${$type . '_id'} }}">
                         @endif
                         <div class="row">
