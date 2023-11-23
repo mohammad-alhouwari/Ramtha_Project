@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontend;
 
 use App\Models\Complain;
+use App\Http\Controllers\Controller; 
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 

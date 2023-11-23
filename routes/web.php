@@ -14,8 +14,8 @@ use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailCo
 use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
 use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
+use App\Http\Controllers\Frontend\ComplainController as FrontendComplainController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ComplainController;
 
 
 /*
@@ -84,8 +84,9 @@ Route::controller(FrontendNewsController::class)->group(function () {
 });
 /*------------------------------- News Routes End -------------------------------*/
 
-
-Route::resource('complains', ComplainController::class);
+/*----------------------------- Complain Routes Start -----------------------------*/
+Route::resource('complains',FrontendComplainController ::class);
+/*----------------------------- Complain Routes end -----------------------------*/
 
 Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
