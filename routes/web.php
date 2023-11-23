@@ -3,9 +3,16 @@
 
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
+use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
+
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
 use App\Http\Controllers\TendersDetailesController;
+use App\Http\Controllers\Frontend\EventController as FrontendEventController;
+use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
+use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComplainController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
@@ -34,8 +41,12 @@ Route::controller(FrontendHomeController::class)->group(function () {
 /*-----------------------------Home Routes End-----------------------------*/
 
 
-/*----------------------------- Projects Routes Start -----------------------------*/
+/*----------------------------- President Routes Start -----------------------------*/
+Route::get('president', [FrontendPresidentController::class, 'index'])->name('president');
+/*----------------------------- President Routes End -----------------------------*/
 
+
+/*----------------------------- Projects Routes Start -----------------------------*/
 Route::controller(FrontendProjectController::class)->group(function () {
     Route::get('projects', 'showAllProjects')->name('showAllProjects');
     Route::get('project/{id}', 'showProject')->name('showProject');

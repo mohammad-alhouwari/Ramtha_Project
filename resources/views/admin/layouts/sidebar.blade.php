@@ -35,6 +35,7 @@
                         <span class="nav-text">News</span>
                     </a>
                 </li>
+
                 <li class="{{ set_active(['partners-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('partners-admin.index') }}">
                         <i class="mdi mdi-newspaper"></i>
@@ -59,6 +60,7 @@
                         <span class="nav-text">Event Participants</span>
                     </a>
                 </li>
+
                 <li class="{{ set_active(['jobs-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('jobs-admin.index') }}">
                         <i class="fa-solid fa-briefcase"></i>
@@ -78,6 +80,13 @@
                         <span class="nav-text">Presidents</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['tenders-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('tenders-admin.index') }}">
+                        <i class="fas fa-file-contract"></i>
+                        <span class="nav-text">Tenders</span>
+                    </a>
+                </li>
+
                 {{-- <li class="{{ set_active(['teams.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('teams.index') }}">
                         <i class="mdi mdi-account-group"></i>
