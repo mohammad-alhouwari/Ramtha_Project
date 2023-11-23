@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
@@ -8,6 +9,13 @@ use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsCon
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
+use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
+
+
+
+
+use App\Http\Controllers\Frontend\EventController as FrontendEventController;
+use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,13 +70,6 @@ Route::resource('complains', ComplainController::class);
 
 // ------------------Gallery Pages--------------------//
 
-// Route::get('/gallery', function () {
-// return view('Pages.Gallery.gallery');
-// });
-
-// Route::get('/single_gallery', function () {
-//     return view('Pages.Gallery.single_gallery');
-// });
 
 Route::controller(FrontendMediaController::class)->group(function () {
     Route::get('gallery', 'showGallery')->name('showGallery');
@@ -77,3 +78,14 @@ Route::controller(FrontendMediaController::class)->group(function () {
 });
 Route::resource('tenders', TenderController::class);
 Route::resource('tendersDetailes', TendersDetailesController::class);
+
+Route::get('events', [FrontendEventController::class, 'index']);
+Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
+Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
+
+/*------------------------------ Tenders Routes Start ------------------------------*/
+Route::controller(FrontendTendersController::class)->group(function () {
+    Route::get('tenders', 'showAllTenders')->name('showAllTenders');
+    Route::get('tender-details/{id}', 'showDetailsTenders')->name('showDetailsTenders');
+});
+
