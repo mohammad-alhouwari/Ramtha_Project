@@ -26,65 +26,47 @@
 
     <section class="department-page">
         <div class="container">
-          
+
             <div class="row">
                 <!--Department Two Single Start-->
-                 <!--Feature Five Start-->
-        <section class="feature-five">
-                <div class="container">
-                    <div class="row">
-                      @foreach ($tenders as $tender)
-                        <!--Feature One Single Start-->
-                        <div class="col-xl-4 col-lg-4">
-                                <div class="feature-one__single">
-                                    <div class="feature-one__img-box">
-                                        <div class="feature-one__img">
-                                            <img src="assets/images/backgrounds/tender.jpg" height="350px"  alt="" style="filter: brightness(0.7);">
-
-                                            {{-- <img src="assets/images/backgrounds/feature-1-1.jpg" alt=""> --}}
-                                        </div>
-                                        <div class="feature-one__content">
-                                            <div class="feature-one__icon">
-                                                {{-- <span class="icon-history"></span> --}}
+                <!--Feature Five Start-->
+                <section class="feature-five">
+                    <div class="container">
+                        <div class="row">
+                            @foreach ($tenders as $tender)
+                                <!--Feature One Single Start-->
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="feature-four__single">
+                                        <div class="feature-four__img-box">
+                                            <div class="feature-four__img">
+                                                <img src="assets/images/backgrounds/tender.png" alt="">
+                                            </div>
+                                            {{-- <div class="feature-four__icon">
                                                 <span class="fas fa-file-contract"></span>
-
-                                            </div>
-                                           
-                                            <h3 class="feature-one__title" style="direction: rtl;" > {{ $tender->title }}
+                                            </div> --}}
                                         </div>
-                                        <div class="feature-one__content-two">
-                                            <div class="feature-one__content-two-top">
-                                                <div class="feature-one__icon-2">
-                                                    <span class="fas fa-file-contract"></span>
-
-                                                    {{-- <span class="icon-cityscape"></span> --}}
-                                                </div>
-                                                <h3 class="feature-one__title-2"><a href="{{ route('showDetailsTenders', $tender->id) }}"> {{ $tender->title }}</a></h3>
-                                            </div>
-                                            <div class="feature-one__content-two-bottom">
-                                                <p class="feature-one__content-two-text"> {{ $tender->description }}</p>
-                                                <div class="feature-one__content-two-btn-box">
-                                                    <a href="{{ route('showDetailsTenders', $tender->id) }}" class="feature-one__content-two-read-more">إقرأ المزيد</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <h3 class="feature-four__title"><a  href="{{ route('showDetailsTenders', $tender->id) }}"> {{ $tender->title }}</a></h3>
+                                        <!-- Add Button under h3 -->
+                                        <br>
+                                        <a  href="{{ route('showDetailsTenders', $tender->id) }}" class="btn btn-primary">المزيد</a>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
-                        <!--Feature One Single End-->
+                            <!--Feature One Single End-->
+                        </div>
                     </div>
-                </div>
-            </section>
-            <!--Feature Five End-->
+                </section>
+                <!--Feature Five End-->
                 <!--Department Two Single End-->
-             
-              
+
+
                 <!--Department Two Single End-->
-             
+
             </div>
         </div>
+
+
+       
     </section>
     <!--Departments Page End-->
 @endsection
-

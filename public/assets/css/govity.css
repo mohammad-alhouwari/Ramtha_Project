@@ -7724,6 +7724,7 @@ ul {
     padding-bottom: 42px;
     margin-bottom: 30px;
     z-index: 1;
+    height: 380px;
 }
 
 .feature-four__single::before {
