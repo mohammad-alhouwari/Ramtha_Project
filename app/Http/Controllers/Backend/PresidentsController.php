@@ -1,27 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
+use App\DataTables\PresidentsDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\President;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
-use App\Models\Event;
-use App\Models\EventParticipant;
-class EventDetailController extends Controller
+
+class PresidentsController extends Controller
 {
+    use ImageUploadTrait;
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function eventdetal($id)
+    public function index(PresidentsDataTable $dataTable)
     {
-        // $eventdetails=Event::all();
-        $eventdetails= Event::where('status', 'on')->find($id);
-        // $category = Category::find($product->category_id);
-
-
-        return view('Pages.Events.event_detail',compact('eventdetails'));
-
+        return $dataTable->render('admin.pages.presidents.index');
     }
 
     /**
@@ -31,7 +28,7 @@ class EventDetailController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.presidents.create');
     }
 
     /**
@@ -40,26 +37,29 @@ class EventDetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $event_id)
+    public function store(Request $request)
     {
+        // Data Validate
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required'],
-            'email' => ['required']
+            'image' => ['required', 'image', 'max:4192'],
+            'name' => ['required', 'string'],
+            'speech' => ['required', 'max:200'],
         ]);
 
+        $imagePath = $this->uploadImage($request, 'image', 'uploads');
 
-
-        EventParticipant::create([
+        President::create([
+            'image' => $imagePath,
             'name' => $request->input('name'),
-            'phone' => $request->input('phone'),
-            'email' => $request->input('email'),
-            'event_id' => $event_id,
-            'status' => 1,
+            'speech' => $request->input('speech'),
         ]);
-       
 
-        return redirect()->back()->with('status','تم التسجيل بنجاح');
+        $notification = array(
+            'message' => 'President Created Successfully!!',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->route('president.index')->with($notification);
     }
 
     /**

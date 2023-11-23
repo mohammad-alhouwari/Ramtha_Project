@@ -32,6 +32,7 @@ class NewController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'preview_image' => ['required'],
+            'date' => ['required'],
         ]);
 
         $imagePath = $this->uploadImage($request, 'preview_image', 'uploads');

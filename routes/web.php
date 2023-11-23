@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
+use App\Http\Controllers\TendersDetailesController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
 use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
 use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
@@ -80,25 +81,8 @@ Route::controller(FrontendNewsController::class)->group(function () {
 
 Route::resource('complains', ComplainController::class);
 
-
-// ------------------Gallery Pages--------------------//
-
-
-Route::controller(FrontendMediaController::class)->group(function () {
-    Route::get('gallery', 'showGallery')->name('showGallery');
-    Route::get('single_gallery/{id}/{type}', 'showSingleGallery')->name('single_gallery');
-});
-Route::resource('tenders', TenderController::class);
-Route::resource('tendersDetailes', TendersDetailesController::class);
-
 Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
-Route::resource('tenders', TenderController::class);
+// Route::resource('tenders', TenderController::class);
 Route::resource('tendersDetailes', TendersDetailesController::class);
-
-/*------------------------------ Tenders Routes Start ------------------------------*/
-Route::controller(FrontendTendersController::class)->group(function () {
-    Route::get('tenders', 'showAllTenders')->name('showAllTenders');
-    Route::get('tender-details/{id}', 'showDetailsTenders')->name('showDetailsTenders');
-});

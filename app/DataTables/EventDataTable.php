@@ -24,17 +24,26 @@ class EventDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
+                $mediaBtn = "<a href='" . route('medias-admin.index', ['event_id' => $query->id]) . "' class='btn btn-info my-2'><i class='far fa-image'></i></a>";
                 $editBtn = "<a href='" . route('Events-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
                 $deleteBtn = "<a href='" . route('Events-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
 
-                return $editBtn . $deleteBtn;
+                return $mediaBtn . $editBtn . $deleteBtn;
             })
             ->addColumn('preview_image', function ($query) {
                 return "<img width='100px' src='" . asset($query->preview_image) . "'></img>";
             })
 
+            ->addColumn('status', function ($query) {
+                $checked = $query->status=='on' ? 'on' : 'off';
 
-            ->rawColumns(['action', 'preview_image'])
+                if ($checked == 'on') {
+                    return "<span class='badge badge-success'>Active</span>";
+                } else {
+                    return "<span class='badge badge-danger'>Inactive</span>";
+                }
+            })
+            ->rawColumns(['action', 'preview_image','status'])
 
             ->setRowId('id');
     }
@@ -58,20 +67,20 @@ class EventDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('event-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    //->dom('Bfrtip')
-                    ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+            ->setTableId('event-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            //->dom('Bfrtip')
+            ->orderBy(1)
+            ->selectStyleSingle()
+            ->buttons([
+                Button::make('excel'),
+                Button::make('csv'),
+                Button::make('pdf'),
+                Button::make('print'),
+                Button::make('reset'),
+                Button::make('reload')
+            ]);
     }
 
     /**
@@ -93,10 +102,10 @@ class EventDataTable extends DataTable
             Column::make('map_y'),
             Column::make('status'),
             Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(60)
-                  ->addClass('text-center'),
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center'),
         ];
     }
 

@@ -1,62 +1,52 @@
 @extends('admin.layouts.master')
-@section('title', 'Edit Investment Opportunities')
+@section('title', 'Edit Admin')
 @section('content')
     <div class="content-wrapper">
         <div class="content">
             <div class="card card-default">
                 <div class="card-header">
-                    <h2>Edit Job Opportunity</h2>
+                    <h2>Edit Admin: {{ $admin->name }}</h2>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('jobs-admin.update', $job->id) }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{ route('admin-users.update', $admin->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
                             <div class="col-xl-2">
                                 <div class="mb-5">
                                     <img id="showImage" width="100px"
-                                        src="{{ $job->image == '' ? url('no-image.jpg') : asset($job->image) }}">
+                                        src="{{ $admin->image == '' ? url('no-admin-image.png') : asset($admin->image) }}">
                                 </div>
                             </div>
                             <div class="col-xl-10">
                                 <div class="mb-5">
                                     <label class="text-dark font-weight-medium" for="">Image</label>
-                                    <div class="mb-5">
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text mdi mdi-folder-image" id="mdi-account"></span>
-                                            </div>
-                                            <input type="file" class="form-control" name="image" id="image">
-                                        </div>
-                                    </div>
+                                    <input type="file" class="form-control" name="image" id="image">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Investment opportunity Name</label>
+                                    <label class="text-dark font-weight-medium">Admin Name</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text mdi mdi-message-text" id="mdi-account"></span>
+                                            <span class="input-group-text mdi mdi-certificate" id="mdi-account"></span>
                                         </div>
-                                        <input type="text" class="form-control" name="title"
-                                            value="{{ $job->title }}">
+                                        <input type="text" class="form-control" name="name"
+                                            value="{{ $admin->name }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Job Status</label>
+                                    <label class="text-dark font-weight-medium">Admin Email</label>
                                     <div class="input-group mb-3">
-                                        <div class="custom-control custom-switch">
-                                            <input type="hidden" name="status" value="off">
-                                            <input type="checkbox" class="custom-control-input" id="statusSwitch"
-                                                name="status" value="on" {{ old('status') ? 'checked' : '' }}
-                                                {{ $job->status == 'on' ? 'checked' : '' }}>
-                                            <label class="custom-control-label" for="statusSwitch"></label>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text mdi mdi-certificate" id="mdi-account"></span>
                                         </div>
+                                        <input type="text" class="form-control" name="header"
+                                            value="{{ $admin->email }}">
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\PresidentsController as BackendPresidentsController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
 use App\Http\Controllers\Backend\PartnerController as BackendPartnerController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
@@ -30,7 +31,7 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //News Medias Route
         Route::get('medias-admin/create/news/{news_id}', [BackendMediaController::class, 'createNews'])->name('medias-admin.create.news');
-
+        Route::get('medias-admin/create/event/{event_id}', [BackendMediaController::class, 'createEvent'])->name('medias-admin.create.event');
         //Admins Route
         Route::resource('admin-users', BackendUserController::class);
 
@@ -42,7 +43,6 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
-
         //Event Route
         Route::resource('Events-admin', BackendEventController::class);
 
@@ -50,7 +50,6 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::resource('EventParticipant-admin', BackendEventParticipantController::class)->parameters([
             'EventParticipant-admin' => 'id'
         ]);
-
 
         //jobs opportunities Route
 
@@ -69,6 +68,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Partners Route
         Route::resource('partners-admin', BackendPartnerController::class);
+
+        //Presidents Route
+        Route::resource('presidents-admin', BackendPresidentsController::class);
 
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
