@@ -12,15 +12,8 @@ use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailCo
 use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ComplainController;
 use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 
-
-
-
-use App\Http\Controllers\Frontend\EventController as FrontendEventController;
-use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
 
 /*
 |--------------------------------------------------------------------------
