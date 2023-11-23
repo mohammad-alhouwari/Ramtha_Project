@@ -60,7 +60,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-
 </head>
 
 <body class="custom-cursor">
