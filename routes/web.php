@@ -10,9 +10,10 @@ use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
 use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
 use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
+use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
+use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
-use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 
 
 /*
@@ -42,6 +43,16 @@ Route::controller(FrontendHomeController::class)->group(function () {
 Route::get('president', [FrontendPresidentController::class, 'index'])->name('president');
 /*----------------------------- President Routes End -----------------------------*/
 
+/*------------------------ Organizational Chart Routes Start ------------------------*/
+Route::get('organizational-chart', function () {
+    return view('Pages.Organizational-Chart');
+})->name('organizational-chart');
+/*------------------------ Organizational Chart Routes End ------------------------*/
+
+/*------------------------ About the Municipality Routes Start ------------------------*/
+Route::resource('about-municipality', ComplainController::class);
+Route::get('about-municipality', [FrontendMembersController::class, 'index'])->name('about-municipality');
+/*------------------------ About the Municipality Routes End ------------------------*/
 
 /*----------------------------- Projects Routes Start -----------------------------*/
 Route::controller(FrontendProjectController::class)->group(function () {
