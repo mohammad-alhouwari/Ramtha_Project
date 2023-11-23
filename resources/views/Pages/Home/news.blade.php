@@ -9,14 +9,14 @@
             <h2 class="section-title__title">آخر الاخبار في مدينة الرمثا</h2>
         </div>
         <div class="row">
-            @foreach($latestNews as $item)
+            @foreach ($latestNews as $item)
                 <!--News One Single Start-->
                 <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
                                 {{-- Image --}}
-                                <img src="{{ asset('storage/' . $item->preview_image) }}" alt="{{ $item->title }}">
+                                <img src="{{ asset($item->preview_image) }}" alt="{{ $item->title }}">
                             </div>
                             <div class="news-one__date">
                                 {{-- News Date --}}
@@ -27,8 +27,11 @@
                             {{-- Title --}}
                             <h3 class="news-one__title"><a>{{ $item->title }}</a></h3>
                             <div class="news-one__btn">
-                                {{-- <a href="{{ route('news.details', $item->id) }}"><i class="icon-right-arrow"></i>  اقرأ المزيد </a> --}}
-                                <a><i class="icon-right-arrow"></i>  اقرأ المزيد </a>
+                                <a href="{{ route('showDetailsNews', $item->id) }}">
+                                    اقرأ
+                                    المزيد
+                                    <i class="icon-left-arrow"></i>
+                                </a>
 
                             </div>
                         </div>

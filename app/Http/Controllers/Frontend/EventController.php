@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontend;
 
-use App\Models\TendersDetailes;
-use App\Http\Requests\StoreTendersDetailesRequest;
-use App\Http\Requests\UpdateTendersDetailesRequest;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Event;
 
-class TendersDetailesController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,12 @@ class TendersDetailesController extends Controller
      */
     public function index()
     {
-        return view('lama.tedersDetailes');
+
+        $events= Event::where('status', 'on')->get();
+        return view('Pages.Events.event',compact('events'));
+
+        $events = Event::all();
+        return view('Pages.Events.event', compact('events'));
 
     }
 
@@ -32,10 +37,10 @@ class TendersDetailesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTendersDetailesRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTendersDetailesRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -43,10 +48,10 @@ class TendersDetailesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TendersDetailes  $tendersDetailes
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(TendersDetailes $tendersDetailes)
+    public function show($id)
     {
         //
     }
@@ -54,10 +59,10 @@ class TendersDetailesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TendersDetailes  $tendersDetailes
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(TendersDetailes $tendersDetailes)
+    public function edit($id)
     {
         //
     }
@@ -65,11 +70,11 @@ class TendersDetailesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTendersDetailesRequest  $request
-     * @param  \App\Models\TendersDetailes  $tendersDetailes
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTendersDetailesRequest $request, TendersDetailes $tendersDetailes)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,10 +82,10 @@ class TendersDetailesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TendersDetailes  $tendersDetailes
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TendersDetailes $tendersDetailes)
+    public function destroy($id)
     {
         //
     }

@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\PresidentsDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\President;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 
-class EventsController extends Controller
+class PresidentsController extends Controller
 {
+    use ImageUploadTrait;
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PresidentsDataTable $dataTable)
     {
-        return view('lama.tenders');
+        return $dataTable->render('admin.pages.presidents.index');
     }
 
     /**
@@ -24,7 +28,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.presidents.create');
     }
 
     /**
@@ -35,7 +39,27 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Data Validate
+        $request->validate([
+            'image' => ['required', 'image', 'max:4192'],
+            'name' => ['required', 'string'],
+            'speech' => ['required', 'max:200'],
+        ]);
+
+        $imagePath = $this->uploadImage($request, 'image', 'uploads');
+
+        President::create([
+            'image' => $imagePath,
+            'name' => $request->input('name'),
+            'speech' => $request->input('speech'),
+        ]);
+
+        $notification = array(
+            'message' => 'President Created Successfully!!',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->route('president.index')->with($notification);
     }
 
     /**

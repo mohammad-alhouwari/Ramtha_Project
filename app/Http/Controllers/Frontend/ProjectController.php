@@ -11,7 +11,7 @@ class ProjectController extends Controller
 {
     public function showAllProjects(Project $project)
     {
-        $projects = Project::get();
+        $projects = Project::where('status', 'on')->get();
         return view('Pages.Projects.projects', compact('projects'));
     }
 
@@ -19,7 +19,7 @@ class ProjectController extends Controller
     public function showProject(Project $project, $id)
     {
         $project = Project::findOrFail($id);
-        $projectImages = Media::where('project_id', $id)->where('media_type', 'image')->get();
+        $projectImages = Media::where('project_id', $id)->where('status', 'on')->where('media_type', 'image')->get();
         $allProjects = Project::where('id', '!=', $id)->get();
         return view('Pages.Projects.single-project', compact('project', 'projectImages', 'allProjects'));
     }

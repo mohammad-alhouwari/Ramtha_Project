@@ -8,18 +8,20 @@ use Illuminate\Http\Request;
 use App\Models\President;
 use App\Models\Event;
 use App\Models\News;
+use App\Models\Partner;
 
 class HomeController extends Controller
 {
 
-public function index()
-{
-    $presidents = President::latest()->get();
-    $events = Event::latest()->get();
-    $latestNews = News::latest()->take(3)->get();
+    public function index()
+    {
+        $presidents = President::latest()->get();
+        $events = Event::latest()->get();
+        $latestNews = News::latest()->take(3)->get();
+        $partners = Partner::get();
 
-    return view('index', compact('presidents', 'events', 'latestNews'));
-}
+        return view('index', compact('presidents', 'events', 'latestNews', 'partners'));
+    }
 
 
 
