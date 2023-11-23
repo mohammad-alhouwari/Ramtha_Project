@@ -246,7 +246,6 @@ ul {
     transform: translate(calc(-50% + 5px), -50%);
     z-index: 999991;
 }
-
 .custom-cursor__cursor-two {
     width: 10px;
     height: 10px;

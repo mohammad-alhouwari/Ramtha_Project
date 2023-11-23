@@ -18,10 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('image')->nullable();
             $table->string('description');
+            
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
