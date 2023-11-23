@@ -35,8 +35,8 @@
                         <span class="nav-text">News</span>
                     </a>
                 </li>
-               
-                    <li class="{{ set_active(['partners-admin.*']) }}">
+
+                <li class="{{ set_active(['partners-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('partners-admin.index') }}">
                         <i class="mdi mdi-newspaper"></i>
                         <span class="nav-text">Partners</span>
@@ -48,7 +48,6 @@
                         <span class="nav-text">Investment opportunities</span>
                     </a>
                 </li>
-<<<<<<< HEAD
                 <li class="{{ set_active(['Events-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('Events-admin.index') }}">
                         <i class="fa-regular fa-calendar-days"></i>
@@ -59,12 +58,13 @@
                     <a class="sidenav-item-link" href="{{ route('EventParticipant-admin.index') }}">
                         <i class="fa-regular fa-calendar-days"></i>
                         <span class="nav-text">Event Participants</span>
-=======
+                    </a>
+                </li>
+
                 <li class="{{ set_active(['jobs-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('jobs-admin.index') }}">
                         <i class="fa-solid fa-briefcase"></i>
                         <span class="nav-text">Jobs</span>
->>>>>>> 705c2847c769499fa843cabaa8bc426293236797
                     </a>
                 </li>
 
@@ -74,13 +74,19 @@
                         <span class="nav-text">Complain</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['presidents-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('presidents-admin.index') }}">
+                        <i class="mdi mdi-alert-octagon"></i>
+                        <span class="nav-text">Presidents</span>
+                    </a>
+                </li>
                 <li class="{{ set_active(['tenders-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('tenders-admin.index') }}">
                         <i class="fas fa-file-contract"></i>
                         <span class="nav-text">Tenders</span>
                     </a>
                 </li>
-                
+
                 {{-- <li class="{{ set_active(['teams.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('teams.index') }}">
                         <i class="mdi mdi-account-group"></i>

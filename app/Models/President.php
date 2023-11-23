@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class President extends Model
 {
     use HasFactory;
+
+    protected $table = 'presidents';
+
+    protected $fillable = [
+        'name',
+        'image',
+        'speech'
+    ];
 }
