@@ -8,6 +8,12 @@ use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\JobController as FrontendJobController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
+<<<<<<< HEAD
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComplainController;
+use App\Http\Controllers\Frontend\EventController as FrontendEventController;
+use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
+=======
 use App\Http\Controllers\TendersDetailesController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
 use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
@@ -16,30 +22,14 @@ use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
+>>>>>>> 5560326e96868909994366cb696358d5836fc7c9
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-/*-----------------------------Home Routes-----------------------------*/
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/', [HomeController::class, 'president'])->name('home');
 
 Route::controller(FrontendHomeController::class)->group(function () {
     Route::get('/', 'index');
 });
 
 /*-----------------------------Home Routes End-----------------------------*/
-
 
 /*----------------------------- President Routes Start -----------------------------*/
 Route::get('president', [FrontendPresidentController::class, 'index'])->name('president');
@@ -64,18 +54,18 @@ Route::controller(FrontendProjectController::class)->group(function () {
 /*----------------------------- Projects Routes End -----------------------------*/
 
 /*--------------------- Investment-Opportunity Routes Start ---------------------*/
-
 Route::controller(FrontendInvestmentsController::class)->group(function () {
     Route::get('investments', 'showAllInvestments')->name('showAllInvestments');
     Route::get('investment/{id}', 'showInvestment')->name('showInvestment');
 });
+/*--------------------- Investment-Opportunity Routes End ----------------------*/
 
+/*------------------------------ Jobs Routes Start ------------------------------*/
 Route::controller(FrontendJobController::class)->group(function () {
     Route::get('jobs', 'showAllJobs')->name('showAllJobs');
     Route::get('job/{id}', 'showJob')->name('showJob');
 });
-
-/*--------------------- Investment-Opportunity Routes End ----------------------*/
+/*------------------------------ Jobs Routes End -------------------------------*/
 
 /*------------------------------ News Routes Start -----------------------------*/
 Route::controller(FrontendNewsController::class)->group(function () {
@@ -84,11 +74,34 @@ Route::controller(FrontendNewsController::class)->group(function () {
 });
 /*------------------------------- News Routes End -------------------------------*/
 
-
+/*------------------------------ Complain Routes Start ------------------------------*/
 Route::resource('complains', ComplainController::class);
+<<<<<<< HEAD
+=======
+/*------------------------------ Complain Routes End -------------------------------*/
+>>>>>>> 5560326e96868909994366cb696358d5836fc7c9
 
+/*----------------------------- Gallery Routes Start -----------------------------*/
+Route::controller(FrontendMediaController::class)->group(function () {
+    Route::get('gallery', 'showGallery')->name('showGallery');
+    Route::get('single_gallery/{id}/{type}', 'showSingleGallery')->name('single_gallery');
+});
+/*----------------------------- Gallery Routes End -----------------------------*/
+
+/*----------------------------- Event Routes Start -----------------------------*/
 Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
-// Route::resource('tenders', TenderController::class);
+<<<<<<< HEAD
+Route::resource('tenders', TenderController::class);
 Route::resource('tendersDetailes', TendersDetailesController::class);
+=======
+/*----------------------------- Event Routes End -----------------------------*/
+
+/*------------------------------ Tenders Routes Start ------------------------------*/
+Route::controller(FrontendTendersController::class)->group(function () {
+    Route::get('tenders', 'showAllTenders')->name('showAllTenders');
+    Route::get('tender-details/{id}', 'showDetailsTenders')->name('showDetailsTenders');
+});
+/*------------------------------ Tenders Routes End ------------------------------*/
+>>>>>>> 5560326e96868909994366cb696358d5836fc7c9
