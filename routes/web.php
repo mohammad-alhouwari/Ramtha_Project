@@ -40,7 +40,6 @@ Route::controller(FrontendHomeController::class)->group(function () {
 
 /*-----------------------------Home Routes End-----------------------------*/
 
-
 /*----------------------------- President Routes Start -----------------------------*/
 Route::get('president', [FrontendPresidentController::class, 'index'])->name('president');
 /*----------------------------- President Routes End -----------------------------*/
@@ -64,18 +63,18 @@ Route::controller(FrontendProjectController::class)->group(function () {
 /*----------------------------- Projects Routes End -----------------------------*/
 
 /*--------------------- Investment-Opportunity Routes Start ---------------------*/
-
 Route::controller(FrontendInvestmentsController::class)->group(function () {
     Route::get('investments', 'showAllInvestments')->name('showAllInvestments');
     Route::get('investment/{id}', 'showInvestment')->name('showInvestment');
 });
+/*--------------------- Investment-Opportunity Routes End ----------------------*/
 
+/*------------------------------ Jobs Routes Start ------------------------------*/
 Route::controller(FrontendJobController::class)->group(function () {
     Route::get('jobs', 'showAllJobs')->name('showAllJobs');
     Route::get('job/{id}', 'showJob')->name('showJob');
 });
-
-/*--------------------- Investment-Opportunity Routes End ----------------------*/
+/*------------------------------ Jobs Routes End -------------------------------*/
 
 /*------------------------------ News Routes Start -----------------------------*/
 Route::controller(FrontendNewsController::class)->group(function () {
@@ -91,5 +90,11 @@ Route::resource('complains',FrontendComplainController ::class);
 Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
-// Route::resource('tenders', TenderController::class);
-Route::resource('tendersDetailes', TendersDetailesController::class);
+/*----------------------------- Event Routes End -----------------------------*/
+
+/*------------------------------ Tenders Routes Start ------------------------------*/
+Route::controller(FrontendTendersController::class)->group(function () {
+    Route::get('tenders', 'showAllTenders')->name('showAllTenders');
+    Route::get('tender-details/{id}', 'showDetailsTenders')->name('showDetailsTenders');
+});
+/*------------------------------ Tenders Routes End ------------------------------*/
