@@ -5,6 +5,11 @@ use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
+use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
+
+
+
+
 
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 /*
@@ -48,5 +53,10 @@ Route::controller(FrontendNewsController::class)->group(function () {
 
 
 Route::resource('complains', ComplainController::class);
-Route::resource('tenders', TenderController::class);
-Route::resource('tendersDetailes', TendersDetailesController::class);
+
+/*------------------------------ Tenders Routes Start ------------------------------*/
+Route::controller(FrontendTendersController::class)->group(function () {
+    Route::get('tenders', 'showAllTenders')->name('showAllTenders');
+    Route::get('tender-details/{id}', 'showDetailsTenders')->name('showDetailsTenders');
+});
+/*------------------------------- Tenders Routes End -------------------------------*/

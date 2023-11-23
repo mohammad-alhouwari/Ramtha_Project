@@ -35,6 +35,7 @@
                         <span class="nav-text">News</span>
                     </a>
                 </li>
+               
                 <li class="{{ set_active(['investments-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('investments-admin.index') }}">
                         <i class="mdi mdi-chart-line"></i>
@@ -47,6 +48,13 @@
                         <span class="nav-text">Complain</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['tenders-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('tenders-admin.index') }}">
+                        <i class="fas fa-file-contract"></i>
+                        <span class="nav-text">Tenders</span>
+                    </a>
+                </li>
+                
                 {{-- <li class="{{ set_active(['teams.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('teams.index') }}">
                         <i class="mdi mdi-account-group"></i>
