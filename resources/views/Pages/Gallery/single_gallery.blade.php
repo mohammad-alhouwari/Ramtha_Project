@@ -11,12 +11,12 @@
     <span class="section-title__tagline">معرض الصور</span>
     <br>
     @if ($name)
-    <h3>{{ $name->title }}</h3>
+    <h3> ألبوم صور {{ $name->title }} </h3>
     @endif
 </div>
-
+<br>
 <div class="gallery">
-    <div class="row">
+    <div class="row-gallery">
         @foreach ($gallery as $index => $item)
             <div class="gallery-item">
                 <a href="{{ asset($item->media) }}" data-fancybox="gallery" data-caption="Image {{ $index + 1 }}" data-src="{{ asset($item->media) }}">
@@ -32,8 +32,5 @@
 <br>
 <br>
 <br>
-<!-- Improved Pagination Design -->
-{{-- <div class="container mt-4">
-            {{ $gallery->links() }}
-</div> --}}
+
 @endsection

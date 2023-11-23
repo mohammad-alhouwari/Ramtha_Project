@@ -14491,11 +14491,48 @@ ul {
   .gallery {
     margin: 20px;
   }
+  .album-items{
+    color: #ffffff; text-decoration: none; transition: color 0.3s ease;
+  }
+  .portfolio-page-items{
+    display: flex; flex-wrap: wrap; gap: 20px; justify-content: center
+  }
+  .single_gallery_item{
+    display: block; font-size: 16px; color: #383737; text-decoration: none; transition: color 0.3s ease-in-out; margin-bottom: 10px;
+  }
+  .gallery-p{
+    margin-top: 12px; font-size: 17px; color: #666;
+  }
+  .gallery-img-item{
+    width: 300px; height: 250px; border-radius: 6px; transition: transform 0.3s ease-in-out;
+  }
+  .hr-gallery{
+    margin: 6px 0; border: 0; border-top: 1px solid #ccc;
+  }
+  .album-item {
+    width: 320px; 
+    padding: 10px; 
+    background-color: #fff; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    text-align: center; 
+    height: auto; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    overflow: hidden; 
+    margin-bottom:20px
+  }
   
-  .row {
+  .row-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
+    margin-bottom: 10px; /* Adjust margin between rows */
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 10px; /* Adjust margin between rows */
   }
   
@@ -14514,40 +14551,6 @@ ul {
     height: 280px; /* Adjust the height for smaller images */
   }
   
-  
-/*--------------------------------------------------------------
-# pagination
---------------------------------------------------------------*/
-/* styles.css */
-
-.container {
-    text-align: center;
-  }
-  
-  .pagination {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .pagination li {
-    margin: 0 5px;
-  }
-  
-  .pagination li a {
-    text-decoration: none;
-    padding: 6px 10px;
-    color: #007bff;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-  }
-  
-  .pagination li.active a {
-    color: #fff;
-    background-color: #007bff;
-  }
   
 
 /*--------------------------------------------------------------
