@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Project;
 use App\DataTables\ProjectDataTable;
+use App\Models\Media;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
@@ -89,12 +91,30 @@ class ProjectController extends Controller
     }
 
 
+    public function addProjectPhotos($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('admin.pages.projects.projectPhotos', compact('project'));
+    }
+
+
     public function destroy($id)
     {
-        $event = Project::findOrFail($id);
-        $this->deleteImage($event->preview_image);
-        $event->delete();
+        try {
+            $projectMedia = Media::where('project_id', $id)->get();
+            foreach ($projectMedia as $media) {
+                $this->deleteImage($media->media);
+                $media->delete();
+            }
+            $project = Project::findOrFail($id);
+            $this->deleteImage($project->preview_image);
+            $project->delete();
 
-        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+
+            return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+        } catch (\Exception $e) {
+            Log::error("Error deleting project: {$e->getMessage()}");
+            return response(['status' => 'error', 'message' => 'An error occurred while deleting.']);
+        }
     }
 }

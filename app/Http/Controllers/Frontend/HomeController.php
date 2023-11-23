@@ -5,17 +5,27 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\President;
+use App\Models\Event;
+use App\Models\News;
+use App\Models\Partner;
+
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $presidents = President::latest()->get();
+        $events = Event::latest()->get();
+        $latestNews = News::latest()->take(3)->get();
+        $partners = Partner::get();
+
+        return view('index', compact('presidents', 'events', 'latestNews', 'partners'));
     }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.

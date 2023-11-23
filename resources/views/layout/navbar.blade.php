@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/ramtha-logo-rbg.png') }}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/ramtha-logo-rbg.png') }}" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="govity HTML 5 Template " />
+    <meta name="description" content="بلدية الرمثا الكبرى " />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -23,6 +23,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
         rel="stylesheet">
+
 
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />
@@ -57,6 +58,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 
 </head>
 
@@ -255,27 +258,13 @@
                                         <a href="#"
                                             class="main-menu__search search-toggler icon-magnifying-glass"></a>
                                     </div>
-                                    <div class="language-switcher">
-                                        <select class="selectpicker">
-                                            <option
-                                                data-content="<span class='lang-en'><img src='assets/images/lang-flag/en.png' alt=''>English</span>"
-                                                value="en" selected>English</option>
-                                            <option
-                                                data-content="<span class='lang-fr'><img src='assets/images/lang-flag/fr.png' alt=''>French</span>"
-                                                value="fr">French
-                                            </option>
 
-                                            <option
-                                                data-content="<span class='lang-it'><img src='assets/images/lang-flag/it.png' alt=''>Italian</span>"
-                                                value="it">
-                                                Italian</option>
-                                        </select>
 
-                                    </div>
-                                    <div class="main-menu__btn-box">
-                                        <a href="contact.html" class="thm-btn main-menu__btn">Report Issue</a>
-                                    </div>
                                 </div>
+                                {{-- <div class="">
+                                    <img style="width: 100px" src="assets/images/backgrounds/logoload.png"
+                                        alt="">
+                                </div> --}}
                             </div>
                         </div>
                     </div>

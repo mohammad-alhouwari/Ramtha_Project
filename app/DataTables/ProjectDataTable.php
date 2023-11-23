@@ -19,10 +19,11 @@ class ProjectDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
+                $mediaBtn = "<a href='" . route('medias-admin.index', ['project_id' => $query->id]) . "' class='btn btn-info my-2'><i class='far fa-image'></i></a>";
                 $editBtn = "<a href='" . route('projects-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
                 $deleteBtn = "<a href='" . route('projects-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
 
-                return $editBtn . $deleteBtn;
+                return $mediaBtn . $editBtn . $deleteBtn;
             })
             ->addColumn('preview_image', function ($query) {
                 return "<img width='100px' src='" . asset($query->preview_image) . "'></img>";
