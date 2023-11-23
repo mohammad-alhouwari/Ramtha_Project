@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\ProjectController as BackendProjectController;
+use App\Http\Controllers\Backend\PartnerController as BackendPartnerController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
 use App\Http\Controllers\Backend\MediaController as BackendMediaController;
 use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
@@ -21,7 +22,6 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Project Medias Route
         Route::resource('medias-admin', BackendMediaController::class);
-
         Route::get('medias-admin/create/project/{project_id}', [BackendMediaController::class, 'createProject'])->name('medias-admin.create.project');
 
         //News Medias Route
@@ -35,6 +35,7 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
+
         //jobs opportunities Route
         Route::resource('jobs-admin', BackendJobController::class);
 

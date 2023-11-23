@@ -4,7 +4,7 @@
 
     <!-- Main Slider Three Start -->
     <section class="main-slider-three" lang="en" dir="ltr">
-        <div class="main-slider-three__carousel owl-carousel owl-theme thm-owl__carousel"
+        <div class="main-slider-three__carousel owl-carousel owl-theme thm-owl__carousel" lang="en" dir="ltr"
             data-owl-options='{"loop": true, "items": 1, "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>" ], "margin": 0, "dots": false, "nav": true, "animateOut": "slideOutDown", "animateIn": "fadeIn", "active": true, "smartSpeed": 1000, "autoplay": true, "autoplayTimeout": 7000, "autoplayHoverPause": false}'>
 
             <div class="item main-slider-three__slide-1">
@@ -24,14 +24,15 @@
                 </div>
 
                 <div class="item main-slider-three__slide-2">
-                    <div class="main-slider-three__bg"
-                        style="background-image: url(assets/images/backgrounds/stad.png);">
+                    <div class="main-slider-three__bg" style="background-image: url(assets/images/backgrounds/stad.png);">
                     </div><!-- /.slider-one__bg -->
-                    <div class="container"  dir="rtl">
+                    <div class="container" dir="rtl">
                         <div class="main-slider-three__content">
                             <h2 class="main-slider-three__title">بلدية
-                                <br> مدينة الرمثا</h2>
-                            <p class="main-slider-three__sub-title">يمكنك العثور على الوظائف والأقسام والأحداث واستكشافها وغير ذلك الكثير.</p>
+                                <br> مدينة الرمثا
+                            </h2>
+                            <p class="main-slider-three__sub-title">يمكنك العثور على الوظائف والأقسام والأحداث واستكشافها
+                                وغير ذلك الكثير.</p>
                             <div class="main-slider-three__btn-box">
                                 <a href="about.html" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
                             </div>
@@ -62,18 +63,19 @@
                 </div>
 
                 <div class="item main-slider-three__slide-3">
-                    <div class="main-slider-three__bg"
-                        style="background-image: url(assets/images/backgrounds/dowar.jpg);">
+                    <div class="main-slider-three__bg" style="background-image: url(assets/images/backgrounds/dowar.jpg);">
                     </div><!-- /.slider-one__bg -->
-                    <div class="container"  dir="rtl">
+                    <div class="container" dir="rtl">
                         <div class="main-slider-three__content">
                             <h2 class="main-slider-three__title">بلدية
-                                <br> مدينة الرمثا</h2>
-                            <p class="main-slider-three__sub-title">يمكنك العثور على الوظائف والأقسام والأحداث واستكشافها وغير ذلك الكثير.</p>
+                                <br> مدينة الرمثا
+                            </h2>
+                            <p class="main-slider-three__sub-title">يمكنك العثور على الوظائف والأقسام والأحداث واستكشافها
+                                وغير ذلك الكثير.</p>
                             <div class="main-slider-three__btn-box">
                                 <a href="about.html" class="main-slider-three__btn thm-btn" dir="rtl">اكتشف المزيد</a>
                             </div>
-                            <div class="main-slider-three__weather-box" >
+                            <div class="main-slider-three__weather-box">
                                 <ul class="main-slider-three__weather-list list-unstyled">
                                     <li>
                                         <div class="icon">
@@ -100,80 +102,84 @@
                 </div>
 
             </div>
-        </section>
-        <!-- Main Slider Three Start -->
+    </section>
+    <!-- Main Slider Three Start -->
 
-<br>
-<br>
+    <br>
+    <br>
 
-<section class="services-two">
-    <div class="services-two__inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <div class="section-title__icon">
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <span class="section-title__tagline">الخدمات الالكترونيه</span>
-                        <h2 class="section-title__title">اكتشف الخدمات الالكترونية المقدمة
-                            <br> من بلدية مدينة الرمثا</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <!-- Services Two Single Start -->
-                <div class="col-md-4" style="height: 100%;">
-                    <div class="services-two__single text-center" style="height: 100%;">
-                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
-                            <h3 class="services-two__title"><a href="building-permission.html">ضريبة الابنية و الاراضي
-                                    <br> "المسقفات" </a></h3>
-                            <div class="services-two__icon">
-                                <span class="icon-accept"></span>
+    <section class="services-two">
+        <div class="services-two__inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="section-title">
+                            <div class="section-title__icon">
+                                <span class="fa fa-star"></span>
                             </div>
+                            <span class="section-title__tagline">الخدمات الالكترونيه</span>
+                            <h2 class="section-title__title">اكتشف الخدمات الالكترونية المقدمة
+                                <br> من بلدية مدينة الرمثا
+                            </h2>
                         </div>
-                        <!-- Button below h3 -->
-                        <a href="link-to-page-1.html" class="btn btn-primary mt-2">المزيد</a>
                     </div>
                 </div>
-                <!-- Services Two Single End -->
-
-                <!-- Services Two Single Start -->
-                <div class="col-md-4" style="height: 100%;">
-                    <div class="services-two__single text-center" style="height: 100%;">
-                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
-                            <h3 class="services-two__title"><a href="driving-license.html">طلب نقل ملكية 
-                                    <br>  </a></h3>
-                            <div class="services-two__icon">
-                                <span class="icon-accept"></span>
+                <div class="row mt-4">
+                    <!-- Services Two Single Start -->
+                    <div class="col-md-4" style="height: 100%;">
+                        <div class="services-two__single text-center" style="height: 100%;">
+                            <div class="services-content"
+                                style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
+                                <h3 class="services-two__title"><a href="building-permission.html">ضريبة الابنية و الاراضي
+                                        <br> "المسقفات" </a></h3>
+                                <div class="services-two__icon">
+                                    <span class="icon-accept"></span>
+                                </div>
                             </div>
+                            <!-- Button below h3 -->
+                            <a href="link-to-page-1.html" class="btn btn-primary mt-2">المزيد</a>
                         </div>
-                        <!-- Button below h3 -->
-                        <a href="link-to-page-2.html" class="btn btn-primary mt-2">المزيد</a>
                     </div>
-                </div>
-                <!-- Services Two Single End -->
+                    <!-- Services Two Single End -->
 
-                <!-- Services Two Single Start -->
-                <div class="col-md-4" style="height: 100%;">
-                    <div class="services-two__single text-center" style="height: 100%;">
-                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
-                            <h3 class="services-two__title"><a href="report-pollution.html">مخالفات السير 
-                                    <br> </a></h3>
-                            <div class="services-two__icon">
-                                <span class="icon-accept"></span>
+                    <!-- Services Two Single Start -->
+                    <div class="col-md-4" style="height: 100%;">
+                        <div class="services-two__single text-center" style="height: 100%;">
+                            <div class="services-content"
+                                style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
+                                <h3 class="services-two__title"><a href="driving-license.html">طلب نقل ملكية
+                                        <br> </a></h3>
+                                <div class="services-two__icon">
+                                    <span class="icon-accept"></span>
+                                </div>
                             </div>
+                            <!-- Button below h3 -->
+                            <a href="link-to-page-2.html" class="btn btn-primary mt-2">المزيد</a>
                         </div>
-                        <br>
-                        <!-- Button below h3 -->
-                        <a href="link-to-page-3.html" class="btn btn-primary mt-2">المزيد</a>
                     </div>
+                    <!-- Services Two Single End -->
+
+                    <!-- Services Two Single Start -->
+                    <div class="col-md-4" style="height: 100%;">
+                        <div class="services-two__single text-center" style="height: 100%;">
+                            <div class="services-content"
+                                style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
+                                <h3 class="services-two__title"><a href="report-pollution.html">مخالفات السير
+                                        <br> </a></h3>
+                                <div class="services-two__icon">
+                                    <span class="icon-accept"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- Button below h3 -->
+                            <a href="link-to-page-3.html" class="btn btn-primary mt-2">المزيد</a>
+                        </div>
+                    </div>
+                    <!-- Services Two Single End -->
                 </div>
-                <!-- Services Two Single End -->
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
