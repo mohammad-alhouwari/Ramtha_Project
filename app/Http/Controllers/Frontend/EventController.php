@@ -1,11 +1,15 @@
 <?php
 
+<<<<<<< HEAD:app/Http/Controllers/Frontend/EventController.php
+namespace App\Http\Controllers\Frontend;
+=======
 namespace App\Http\Controllers\Backend;
+>>>>>>> 705c2847c769499fa843cabaa8bc426293236797:app/Http/Controllers/Backend/EventsController.php
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-class EventsController extends Controller
+use App\Http\Controllers\Controller;
+use App\Models\Event;
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +18,8 @@ class EventsController extends Controller
      */
     public function index()
     {
-        return view('lama.tenders');
+        $events= Event::all();
+        return view('Pages.Events.event',compact('events'));
     }
 
     /**
