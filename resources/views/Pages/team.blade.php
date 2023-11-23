@@ -310,18 +310,19 @@
                             </div>
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="assets/images/team/team-1-1.jpg" alt="" height="270px">
+                                    <img src="assets\images\developers\MohammadAlhouwari.png" alt=""
+                                        height="270px">
                                 </div>
                             </div>
                             <div class="team-one__content">
                                 <h3 class="team-one__name"><a href="team-details.html">Mohammad Alhouwari</a></h3>
                                 <p class="team-one__sub-title">Full Satck Web Developer</p>
                                 <div class="team-one__social">
-                                    <a href="https://github.com/MarahAbusaleh" target="blank"><i
+                                    <a href="https://github.com/mohammad-alhouwari" target="blank"><i
                                             class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/marah-abusaleh/" target="blank"><i
+                                    <a href="https://www.linkedin.com/in/mohammad-alhouwari-131332208/" target="blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:leenaalrababah@gmail.com" target="blank"><i
+                                    <a href="mailto:mohammad.alhouwari.1996@gmail.com" target="blank"><i
                                             class="fas fa-envelope"></i></i></a>
                                 </div>
                             </div>
