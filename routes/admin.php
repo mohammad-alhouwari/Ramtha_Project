@@ -7,15 +7,12 @@ use App\Http\Controllers\Backend\UserController as BackendUserController;
 use App\Http\Controllers\Backend\MediaController as BackendMediaController;
 use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
 use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
-<<<<<<< HEAD
 use App\Http\Controllers\Backend\EventController as BackendEventController;
 use App\Http\Controllers\Backend\EventParticipantController as BackendEventParticipantController;
-=======
 use App\Http\Controllers\Backend\NewController as BackendNewController;
 use App\Http\Controllers\Backend\TenderController as BackendTenderController;
 
 use App\Http\Controllers\Backend\JobController as BackendJobController;
->>>>>>> 705c2847c769499fa843cabaa8bc426293236797
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
@@ -42,7 +39,6 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
-<<<<<<< HEAD
         //Event Route
         Route::resource('Events-admin', BackendEventController::class);
         //Event Participant Route
@@ -50,7 +46,6 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::resource('EventParticipant-admin', BackendEventParticipantController::class)->parameters([
             'EventParticipant-admin' => 'id'
         ]);
-=======
 
         //jobs opportunities Route
         Route::resource('jobs-admin', BackendJobController::class);
@@ -67,7 +62,6 @@ Route::prefix('admin')->middleware('auth')->group(
         //Partners Route
         Route::resource('partners-admin', BackendPartnerController::class);
 
->>>>>>> 705c2847c769499fa843cabaa8bc426293236797
         // Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
         Route::post('/profile-update/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
