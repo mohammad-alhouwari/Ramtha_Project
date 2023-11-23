@@ -38,12 +38,8 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //**Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
-<<<<<<< HEAD
-        //Event Route
-=======
 
         //**Event Route
->>>>>>> 5560326e96868909994366cb696358d5836fc7c9
         Route::resource('Events-admin', BackendEventController::class);
 
         //** Event Participant
@@ -63,9 +59,6 @@ Route::prefix('admin')->middleware('auth')->group(
         //**Partners Route
         Route::resource('partners-admin', BackendPartnerController::class);
 
-<<<<<<< HEAD
-        // Profile Routes
-=======
         //**Presidents Route
         Route::resource('presidents-admin', BackendPresidentsController::class);
 
@@ -78,7 +71,6 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::get('medias-admin/create/event/{event_id}', [BackendMediaController::class, 'createEvent'])->name('medias-admin.create.event');
 
         //** Profile Routes
->>>>>>> 5560326e96868909994366cb696358d5836fc7c9
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
         Route::get('/profile/change-password', [AdminController::class, 'changePassword'])->name('profile.change-password');
         Route::post('/profile/update-password/{id}', [AdminController::class, 'updatePassword'])->name('profile.update-password');
