@@ -52,7 +52,7 @@ class ComplainController extends Controller
     public function destroy($id)
     {
         $complain = Complain::findOrFail($id);
-        $this->deleteImage($complain->image);
+        // $this->deleteImage($complain->image);
         $complain->delete();
 
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
