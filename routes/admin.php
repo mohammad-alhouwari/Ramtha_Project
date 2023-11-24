@@ -15,6 +15,8 @@ use App\Http\Controllers\Backend\SuggestionController as BackendSuggestionContro
 use App\Http\Controllers\Backend\TenderController as BackendTenderController;
 use App\Http\Controllers\Backend\JobController as BackendJobController;
 use App\Http\Controllers\Backend\MembersController as BackendMembersController;
+use App\Http\Controllers\Backend\PollTopicController as BackendPollTopicController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
@@ -46,6 +48,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //**Event Route
         Route::resource('Events-admin', BackendEventController::class);
+
+        //polls Topics Route
+        Route::resource('pollTopics-admin', BackendPollTopicController::class);
 
         //** Event Participant
         Route::resource('EventParticipant-admin', BackendEventParticipantController::class)->parameters([

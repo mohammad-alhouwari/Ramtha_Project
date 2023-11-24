@@ -11,7 +11,7 @@ class ProjectController extends Controller
 {
     public function showAllProjects(Project $project)
     {
-        $projects = Project::where('status', 'on')->get();
+        $projects = Project::where('status', 'on')->paginate(6);
         return view('Pages.Projects.projects', compact('projects'));
     }
 

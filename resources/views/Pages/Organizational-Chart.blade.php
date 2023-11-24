@@ -17,7 +17,7 @@
                 <ul class="thm-breadcrumb list-unstyled">
                     <li><a href="">الرئيسية</a></li>
                     <li><span>/</span></li>
-                    <li><a href="{{ route('president') }}">الهيكل التنظيمي</a></li>
+                    <li><a href="{{ route('organizational-chart') }}">الهيكل التنظيمي</a></li>
                 </ul>
             </div>
         </div>
@@ -37,7 +37,7 @@
             <div class="row">
                 <center>
                     <div>
-                        <img src="{{ asset('assets\images\organizational-chart.PNG') }}" width="500px" height="500px" />
+                        <img src="{{ asset('assets\images\organizational-chart.jpeg') }}" width="100%" height="100%" />
                     </div>
                 </center>
             </div>
