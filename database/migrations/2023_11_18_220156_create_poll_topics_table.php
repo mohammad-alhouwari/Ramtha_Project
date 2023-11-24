@@ -15,6 +15,7 @@ return new class extends Migration {
         Schema::create('poll_topics', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->text('status')->nullable();
             $table->string('image')->nullable();
             $table->date('end_date')->nullable();
             $table->text('description')->nullable();

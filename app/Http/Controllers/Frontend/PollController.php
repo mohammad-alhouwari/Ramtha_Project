@@ -11,18 +11,17 @@ class PollController extends Controller
 {
     public function showAllPolls()
     {
-        $currentDate = now()->toDateString();
-
-        $PollTopics = PollTopic::whereDate('end_date', '>=', $currentDate)->get();
-
+        $PollTopics = PollTopic::where('status', 'on')->get();
         return view('Pages.Polls.poll-topic', compact('PollTopics'));
     }
 
 
+
     public function showPoll($id)
     {
+        $currentDate = now()->toDateString();
         $PollTopic = PollTopic::findOrFail($id);
-        return view('Pages.Polls.poll-details', compact('PollTopic'));
+        return view('Pages.Polls.poll-details', compact('PollTopic','currentDate'));
     }
    
     public function userPoll(Request $request, $pollTopicId)
