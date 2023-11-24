@@ -117,10 +117,20 @@
                         <span class="nav-text">Suggestions</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['ownership-transfer-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('ownership-transfer-admin.index') }}">
+                        <i class="mdi mdi-account-arrow-right-outline"></i>
+                        <span class="nav-text">Ownership Transfers</span>
                 <li class="{{ set_active(['landmarks-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('landmarks-admin.index') }}">
                         <i class="mdi mdi-store"></i>
                         <span class="nav-text">Landmarks</span>
+                    </a>
+                </li>
+                <li class="{{ set_active(['municipality-info-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('municipality-info-admin.index') }}">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span class="nav-text">Municipality Info</span>
                     </a>
                 </li>
                 {{-- <li class="{{ set_active(['teams.*']) }}">

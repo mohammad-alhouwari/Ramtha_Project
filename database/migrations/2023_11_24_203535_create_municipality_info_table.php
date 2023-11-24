@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -12,13 +13,13 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('poll_topics', function (Blueprint $table) {
+        Schema::create('municipality_infos', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('status')->nullable();
-            $table->string('image')->nullable();
-            $table->date('end_date')->nullable();
-            $table->text('description')->nullable();
+            $table->string('logo');
+            $table->string('description');
+            $table->string('description_image');
+            $table->string('email');
+            $table->string('phone');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('poll_topics');
+        Schema::dropIfExists('municipality_infos');
     }
 };

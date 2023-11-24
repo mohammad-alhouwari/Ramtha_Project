@@ -40,8 +40,8 @@ class ComplainController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email'],
-            'national_id' => ['required', 'numeric'],
-            'phone' => ['required', 'numeric'],
+            'national_id' => ['required', 'numeric', 'min:10'],
+            'phone' => ['required', 'numeric', 'digits:10', 'regex:/^(079|078|077|06|02)[0-9]{7}$/'],
             'complain_type' => ['required', 'string'],
             'address' => ['required', 'string', 'max:255'],
             'complain_details' => ['required', 'string'],
@@ -55,10 +55,13 @@ class ComplainController extends Controller
             'email.email' => 'البريد الإلكتروني يجب أن يكون صالحًا.',
 
             'national_id.required' => 'الرجاء إدخال الهوية الوطنية.',
-            'national_id.string' => 'يجب أن تكون الهوية الوطنية رقمًا.',
+            'national_id.numeric' => 'يجب أن تكون الهوية الوطنية رقمًا.',
+            'national_id.digits' => 'يجب أن تتكون الهوية الوطنية من 10 أرقام.',
 
             'phone.required' => 'الرجاء إدخال رقم الهاتف.',
             'phone.numeric' => 'يجب أن يكون رقم الهاتف رقمًا.',
+            'phone.digits' => 'يجب أن يتكون رقم الهاتف من 10 أرقام.',
+            'phone.regex' => 'رقم الهاتف يجب أن يبدأ بـ 079 أو 078 أو 077 أو 06 أو 02.',
 
             'complain_type.required' => 'الرجاء اختيار نوع الشكوى.',
             'complain_type.string' => 'يجب أن يكون نوع الشكوى نصًا.',
