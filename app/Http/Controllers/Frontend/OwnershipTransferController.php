@@ -39,34 +39,38 @@ class OwnershipTransferController extends Controller
     {
         // Data Validate
         $request->validate([
-            'landlord_phone' => ['required', 'string', 'max:20'],
+            'landlord_phone' => ['required', 'numeric', 'digits:10', 'regex:/^07\d{8}$/'],
             'new_owner_name' => ['required', 'string', 'max:255'],
-            'new_owner_phone' => ['required', 'string', 'max:20'],
-            'national_id' => ['required', 'numeric', 'digits_between:1,10'],
+            'new_owner_phone' => ['required', 'numeric', 'digits:10', 'regex:/^07\d{8}$/'],
+            'national_id' => ['required', 'numeric', 'digits:10'],
             'property_number' => ['required'],
             'municipality_name' => ['required', 'string', 'max:255'],
             'basin' => ['required', 'string', 'max:255'],
             'district' => ['required', 'string', 'max:255'],
             'land_number' => ['required', 'string', 'max:20'],
         ], [
-            'landlord_phone.required' => 'الرجاء إدخال رقم هاتف المالك.',
-            'landlord_phone.string' => 'يجب أن يكون رقم هاتف المالك نصًا.',
-            'landlord_phone.max' => 'رقم هاتف المالك يجب ألا يتجاوز 20 رقمًا.',
+            'landlord_phone.required' => 'الرجاء إدخال رقم هاتف المالك الحالي.',
+            'landlord_phone.numeric' => 'يجب أن يكون رقم هاتف المالك الحالي رقمًا.',
+            'landlord_phone.digits' => 'يجب أن يتألف رقم هاتف المالك الحالي من 10 أرقام.',
+            'landlord_phone.regex' => 'يجب أن يبدأ رقم هاتف المالك الحالي بـ "07" ويتبعه 8 أرقام أخرى.',
 
-            'new_owner_name.required' => 'الرجاء إدخال الاسم.',
-            'new_owner_name.string' => 'يجب أن يكون الاسم نصًا.',
+            'new_owner_name.required' => 'الرجاء إدخال اسم المالك الجديد.',
+            'new_owner_name.string' => 'يجب أن يكون اسم المالك الجديد نصًا.',
             'new_owner_name.max' => 'الاسم يجب ألا يتجاوز 255 حرفًا.',
 
-            'new_owner_phone.required' => 'الرجاء إدخال رقم الهاتف.',
-            'new_owner_phone.string' => 'يجب أن يكون رقم الهاتف نصًا.',
-            'new_owner_phone.max' => 'رقم الهاتف يجب ألا يتجاوز 20 رقمًا.',
+            'new_owner_phone.required' => 'الرجاء إدخال رقم هاتف المالك الجديد.',
+            'new_owner_phone.numeric' => 'يجب أن يكون رقم هاتف المالك الجديد رقمًا.',
+            'new_owner_phone.digits' => 'يجب أن يتألف رقم هاتف المالك الجديد من 10 أرقام.',
+            'new_owner_phone.regex' => 'يجب أن يبدأ رقم هاتف المالك الجديد بـ "07" ويتبعه 8 أرقام أخرى.',
 
-            'national_id.required' => 'الرجاء إدخال الهوية الوطنية.',
-            'national_id.numeric' => 'يجب أن تكون الهوية الوطنية رقمًا.',
-            'national_id.max' => 'الرقم الوطني يجب ألا تتجاوز 10 رقمًا.',
+            'national_id.required' => 'الرجاء إدخال الرقم الوطني.',
+            'national_id.numeric' => 'يجب أن يكون الرقم الوطني رقمًا.',
+            'national_id.digits' => 'يجب أن يتألف الرقم الوطني من 10 أرقام.',
+
+
 
             'property_number.required' => 'الرجاء إدخال رقم العقار.',
-            
+
             'municipality_name.required' => 'الرجاء إدخال اسم البلدية.',
             'municipality_name.string' => 'يجب أن يكون اسم البلدية نصًا.',
             'municipality_name.max' => 'اسم البلدية يجب ألا يتجاوز 255 حرفًا.',

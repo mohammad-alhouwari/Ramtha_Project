@@ -40,7 +40,7 @@ class SuggestionController extends Controller
         // Data Validate
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:20'],
+            'phone' => ['required', 'numeric', 'digits:10', 'regex:/^07\d{8}$/'],
             'description' => ['required', 'string'],
             'place' => ['required', 'string', 'max:255'],
             'sector' => ['required', 'string', 'max:255'],
@@ -50,8 +50,9 @@ class SuggestionController extends Controller
             'name.max' => 'الاسم يجب ألا يتجاوز 255 حرفًا.',
 
             'phone.required' => 'الرجاء إدخال رقم الهاتف.',
-            'phone.string' => 'يجب أن يكون رقم الهاتف نصًا.',
-            'phone.max' => 'رقم الهاتف يجب ألا يتجاوز 20 رقمًا.',
+            'phone.numeric' => 'يجب أن يكون رقم الهاتف رقمًا.',
+            'phone.digits' => 'يجب أن يتألف رقم الهاتف من 10 أرقام.',
+            'phone.regex' => 'يجب أن يبدأ رقم الهاتف بـ "07" ويتبعه 8 أرقام أخرى.',
 
             'description.required' => 'الرجاء إدخال الوصف.',
             'description.string' => 'يجب أن يكون الوصف نصًا.',
