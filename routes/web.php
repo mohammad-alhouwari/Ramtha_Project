@@ -4,6 +4,7 @@ use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
+use App\Http\Controllers\Frontend\SuggestionController as FrontendSuggestionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComplainController;
 
@@ -58,3 +59,11 @@ Route::controller(FrontendNewsController::class)->group(function () {
 Route::resource('complains', ComplainController::class);
 Route::resource('tenders', TenderController::class);
 Route::resource('tendersDetailes', TendersDetailesController::class);
+
+
+/*--------------------- Suggestions Routes Start ---------------------*/
+
+Route::resource('suggestions', FrontendSuggestionController::class);
+
+
+/*--------------------- Suggestions Routes End ----------------------*/

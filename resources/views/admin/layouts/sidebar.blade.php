@@ -47,6 +47,12 @@
                         <span class="nav-text">Complain</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['suggestions-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('suggestions-admin.index') }}">
+                        <i class="mdi mdi-brain"></i>
+                        <span class="nav-text">Suggestions</span>
+                    </a>
+                </li>
                 {{-- <li class="{{ set_active(['teams.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('teams.index') }}">
                         <i class="mdi mdi-account-group"></i>

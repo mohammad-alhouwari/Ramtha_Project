@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\MediaController as BackendMediaController;
 use App\Http\Controllers\Backend\ComplainController as BackendComplainController;
 use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentController;
 use App\Http\Controllers\Backend\NewController as BackendNewController;
+use App\Http\Controllers\Backend\SuggestionController as BackendSuggestionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
@@ -31,6 +32,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         // Complain Route
         Route::resource('complain-admin', BackendComplainController::class);
+
+        // Suggestion Route
+        Route::resource('suggestions-admin', BackendSuggestionController::class);
 
         //Investment opportunities Route
         Route::resource('investments-admin', BackendInvestmentController::class);
