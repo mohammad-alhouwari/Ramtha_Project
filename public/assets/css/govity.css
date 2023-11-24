@@ -14465,15 +14465,15 @@ ul {
     transition-delay: 500ms;
     opacity: 1;
 }
-.investments-page__content{
+.investments-page__content {
     visibility: visible;
-        transform: translateY(0%);
-        transition-delay: 500ms;
-        opacity: 1;
-            position: absolute;
-                bottom: 30px;
-                right: 0;
-                z-index: 2;
+    transform: translateY(0%);
+    transition-delay: 500ms;
+    opacity: 1;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    z-index: 2;
 }
 
 .portfolio-page__sub-title {
@@ -15863,4 +15863,22 @@ body.boxed-wrapper .main-menu__call {
 .department-two__icon-two {
     float: left;
     margin-right: 170px;
+}
+
+/* pagination */
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    background-color: #0063ae;
+    border-color: #0063ae;
+}
+
+.page-item.active .page-link {
+    color: white !important;
+    background-color: #0063ae;
+    border-color: #0063ae;
 }

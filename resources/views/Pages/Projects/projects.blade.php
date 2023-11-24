@@ -108,5 +108,11 @@
             </div>
         </section>
     @endif
+    <center>
+        <div style="padding-bottom: 10px; font-size: 14px; text-align: center; display: flex; justify-content: center;">
+            {{ $projects->links() }}
+        </div>
+
+    </center>
     <!--Projects Page End-->
 @endsection
