@@ -54,7 +54,7 @@ class MediaSeeder extends Seeder
                     'project_id' => '15',
                     'status' => 'on'
                 ],
-                'media' => 'uploads/media_655fc32747164.jpg',
+                'media' => 'http://127.0.0.1:8000/images/media_655fc32747164.jpg',
                 'media_type' => 'image',
                 'news_id' => 1,
 
@@ -63,138 +63,122 @@ class MediaSeeder extends Seeder
         );
         DB::table('media')->insert([
             [
-                'media' => 'uploads/media_655fc327475e1.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc327475e1.jpg',
                 'media_type' => 'image',
                 'news_id' => 1,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
             [
-                'media' => 'uploads/media_655fc3274798c.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc3274798c.jpg',
                 'media_type' => 'image',
                 'news_id' => 1,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
             [
-                'media' => 'uploads/media_655fc32747f6c.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc32747f6c.jpg',
                 'media_type' => 'image',
                 'news_id' => 1,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc32748525.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc32748525.jpg',
                 'media_type' => 'image',
                 'news_id' => 1,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc32748a84.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc32748a84.jpg',
                 'media_type' => 'image',
                 'news_id' => 1,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc4ed04655.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc4ed04655.jpg',
                 'media_type' => 'image',
                 'news_id' => 2,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc4ed04a15.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc4ed04a15.jpg',
                 'media_type' => 'image',
                 'news_id' => 2,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc4ed04fd2.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc4ed04fd2.jpg',
                 'media_type' => 'image',
                 'news_id' => 2,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc4ed0522f.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc4ed0522f.jpg',
                 'media_type' => 'image',
                 'news_id' => 2,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc4ed48a1e.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc4ed48a1e.jpg',
                 'media_type' => 'image',
                 'news_id' => 2,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc4ed4a8be.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc4ed4a8be.jpg',
                 'media_type' => 'image',
                 'news_id' => 2,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc4ed4af75.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc4ed4af75.jpg',
                 'media_type' => 'image',
                 'news_id' => 2,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc50955fcf.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc50955fcf.jpg',
                 'media_type' => 'image',
                 'news_id' => 3,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fcdf5e39ae.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fcdf5e39ae.jpg',
                 'media_type' => 'image',
                 'news_id' => 3,
 
 
-            ]
-        ]);
-        DB::table('media')->insert([
+            ],
+
             [
-                'media' => 'uploads/media_655fc5095697b.jpg',
+                'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc5095697b.jpg',
                 'media_type' => 'image',
                 'news_id' => 3,
 
 
-            ]
+            ],
         ]);
     }
 }
