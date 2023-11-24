@@ -1,28 +1,7 @@
 @extends('Layout.master')
-@section('title', 'Complains')
-
-
+@section('title', 'العطاءات')
+@section('header_title', 'العطاءات')
 @section('content')
-
-    <!--Departments Page Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2> عطاءات بلدية الرمثا الكبرى</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li>العطاءات</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-
-
 
     <section class="department-page">
         <div class="container">
@@ -45,10 +24,13 @@
                                                 <span class="fas fa-file-contract"></span>
                                             </div> --}}
                                         </div>
-                                        <h3 class="feature-four__title"><a  href="{{ route('showDetailsTenders', $tender->id) }}"> {{ $tender->title }}</a></h3>
+                                        <h3 class="feature-four__title"><a
+                                                href="{{ route('showDetailsTenders', $tender->id) }}">
+                                                {{ $tender->title }}</a></h3>
                                         <!-- Add Button under h3 -->
                                         <br>
-                                        <a  href="{{ route('showDetailsTenders', $tender->id) }}" class="btn btn-primary">المزيد</a>
+                                        <a href="{{ route('showDetailsTenders', $tender->id) }}"
+                                            class="btn btn-primary">المزيد</a>
                                     </div>
                                 </div>
                             @endforeach
@@ -66,7 +48,7 @@
         </div>
 
 
-       
+
     </section>
     <!--Departments Page End-->
 @endsection
