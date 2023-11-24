@@ -1,7 +1,9 @@
 @extends('Layout.master')
-@section('title', 'Complains')
+@section('title', 'Tenders')
 
 @section('content')
+
+
 
     <section class="page-header">
         <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/tender.jpg)">
@@ -33,7 +35,7 @@
                             </div>
                             <p class="contact-page__text text-center" style="direction: rtl; ">{{ $tenders->description }}</p>
 
-                            <ul class="list-unstyled contact-page__contact-list">
+                            <ul class="list-unstyled contact-page__contact-list" >
                                 <li style="direction: rtl;">
                                     <div  class="icon">
                                         <span class="fas fa-money-bill"></span>
@@ -43,7 +45,7 @@
                                         <h4> {{ $tenders->value }}</h4>
                                     </div>
                                 </li>
-                                <li style="direction: rtl;">
+                                <li  style="direction: rtl;">
                                     <div class="icon">
                                         <span class="far fa-calendar-alt"></span>
                                     </div>
@@ -54,11 +56,11 @@
                                 </li>
                                 <li style="direction: rtl;">
                                     <div class="icon">
-                                        <span class="far fa-file-pdf"></span>
+                                        <span class="far fa-image"></span>
                                     </div>
                                     <div class="content" style="margin-right: 20px">
-                                        <p>تحميل الملف pdf :</p>
-                                        <h4>تحميل</h4>
+                                        <p>تحميل الصورة :</p>
+                                        <a href="{{ $tenders->preview_image }}" download><h4>تحميل</h4></a>
                                     </div>
                                 </li>
                             </ul>
@@ -77,7 +79,7 @@
                         <div class="contact-page__img-box">
                             <div class="contact-page__img">
                                 <img src="{{ $tenders->preview_image }}" alt=""
-                                    style="border: 1px solid black;">
+                                    style="border: 1px solid black;" download>
                             </div>
                         </div>
                     </div>

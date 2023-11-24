@@ -38,8 +38,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/govity-icons/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/tiny-slider/tiny-slider.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/reey-font/stylesheet.css') }}" />
-    {{-- <link rel="stylesheet" href="{{ asset('assets/vendors/owl-carousel/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/vendors/owl-carousel/owl.theme.default.min.css') }}" /> --}}
+    <link rel="stylesheet" href="{{ asset('assets/vendors/owl-carousel/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendors/owl-carousel/owl.theme.default.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/bxslider/jquery.bxslider.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-select/css/bootstrap-select.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/vegas/vegas.min.css') }}" />
@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/govity.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/govity-responsive.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
- 
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
@@ -61,6 +61,8 @@
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
 
 
 </head>
@@ -114,7 +116,7 @@
                                                 <i class="fas fa-clock"></i>
                                             </div>
                                             <div class="text">
-                                                <p>Open hours: Sun - Fri 8.00 am - 6.00 pm</p>
+                                                <p>Open hours: Mon - Fri 8.00 am - 6.00 pm</p>
                                             </div>
                                         </li>
                                     </ul>

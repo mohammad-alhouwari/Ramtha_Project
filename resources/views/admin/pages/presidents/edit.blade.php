@@ -5,17 +5,17 @@
         <div class="content">
             <div class="card card-default">
                 <div class="card-header">
-                    <h2>Edit Admin: {{ $admin->name }}</h2>
+                    <h2>Edit President: {{ $president->name }}</h2>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin-users.update', $admin->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('presidents-admin.update', $president->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
                             <div class="col-xl-2">
                                 <div class="mb-5">
                                     <img id="showImage" width="100px"
-                                        src="{{ $admin->image == '' ? url('no-admin-image.png') : asset($admin->image) }}">
+                                        src="{{ $president->image == '' ? url('no-admin-image.png') : asset($president->image) }}">
                                 </div>
                             </div>
                             <div class="col-xl-10">
@@ -28,25 +28,24 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Admin Name</label>
+                                    <label class="text-dark font-weight-medium">President Name</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text mdi mdi-certificate" id="mdi-account"></span>
                                         </div>
                                         <input type="text" class="form-control" name="name"
-                                            value="{{ $admin->name }}">
+                                            value="{{ $president->name }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Admin Email</label>
+                                    <label class="text-dark font-weight-medium">President Speech</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text mdi mdi-certificate" id="mdi-account"></span>
                                         </div>
-                                        <input type="text" class="form-control" name="header"
-                                            value="{{ $admin->email }}">
+                                        <textarea class="form-control" rows="6" name="speech">{{ $president->speech }}</textarea>
                                     </div>
                                 </div>
                             </div>

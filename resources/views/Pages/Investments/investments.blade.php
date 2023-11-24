@@ -1,5 +1,5 @@
 @extends('Layout.master')
-@section('title', 'Investments Opportunity')
+@section('title', 'الفُرص الإستثمارية')
 
 @section('content')
     <div class="stricky-header stricked-menu main-menu">
@@ -55,7 +55,7 @@
                                     <div class="portfolio-page__img">
                                         <img src={{ asset($investment->image) }} alt="">
                                     </div>
-                                    <div class="portfolio-page__content">
+                                    <div class="investments-page__content">
                                         <p class="portfolio-page__sub-title">الفُرصة الإستثمارية</p>
                                         <h4 class="portfolio-page__title"><a href="{{ route('showInvestment', $investment->id) }}">{{ $investment->name }}</a></h4>
                                     </div>

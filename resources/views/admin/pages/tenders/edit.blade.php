@@ -12,12 +12,7 @@
                         @csrf
                         @method('PUT')
                         <div class="row">
-                            <div class="col-xl-2">
-                                <div class="mb-5">
-                                    <img id="showImage" width="100px"
-                                        src="{{ $tenders->preview_image == '' ? url('no-image.jpg') : asset($tenders->preview_image) }}">
-                                </div>
-                            </div>
+                          
                             <div class="col-xl-10">
                                 <div class="mb-5">
                                     <label class="text-dark font-weight-medium" for="">Image</label>
@@ -59,18 +54,6 @@
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Tenders value</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text mdi  mdi-clipboard-text" id="mdi-account"></span>
-                                        </div>
-                                        <input type="text" class="form-control" name="value"
-                                            value="{{ $tenders->value }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="mb-5">
                                     <label class="text-dark font-weight-medium">Tenders Date</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -78,6 +61,18 @@
                                         </div>
                                         <input type="date" class="form-control" name="date"
                                             value="{{ $tenders->date }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium">Tenders value</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text mdi  mdi-clipboard-text" id="mdi-account"></span>
+                                        </div>
+                                        <input type="text" class="form-control" name="value"
+                                            value="{{ $tenders->value }}">
                                     </div>
                                 </div>
                             </div>
