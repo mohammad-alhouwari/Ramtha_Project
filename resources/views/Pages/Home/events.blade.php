@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="history-one__bottom">
-        <div class="history-one__wrap">
+        <div class="history-one__wrap events_wrap">
             <div class="history-one__shape-1">
                 {{-- <img src="assets/images/shapes/history-one-shape-1.png" alt=""> --}}
             </div>
@@ -31,7 +31,7 @@
                                                     </div>
                                                 </div>
                                                 {{-- event date --}}
-                                                <p class="history-one__date">{{ $event->date }}</p>
+                                                <p class="history-one__date">{{ \Illuminate\Support\Carbon::parse($event->date)->format(' M d ') }}</p>
                                             </div>
                                         </div><!-- /.swiper-slide -->
                                     @endforeach
@@ -53,21 +53,22 @@
                                         <div class="swiper-slide">
                                             <div class="history-one__content">
                                                 <div class="row">
-                                                    <div class="col-xl-6 col-lg-6" dir="rtl">
-                                                        <div class="history-one__content-left">
-                                                            {{-- title --}}
-                                                            <h4 class="history-one__content-title">{{ $event->title }}</h4>
-                                                            <p class="history-one__content-text">{{ $event->description }}</p>
-                                                            {{-- Add other event details as needed --}}
-                                                        </div>
-                                                    </div>
                                                     <div class="col-xl-6 col-lg-6">
                                                         <div class="history-one__content-right">
                                                             <div class="history-one__content-img">
-                                                                <img src="{{ asset('storage/' . $event->preview_image) }}" alt="{{ $event->title }}">
+                                                                <img src="{{ asset( $event->preview_image) }}" alt="{{ $event->title }}">
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6 col-lg-6" dir="rtl">
+                                                        <div class="history-one__content-left">
+                                                            {{-- title --}}
+                                                            <h4 class="history-one__content-title font-event">{{ $event->title }}</h4>
+                                                            <p class="history-one__content-text mobile-description ">{{ \Illuminate\Support\Str::limit($event->description, 100) }}</p>
+                                                            {{-- Add other event details as needed --}}
+                                                        </div>
+                                                    </div>
+                                                   
                                                 </div>
                                             </div>
                                         </div><!-- /.swiper-slide -->

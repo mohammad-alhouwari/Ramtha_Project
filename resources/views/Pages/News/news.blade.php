@@ -6,8 +6,6 @@
     <div class="stricky-header stricked-menu main-menu">
         <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
     </div><!-- /.stricky-header -->
-
-
     <!--Page Header Start-->
     <section class="page-header">
         <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/banner.jpeg );opacity:0.3">
@@ -16,7 +14,7 @@
             <div class="page-header__inner">
                 <h2>الأخبار</h2>
                 <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="{{ route('index') }}">الرئيسية</a></li>
                     <li><span>/</span></li>
                     <li><a href="{{ route('showAllNews') }}">الأخبار</a></li>
                 </ul>
@@ -52,7 +50,7 @@
                     <h1>اكتشف أخبار بلديةالرمثا</h1>
                 </div>
                 <br>
-                <div class="row">
+                <div class="row rownews">
                     <!--News One Single Start-->
                     @foreach ($news as $new)
                         <div class="col-xl-4 col-lg-4 news-div">

@@ -23,11 +23,10 @@ use App\Http\Controllers\ComplainController;
 
 /*-----------------------------Home Routes-----------------------------*/
 
-Route::controller(FrontendHomeController::class)->group(function () {
-    Route::get('/', 'index');
-});
 /*-----------------------------Home Routes End-----------------------------*/
-
+Route::controller(FrontendHomeController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+});
 /*----------------------------- President Routes Start -----------------------------*/
 Route::get('president', [FrontendPresidentController::class, 'index'])->name('president');
 /*----------------------------- President Routes End -----------------------------*/

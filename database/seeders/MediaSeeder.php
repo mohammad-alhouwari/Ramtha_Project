@@ -81,7 +81,6 @@ class MediaSeeder extends Seeder
                 'media_type' => 'image',
                 'news_id' => 1,
 
-
             ],
 
             [

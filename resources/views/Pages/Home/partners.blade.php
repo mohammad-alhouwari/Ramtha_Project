@@ -34,7 +34,7 @@
                         {{-- link --}}
                         <a href="{{ $partner->link }}" target="_blank">
                             {{-- logo --}}
-                            <img src="{{ asset($partner->logo) }}" style="max-height: 50px;">
+                            <img src="{{ asset($partner->logo) }}" style="max-height: 60px;">
                         </a>
                     </div>
                 </div>

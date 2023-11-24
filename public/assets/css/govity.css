@@ -5066,7 +5066,7 @@ ul {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
     padding: 10px 40px 20px;
-    height: 180px;
+    height: 200px;
 }
 
 .news-one__user-and-meta {
@@ -9290,6 +9290,9 @@ ul {
     position: relative;
     display: block;
     padding: 120px 0 0;
+}
+.events_wrap{
+    height: 700px;
 }
 
 .history-one__top {
@@ -14573,10 +14576,12 @@ ul {
 .row {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 60px;
+    
     margin-bottom: 10px; /* Adjust margin between rows */
 }
-
+.rownews{
+    row-gap: 100px;
+}
 .gallery-item {
     width: 320px; /* 25% width for each item with margin */
     margin: 5px; /* Adjust margin for spacing */
