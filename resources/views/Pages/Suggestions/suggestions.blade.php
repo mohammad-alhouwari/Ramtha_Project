@@ -4,8 +4,9 @@
 @section('content')
     <!-- Ideas Submission Page Start -->
     @include('sweetalert::alert')
-
+    <br><br>
     <section class="contact-two" dir="rtl">
+    
         <div class="contact-two__bg">
         </div>
         <div class="container" dir="rtl">

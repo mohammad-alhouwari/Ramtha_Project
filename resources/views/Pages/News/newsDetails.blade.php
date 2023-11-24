@@ -31,7 +31,7 @@
                             data-owl-options='{
                                     "items": 3,
                                     "margin": 30,
-                                    "smartSpeed": 3000,
+                                    "smartSpeed": 700,
                                     "loop": true,
                                     "autoplay": false,  <!-- Change this line to enable autoplay -->
                                     "autoplayTimeout": 6000,  <!-- Set the autoplay timeout (in milliseconds) -->
@@ -51,8 +51,8 @@
                             @foreach ($newsImages as $newsImage)
                                 <div class="brand-one__single">
                                     <div class=" items">
-                                        <img src="{{ asset($newsImage->media) }}" alt="Image1" style="margin: 10px"
-                                            width="200px" />
+                                        <img src="{{ asset($newsImage->media) }}" alt="Image1"
+                                            />
                                     </div>
                                 </div>
                             @endforeach
