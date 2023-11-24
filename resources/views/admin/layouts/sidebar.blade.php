@@ -123,6 +123,12 @@
                         <span class="nav-text">Landmarks</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['municipality-info-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('municipality-info-admin.index') }}">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span class="nav-text">Municipality Info</span>
+                    </a>
+                </li>
                 {{-- <li class="{{ set_active(['teams.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('teams.index') }}">
                         <i class="mdi mdi-account-group"></i>
