@@ -72,16 +72,31 @@
                                             {{ $new->title }}
                                         </a>
                                     </h3>
-                                    <div class="news-one__btn">
-                                        <a href="{{ route('showDetailsNews', $new->id) }}">اقرأ المزيد<i
-                                                class="icon-left-arrow"></i></a>
-                                    </div>
+                                    {{-- Check if the item's description exists --}}
+                                    @if ($new->description)
+                                    {{-- Split the description into words --}}
+                                    @php
+                                        $words = explode(' ', $new->description);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                    @endphp
+                                
+                                    {{-- Display the first 10 words and 'Read more' link --}}
+                                    <p>
+                                        {{ $limitedWords }}
+                                        @if (count($words) > 10)
+                                            ... 
+                                        @endif
+                                        <a style="color: var(--govity-base)"
+                                            href="{{ route('showDetailsNews', $new->id) }}">اقرأ المزيد</a>
+                                    </p>
+                                @endif
+
                                 </div>
                             </div>
                         </div>
                     @endforeach
-                    
-               
+
+
 
                 </div>
             </div>

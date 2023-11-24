@@ -63,6 +63,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 
 
+
 </head>
 
 <body class="custom-cursor">
@@ -114,7 +115,7 @@
                                                 <i class="fas fa-clock"></i>
                                             </div>
                                             <div class="text">
-                                                <p>Open hours: Sun - Fri 8.00 am - 6.00 pm</p>
+                                                <p>Open hours: Mon - Fri 8.00 am - 6.00 pm</p>
                                             </div>
                                         </li>
                                     </ul>

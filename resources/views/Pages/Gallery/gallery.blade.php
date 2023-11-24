@@ -22,7 +22,35 @@
     </section>
     <!--Page Header End-->
 
+    @if ($uniqueGallery->isEmpty())
+        <section class="department-page">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">ألبوماتنا</span>
+                    <h2 class="section-title__title">لا يوجد ألبومات لعرضها</h2>
+                </div>
+                <div class="row">
+                    <div class="text-center">
+                        <a href="{{ url('/') }}" class="btn thm-btn">العودة الى الصفحة الرئيسية</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @else
+
+   
 <section class="portfolio-page"> 
+    <div class="section-title text-center" >
+        <div class="section-title__icon">
+            <span class="fa fa-star"></span>
+        </div>
+        <span class="section-title__tagline" >ألبوماتنا</span>
+        <h1>اكتشف معرض صور بلديةالرمثا</h1>
+        <br>
+    </div>
     <div class="portfolio-page-items" >
         @foreach($uniqueGallery as $item)
         <a class="album-items" href="{{ route('single_gallery', [
@@ -64,6 +92,7 @@
 
     
 </section>
+@endif
 
 @endsection
 
