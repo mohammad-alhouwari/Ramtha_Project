@@ -14465,6 +14465,16 @@ ul {
     transition-delay: 500ms;
     opacity: 1;
 }
+.investments-page__content{
+    visibility: visible;
+        transform: translateY(0%);
+        transition-delay: 500ms;
+        opacity: 1;
+            position: absolute;
+                bottom: 30px;
+                right: 0;
+                z-index: 2;
+}
 
 .portfolio-page__sub-title {
     position: relative;
