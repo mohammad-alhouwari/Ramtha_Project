@@ -1,24 +1,8 @@
 @extends('Layout.master')
-@section('title', 'Tenders')
-
+@section('title', 'العطاءات')
+@section('header_title', 'العطاءات')
 @section('content')
 
-
-
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/tender.jpg)">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2> تفاصيل العطاء</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li>العطاءات</li>
-                </ul>
-            </div>
-        </div>
-    </section>
     <section class="contact-page">
         <div class="container">
             <div class="contact-page__top">
@@ -33,11 +17,12 @@
 
                                 <h2 class="section-title__title"  style="direction: rtl; color:#0063ae; "  >{{ $tenders->title }}</h2>
                             </div>
-                            <p class="contact-page__text text-center" style="direction: rtl; ">{{ $tenders->description }}</p>
+                            <p class="contact-page__text text-center" style="direction: rtl; ">{{ $tenders->description }}
+                            </p>
 
                             <ul class="list-unstyled contact-page__contact-list"  >
                                 <li style="direction: rtl;">
-                                    <div  class="icon">
+                                    <div class="icon">
                                         <span class="fas fa-money-bill"></span>
                                     </div>
                                     <div class="content" style="margin-right: 15px" >
@@ -60,7 +45,9 @@
                                     </div>
                                     <div class="content" style="margin-right: 15px">
                                         <p>تحميل الصورة :</p>
-                                        <a href="{{ $tenders->preview_image }}" download><h4>تحميل</h4></a>
+                                        <a href="{{ $tenders->preview_image }}" download>
+                                            <h4>تحميل</h4>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
@@ -101,6 +88,6 @@
 
             </center>
         </div>
-        
+
     </section>
 @endsection

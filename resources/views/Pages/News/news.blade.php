@@ -1,28 +1,9 @@
 @extends('layout.master')
 @section('title', 'الأخبار')
+@section('header_title', 'الاخبار')
+
 @section('content')
-    <!--Page Header End-->
 
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
-
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/banner.jpeg );opacity:0.3">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>الأخبار</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li><a href="{{ route('showAllNews') }}">الأخبار</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
     <!--News Page Start-->
     @if ($news->isEmpty())
         <section class="department-page">
@@ -74,22 +55,22 @@
                                     </h3>
                                     {{-- Check if the item's description exists --}}
                                     @if ($new->description)
-                                    {{-- Split the description into words --}}
-                                    @php
-                                        $words = explode(' ', $new->description);
-                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
-                                    @endphp
-                                
-                                    {{-- Display the first 10 words and 'Read more' link --}}
-                                    <p>
-                                        {{ $limitedWords }}
-                                        @if (count($words) > 10)
-                                            ... 
-                                        @endif
-                                        <a style="color: var(--govity-base)"
-                                            href="{{ route('showDetailsNews', $new->id) }}">اقرأ المزيد</a>
-                                    </p>
-                                @endif
+                                        {{-- Split the description into words --}}
+                                        @php
+                                            $words = explode(' ', $new->description);
+                                            $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                        @endphp
+
+                                        {{-- Display the first 10 words and 'Read more' link --}}
+                                        <p>
+                                            {{ $limitedWords }}
+                                            @if (count($words) > 10)
+                                                ...
+                                            @endif
+                                            <a style="color: var(--govity-base)"
+                                                href="{{ route('showDetailsNews', $new->id) }}">اقرأ المزيد</a>
+                                        </p>
+                                    @endif
 
                                 </div>
                             </div>

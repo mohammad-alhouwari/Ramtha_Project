@@ -36,6 +36,7 @@ class ProjectController extends Controller
             'description' => ['required', 'string'],
             'percentage' => ['required', 'numeric', 'between:0,100'],
             'preview_image' => ['required'],
+            'status'=>['required'],
         ]);
 
         $imagePath = $this->uploadImage($request, 'preview_image', 'uploads');
@@ -45,6 +46,7 @@ class ProjectController extends Controller
             'description' => $request->input('description'),
             'percentage' => $request->input('percentage'),
             'preview_image' => $imagePath,
+            'status'=>$request->input('status'),
         ]);
 
         $notification = array(
@@ -101,11 +103,6 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         try {
-            $projectMedia = Media::where('project_id', $id)->get();
-            foreach ($projectMedia as $media) {
-                $this->deleteImage($media->media);
-                $media->delete();
-            }
             $project = Project::findOrFail($id);
             $this->deleteImage($project->preview_image);
             $project->delete();
@@ -114,7 +111,7 @@ class ProjectController extends Controller
             return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
         } catch (\Exception $e) {
             Log::error("Error deleting project: {$e->getMessage()}");
-            return response(['status' => 'error', 'message' => 'An error occurred while deleting.']);
+            return response(['status' => 'error', 'message' => 'You Must have delete gallery first']);
         }
     }
 }
