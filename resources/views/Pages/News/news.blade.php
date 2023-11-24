@@ -76,15 +76,14 @@
                             </div>
                         </div>
                     @endforeach
-                    
-                    {{ $news->links() }}
-
-
-
-
                 </div>
             </div>
         </section>
     @endif
+    <center>
+        <div style="padding-bottom: 10px; font-size: 14px; text-align: center; display: flex; justify-content: center;">
+            {{ $news->links() }}
+        </div>
+    </center>
     <!--News Page End-->
 @endsection

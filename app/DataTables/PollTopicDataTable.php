@@ -24,13 +24,16 @@ class PollTopicDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
-                $editBtn = "<a href='" . route('pollTopics-admin.edit', $query->id) . "' class='btn btn-success m-1'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='" . route('pollTopics-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item m-1'><i class='fas fa-trash-alt'></i></a>";
-                $showBtn = "<a href='" . route('pollTopics-admin.show', $query->id) . "' class='btn btn-info my-2 show-item m-1'><i class='fa-solid fa-circle-info'></i></a>";
-                return $editBtn . $showBtn . $deleteBtn;
+                $editBtn = "<a href='" . route('pollTopics-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='" . route('pollTopics-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
+                $showBtn = "<a href='" . route('pollTopics-admin.show', $query->id) . "' class='btn btn-info my-2 show-item'><i class='fa-solid fa-circle-info'></i></a>";
+                return $showBtn . $editBtn . $deleteBtn;
             })
             ->addColumn('image', function ($query) {
                 return "<img width='100px' src='" . asset($query->image) . "'></img>";
+            })
+            ->addColumn('description', function ($query) {
+                return \Illuminate\Support\Str::limit($query->description, 120, ' . . . ');
             })
             ->addColumn('status', function ($query) {
                 $checked = $query->status == 'on' ? 'on' : 'off';
@@ -41,10 +44,7 @@ class PollTopicDataTable extends DataTable
                     return "<span class='badge badge-danger'>Inactive</span>";
                 }
             })
-            ->addColumn('description', function ($query) {
-                return \Illuminate\Support\Str::limit($query->description, 120, ' . . . ');
-            })
-            ->rawColumns(['action', 'image'])
+            ->rawColumns(['action', 'image', 'status'])
             ->setRowId('id');
     }
 

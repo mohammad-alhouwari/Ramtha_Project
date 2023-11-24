@@ -94,6 +94,7 @@ Route::prefix('admin')->middleware('auth')->group(
         Route::get('medias-admin/create/project/{project_id}', [BackendMediaController::class, 'createProject'])->name('medias-admin.create.project');
         Route::get('medias-admin/create/news/{news_id}', [BackendMediaController::class, 'createNews'])->name('medias-admin.create.news');
         Route::get('medias-admin/create/event/{event_id}', [BackendMediaController::class, 'createEvent'])->name('medias-admin.create.event');
+        Route::get('medias-admin/create/landmark/{landmark_id}', [BackendMediaController::class, 'createLandmark'])->name('medias-admin.create.landmark');
 
         //** Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');

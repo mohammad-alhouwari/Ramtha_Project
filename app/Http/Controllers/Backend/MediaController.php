@@ -17,6 +17,7 @@ class MediaController extends Controller
         $projectId = $request->get('project_id');
         $newsId = $request->get('news_id');
         $eventId = $request->get('event_id');
+        $landmarkId = $request->get('landmark_id');
 
         if ($newsId != null) {
             $dataTables->setNewsId($newsId);
@@ -27,6 +28,9 @@ class MediaController extends Controller
         } elseif ($eventId != null) {
             $dataTables->setEventId($eventId);
             return $dataTables->render('admin.pages.medias.index', compact('eventId'));
+        } elseif ($landmarkId != null) {
+            $dataTables->setLandmarkId($landmarkId);
+            return $dataTables->render('admin.pages.medias.index', compact('landmarkId'));
         }
     }
 
@@ -42,6 +46,10 @@ class MediaController extends Controller
     public function createEvent($event_id)
     {
         return view('admin.pages.medias.create', compact('event_id'))->with('type', 'event');
+    }
+    public function createLandmark($landmark_id)
+    {
+        return view('admin.pages.medias.create', compact('landmark_id'))->with('type', 'landmark');
     }
 
     public function store(Request $request)
@@ -76,7 +84,8 @@ class MediaController extends Controller
                 ]);
             }
             return redirect()->route('medias-admin.index', ['news_id' => $newsId])->with($notification);
-        } 
+        }
+        //** Add medias in Events */
         else if ($eventId = $request->input('event_id')) {
             foreach ($imagePath as $imagePath) {
                 Media::create([
@@ -86,6 +95,17 @@ class MediaController extends Controller
                 ]);
             }
             return redirect()->route('medias-admin.index', ['event_id' => $eventId])->with($notification);
+        }
+        //** Add medias in Landmarks */
+        else if ($landmarkId = $request->input('landmark_id')) {
+            foreach ($imagePath as $imagePath) {
+                Media::create([
+                    'landmark_id' => $landmarkId,
+                    'media_type' => 'image',
+                    'media' => $imagePath,
+                ]);
+            }
+            return redirect()->route('medias-admin.index', ['landmark_id' => $landmarkId])->with($notification);
         }
         return redirect()->route('medias-admin.index')->withErrors(['error' => 'Invalid request']);
     }
