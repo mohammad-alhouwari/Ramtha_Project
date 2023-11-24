@@ -41,7 +41,8 @@
                                 <div class="event-three__meta-and-title">
                                     <ul class="event-three__meta list-unstyled">
                                     </ul>
-                                    <h3 class="event-three__title text-center"><a href="{{ route('showPoll', $PollTopic->id) }}">{{ $PollTopic->title }}</a>
+                                    <h3 class="event-three__title text-center"><a
+                                            href="{{ route('showPoll', $PollTopic->id) }}">{{ $PollTopic->title }}</a>
                                     </h3>
                                 </div>
                                 <div class="event-three__btn-box">
@@ -61,5 +62,5 @@
                     </div>
                     <!--Event Three Single End-->
                 @endforeach
-
-            @endsection
+            </div>
+        @endsection

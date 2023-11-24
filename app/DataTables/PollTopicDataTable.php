@@ -24,13 +24,25 @@ class PollTopicDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
-                $editBtn = "<a href='" . route('pollTopics-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='" . route('pollTopics-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
-                $showBtn = "<a href='" . route('pollTopics-admin.show', $query->id) . "' class='btn btn-info my-2 show-item'><i class='fa-solid fa-circle-info'></i></a>";
+                $editBtn = "<a href='" . route('pollTopics-admin.edit', $query->id) . "' class='btn btn-success m-1'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='" . route('pollTopics-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item m-1'><i class='fas fa-trash-alt'></i></a>";
+                $showBtn = "<a href='" . route('pollTopics-admin.show', $query->id) . "' class='btn btn-info my-2 show-item m-1'><i class='fa-solid fa-circle-info'></i></a>";
                 return $editBtn . $showBtn . $deleteBtn;
             })
             ->addColumn('image', function ($query) {
                 return "<img width='100px' src='" . asset($query->image) . "'></img>";
+            })
+            ->addColumn('status', function ($query) {
+                $checked = $query->status == 'on' ? 'on' : 'off';
+
+                if ($checked == 'on') {
+                    return "<span class='badge badge-success'>Active</span>";
+                } else {
+                    return "<span class='badge badge-danger'>Inactive</span>";
+                }
+            })
+            ->addColumn('description', function ($query) {
+                return \Illuminate\Support\Str::limit($query->description, 120, ' . . . ');
             })
             ->rawColumns(['action', 'image'])
             ->setRowId('id');
@@ -82,10 +94,11 @@ class PollTopicDataTable extends DataTable
             Column::make('image'),
             Column::make('title'),
             Column::make('description'),
+            Column::make('status'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
-                ->width(60)
+                ->width(230)
                 ->addClass('text-center'),
         ];
     }
