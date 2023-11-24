@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('tenders', function (Blueprint $table) {
             $table->id();
-            $table->text('preview_image');
+            $table->text('preview_image')->nullable();
+            $table->text('preview_image2')->nullable();
             $table->text('title');
             $table->text('value');
             $table->text('description')->nullable();

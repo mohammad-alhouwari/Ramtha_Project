@@ -1,5 +1,6 @@
 @extends('Layout.master')
-@section('title', 'Ideas Submission')
+@section('title', 'الافكار والمبادرات')
+@section('header_title', 'الافكار والمبادرات')
 @section('content')
     <!-- Ideas Submission Page Start -->
     @include('sweetalert::alert')
@@ -17,7 +18,7 @@
                     نظرًا لاهتمامنا بالابتكار وتحفيز ثقافة الأفكار الجديدة، قمنا بتيسير عملية تقديم الأفكار والمبادرات عبر
                     موقعنا.
                     هدفنا هو توفير الفرصة لكم للمساهمة بأفكاركم الرائعة. فأيها المواطن الكريم، أيتها المواطنة الكريمة، حان
-                     وقتكم لتقديم أفكاركم ومساهماتكم إلى بلدية الرمثا الكبرى.
+                    وقتكم لتقديم أفكاركم ومساهماتكم إلى بلدية الرمثا الكبرى.
                     يُمكنكم تقديم أي فكرة من أي مكان وفي أي وقت.
                 </p>
 
@@ -32,10 +33,11 @@
                             <label for="name">الاسم</label>
                             <span style="color: red;">*</span>
                             <div class="contact-two__input-box">
-                                <input type="text" placeholder="الاسم" name="name" value="{{old('name')}}" id="name">
+                                <input type="text" placeholder="الاسم" name="name" value="{{ old('name') }}"
+                                    id="name">
                                 @error('name')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 
@@ -45,10 +47,11 @@
                             <label for="phone">رقم الهاتف</label>
                             <span style="color: red;">*</span>
                             <div class="contact-two__input-box">
-                                <input type="text" placeholder="رقم الهاتف" name="phone" value="{{old('phone')}}" id="phone">
-                                 @error('phone')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
+                                <input type="text" placeholder="رقم الهاتف" name="phone" value="{{ old('phone') }}"
+                                    id="phone">
+                                @error('phone')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -61,10 +64,11 @@
                             <label for="sector">القطاع</label>
                             <span style="color: red;">*</span>
                             <div class="contact-two__input-box">
-                                <input type="text" placeholder="القطاع" name="sector" value="{{old('sector')}}" id="sector">
-                                 @error('sector')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
+                                <input type="text" placeholder="القطاع" name="sector" value="{{ old('sector') }}"
+                                    id="sector">
+                                @error('sector')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 
@@ -72,10 +76,11 @@
                             <label for="place">المكان</label>
                             <span style="color: red;">*</span>
                             <div class="contact-two__input-box">
-                                <input type="text" placeholder="المكان" name="place" value="{{old('place')}}" id="place">
-                                 @error('place')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
+                                <input type="text" placeholder="المكان" name="place" value="{{ old('place') }}"
+                                    id="place">
+                                @error('place')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -86,10 +91,10 @@
                             <label for="description">تفاصيل الفكرة</label>
                             <span style="color: red;">*</span>
                             <div class="contact-two__input-box text-message-box">
-                                <textarea name="description" placeholder="تفاصيل الفكرة" id="description">{{old('description')}}</textarea>
-                                 @error('description')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
+                                <textarea name="description" placeholder="تفاصيل الفكرة" id="description">{{ old('description') }}</textarea>
+                                @error('description')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
                             <p style="text-align: justify; margin-top: 6%">
                                 ملاحظة: جميع الحقول المسبوقة بـــ

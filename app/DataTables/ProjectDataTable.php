@@ -34,7 +34,6 @@ class ProjectDataTable extends DataTable
             })
             ->addColumn('status', function ($query) {
                 $checked = $query->status == 'on' ? 'on' : 'off';
-
                 if ($checked == 'on') {
                     return "<span class='badge badge-success'>Active</span>";
                 } else {
