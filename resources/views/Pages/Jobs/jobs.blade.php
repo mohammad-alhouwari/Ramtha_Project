@@ -2,26 +2,7 @@
 @section('title', 'فرص عمل')
 
 @section('content')
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
 
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>فرص العمل</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li><a href="{{ route('showAllInvestments') }}">فرص العمل</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
     <!--Page Header End-->
     @php use Illuminate\Support\Str; @endphp
 
@@ -53,13 +34,14 @@
                             <div class="feature-four__single">
                                 <div class="feature-four__img-box">
                                     <div class="feature-four__img">
-                                        <img src="{{$job->image}}" alt="">
+                                        <img src="{{ $job->image }}" alt="">
                                     </div>
                                     <div class="feature-four__icon">
-                                        <i class=" fs-3 text-white fas fa-briefcase"></i>                                    </div>
+                                        <i class=" fs-3 text-white fas fa-briefcase"></i>
+                                    </div>
                                 </div>
                                 <h3 class="feature-four__title">
-                                    <a href="{{route('showJob', $job->id)}}">{{$job->title}}</a>
+                                    <a href="{{ route('showJob', $job->id) }}">{{ $job->title }}</a>
                                 </h3>
                             </div>
                         </div>

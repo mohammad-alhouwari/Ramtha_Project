@@ -1,30 +1,7 @@
 @extends('Layout.master')
-@section('title', 'Polls')
-
+@section('title', 'استطلاعات الرأي')
+@section('header_title', 'استطلاعات الرأي')
 @section('content')
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
-
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url({{ url('assets/images/backgrounds/page-header-bg.jpg') }})">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>{{ $PollTopic->title }}</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="{{ redirect('/') }}">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li><a href="{{ route('showAllPolls') }}">إستطلاعات الرأي</a></li>
-                    <li><span>/</span></li>
-                    <li>{{ $PollTopic->title }}</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
 
     <!--Event Details Start-->
     <section class="event-details">
@@ -93,8 +70,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="contact-one__btn-box">
-                                <button style="color:white;background-color: rgb(26,115,232);border-radius: 7px;"
-                                    type="submit" class="thm-btn contact-one__btn">شارك رأيك</button>
+                                <button type="submit" class="thm-btn contact-one__btn">شارك رأيك</button>
                             </div>
                         </div>
                     </div>

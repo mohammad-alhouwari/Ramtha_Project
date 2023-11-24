@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\TenderController as BackendTenderController;
 use App\Http\Controllers\Backend\JobController as BackendJobController;
 use App\Http\Controllers\Backend\MembersController as BackendMembersController;
 use App\Http\Controllers\Backend\PollTopicController as BackendPollTopicController;
+use App\Http\Controllers\Backend\LandmarksController as BackendLandmarksController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -74,6 +75,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //Members Route
         Route::resource('members-admin', BackendMembersController::class);
+
+        //Landmarks Route
+        Route::resource('landmarks-admin', BackendLandmarksController::class);
 
         //** All Medias Route 
         Route::get('medias', [BackendMediaController::class, 'showAllMedia']);

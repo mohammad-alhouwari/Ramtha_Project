@@ -87,10 +87,10 @@
             <nav class="main-menu">
                 <div class="main-menu__wrapper">
                     <div class="main-menu__wrapper-inner">
-                        <div class="main-menu__logo">
+                        {{-- <div class="main-menu__logo">
                             <a href="index.html"><img src="{{ asset('assets/images/ramtha-logo-rbg.png') }}"
                                     alt="" width="100px"></a>
-                        </div>
+                        </div> --}}
                         <div class="main-menu__top">
                             <div class="main-menu__top-inner">
                                 <div class="main-menu__top-left">
@@ -275,3 +275,31 @@
                 </div>
             </nav>
         </header>
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+
+        @if (!request()->is('/'))
+            <!--Page Header Start-->
+            <section class="page-header">
+                <div class="page-header-bg"
+                    style="background-image: url({{ asset('assets/images/HeroSection.png') }})">
+                </div>
+                <div class="container">
+                    <div class="page-header__inner">
+                        <h2>@yield('header_title')</h2>
+                        <ul class="thm-breadcrumb list-unstyled" style="padding-inline-start:0px">
+                            <li><a href="{{ url('/') }}">الرئيسية</a></li>
+                            <li><span>/</span></li>
+                            <li>@yield('header_title')</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!--Page Header End-->
+        @endif

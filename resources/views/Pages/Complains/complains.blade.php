@@ -1,5 +1,6 @@
 @extends('Layout.master')
-@section('title', 'Complains')
+@section('title', 'الشكاوي والمقترحات')
+@section('header_title', 'الشكاوي والمقترحات')
 @section('content')
 
     <!--Contact Page Contact Start-->

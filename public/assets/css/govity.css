@@ -5066,7 +5066,7 @@ ul {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
     padding: 10px 40px 20px;
-    height: 180px;
+    height: 200px;
 }
 
 .news-one__user-and-meta {
@@ -7834,7 +7834,12 @@ ul {
     font-size: 22px;
     font-weight: 700;
     line-height: 30px;
-    margin-top: 46px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    height: 50px;
 }
 
 .feature-four__title a {
@@ -9291,6 +9296,9 @@ ul {
     display: block;
     padding: 120px 0 0;
 }
+.events_wrap{
+    height: 700px;
+}
 
 .history-one__top {
     position: relative;
@@ -9602,19 +9610,19 @@ ul {
     bottom: 0;
     left: 0;
     right: 0;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     z-index: -1;
-    /* height: 258px; */
+    height: 445px !important;
 }
 
 .page-header__inner {
     position: relative;
     display: block;
     text-align: center;
-    padding: 149px 0 150px;
+    padding: 225px 0 150px;
     z-index: 15;
 }
 
@@ -10617,6 +10625,7 @@ ul {
     position: relative;
     display: block;
     margin-top: 17px;
+    margin-right: -30px;
 }
 
 .contact-page__contact-list li {
@@ -13807,7 +13816,7 @@ ul {
 .our-history__img {
     position: relative;
     display: block;
-    transform: rotate(-12deg);
+    /* transform: rotate(-12deg); */
 }
 
 .our-history__img img {
@@ -13978,7 +13987,7 @@ ul {
 .our-history__img-two {
     position: relative;
     display: block;
-    transform: rotate(-12deg);
+    /* transform: rotate(-12deg); */
 }
 
 .our-history__img-two img {
@@ -14573,10 +14582,12 @@ ul {
 .row {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 60px;
+    
     margin-bottom: 10px; /* Adjust margin between rows */
 }
-
+.rownews{
+    row-gap: 100px;
+}
 .gallery-item {
     width: 320px; /* 25% width for each item with margin */
     margin: 5px; /* Adjust margin for spacing */

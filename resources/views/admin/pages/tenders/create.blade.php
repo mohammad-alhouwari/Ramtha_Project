@@ -33,6 +33,28 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-xl-2">
+                                <div class="mb-5">
+                                    <img id="showImage" width="100px" src="{{ url('no-image.jpg') }}">
+                                </div>
+                            </div>
+                            <div class="col-xl-10">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium" for="">Image2</label>
+                                    <div class="mb-5">
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text mdi mdi-folder-image" id="mdi-account"></span>
+                                            </div>
+                                            <input type="file" class="form-control" name="preview_image2" id="image2">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-xl-12">
                                 <div class="mb-5">
                                     <label class="text-dark font-weight-medium">Tenders Title</label>
