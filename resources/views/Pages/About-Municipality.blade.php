@@ -31,9 +31,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6" dir="rtl">
-                                            <br>
-                                            <br>
-                                            <br>
+
                                             <div class="history-one__content-right">
                                                 <h4 class="">نبذة عن البلدية</h4>
                                                 <p class="history-one__content-text">
