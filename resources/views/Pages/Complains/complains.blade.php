@@ -4,7 +4,7 @@
 @section('content')
 
     <!--Contact Page Contact Start-->
-    <br><br>
+<br><br>
     <section class="contact-two" dir="rtl">
         @include('sweetalert::alert')
 

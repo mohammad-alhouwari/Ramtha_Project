@@ -12,7 +12,8 @@ class PollTopic extends Model
         'title',
         'image',
         'description',
-        'end_date'
+        'end_date',
+        'status'
     ];
 
 

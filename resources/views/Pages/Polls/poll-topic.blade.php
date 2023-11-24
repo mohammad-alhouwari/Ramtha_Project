@@ -41,5 +41,5 @@
                     </div>
                     <!--Event Three Single End-->
                 @endforeach
-
-            @endsection
+            </div>
+        @endsection

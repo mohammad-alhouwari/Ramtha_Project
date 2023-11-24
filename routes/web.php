@@ -40,7 +40,6 @@ Route::get('organizational-chart', function () {
 /*------------------------ Organizational Chart Routes End ------------------------*/
 
 /*------------------------ About the Municipality Routes Start ------------------------*/
-Route::resource('about-municipality', ComplainController::class);
 Route::get('about-municipality', [FrontendMembersController::class, 'index'])->name('about-municipality');
 /*------------------------ About the Municipality Routes End ------------------------*/
 

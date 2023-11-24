@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Landmark;
+use App\Models\Media;
 use Illuminate\Http\Request;
 
 class LandmarksController extends Controller
@@ -18,7 +19,7 @@ class LandmarksController extends Controller
     public function showLandmark(Landmark $Landmark, $id)
     {
         $landmark = Landmark::findOrFail($id);
-        // $LandmarkImages = Media::where('Landmark_id', $id)->where('status', 'on')->where('media_type', 'image')->get();
-        return view('Pages.Landmarks.single-landmark', compact('landmark')); //, 'LandmarkImages', 'latestLandmarks'));
+        $landmarkImages = Media::where('landmark_id', $id)->where('status', 'on')->where('media_type', 'image')->get();
+        return view('Pages.Landmarks.single-landmark', compact('landmark', 'landmarkImages'));
     }
 }
