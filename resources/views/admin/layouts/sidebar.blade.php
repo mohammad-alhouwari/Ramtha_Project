@@ -55,10 +55,17 @@
                         <span class="nav-text">Events</span>
                     </a>
                 </li>
+
                 <li class="{{ set_active(['EventParticipant-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('EventParticipant-admin.index') }}">
                         <i class="fa-regular fa-calendar-days"></i>
                         <span class="nav-text">Event Participants</span>
+                    </a>
+                </li>
+                <li class="{{ set_active(['pollTopics-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('pollTopics-admin.index') }}">
+                        <i class="mdi mdi-thumbs-up-down"></i>
+                        <span class="nav-text">Polls Topics</span>
                     </a>
                 </li>
 

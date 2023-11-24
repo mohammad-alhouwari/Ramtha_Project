@@ -15,6 +15,8 @@ use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentContro
 use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
 use App\Http\Controllers\Frontend\ComplainController as FrontendComplainController;
+use App\Http\Controllers\Frontend\PollController as FrontendPollController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -91,6 +93,15 @@ Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
 /*----------------------------- Event Routes End -----------------------------*/
+
+/*----------------------------- Poll Routes Start -----------------------------*/
+Route::controller(FrontendPollController::class)->group(function () {
+    Route::get('polls', 'showAllPolls')->name('showAllPolls');
+    Route::get('poll/{id}', 'showPoll')->name('showPoll');
+    Route::post('poll/{id}','userPoll')->name('userPoll');
+
+});
+/*----------------------------- Poll Routes End -----------------------------*/
 
 /*------------------------------ Tenders Routes Start ------------------------------*/
 Route::controller(FrontendTendersController::class)->group(function () {
