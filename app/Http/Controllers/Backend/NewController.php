@@ -8,7 +8,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use App\Traits\ImageUploadTrait;
 use App\DataTables\NewsDataTable;
-
+use Illuminate\Support\Facades\Log;
 class NewController extends Controller
 {
     use ImageUploadTrait;
@@ -28,6 +28,7 @@ class NewController extends Controller
 
     public function store(Request $request)
     {
+ 
         // Data Validate
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
@@ -93,15 +94,24 @@ class NewController extends Controller
 
     public function destroy($id)
     {
-        $event = News::findOrFail($id);
-        $media=Media::where('news_id',$id)->first();
-        if($media!=null){
-            return response(['status' => 'success', 'message' => 'You Should Remove the  gallery First!']);
-        }
-        else{
-        $this->deleteImage($event->preview_image);
-        $event->delete();
+        try {
+            $event = News::findOrFail($id);
+            $this->deleteImage($event->preview_image);
+            $event->delete();
 
-        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);}
+
+            return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+        } catch (\Exception $e) {
+            Log::error("Error deleting project: {$e->getMessage()}");
+            return response(['status' => 'error', 'message' => 'You Must have delete gallery first']);
+        }
+        // if($media!=null){
+        //     return response(['status' => 'success', 'message' => 'You Should Remove the  gallery First!']);
+        // }
+        // else{
+        // $this->deleteImage($event->preview_image);
+        // $event->delete();
+
+        // return response(['status' => 'success', 'message' => 'Deleted Successfully!']);}
     }
 }
