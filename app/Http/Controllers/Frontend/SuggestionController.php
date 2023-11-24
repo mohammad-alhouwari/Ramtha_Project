@@ -51,7 +51,7 @@ class SuggestionController extends Controller
 
             'phone.required' => 'الرجاء إدخال رقم الهاتف.',
             'phone.string' => 'يجب أن يكون رقم الهاتف نصًا.',
-            'phone.max' => 'رقم الهاتف يجب ألا يتجاوز 20 حرفًا.',
+            'phone.max' => 'رقم الهاتف يجب ألا يتجاوز 20 رقمًا.',
 
             'description.required' => 'الرجاء إدخال الوصف.',
             'description.string' => 'يجب أن يكون الوصف نصًا.',
@@ -75,7 +75,7 @@ class SuggestionController extends Controller
 
         ]);
 
-        Alert::success('Success', 'Your Suggestion is Submitted!');
+        Alert::success('تم بنجاح', 'تقديم فكرة مُبادرتك!');
 
         return redirect()->route('suggestions.index');
     }

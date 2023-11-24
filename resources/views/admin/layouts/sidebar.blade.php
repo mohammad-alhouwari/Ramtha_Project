@@ -117,6 +117,10 @@
                         <span class="nav-text">Suggestions</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['ownership-transfer-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('ownership-transfer-admin.index') }}">
+                        <i class="mdi mdi-account-arrow-right-outline"></i>
+                        <span class="nav-text">Ownership Transfers</span>
                 <li class="{{ set_active(['landmarks-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('landmarks-admin.index') }}">
                         <i class="mdi mdi-store"></i>
