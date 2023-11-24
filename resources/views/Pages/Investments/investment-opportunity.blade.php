@@ -1,5 +1,5 @@
 @extends('Layout.master')
-@section('title', 'Projects')
+@section('title', 'الفُرص الإستثمارية')
 
 @section('content')
     <div class="stricky-header stricked-menu main-menu">
