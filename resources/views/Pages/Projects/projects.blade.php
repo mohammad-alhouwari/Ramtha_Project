@@ -55,11 +55,11 @@
                 </div>
                 <div class="row">
                     @foreach ($projects as $project)
-                        <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="col-xl-4 col-lg-3 col-md-6">
                             <div class="department-two__single">
                                 <div class="department-two__img-box">
                                     <div class="department-two__img">
-                                        <img src="{{ $project->preview_image }}" alt="" height="300px">
+                                        <img src="{{ $project->preview_image }}" alt="" height="400px">
                                     </div>
                                     <div class="department-two__content">
                                         <div class="department-two__icon">

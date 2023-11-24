@@ -4975,10 +4975,10 @@ ul {
     z-index: 1;
 }
 
-.news-div{
-height: 390px;
+.news-div {
+    height: 390px;
 }
-.news-img{
+.news-img {
     height: 240px;
 }
 
@@ -6900,7 +6900,7 @@ height: 390px;
     align-items: center;
     justify-content: center;
     top: -23px;
-    right: 20px;
+    right: 95px;
     width: 46px;
     height: 46px;
     background-color: var(--govity-base);
@@ -6947,7 +6947,6 @@ height: 390px;
 .event-img {
     height: 240px;
 }
-
 
 .event-two__img {
     position: absolute;
@@ -8408,7 +8407,6 @@ height: 390px;
     position: relative;
     display: flex;
     align-items: center;
-  
 }
 
 .event-three__meta li {
@@ -8442,7 +8440,6 @@ height: 390px;
 .event-three__meta li .text p {
     font-size: 14px;
 }
-
 
 .event-three__title {
     font-size: 24px;
@@ -8491,7 +8488,6 @@ height: 390px;
     background-color: var(--govity-base);
     padding: 4px 20px 4px;
 }
-
 
 .event-three__date p {
     font-size: 12px;
@@ -8813,11 +8809,9 @@ height: 390px;
     transition: all 500ms ease;
 }
 
-
 .portfolio-three__single:hover .portfolio-three__sub-title {
     color: var(--govity-white);
 }
-
 
 .portfolio-three__title {
     font-size: 24px;
@@ -14463,7 +14457,6 @@ height: 390px;
     visibility: hidden;
     opacity: 0;
     z-index: 2;
-    
 }
 
 .portfolio-page__single:hover .portfolio-page__content {
@@ -14496,7 +14489,6 @@ height: 390px;
     font-weight: 700;
     padding: 18px 30px 18px;
     padding-right: 25px;
-
 }
 
 .portfolio-page__title a {
@@ -14508,73 +14500,87 @@ height: 390px;
     color: var(--govity-base);
 }
 
-
-  .gallery {
+.gallery {
     margin: 20px;
-  }
-  .album-items{
-    color: #ffffff; text-decoration: none; transition: color 0.3s ease;
-  }
-  .portfolio-page-items{
-    display: flex; flex-wrap: wrap; gap: 20px; justify-content: center
-  }
-  .single_gallery_item{
-    display: block; font-size: 16px; color: #383737; text-decoration: none; transition: color 0.3s ease-in-out; margin-bottom: 10px;
-  }
-  .gallery-p{
-    margin-top: 12px; font-size: 17px; color: #666;
-  }
-  .gallery-img-item{
-    width: 300px; height: 250px; border-radius: 6px; transition: transform 0.3s ease-in-out;
-  }
-  .hr-gallery{
-    margin: 6px 0; border: 0; border-top: 1px solid #ccc;
-  }
-  .album-item {
-    width: 320px; 
-    padding: 10px; 
-    background-color: #fff; 
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
-    border-radius: 8px; 
-    text-align: center; 
-    height: auto; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    overflow: hidden; 
-    margin-bottom:20px
-  }
-  
-  .row-gallery {
+}
+.album-items {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.portfolio-page-items {
     display: flex;
     flex-wrap: wrap;
-  
-    justify-content:center;
+    gap: 20px;
+    justify-content: center;
+}
+.single_gallery_item {
+    display: block;
+    font-size: 16px;
+    color: #383737;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+.gallery-p {
+    margin-top: 12px;
+    font-size: 17px;
+    color: #666;
+}
+.gallery-img-item {
+    width: 300px;
+    height: 250px;
+    border-radius: 6px;
+    transition: transform 0.3s ease-in-out;
+}
+.hr-gallery {
+    margin: 6px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+.album-item {
+    width: 320px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.row-gallery {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
     margin-bottom: 10px; /* Adjust margin between rows */
-  }
-  .row {
+}
+.row {
     display: flex;
     flex-wrap: wrap;
     row-gap: 60px;
     margin-bottom: 10px; /* Adjust margin between rows */
-  }
-  
-  .gallery-item {
+}
+
+.gallery-item {
     width: 320px; /* 25% width for each item with margin */
     margin: 5px; /* Adjust margin for spacing */
     box-sizing: border-box;
-  }
-  
-  .gallery-item img {
+}
+
+.gallery-item img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
     /* Define the size you want for the images */
     width: 320px; /* Adjust the width for smaller images */
     height: 280px; /* Adjust the height for smaller images */
-  }
-  
-  
+}
 
 /*--------------------------------------------------------------
 # Department Page
@@ -14926,7 +14932,7 @@ height: 390px;
     width: 100%;
 }
 
-.product__showing-sort .select-box .nice-select ,
+.product__showing-sort .select-box .nice-select,
 .select-poll {
     background-color: var(--govity-primary);
     border-radius: 0;
@@ -14941,7 +14947,7 @@ height: 390px;
     margin-bottom: 0px;
 }
 
-.product__showing-sort .select-box .nice-select:after  {
+.product__showing-sort .select-box .nice-select:after {
     position: absolute;
     right: 30px;
 }
