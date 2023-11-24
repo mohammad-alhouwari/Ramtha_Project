@@ -1,6 +1,7 @@
 @extends('Layout.master')
 @section('title', 'الفُرص الإستثمارية')
 @section('header_title', 'الفُرص الإستثمارية')
+
 @section('content')
 
     @php use Illuminate\Support\Str; @endphp

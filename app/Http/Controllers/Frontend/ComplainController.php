@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Complain;
-use App\Http\Controllers\Controller; 
+use App\Http\Controllers\Controller;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ComplainController extends Controller
 {
+    use ImageUploadTrait;
 
     public function index()
     {
@@ -36,16 +38,41 @@ class ComplainController extends Controller
     {
         // Validate the incoming request data
         $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'national_id' => 'required|string',
-            'phone' => 'required|string',
-            'complain_type' => 'required|string',
-            'address' => 'nullable|string',
-            'complain_details' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust file type and size as needed
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email'],
+            'national_id' => ['required', 'numeric'],
+            'phone' => ['required', 'numeric'],
+            'complain_type' => ['required', 'string'],
+            'address' => ['required', 'string', 'max:255'],
+            'complain_details' => ['required', 'string'],
+            'image' => ['nullable'],
+        ], [
+            'name.required' => 'الرجاء إدخال الاسم.',
+            'name.string' => 'يجب أن يكون الاسم نصًا.',
+            'name.max' => 'الاسم يجب ألا يتجاوز 255 حرفًا.',
+
+            'email.required' => 'الرجاء إدخال البريد الإلكتروني.',
+            'email.email' => 'البريد الإلكتروني يجب أن يكون صالحًا.',
+
+            'national_id.required' => 'الرجاء إدخال الهوية الوطنية.',
+            'national_id.string' => 'يجب أن تكون الهوية الوطنية رقمًا.',
+
+            'phone.required' => 'الرجاء إدخال رقم الهاتف.',
+            'phone.numeric' => 'يجب أن يكون رقم الهاتف رقمًا.',
+
+            'complain_type.required' => 'الرجاء اختيار نوع الشكوى.',
+            'complain_type.string' => 'يجب أن يكون نوع الشكوى نصًا.',
+
+            'address.required' => 'الرجاء إدخال المكان.',
+            'address.string' => 'يجب أن يكون المكان نصًا.',
+            'address.max' => 'المكان يجب ألا يتجاوز 255 حرفًا.',
+
+            'complain_details.required' => 'الرجاء إدخال تفاصيل الشكوى.',
+            'complain_details.string' => 'يجب أن تكون تفاصيل الشكوى نصًا.',
+
         ]);
 
+        $imagePath = $this->uploadImage($request, 'image', 'uploads');
         // Create a new Complain instance with the validated data
         $complain = new Complain([
             'name' => $request->input('name'),
@@ -55,24 +82,19 @@ class ComplainController extends Controller
             'complain_type' => $request->input('complain_type'),
             'address' => $request->input('address'),
             'complain_details' => $request->input('complain_details'),
-        ]);
+            'image' => $imagePath,
 
-        // Check if an image file was provided
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads'), $imageName);
-            $complain->image = $imageName;
-        }
+
+        ]);
 
         // Save the Complain instance to the database
         $complain->save();
 
         // Redirect to a success page or return a response as needed
-        return redirect()->route('complains.index')->with('success', 'Complain submitted successfully!')->with('alert', 'success');
+        Alert::success('نجاح!', 'تم تقديم الشكوى بنجاح!');
+
+        return redirect()->route('complains.index');
     }
-
-
     /**
      * Display the specified resource.
      *
