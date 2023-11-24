@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            {{-- <div class="item main-slider-three__slide-3">
+            <div class="item main-slider-three__slide-3">
                 <div class="main-slider-three__bg"
                     style="background: url(assets/images/backgrounds/dowar.jpg) contain; width: 100%">
                 </div><!-- /.slider-one__bg -->
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
 
         </div>
     </section>
