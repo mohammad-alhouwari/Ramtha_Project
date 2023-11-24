@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('municipality_infos', function (Blueprint $table) {
             $table->id();
             $table->string('logo');
-            $table->string('description');
+            $table->text('description');
             $table->string('description_image');
             $table->string('email');
             $table->string('phone');
+            $table->string('vision');
+            $table->string('mission');
             $table->timestamps();
         });
     }

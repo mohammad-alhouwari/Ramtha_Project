@@ -6,7 +6,7 @@
             <div class="card card-default">
                 <div class="card-header">
                     <h4>Manage Municipality Info</h4>
-                    <a href="{{ route('news-admin.create') }}" class="mb-1 btn btn-outline-primary">
+                    <a href="{{ route('municipality-info-admin.create') }}" class="mb-1 btn btn-outline-primary">
                         <i class=" mdi mdi-checkbox-marked-outline mr-1"></i>
                         Create Municipality Info
                     </a>

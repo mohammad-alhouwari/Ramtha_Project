@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\MunicipalityInfo;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,6 +29,7 @@ class DatabaseSeeder extends Seeder
                 $this->call(MediaSeeder::class);
                 $this->call(InvestmentsTableSeeder::class);
                 $this->call(TerndersSeeder::class);
+                $this->call(MunicipalityInfoSeeder::class);
         }
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

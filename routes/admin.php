@@ -78,16 +78,16 @@ Route::prefix('admin')->middleware('auth')->group(
         //**Presidents Route
         Route::resource('presidents-admin', BackendPresidentsController::class);
 
-        //Members Route
+        //**Members Route
         Route::resource('members-admin', BackendMembersController::class);
 
-        //Landmarks Route
+        //**Landmarks Route
         Route::resource('landmarks-admin', BackendLandmarksController::class);
 
         //** All Medias Route 
         Route::get('medias', [BackendMediaController::class, 'showAllMedia']);
 
-        // Municipality Info Route
+        //**Municipality Info Route
         Route::resource('municipality-info-admin', BackendMunicipalityInfoController::class);
 
         //****All Media
