@@ -59,7 +59,7 @@
                             <div class="department-two__single">
                                 <div class="department-two__img-box">
                                     <div class="department-two__img">
-                                        <img src="{{ $project->preview_image }}" alt="">
+                                        <img src="{{ $project->preview_image }}" alt="" height="300px">
                                     </div>
                                     <div class="department-two__content">
                                         <div class="department-two__icon">

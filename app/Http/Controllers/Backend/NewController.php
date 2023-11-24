@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Media;
 use App\Models\News;
 use Illuminate\Http\Request;
 use App\Traits\ImageUploadTrait;
@@ -32,6 +33,7 @@ class NewController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'preview_image' => ['required'],
+            'date' => ['required'],
         ]);
 
         $imagePath = $this->uploadImage($request, 'preview_image', 'uploads');
@@ -92,9 +94,14 @@ class NewController extends Controller
     public function destroy($id)
     {
         $event = News::findOrFail($id);
+        $media=Media::where('news_id',$id)->first();
+        if($media!=null){
+            return response(['status' => 'success', 'message' => 'You Should Remove the  gallery First!']);
+        }
+        else{
         $this->deleteImage($event->preview_image);
         $event->delete();
 
-        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);}
     }
 }

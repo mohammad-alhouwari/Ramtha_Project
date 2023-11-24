@@ -17,6 +17,30 @@
 
   }
 
+// galery fancybox
+  $(document).ready(function() {
+    $("[data-fancybox]").fancybox({
+      loop: true,
+      transitionEffect: "slide",
+      buttons: [
+        "slideShow",
+        "thumbs",
+        "close"
+      ],
+      caption: function(instance, item) {
+        return $(this).find('img').attr('alt');
+      },
+      afterLoad: function(instance, current) {
+        var src = current.opts.$orig.data('src');
+        $('.fancybox-inner').append('<a href="' + src + '" download class="fancybox-button fancybox-button--download" title="Download">' +
+          '<svg viewBox="0 0 24 24">' +
+          '<path d="M15 13h-2v4h-2v-4H9v-2h4V7h2v4h4v2z" />' +
+          '<path d="M0 0h24v24H0z" fill="none" />' +
+          '</svg></a>');
+      }
+    });
+  });
+  
 
 
   function thmOwlInit() {

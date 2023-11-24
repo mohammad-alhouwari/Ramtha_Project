@@ -12,9 +12,9 @@ use App\Traits\ImageUploadTrait;
 class InvestmentController extends Controller
 {
     use ImageUploadTrait;
-    public function index(InvestmentDataTable $dataTables)
+    public function index(InvestmentDataTable $dataTable)
     {
-        return $dataTables->render('admin.pages.investments.index');
+        return $dataTable->render('admin.pages.investments.index');
     }
 
 
