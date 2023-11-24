@@ -22,7 +22,16 @@ class DatabaseSeeder extends Seeder
                 // ]);
                 $this->call(AdminSeeder::class);
                 $this->call(ProjectsSeeder::class);
-                // $this->call(NewsSeeder::class);
-                // $this->call(MediaSeeder::class);
+                $this->call(NewsSeeder::class);
+                $this->call(MediaSeeder::class);
+                $this->call(LandmarkSeeder::class);
+                $this->call(InvestmentsTableSeeder::class);
         }
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+        $this->call(AdminSeeder::class);
+        $this->call(TerndersSeeder::class);
+    }
 }

@@ -1,92 +1,68 @@
 @extends('Layout.master')
-@section('title', 'Events')
-
+@section('title', 'الفعاليات')
+@section('header_title', 'الفعاليات')
 @section('content')
 
-    <body class="custom-cursor">
-
-
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
-
-        <!--Page Header Start-->
-        <section dir="rtl" class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
-            </div>
-            <div class="container">
-                <div class="page-header__inner">
-                    <h2>الفعاليات</h2>
-                    <ul style="margin-left: 30px;" class="thm-breadcrumb list-unstyled">
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><span>/</span></li>
-                        <li>الفعاليات</li>
-                    </ul>
+    <!--Events Page Start-->
+    <section style="direction: rtl;" class="events-page">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="section-title__icon">
+                    <span class="fa fa-star"></span>
                 </div>
+                <span class="section-title__tagline">فعالياتنا</span>
+                <h1>اكتشف فعاليات بلديةالرمثا</h1>
             </div>
-        </section>
-        <!--Page Header End-->
-
-        <!--Events Page Start-->
-        <section style="direction: rtl;" class="events-page">
-            <div class="container">
-                <div class="section-title text-center">
-                    <div class="section-title__icon">
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <span class="section-title__tagline">فعالياتنا</span>
-                    <h1>اكتشف فعاليات بلديةالرمثا</h1>
-                </div>
-                <br>
-                <div class="row">
-                    <!--Event Three Single Start-->
-                    @foreach ($events as $event)
-                        <div class="col-xl-4 col-lg-4">
-                            <div class="event-three__single">
-                                <div class="event-three__img-box">
-                                    <div class="event-three__img">
-                                        <img class="event-img" src="{{ url( $event->preview_image) }}"></a>
-                                    </div>
+            <br>
+            <div class="row">
+                <!--Event Three Single Start-->
+                @foreach ($events as $event)
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="event-three__single">
+                            <div class="event-three__img-box">
+                                <div class="event-three__img">
+                                    <img class="event-img" src="{{ url($event->preview_image) }}"></a>
                                 </div>
-                                <div class="event-three__content">
-                                    <div class="event-three__meta-and-title">
-                                        <ul class="event-three__meta list-unstyled">
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="fa fa-clock"></span>
-                                                </div>
-                                                <div class="text" style="margin-left: 20px">
-                                                    <p>{{ $event->time }}</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="fa fa-map-marker"></span>
-                                                </div>
-                                                <div class="text">
-                                                    <p>{{ $event->location }}</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <h4 class="event-three__title" style="font-size: 20px"><a href="{{ route('eventdetail', ['id' => $event->id]) }}">
-                                                {{ $event->title }}</a>
-                                        </h4>
-                                    </div>
-                                    <div class="event-three__btn-box">
-                                        <a href="{{ route('eventdetail', ['id' => $event->id]) }}"
-                                            class="event-three__btn">للمزيد<i class="icon-left-arrow"></i></a>
-                                    </div>
-                                    <div class="event-three__date">
-                                        <p> {{ $event->date }}</p>
-                                    </div>
+                            </div>
+                            <div class="event-three__content">
+                                <div class="event-three__meta-and-title">
+                                    <ul class="event-three__meta list-unstyled">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fa fa-clock"></span>
+                                            </div>
+                                            <div class="text" style="margin-left: 20px">
+                                                <p>{{ $event->time }}</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fa fa-map-marker"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>{{ $event->location }}</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <h4 class="event-three__title" style="font-size: 20px"><a
+                                            href="{{ route('eventdetail', ['id' => $event->id]) }}">
+                                            {{ $event->title }}</a>
+                                    </h4>
+                                </div>
+                                <div class="event-three__btn-box">
+                                    <a href="{{ route('eventdetail', ['id' => $event->id]) }}"
+                                        class="event-three__btn">للمزيد<i class="icon-left-arrow"></i></a>
+                                </div>
+                                <div class="event-three__date">
+                                    <p> {{ $event->date }}</p>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                    <!--Event Three Single End-->
-                    <!--Event Three Single Start-->
-                    {{-- <div class="col-xl-4 col-lg-4">
+                    </div>
+                @endforeach
+                <!--Event Three Single End-->
+                <!--Event Three Single Start-->
+                {{-- <div class="col-xl-4 col-lg-4">
                         <div class="event-three__single">
                             <div class="event-three__img-box">
                                 <div class="event-three__img">
@@ -127,9 +103,9 @@
                             </div>
                         </div>
                     </div> --}}
-                    <!--Event Three Single End-->
-                    <!--Event Three Single Start-->
-                    {{-- <div class="col-xl-4 col-lg-4">
+                <!--Event Three Single End-->
+                <!--Event Three Single Start-->
+                {{-- <div class="col-xl-4 col-lg-4">
                         <div class="event-three__single">
                             <div class="event-three__img-box">
                                 <div class="event-three__img">
@@ -171,9 +147,9 @@
                             </div>
                         </div>
                     </div> --}}
-                    <!--Event Three Single End-->
-                    <!--Event Three Single Start-->
-                    {{-- <div class="col-xl-4 col-lg-4">
+                <!--Event Three Single End-->
+                <!--Event Three Single Start-->
+                {{-- <div class="col-xl-4 col-lg-4">
                         <div class="event-three__single">
                             <div class="event-three__img-box">
                                 <div class="event-three__img">
@@ -214,9 +190,9 @@
                             </div>
                         </div>
                     </div> --}}
-                    <!--Event Three Single End-->
-                    <!--Event Three Single Start-->
-                    {{-- <div class="col-xl-4 col-lg-4">
+                <!--Event Three Single End-->
+                <!--Event Three Single Start-->
+                {{-- <div class="col-xl-4 col-lg-4">
                         <div class="event-three__single">
                             <div class="event-three__img-box">
                                 <div class="event-three__img">
@@ -258,9 +234,9 @@
                             </div>
                         </div>
                     </div> --}}
-                    <!--Event Three Single End-->
-                    <!--Event Three Single Start-->
-                    {{-- <div class="col-xl-4 col-lg-4">
+                <!--Event Three Single End-->
+                <!--Event Three Single Start-->
+                {{-- <div class="col-xl-4 col-lg-4">
                         <div class="event-three__single">
                             <div class="event-three__img-box">
                                 <div class="event-three__img">
@@ -303,11 +279,11 @@
                             </div>
                         </div>
                     </div> --}}
-                    <!--Event Three Single End-->
-                </div>
+                <!--Event Three Single End-->
             </div>
-        </section>
-        <!--Events Page End-->
+        </div>
+    </section>
+    <!--Events Page End-->
 
 
     </body>
