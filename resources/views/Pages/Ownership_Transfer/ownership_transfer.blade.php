@@ -3,6 +3,7 @@
 @section('header_title', 'طلب نقل الملكية')
 @section('content')
     <!-- Ownership Transfer Page Start -->
+    <br><br>
     <section class="contact-two" dir="rtl">
         <div class="contact-two__bg">
         </div>

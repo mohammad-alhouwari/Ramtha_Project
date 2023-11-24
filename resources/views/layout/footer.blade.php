@@ -272,7 +272,11 @@
 <script src="{{ asset('assets/js/govity.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-
+<script src="{{ asset('navbar/js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{ asset('navbar/js/popper.min.js')}}"></script>
+<script src="{{ asset('navbar/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('navbar/js/jquery.sticky.js')}}"></script>
+<script src="{{ asset('navbar/js/main.js')}}"></script>
 </body>
 
 

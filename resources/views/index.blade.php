@@ -260,7 +260,6 @@
     @include('Pages.Home.suggestions')
     <!--Feature Three End-->
 
-
     <script>
         function updateCurrentTime() {
             var currentTime = new Date();
