@@ -4,12 +4,12 @@
 @section('content')
 
     <!--Contact Page Contact Start-->
-
+<br><br>
     <section class="contact-two" dir="rtl">
         @include('sweetalert::alert')
 
-        {{-- <div class="contact-two__bg">
-        </div> --}}
+        <div class="contact-two__bg">
+        </div>
         <div class="container" dir="rtl">
             <div class="section-title text-center">
                 <p class="section-title__title"> تقديم الشكاوي والاقتراحات</p>
