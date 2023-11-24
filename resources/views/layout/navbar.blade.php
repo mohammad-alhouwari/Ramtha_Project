@@ -62,6 +62,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
 
 
 </head>

@@ -8492,7 +8492,21 @@ height: 390px;
     padding: 4px 20px 4px;
 }
 
+
 .event-three__date p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--govity-white);
+}
+.event-three__date-L {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    background-color: var(--govity-base);
+    padding: 4px 20px 4px;
+}
+.event-three__date-L p {
     font-size: 12px;
     font-weight: 500;
     line-height: 22px;
@@ -14912,7 +14926,8 @@ height: 390px;
     width: 100%;
 }
 
-.product__showing-sort .select-box .nice-select {
+.product__showing-sort .select-box .nice-select ,
+.select-poll {
     background-color: var(--govity-primary);
     border-radius: 0;
     color: var(--govity-gray);
@@ -14926,7 +14941,7 @@ height: 390px;
     margin-bottom: 0px;
 }
 
-.product__showing-sort .select-box .nice-select:after {
+.product__showing-sort .select-box .nice-select:after  {
     position: absolute;
     right: 30px;
 }
