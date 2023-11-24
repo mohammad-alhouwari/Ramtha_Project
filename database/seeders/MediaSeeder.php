@@ -125,7 +125,8 @@ class MediaSeeder extends Seeder
             [
                 'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc32747f6c.jpg',
                 'media_type' => 'image',
-                'news_id' => 1
+                'news_id' => 1,
+
             ],
 
             [

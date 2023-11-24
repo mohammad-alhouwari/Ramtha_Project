@@ -33,7 +33,7 @@
                     <h1>اكتشف أخبار بلديةالرمثا</h1>
                 </div>
                 <br>
-                <div class="row">
+                <div class="row rownews">
                     <!--News One Single Start-->
                     @foreach ($news as $new)
                         <div class="col-xl-4 col-lg-4 news-div">

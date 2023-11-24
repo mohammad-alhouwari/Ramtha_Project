@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="text">
                                         <span>الوقت</span>
-                                        <p>09:28 pm</p>
+                                        <p id="current-time"></p>
                                     </div>
                                 </li>
                             </ul>
@@ -261,5 +261,22 @@
     <!--Feature Three End-->
 
 
+    <script>
+        function updateCurrentTime() {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var ampm = hours >= 12 ? 'pm' : 'am';
 
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; 
+
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('current-time').innerText = hours + ':' + minutes + ' ' + ampm;
+        }
+
+        updateCurrentTime();
+        setInterval(updateCurrentTime, 1000);
+    </script>
 @endsection

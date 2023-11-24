@@ -43,7 +43,7 @@ class PresidentsController extends Controller
         $request->validate([
             'image' => ['required', 'image', 'max:4192'],
             'name' => ['required', 'string'],
-            'speech' => ['required', 'max:200'],
+            'speech' => ['required'],
         ]);
 
         $imagePath = $this->uploadImage($request, 'image', 'uploads');
@@ -98,7 +98,7 @@ class PresidentsController extends Controller
         $request->validate([
             'image' => ['nullable', 'image', 'max:4192'],
             'name' => ['required', 'string'],
-            'speech' => ['required', 'max:200'],
+            'speech' => ['required'],
         ]);
 
         $president = President::findOrFail($id);

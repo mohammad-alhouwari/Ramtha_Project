@@ -8,7 +8,7 @@
             <span class="section-title__tagline">آخر الاخبار</span>
             <h2 class="section-title__title">آخر الاخبار في مدينة الرمثا</h2>
         </div>
-        <div class="row">
+        <div class="row rownews">
             @foreach ($latestNews as $item)
                 <!--News One Single Start-->
                 <div class="col-xl-4 col-lg-4 news-div wow fadeInUp" data-wow-delay="100ms" >

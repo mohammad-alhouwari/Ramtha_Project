@@ -25,7 +25,9 @@ Route::controller(FrontendHomeController::class)->group(function () {
     Route::get('/', 'index');
 })->name('home');
 /*-----------------------------Home Routes End-----------------------------*/
-
+Route::controller(FrontendHomeController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+});
 /*----------------------------- President Routes Start -----------------------------*/
 Route::get('president', [FrontendPresidentController::class, 'index'])->name('president');
 /*----------------------------- President Routes End -----------------------------*/
