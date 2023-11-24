@@ -11,12 +11,12 @@
         <div class="row">
             @foreach ($latestNews as $item)
                 <!--News One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-xl-4 col-lg-4 news-div wow fadeInUp" data-wow-delay="100ms" >
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
                                 {{-- Image --}}
-                                <img src="{{ asset($item->preview_image) }}" alt="{{ $item->title }}">
+                                <img class="news-img" src="{{ asset($item->preview_image) }}" alt="{{ $item->title }}">
                             </div>
                             <div class="news-one__date">
                                 {{-- News Date --}}
@@ -25,15 +25,22 @@
                         </div>
                         <div class="news-one__content">
                             {{-- Title --}}
-                            <h3 class="news-one__title"><a>{{ $item->title }}</a></h3>
-                            <div class="news-one__btn">
-                                <a href="{{ route('showDetailsNews', $item->id) }}">
-                                    اقرأ
-                                    المزيد
-                                    <i class="icon-left-arrow"></i>
-                                </a>
+                            <h3 class="news-one__title"><a href="{{ route('showDetailsNews', $item->id) }}">{{ $item->title }}</a></h3>
+{{-- Check if the item's description exists --}}
+@if ($item->description)
+    {{-- Split the description into words --}}
+    @php
+        $words = explode(' ', $item->description);
+        $limitedWords = implode(' ', array_slice($words, 0, 10));
+    @endphp
 
-                            </div>
+    {{-- Display the first 10 words and 'Read more' link --}}
+    <p>
+        {{ $limitedWords }}
+        <a style="color: var(--govity-base)" href="{{ route('showDetailsNews', $item->id) }}">اقرأ المزيد</a>
+    </p>
+@endif
+
                         </div>
                     </div>
                 </div>

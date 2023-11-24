@@ -59,7 +59,7 @@ class PresidentsController extends Controller
             'alert-type' => 'success',
         );
 
-        return redirect()->route('president.index')->with($notification);
+        return redirect()->route('presidents-admin.index')->with($notification);
     }
 
     /**
@@ -81,7 +81,8 @@ class PresidentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $president = President::findOrFail($id);
+        return view('admin.pages.presidents.edit', compact('president'));
     }
 
     /**
@@ -93,7 +94,28 @@ class PresidentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Data Validate
+        $request->validate([
+            'image' => ['nullable', 'image', 'max:4192'],
+            'name' => ['required', 'string'],
+            'speech' => ['required', 'max:200'],
+        ]);
+
+        $president = President::findOrFail($id);
+
+        $imagePath = $this->updateImage($request, 'image', 'uploads', $president->image);
+
+        $president->image = empty(!$imagePath) ? $imagePath : $president->image;
+        $president->name = $request->name;
+        $president->speech = $request->speech;
+        $president->save();
+
+        $notification = array(
+            'message' => 'President Updated Successfully!!',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->route('presidents-admin.index')->with($notification);
     }
 
     /**
@@ -104,6 +126,10 @@ class PresidentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $president = President::findOrFail($id);
+        $this->deleteImage($president->image);
+        $president->delete();
+
+        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }

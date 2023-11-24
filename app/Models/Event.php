@@ -24,10 +24,9 @@ class Event extends Model
     public function participants()
     {
         return $this->hasMany(EventParticipant::class, 'event_id');
-
-        // public function media()
-        // {
-        //     return $this->hasMany(Media::class, 'event_id');
-        // }
+    }
+    public function media()
+    {
+        return $this->hasMany(Media::class, 'event_id');
     }
 }
