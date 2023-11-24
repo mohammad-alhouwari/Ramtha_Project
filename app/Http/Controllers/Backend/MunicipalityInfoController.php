@@ -39,6 +39,8 @@ class MunicipalityInfoController extends Controller
         // Data Validate
         $request->validate([
             'description' => ['required', 'string', 'max:255'],
+            'vision' => ['required', 'string', 'max:255'],
+            'mission' => ['required', 'string', 'max:255'],
             'description_image' => ['required'],
             'logo' => ['required'],
             'email' => ['required'],
@@ -50,6 +52,8 @@ class MunicipalityInfoController extends Controller
 
         MunicipalityInfo::create([
             'description' => $request->input('description'),
+            'vision' => $request->input('vision'),
+            'mission' => $request->input('mission'),
             'description_image' => $imagePath,
             'logo' => $logoPath,
             'phone' => $request->input('phone'),
@@ -63,4 +67,42 @@ class MunicipalityInfoController extends Controller
 
         return redirect()->route('municipality-info-admin.index')->with($notification);
     }
+
+    public function edit($id)
+    {
+        $municipalityInfo = MunicipalityInfo::findOrFail($id);
+        return view('admin.pages.municipalityInfo.edit', compact('municipalityInfo'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Data Validate
+        $request->validate([
+            'description' => ['required', 'string', 'max:255'],
+            'mission' => ['required', 'string', 'max:255'],
+            'vision' => ['required', 'string', 'max:255'],
+            'phone' => ['required'],
+            'email' => ['required'],
+        ]);
+
+        $data = $request->except(['_token', '_method']);
+
+        $municipalityInfo = MunicipalityInfo::findOrFail($id);
+
+        $imagePath = $this->updateImage($request, 'description_image', 'uploads', $municipalityInfo->description_image);
+        $logoPath = $this->updateImage($request, 'logo', 'uploads', $municipalityInfo->logo);
+
+        $data['description_image'] = empty(!$imagePath) ? $imagePath : $municipalityInfo->description_image;
+        $data['logo'] = empty(!$logoPath) ? $logoPath : $municipalityInfo->logo;
+
+        MunicipalityInfo::where('id', $id)->update($data);
+
+        $notification = array(
+            'message' => 'Municipality Info Updated Successfully!!',
+            'alert-type' => 'success',
+        );
+
+        return redirect()->route('municipality-info-admin.index')->with($notification);
+    }
+
 }

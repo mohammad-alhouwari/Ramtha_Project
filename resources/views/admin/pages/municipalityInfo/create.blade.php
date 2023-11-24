@@ -65,6 +65,30 @@
                             </div>
                             <div class="col-xl-12">
                                 <div class="mb-5">
+                                    <label class="text-dark font-weight-medium">Municipality Vision</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text mdi mdi-clipboard-text" id="mdi-account"></span>
+                                        </div>
+                                        <input type="text" class="form-control" name="vision"
+                                            value="{{ old('description') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium">Municipality Mission</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text mdi mdi-clipboard-text" id="mdi-account"></span>
+                                        </div>
+                                        <input type="text" class="form-control" name="mession"
+                                            value="{{ old('description') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="mb-5">
                                     <label class="text-dark font-weight-medium">Municipality Phone</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
