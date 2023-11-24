@@ -109,7 +109,7 @@ Route::resource('suggestions', FrontendSuggestionController::class);
 
 /*--------------------------- Landmarks Routes Start --------------------------*/
 Route::controller(FrontendLandmarksController::class)->group(function () {
-    Route::get('landmarks', 'showAllLandmarks')->name('showAllProjects');
+    Route::get('landmarks', 'showAllLandmarks')->name('showAllLandmarks');
     Route::get('landmark/{id}', 'showLandmark')->name('showLandmark');
 });
 /*--------------------------- Landmarks Routes End ---------------------------*/
