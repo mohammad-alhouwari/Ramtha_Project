@@ -1,24 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
+use App\DataTables\SuggestionsDataTable;
 use App\Http\Controllers\Controller;
-use App\Models\Event;
+use App\Models\Suggestion;
+use Illuminate\Http\Request;
 
-class EventController extends Controller
+class SuggestionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(SuggestionsDataTable $dataTables)
     {
-
-        $events= Event::where('status', 'on')->get();
-        return view('Pages.Events.event',compact('events'));
-
+        return $dataTables->render('admin.pages.suggestions.index');
 
     }
 
@@ -85,6 +83,9 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $suggestion = Suggestion::findOrFail($id);
+        $suggestion->delete();
+
+        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }

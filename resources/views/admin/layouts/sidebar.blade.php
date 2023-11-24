@@ -48,19 +48,26 @@
                         <span class="nav-text">Investment opportunities</span>
                     </a>
                 </li>
-
-                <li class="{{ set_active(['Events-admin.*']) }}">
-                    <a class="sidenav-item-link" href="{{ route('Events-admin.index') }}">
+                <li class="has-sub {{ set_active(['Events-admin.*']) ?? set_active(['EventParticipant-admin.*']) ? 'active' : '' }}">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#event"
+                        aria-expanded="false" aria-controls="event">
                         <i class="fa-regular fa-calendar-days"></i>
-                        <span class="nav-text">Events</span>
+                        <span class="nav-text">Events</span> <b class="caret"></b>
                     </a>
-                </li>
-
-                <li class="{{ set_active(['EventParticipant-admin.*']) }}">
-                    <a class="sidenav-item-link" href="{{ route('EventParticipant-admin.index') }}">
-                        <i class="fa-regular fa-calendar-days"></i>
-                        <span class="nav-text">Event Participants</span>
-                    </a>
+                    <ul class="collapse" id="event" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="{{ set_active(['Events-admin.*']) }}">
+                                <a class="sidenav-item-link" href="{{ route('Events-admin.index') }}">
+                                    <span class="nav-text">All Events</span>
+                                </a>
+                            </li>
+                            <li class="{{ set_active(['EventParticipant-admin.*']) }}">
+                                <a class="sidenav-item-link" href="{{ route('EventParticipant-admin.index') }}">
+                                    <span class="nav-text">Event Participants</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
                 </li>
                 <li class="{{ set_active(['pollTopics-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('pollTopics-admin.index') }}">
@@ -68,6 +75,7 @@
                         <span class="nav-text">Polls Topics</span>
                     </a>
                 </li>
+                
 
                 <li class="{{ set_active(['jobs-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('jobs-admin.index') }}">
@@ -102,6 +110,12 @@
                     </a>
                 </li>
 
+                <li class="{{ set_active(['suggestions-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('suggestions-admin.index') }}">
+                        <i class="mdi mdi-brain"></i>
+                        <span class="nav-text">Suggestions</span>
+                    </a>
+                </li>
                 {{-- <li class="{{ set_active(['teams.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('teams.index') }}">
                         <i class="mdi mdi-account-group"></i>

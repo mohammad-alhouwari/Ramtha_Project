@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\JobController as FrontendJobController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
+use App\Http\Controllers\Frontend\SuggestionController as FrontendSuggestionController;
 use App\Http\Controllers\TendersDetailesController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
 use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
@@ -81,10 +82,15 @@ Route::controller(FrontendJobController::class)->group(function () {
 /*------------------------------ News Routes Start -----------------------------*/
 Route::controller(FrontendNewsController::class)->group(function () {
     Route::get('news', 'showAllNews')->name('showAllNews');
-    Route::get('new-details/{id}', 'showDetailsNews')->name('showDetailsNews');
+    Route::get('news-details/{id}', 'showDetailsNews')->name('showDetailsNews');
 });
 /*------------------------------- News Routes End -------------------------------*/
 
+Route::controller(FrontendMediaController::class)->group(function () {
+    Route::get('gallery', 'showGallery')->name('showGallery');
+    Route::get('single_gallery/{id}/{type}', 'showSingleGallery')->name('single_gallery');
+
+});
 /*----------------------------- Complain Routes Start -----------------------------*/
 Route::resource('complains',FrontendComplainController ::class);
 /*----------------------------- Complain Routes end -----------------------------*/
@@ -109,3 +115,11 @@ Route::controller(FrontendTendersController::class)->group(function () {
     Route::get('tender-details/{id}', 'showDetailsTenders')->name('showDetailsTenders');
 });
 /*------------------------------ Tenders Routes End ------------------------------*/
+
+
+/*--------------------- Suggestions Routes Start ---------------------*/
+
+Route::resource('suggestions', FrontendSuggestionController::class);
+
+
+/*--------------------- Suggestions Routes End ----------------------*/
