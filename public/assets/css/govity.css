@@ -13813,7 +13813,7 @@ ul {
 .our-history__img {
     position: relative;
     display: block;
-    transform: rotate(-12deg);
+    /* transform: rotate(-12deg); */
 }
 
 .our-history__img img {
@@ -13984,7 +13984,7 @@ ul {
 .our-history__img-two {
     position: relative;
     display: block;
-    transform: rotate(-12deg);
+    /* transform: rotate(-12deg); */
 }
 
 .our-history__img-two img {
