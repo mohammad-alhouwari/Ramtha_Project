@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\MembersController as BackendMembersController;
 use App\Http\Controllers\Backend\OwnershipTransferController as BackendOwnershipTransferController;
 use App\Http\Controllers\Backend\PollTopicController as BackendPollTopicController;
 use App\Http\Controllers\Backend\LandmarksController as BackendLandmarksController;
+use App\Http\Controllers\Backend\MunicipalityInfoController as BackendMunicipalityInfoController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -85,6 +86,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //** All Medias Route 
         Route::get('medias', [BackendMediaController::class, 'showAllMedia']);
+
+        // Municipality Info Route
+        Route::resource('municipality-info-admin', BackendMunicipalityInfoController::class);
 
         //****All Media
         Route::get('medias-admin/create/project/{project_id}', [BackendMediaController::class, 'createProject'])->name('medias-admin.create.project');
