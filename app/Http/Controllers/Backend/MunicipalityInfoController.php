@@ -24,17 +24,29 @@ class MunicipalityInfoController extends Controller
 
     public function store(Request $request)
     {
+
+        $existingRecord = MunicipalityInfo::first();
+
+        if ($existingRecord) {
+            $notification = [
+                'message' => 'A record already exists. Cannot create a new one.',
+                'alert-type' => 'error',
+            ];
+    
+            return redirect()->route('municipality-info-admin.index')->with($notification);
+        }
+
         // Data Validate
         $request->validate([
             'description' => ['required', 'string', 'max:255'],
-            'description_image' => ['required', 'string', 'max:255'],
+            'description_image' => ['required'],
             'logo' => ['required'],
             'email' => ['required'],
             'phone' => ['required'],
         ]);
 
         $logoPath = $this->uploadImage($request, 'logo', 'uploads');
-        $imagePath = $this->uploadImage($request, 'image', 'uploads');
+        $imagePath = $this->uploadImage($request, 'description_image', 'uploads');
 
         MunicipalityInfo::create([
             'description' => $request->input('description'),
@@ -49,6 +61,6 @@ class MunicipalityInfoController extends Controller
             'alert-type' => 'success',
         );
 
-        return redirect()->route('admin.pages.municipalityInfo.index')->with($notification);
+        return redirect()->route('municipality-info-admin.index')->with($notification);
     }
 }
