@@ -45,7 +45,7 @@
                                                 <span class="fas fa-file-contract"></span>
                                             </div> --}}
                                         </div>
-                                        <h3 class="feature-four__title"><a  href="{{ route('showDetailsTenders', $tender->id) }}"> {{ $tender->title }}</a></h3>
+                                        <h3 class="feature-four__title"><a style="width: 40px"  href="{{ route('showDetailsTenders', $tender->id) }}"> {{ $tender->title }}</a></h3>
                                         <!-- Add Button under h3 -->
                                         <br>
                                         <a  href="{{ route('showDetailsTenders', $tender->id) }}" class="btn btn-primary">المزيد</a>

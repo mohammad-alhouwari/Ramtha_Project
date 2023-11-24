@@ -1,5 +1,15 @@
 /* Medium screen  */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .feature-four__title {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 30px;
+        margin-top: 46px;
+        margin-left: 12px;
+        margin-right: 12px;
+       
+
+    }
     .department-one__content {
         padding: 70px 20px 27px;
     }
@@ -1538,10 +1548,10 @@
         margin-top: 60px;
     }
 
-    .contact-page__contact-list li {
+    /* .contact-page__contact-list li {
         flex-direction: column;
         align-items: baseline;
-    }
+    } */
 
     .contact-page__contact-list li .content {
         margin-left: 0;

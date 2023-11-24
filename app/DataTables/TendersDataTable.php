@@ -32,6 +32,9 @@ class TendersDataTable extends DataTable
             ->addColumn('preview_image', function ($query) {
                 return "<img width='100px' src='" . asset($query->preview_image) . "'></img>";
             })
+            ->addColumn('preview_image2', function ($query) {
+                return "<img width='100px' src='" . asset($query->preview_image2) . "'></img>";
+            })
 
             ->addColumn('status', function ($query) {
                 $checked = $query->status=='on' ? 'on' : 'off';
@@ -42,7 +45,7 @@ class TendersDataTable extends DataTable
                     return "<span class='badge badge-danger'>Inactive</span>";
                 }
             })
-            ->rawColumns(['action', 'preview_image', 'status'])
+            ->rawColumns(['action', 'preview_image', 'preview_image2', 'status'])
             ->setRowId('id');
     }
 
@@ -93,6 +96,8 @@ class TendersDataTable extends DataTable
             Column::make('title'),
             Column::make('description'),
             Column::make('preview_image'),
+            Column::make('preview_image2'),
+
             Column::make('date'),
             Column::make('value'),
             Column::make('status'),
