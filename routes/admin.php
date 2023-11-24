@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\SuggestionController as BackendSuggestionContro
 use App\Http\Controllers\Backend\TenderController as BackendTenderController;
 use App\Http\Controllers\Backend\JobController as BackendJobController;
 use App\Http\Controllers\Backend\MembersController as BackendMembersController;
+use App\Http\Controllers\Backend\OwnershipTransferController as BackendOwnershipTransferController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
@@ -37,6 +38,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         // Suggestion Route
         Route::resource('suggestions-admin', BackendSuggestionController::class);
+
+        // Ownership_Transfer Route
+        Route::resource('ownership-transfer-admin', BackendOwnershipTransferController::class);
 
         //**jobs opportunities Route
         Route::resource('jobs-admin', BackendJobController::class);

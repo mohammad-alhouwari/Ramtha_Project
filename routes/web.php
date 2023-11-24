@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentContro
 use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
 use App\Http\Controllers\Frontend\ComplainController as FrontendComplainController;
+use App\Http\Controllers\Frontend\OwnershipTransferController as FrontendOwnershipTransferController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -110,5 +111,11 @@ Route::controller(FrontendTendersController::class)->group(function () {
 
 Route::resource('suggestions', FrontendSuggestionController::class);
 
-
 /*--------------------- Suggestions Routes End ----------------------*/
+
+
+/*--------------------- Ownership_Transfer Routes Start ---------------------*/
+
+Route::resource('ownership_transfer', FrontendOwnershipTransferController::class);
+
+/*--------------------- Ownership_Transfer Routes End ----------------------*/

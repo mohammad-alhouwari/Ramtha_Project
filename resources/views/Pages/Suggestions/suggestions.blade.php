@@ -98,7 +98,7 @@
                                 الحقل
                             </p>
                             <div class="contact-two__btn-box">
-                                <button type="submit" class="thm-btn contact-two__btn">ارسل</button>
+                                <button type="submit" class="thm-btn contact-two__btn">أرسل</button>
                             </div>
                         </div>
                     </div>
