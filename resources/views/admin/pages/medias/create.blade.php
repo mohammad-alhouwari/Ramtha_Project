@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form action="{{ route('medias-admin.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @if ($type == 'project' || $type == 'news'|| $type='event')
+                        @if ($type == 'landmark' || $type == 'project' || $type == 'news' || ($type = 'event'))
                             <input type="hidden" name="{{ $type }}_id" value="{{ ${$type . '_id'} }}">
                         @endif
                         <div class="row">
@@ -27,7 +27,8 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text mdi mdi-folder-image" id="mdi-account"></span>
                                             </div>
-                                            <input type="file" class="form-control" name="media[]"  id="image" multiple>
+                                            <input type="file" class="form-control" name="media[]" id="image"
+                                                multiple>
                                         </div>
                                     </div>
                                 </div>

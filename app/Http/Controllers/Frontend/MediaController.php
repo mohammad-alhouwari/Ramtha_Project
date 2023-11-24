@@ -17,13 +17,13 @@ class MediaController extends Controller
     public function showGallery()
     {
         $gallery = Media::with('project', 'event', 'news')->get();
-    
+
         // Filter out duplicate media based on event_id, news_id, or project_id
         $uniqueGallery = collect([]);
         $uniqueProjects = collect([]);
         $uniqueEvents = collect([]);
         $uniqueNews = collect([]);
-    
+
         foreach ($gallery as $item) {
             if ($item->project && !$uniqueProjects->contains('id', $item->project->id)) {
                 $uniqueProjects->push($item->project);
@@ -36,10 +36,10 @@ class MediaController extends Controller
                 $uniqueGallery->push($item);
             }
         }
-    
+
         return view('Pages.Gallery.gallery', compact('uniqueGallery'));
     }
-    
+
 
 
     // public function showSingleGallery($id, $type)
@@ -59,14 +59,14 @@ class MediaController extends Controller
     //         $name=News::find($id);
     //         return view('Pages.Gallery.single_gallery', compact('gallery','name'));
     //     }
-        
+
 
     // }
     public function showSingleGallery($id, $type)
     {
         $gallery = [];
         $name = null;
-    
+
         if ($type == 'project') {
             $name = Project::find($id);
             if ($name) {
@@ -85,6 +85,4 @@ class MediaController extends Controller
         }
         return view('Pages.Gallery.single_gallery', compact('gallery', 'name'));
     }
-
-  
 }

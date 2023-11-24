@@ -27,7 +27,7 @@ class PollTopicDataTable extends DataTable
                 $editBtn = "<a href='" . route('pollTopics-admin.edit', $query->id) . "' class='btn btn-success'><i class='far fa-edit'></i></a>";
                 $deleteBtn = "<a href='" . route('pollTopics-admin.destroy', $query->id) . "' class='btn btn-danger my-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
                 $showBtn = "<a href='" . route('pollTopics-admin.show', $query->id) . "' class='btn btn-info my-2 show-item'><i class='fa-solid fa-circle-info'></i></a>";
-                return $editBtn . $showBtn . $deleteBtn;
+                return $showBtn . $editBtn . $deleteBtn;
             })
             ->addColumn('image', function ($query) {
                 return "<img width='100px' src='" . asset($query->image) . "'></img>";
