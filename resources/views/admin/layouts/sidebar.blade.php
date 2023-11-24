@@ -35,7 +35,6 @@
                         <span class="nav-text">News</span>
                     </a>
                 </li>
-
                 <li class="{{ set_active(['partners-admin.*']) }}">
                     <a class="sidenav-item-link" href="{{ route('partners-admin.index') }}">
                         <i class="mdi mdi-account-network"></i>
@@ -69,6 +68,13 @@
                             </li>
                         </div>
                     </ul>
+                </li>
+
+                <li class="{{ set_active(['pollTopics-admin.*']) }}">
+                    <a class="sidenav-item-link" href="{{ route('pollTopics-admin.index') }}">
+                        <i class="mdi mdi-thumbs-up-down"></i>
+                        <span class="nav-text">Polls Topics</span>
+                    </a>
                 </li>
 
 
