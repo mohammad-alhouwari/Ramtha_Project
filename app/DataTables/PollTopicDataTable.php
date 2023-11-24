@@ -32,6 +32,9 @@ class PollTopicDataTable extends DataTable
             ->addColumn('image', function ($query) {
                 return "<img width='100px' src='" . asset($query->image) . "'></img>";
             })
+            ->addColumn('description', function ($query) {
+                return \Illuminate\Support\Str::limit($query->description, 120, ' . . . ');
+            })
             ->addColumn('status', function ($query) {
                 $checked = $query->status == 'on' ? 'on' : 'off';
 
@@ -41,10 +44,7 @@ class PollTopicDataTable extends DataTable
                     return "<span class='badge badge-danger'>Inactive</span>";
                 }
             })
-            ->addColumn('description', function ($query) {
-                return \Illuminate\Support\Str::limit($query->description, 120, ' . . . ');
-            })
-            ->rawColumns(['action', 'image'])
+            ->rawColumns(['action', 'image','status'])
             ->setRowId('id');
     }
 
