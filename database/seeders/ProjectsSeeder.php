@@ -35,6 +35,13 @@ class ProjectsSeeder extends Seeder
                 'percentage' => '87',
                 'status' => 'on'
             ],
+            [
+                'title' => 'صيانة الطرق والحفر المتهالكة',
+                'description' => 'إستمرار جهود قسم المشاريع بصيانة الطرق والحفر المتهالكة  بالخلطات الإسفلتية . ',
+                'preview_image' => 'assets\images\project\p4.jpg',
+                'percentage' => '90',
+                'status' => 'on'
+            ],
         ]);
     }
 }

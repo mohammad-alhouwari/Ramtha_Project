@@ -64,7 +64,7 @@
                     @csrf
                     <div class="row">
                         @if (session('status'))
-                            <h6 class='alert alert-success'>{{ session('status') }}</h6>
+                            <h6 class='alert alert-success text-center'>{{ session('status') }}</h6>
                         @endif
                         <div class="col-xl-12">
                             <div class="contact-one__input-box">
