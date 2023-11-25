@@ -8396,6 +8396,7 @@ ul {
     position: relative;
     display: flex;
     align-items: center;
+    padding: 5px;
 }
 
 .event-three__meta li {
