@@ -23,9 +23,7 @@
                     <img src="{{ asset($item->media) }}" alt="Image {{ $index + 1 }}">
                 </a>
             </div>
-            @if (($index + 1) % 4 === 0 && $index !== count($gallery) - 1)
-                </div><div class="row">
-            @endif
+
         @endforeach
     </div>
 </div>

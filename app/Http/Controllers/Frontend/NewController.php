@@ -20,6 +20,11 @@ class NewController extends Controller
     public function showDetailsNews($id)
     {
         $news = News::where('id', $id)->where('status', 'on')->first();
+
+        if (!$news) {
+            abort(404);
+        }
+
         $latestNews = News::where('created_at', '>', Carbon::now()->subDays(3))
             ->where('status', 'on')->where('id', '!=', $id)
             ->take(3)

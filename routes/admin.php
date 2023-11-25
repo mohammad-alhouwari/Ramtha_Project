@@ -11,9 +11,12 @@ use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentContro
 use App\Http\Controllers\Backend\EventController as BackendEventController;
 use App\Http\Controllers\Backend\EventParticipantController as BackendEventParticipantController;
 use App\Http\Controllers\Backend\NewController as BackendNewController;
+use App\Http\Controllers\Backend\SuggestionController as BackendSuggestionController;
 use App\Http\Controllers\Backend\TenderController as BackendTenderController;
 use App\Http\Controllers\Backend\JobController as BackendJobController;
 use App\Http\Controllers\Backend\MembersController as BackendMembersController;
+use App\Http\Controllers\Backend\PollTopicController as BackendPollTopicController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
@@ -34,6 +37,9 @@ Route::prefix('admin')->middleware('auth')->group(
         //** Complain Route
         Route::resource('complain-admin', BackendComplainController::class);
 
+        // Suggestion Route
+        Route::resource('suggestions-admin', BackendSuggestionController::class);
+
         //**jobs opportunities Route
         Route::resource('jobs-admin', BackendJobController::class);
 
@@ -42,6 +48,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //**Event Route
         Route::resource('Events-admin', BackendEventController::class);
+
+        //polls Topics Route
+        Route::resource('pollTopics-admin', BackendPollTopicController::class);
 
         //** Event Participant
         Route::resource('EventParticipant-admin', BackendEventParticipantController::class)->parameters([

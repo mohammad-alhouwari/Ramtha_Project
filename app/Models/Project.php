@@ -15,7 +15,8 @@ class Project extends Model
         'title',
         'description',
         'percentage',
-        'preview_image'
+        'preview_image',
+        'status'
     ];
 
     public function media()

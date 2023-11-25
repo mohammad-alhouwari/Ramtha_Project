@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\President;
 use App\Models\Event;
 use App\Models\News;
+use App\Models\Project;
 use App\Models\Partner;
 
 class HomeController extends Controller
@@ -17,10 +18,15 @@ class HomeController extends Controller
     {
         $presidents = President::latest()->get();
         $events = Event::latest()->get();
+        $projects = Project::all();
         $latestNews = News::latest()->take(3)->get();
         $partners = Partner::get();
+        $eventsCount = $events->count();
+        $projectsCount = $projects->count();
 
-        return view('index', compact('presidents', 'events', 'latestNews', 'partners'));
+        
+         
+        return view('index', compact('presidents', 'events', 'latestNews', 'partners', 'eventsCount','projectsCount'));
     }
 
 
