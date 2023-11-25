@@ -53,7 +53,7 @@ class JobController extends Controller
         Job::create([
             'title' => $request->input('name'),
             'image' => $imagePath,
-            'status' => 1,
+            'status' => 'on',
         ]);
 
         $notification = array(

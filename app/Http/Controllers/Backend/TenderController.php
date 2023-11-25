@@ -35,11 +35,14 @@ class TenderController extends Controller
         ]);
 
         $imagePath = $this->uploadImage($request, 'preview_image', 'uploads');
+        $imagePath2 = $this->uploadImage($request, 'preview_image2', 'uploads'); // Add this line
 
         Tender::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'preview_image' => $imagePath,
+            'preview_image2' => $imagePath2, // Add this line
+
             'date' => $request->input('date'),
             'value' => $request->input('value'),
             'status' => $request->input('status'),
@@ -79,6 +82,10 @@ class TenderController extends Controller
         $imagePath = $this->updateImage($request, 'preview_image', 'uploads', $tenders->image);
 
         $data['preview_image'] = empty(!$imagePath) ? $imagePath : $tenders->preview_image;
+
+        $imagePath2 = $this->updateImage($request, 'preview_image2', 'uploads', $tenders->preview_image2); // Add this line
+
+        $data['preview_image2'] = empty(!$imagePath2) ? $imagePath2 : $tenders->preview_image2;
 
         Tender::where('id', $id)->update($data);
 

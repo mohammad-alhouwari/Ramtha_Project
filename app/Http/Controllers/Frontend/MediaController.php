@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use Illuminate\Support\Facades\DB;
 use App\Models\Media;
 use Illuminate\Http\Request;
@@ -20,14 +21,15 @@ class MediaController extends Controller
 {
     public function showGallery()
     {
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $gallery = Media::with('project', 'event', 'news')->get();
-    
+
         // Filter out duplicate media based on event_id, news_id, or project_id
         $uniqueGallery = collect([]);
         $uniqueProjects = collect([]);
         $uniqueEvents = collect([]);
         $uniqueNews = collect([]);
-    
+
         foreach ($gallery as $item) {
             if ($item->project && !$uniqueProjects->contains('id', $item->project->id)) {
                 $uniqueProjects->push($item->project);
@@ -50,15 +52,37 @@ class MediaController extends Controller
         // Set path for paginator if needed
         $paginatedGallery->setPath('gallery');
     
-        return view('Pages.Gallery.gallery', compact('paginatedGallery'));
-    }
-    
 
+        return view('Pages.Gallery.gallery', compact('paginatedGallery','municipalityInfo'));
+    }
+
+
+
+    // public function showSingleGallery($id, $type)
+    // {
+    //     if ($type == 'project') {
+    //         $gallery = Media::where('project_id', $id)->with('project')->get();
+    //         $name=Project::find($id);
+    //         return view('Pages.Gallery.single_gallery', compact('gallery','name'));
+    //     }
+    //     else if ($type == 'event') {
+    //         $gallery = Media::where('event_id', $id)->with('event')->get();
+    //         $name=Event::find($id);
+    //         return view('Pages.Gallery.single_gallery', compact('gallery','name'));
+    //     }
+    //    else if ($type == 'news') {
+    //         $gallery = Media::where('news_id', $id)->with('news')->get();
+    //         $name=News::find($id);
+    //         return view('Pages.Gallery.single_gallery', compact('gallery','name'));
+    //     }
+
+
+    // }
     public function showSingleGallery($id, $type)
     {
         $gallery = [];
         $name = null;
-    
+
         if ($type == 'project') {
             $name = Project::find($id);
             if ($name) {
@@ -75,8 +99,7 @@ class MediaController extends Controller
                 $gallery = Media::where('news_id', $id)->get();
             }
         }
-        return view('Pages.Gallery.single_gallery', compact('gallery', 'name'));
+        $municipalityInfo=MunicipalityInfo::latest()->first();
+        return view('Pages.Gallery.single_gallery', compact('gallery', 'name','municipalityInfo'));
     }
-
-  
 }

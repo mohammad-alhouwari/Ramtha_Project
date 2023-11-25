@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use App\Models\Poll;
 use App\Models\PollTopic;
 use Illuminate\Http\Request;
@@ -11,18 +12,19 @@ class PollController extends Controller
 {
     public function showAllPolls()
     {
-        $currentDate = now()->toDateString();
-
-        $PollTopics = PollTopic::whereDate('end_date', '>=', $currentDate)->get();
-
-        return view('Pages.Polls.poll-topic', compact('PollTopics'));
+        $municipalityInfo=MunicipalityInfo::latest()->first();
+        $PollTopics = PollTopic::where('status', 'on')->get();
+        return view('Pages.Polls.poll-topic', compact('PollTopics','municipalityInfo'));
     }
+
 
 
     public function showPoll($id)
     {
+        $currentDate = now()->toDateString();
         $PollTopic = PollTopic::findOrFail($id);
-        return view('Pages.Polls.poll-details', compact('PollTopic'));
+        $municipalityInfo=MunicipalityInfo::latest()->first();
+        return view('Pages.Polls.poll-details', compact('PollTopic','currentDate','municipalityInfo'));
     }
    
     public function userPoll(Request $request, $pollTopicId)
@@ -56,8 +58,9 @@ class PollController extends Controller
 
             $message = 'شكراً لمشاركة رأيك';
         }
+        $municipalityInfo=MunicipalityInfo::latest()->first();
+        return redirect()->back()->with(['status' => $message, 'municipalityInfo' => $municipalityInfo]);
 
-        return redirect()->back()->with('status', $message);
     }
 
 }

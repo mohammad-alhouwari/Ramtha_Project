@@ -1,28 +1,7 @@
 @extends('Layout.master')
 @section('title', 'كلمة الرئيس')
-
+@section('header_title', 'كلمة الرئيس')
 @section('content')
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
-
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>كلمة الرئيس</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li><a href="{{ route('president') }}">كلمة الرئيس</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
 
     <!--Projects Page Start-->
     <section class="department-page">

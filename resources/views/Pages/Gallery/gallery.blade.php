@@ -1,7 +1,6 @@
-
 @extends('Layout.master')
 @section('title', 'معرض الصور')
-
+@section('header_title', 'معرض الصور')
 @section('content')
 
     <!--Page Header Start-->
@@ -102,4 +101,3 @@
 @endif
 
 @endsection
-

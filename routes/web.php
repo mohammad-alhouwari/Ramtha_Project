@@ -2,45 +2,45 @@
 
 
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\Frontend\MembersController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
-
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\JobController as FrontendJobController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
 use App\Http\Controllers\Frontend\SuggestionController as FrontendSuggestionController;
-use App\Http\Controllers\TendersDetailesController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
 use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
 use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
 use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
 use App\Http\Controllers\Frontend\ComplainController as FrontendComplainController;
+use App\Http\Controllers\Frontend\OwnershipTransferController as FrontendOwnershipTransferController;
 use App\Http\Controllers\Frontend\PollController as FrontendPollController;
+use App\Http\Controllers\Frontend\LandmarksController as FrontendLandmarksController;
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ComplainController;
 
 /*-----------------------------Home Routes-----------------------------*/
 
 Route::controller(FrontendHomeController::class)->group(function () {
     Route::get('/', 'index');
-});
+})->name('home');
 /*-----------------------------Home Routes End-----------------------------*/
-
+Route::controller(FrontendHomeController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+});
 /*----------------------------- President Routes Start -----------------------------*/
 Route::get('president', [FrontendPresidentController::class, 'index'])->name('president');
 /*----------------------------- President Routes End -----------------------------*/
 
 /*------------------------ Organizational Chart Routes Start ------------------------*/
-Route::get('organizational-chart', function () {
-    return view('Pages.Organizational-Chart');
-})->name('organizational-chart');
+
 /*------------------------ Organizational Chart Routes End ------------------------*/
 
 /*------------------------ About the Municipality Routes Start ------------------------*/
-Route::resource('about-municipality', ComplainController::class);
-Route::get('about-municipality', [FrontendMembersController::class, 'index'])->name('about-municipality');
+Route::get('about-municipality', [MembersController::class, 'index'])->name('about-municipality');
+Route::get('organizational-chart', [MembersController::class, 'organizationalChart'])->name('organizational-chart');
 /*------------------------ About the Municipality Routes End ------------------------*/
 
 /*----------------------------- Projects Routes Start -----------------------------*/
@@ -71,13 +71,6 @@ Route::controller(FrontendNewsController::class)->group(function () {
 });
 /*------------------------------- News Routes End -------------------------------*/
 
-/*------------------------------ Complain Routes Start ------------------------------*/
-Route::resource('complains', ComplainController::class);
-/*------------------------------ Complain Routes End -------------------------------*/
-Route::controller(FrontendMediaController::class)->group(function () {
-    Route::get('gallery', 'showGallery')->name('showGallery');
-    Route::get('single_gallery/{id}/{type}', 'showSingleGallery')->name('single_gallery');
-});
 /*----------------------------- Complain Routes Start -----------------------------*/
 Route::resource('complains', FrontendComplainController::class);
 /*----------------------------- Complain Routes end -----------------------------*/
@@ -90,7 +83,7 @@ Route::controller(FrontendMediaController::class)->group(function () {
 /*----------------------------- Gallery Routes End -----------------------------*/
 
 /*----------------------------- Event Routes Start -----------------------------*/
-Route::get('events', [FrontendEventController::class, 'index']);
+Route::get('events', [FrontendEventController::class, 'index'])->name('events');
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
 /*----------------------------- Event Routes End -----------------------------*/
@@ -99,8 +92,7 @@ Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'
 Route::controller(FrontendPollController::class)->group(function () {
     Route::get('polls', 'showAllPolls')->name('showAllPolls');
     Route::get('poll/{id}', 'showPoll')->name('showPoll');
-    Route::post('poll/{id}','userPoll')->name('userPoll');
-
+    Route::post('poll/{id}', 'userPoll')->name('userPoll');
 });
 /*----------------------------- Poll Routes End -----------------------------*/
 
@@ -111,10 +103,21 @@ Route::controller(FrontendTendersController::class)->group(function () {
 });
 /*------------------------------ Tenders Routes End ------------------------------*/
 
-
-/*--------------------- Suggestions Routes Start ---------------------*/
-
+/*--------------------------- Suggestions Routes Start --------------------------*/
 Route::resource('suggestions', FrontendSuggestionController::class);
-
+/*--------------------------- Suggestions Routes End ---------------------------*/
 
 /*--------------------- Suggestions Routes End ----------------------*/
+
+
+/*--------------------- Ownership_Transfer Routes Start ---------------------*/
+
+Route::resource('ownership_transfer', FrontendOwnershipTransferController::class);
+
+/*--------------------- Ownership_Transfer Routes End ----------------------*/
+/*--------------------------- Landmarks Routes Start --------------------------*/
+Route::controller(FrontendLandmarksController::class)->group(function () {
+    Route::get('landmarks', 'showAllLandmarks')->name('showAllLandmarks');
+    Route::get('landmark/{id}', 'showLandmark')->name('showLandmark');
+});
+/*--------------------------- Landmarks Routes End ---------------------------*/

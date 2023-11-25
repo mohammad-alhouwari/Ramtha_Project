@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
+            $table->text('status')->default('on');
             $table->text('media');
             $table->text('media_type');
             $table->unsignedBigInteger('event_id')->nullable();

@@ -59,7 +59,6 @@ class NewsSeeder extends Seeder
                 'date' => '2023-10-16',
                 'status' => 'on',
                 'created_at'=>Carbon::now(),
-
             ]
         ]);
 

@@ -48,6 +48,7 @@ class PollTopicController extends Controller
             'description' => ['required', 'string'],
             'end_date' => ['required', 'date', 'after:now'],
             'image' => ['nullable'],
+            'status' => ['nullable'],
         ]);
 
         $imagePath = $this->uploadImage($request, 'image', 'uploads');
@@ -56,6 +57,7 @@ class PollTopicController extends Controller
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'end_date' => $request->input('end_date'),
+            'status' => $request->input('status'),
             'image' => $imagePath,
         ]);
 
@@ -113,8 +115,9 @@ class PollTopicController extends Controller
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
-            'end_date' => ['required', 'date', 'after:now'], 
+            'end_date' => ['required', 'date', 'after:now'],
             'image' => ['nullable'],
+            'status' => ['nullable'],
         ]);
 
         $data = $request->except(['_token', '_method']);
@@ -124,6 +127,7 @@ class PollTopicController extends Controller
         $imagePath = $this->updateImage($request, 'image', 'uploads', $PollTopic->image);
 
         $data['image'] = empty(!$imagePath) ? $imagePath : $PollTopic->image;
+        $data['status'] = $request->input('status');
 
         PollTopic::where('id', $id)->update($data);
 
@@ -143,7 +147,7 @@ class PollTopicController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $PollTopic = PollTopic::findOrFail($id);
         $this->deleteImage($PollTopic->image);
         $PollTopic->delete();

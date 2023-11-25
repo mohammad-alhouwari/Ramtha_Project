@@ -34,7 +34,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Prject Title</label>
+                                    <label class="text-dark font-weight-medium">Project Title</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text mdi mdi-message-text" id="mdi-account"></span>

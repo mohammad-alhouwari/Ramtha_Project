@@ -3,20 +3,18 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use App\Models\Suggestion;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class SuggestionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('Pages.Suggestions.suggestions');
+        $municipalityInfo=MunicipalityInfo::latest()->first();
+        return view('Pages.Suggestions.suggestions',compact('municipalityInfo'));
     }
 
     /**
@@ -40,7 +38,7 @@ class SuggestionController extends Controller
         // Data Validate
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:20'],
+            'phone' => ['required', 'numeric', 'digits:10', 'regex:/^07\d{8}$/'],
             'description' => ['required', 'string'],
             'place' => ['required', 'string', 'max:255'],
             'sector' => ['required', 'string', 'max:255'],
@@ -50,8 +48,9 @@ class SuggestionController extends Controller
             'name.max' => 'الاسم يجب ألا يتجاوز 255 حرفًا.',
 
             'phone.required' => 'الرجاء إدخال رقم الهاتف.',
-            'phone.string' => 'يجب أن يكون رقم الهاتف نصًا.',
-            'phone.max' => 'رقم الهاتف يجب ألا يتجاوز 20 حرفًا.',
+            'phone.numeric' => 'يجب أن يكون رقم الهاتف رقمًا.',
+            'phone.digits' => 'يجب أن يتألف رقم الهاتف من 10 أرقام.',
+            'phone.regex' => 'يجب أن يبدأ رقم الهاتف بـ "07" ويتبعه 8 أرقام أخرى.',
 
             'description.required' => 'الرجاء إدخال الوصف.',
             'description.string' => 'يجب أن يكون الوصف نصًا.',
@@ -75,8 +74,8 @@ class SuggestionController extends Controller
 
         ]);
 
-        Alert::success('Success', 'Your Suggestion is Submitted!');
-
+        Alert::success('تم بنجاح', 'تقديم فكرة مُبادرتك!');
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return redirect()->route('suggestions.index');
     }
 

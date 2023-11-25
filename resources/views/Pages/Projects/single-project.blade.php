@@ -1,28 +1,8 @@
 @extends('Layout.master')
-@section('title', 'Project')
+@section('title', 'تفاصيل المشروع')
+@section('header_title', 'المشاريع')
 @section('content')
 
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
-
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>{{ $project->title }}</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li><a href="{{ route('showAllProjects') }}">المشاريع</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
 
     <!--Project Details Start-->
     <section class="department-details">
@@ -91,8 +71,10 @@
                 <div class="col-xl-4 col-lg-5">
                     <div class="department-details__right">
                         <div class="department-details__services-box">
+                            <h3 class="sidebar__title">آخر المشاريع</h3>
+                            <br>
                             <ul class="department-details__services-list list-unstyled">
-                                @foreach ($allProjects as $project)
+                                @foreach ($latestProjects as $project)
                                     <li>
                                         <a href="{{ route('showProject', $project->id) }}">{{ $project->title }}<span
                                                 class="icon-left-arrow"></span></a>
