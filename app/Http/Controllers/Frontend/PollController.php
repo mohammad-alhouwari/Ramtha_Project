@@ -19,11 +19,57 @@ class PollController extends Controller
 
     public function showPoll($id)
     {
+
         $currentDate = now()->toDateString();
         $PollTopic = PollTopic::findOrFail($id);
-        return view('Pages.Polls.poll-details', compact('PollTopic','currentDate'));
+        $polls = Poll::get()->where('poll_topic_id', $PollTopic->id);
+        $R1 = 0;
+        $R2 = 0;
+        $R3 = 0;
+        $R4 = 0;
+        $R5 = 0;
+        $count = 0;
+        $AVG = 0;
+        $AVGrsult = '';
+        $AVGcss = '';
+        foreach ($polls as $poll) {
+            $count++;
+            if ($poll->rating == 5) {
+                $R5++;
+            } elseif ($poll->rating == 4) {
+                $R4++;
+            } elseif ($poll->rating == 3) {
+                $R3++;
+            } elseif ($poll->rating == 2) {
+                $R2++;
+            } elseif ($poll->rating == 1) {
+                $R1++;
+            }
+        }
+
+        if ($count) {
+            $AVG = (($R2 * 2.5 + $R3 * 5 + $R4 * 7.5 + $R5 * 10) / $count)*10;
+            if ($AVG > 80) {
+                $AVGrsult = 'موافق بشدة';
+                $AVGcss = 'strongly-agree';
+            } elseif ($AVG > 60) {
+                $AVGrsult = 'موافق';
+                $AVGcss = 'agree';
+            } elseif ($AVG > 40) {
+                $AVGrsult = 'محايد';
+                $AVGcss = 'neutral';
+            } elseif ($AVG > 20) {
+                $AVGrsult = 'معارض';
+                $AVGcss = 'disagree';
+            } else {
+                $AVGrsult = 'معارض بشدة';
+                $AVGcss = 'strongly-disagree';
+            }
+        }
+
+        return view('Pages.Polls.poll-details', compact('PollTopic', 'currentDate','AVG', 'AVGrsult','AVGcss'));
     }
-   
+
     public function userPoll(Request $request, $pollTopicId)
     {
         $request->validate([

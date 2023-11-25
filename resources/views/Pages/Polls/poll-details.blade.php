@@ -2,8 +2,28 @@
 @section('title', 'استطلاعات الرأي')
 @section('header_title', 'استطلاعات الرأي')
 @section('content')
-
     <!--Event Details Start-->
+    <style>
+        /* .strongly-agree {
+            color: green;
+        }
+
+        .agree {
+            color: greenyellow;
+        }
+
+        .neutral {
+            color: yellow;
+        }
+
+        .disagree {
+            color: orange;
+        }
+
+        .strongly-disagree {
+            color: red;
+        } */
+    </style>
     <section class="event-details pt-5">
         <div class="container">
             <div class="row">
@@ -15,8 +35,11 @@
                         <h3 class="event-details__title-1">{{ $PollTopic->title }}</h3>
                         <p class="event-details__text-1">{{ $PollTopic->description }}</p>
                     </div>
+                    <div class="text-center mt-3 row">
+                        <h2 class="mb-1 {{ $AVGcss }}">{{ $AVG }}%</h2><span class="h6"> الأغلبية العظمى
+                            للإستطلاع هي - {{ $AVGrsult }}</span>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -31,12 +54,12 @@
                 </div>
                 <span class="section-title__tagline">
                     <h2 class="section-title__title">
-                        @if (($currentDate < $PollTopic->end_date))
-                            للمشاركة في إستطلاعات الرأي
+                        @if ($currentDate < $PollTopic->end_date)
+                            للمشاركة في الإستبيان
                         @else
-                            شكراً لمن شارك في إستبيان
+                            شكراً لمن شارك في الإستبيان
                         @endif
-                        
+
                     </h2>
                 </span>
 
@@ -50,6 +73,7 @@
                         <div class="row">
                             @if (session('status'))
                                 <h6 class='alert alert-success text-center'>{{ session('status') }}</h6>
+                                <script></script>
                             @endif
                             <div class="col-xl-12">
                                 <div class="contact-one__input-box">

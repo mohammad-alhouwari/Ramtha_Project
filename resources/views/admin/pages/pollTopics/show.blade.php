@@ -9,6 +9,7 @@
         $R4 = 0;
         $R5 = 0;
         $count = 0;
+        $AVGcss ='';
     @endphp
     @foreach ($polls as $poll)
         @php
@@ -27,10 +28,21 @@
         @endphp
     @endforeach
     @php
-    if ($count) {
-        $AVG = (($R1 + $R2 * 2 + $R3 * 3 + $R4 * 4 + $R5 * 5) / $count) * 20;
-        $AVG100 = 100-$AVG;
-    }
+        if ($count) {
+            $AVG = (($R2 * 2.5 + $R3 * 5 + $R4 * 7.5 + $R5 * 10) / $count) * 10;
+            $AVG100 = 100 - $AVG;
+            if ($AVG > 80) {
+                $AVGcss = 'strongly-agree';
+            } elseif ($AVG > 60) {
+                $AVGrsult = 'موافق';
+            } elseif ($AVG > 40) {
+                $AVGcss = 'neutral';
+            } elseif ($AVG > 20) {
+                $AVGcss = 'disagree';
+            } else {
+                $AVGcss = 'strongly-disagree';
+            }
+        }
     @endphp
     <div class="content-wrapper">
         <div class="content">
@@ -39,7 +51,7 @@
                     <h1>{{ $pollTopic->title }}</h1>
                 </div>
                 <div class="text-center">
-                    <sup class="text-secondary">{{$pollTopic->end_date}}</sup>
+                    <sup class="text-secondary">{{ $pollTopic->end_date }}</sup>
                 </div>
 
                 <div class="card-body text-center">
@@ -49,18 +61,25 @@
             </div>
             <div class="card card-default p-3 px-5">
                 <div class="d-flex justify-content-between mb-2">
-                    <p>({{$R1}})-Strongly Disagree</p>
-                    <p>({{$R2}})-Disagree</p>
-                    <p>({{$R3}})-Neutral</p>
-                    <p>({{$R4}})-Agree</p>
-                    <p>({{$R5}})-Strongly Agree</p>
+                    <p>({{ $R1 }})-Strongly Disagree</p>
+                    <p>({{ $R2 }})-Disagree</p>
+                    <p>({{ $R3 }})-Neutral</p>
+                    <p>({{ $R4 }})-Agree</p>
+                    <p>({{ $R5 }})-Strongly Agree</p>
                 </div>
                 <div class="poll-progress-bar border border-primary d-flex" style="height: 17px;">
                     @if ($count)
-                    <div class="bg-transparent h-100" style="width: {{ $AVG }}%;"></div>
-                    <div class="d-inline-block bg-light h-100" style="width: {{ $AVG100 }}%"></div>
+                        <div class="bg-transparent h-100" style="width: {{ $AVG }}%;"></div>
+                        <div class="d-inline-block bg-light h-100" style="width: {{ $AVG100 }}%"></div>
                     @else
-                    <div class="d-inline-block bg-light h-100 w-100"></div>
+                        <div class="d-inline-block bg-light h-100 w-100"></div>
+                    @endif
+                </div>
+                <div class='text-center'>
+                     @if ($count)
+                        <h3 class="{{$AVGcss}}">{{ $AVG }}%</h3>
+                    @else
+                        <p class="text-secandry">No one has participated in the <b>Poll</b> yet</p>
                     @endif
                 </div>
             </div>
