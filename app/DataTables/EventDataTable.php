@@ -35,7 +35,7 @@ class EventDataTable extends DataTable
             })
 
             ->addColumn('status', function ($query) {
-                $checked = $query->status=='on' ? 'on' : 'off';
+                $checked = $query->status == 'on' ? 'on' : 'off';
 
                 if ($checked == 'on') {
                     return "<span class='badge badge-success'>Active</span>";
@@ -43,7 +43,7 @@ class EventDataTable extends DataTable
                     return "<span class='badge badge-danger'>Inactive</span>";
                 }
             })
-            ->rawColumns(['action', 'preview_image','status'])
+            ->rawColumns(['action', 'preview_image', 'status'])
 
             ->setRowId('id');
     }
@@ -98,8 +98,7 @@ class EventDataTable extends DataTable
             Column::make('date'),
             Column::make('time'),
             Column::make('location'),
-            Column::make('map_x'),
-            Column::make('map_y'),
+            Column::make('map'),
             Column::make('status'),
             Column::computed('action')
                 ->exportable(false)

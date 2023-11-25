@@ -24,11 +24,17 @@
                                                 <span class="fas fa-file-contract"></span>
                                             </div> --}}
                                         </div>
-                                        <h3 class="feature-four__title"><a  href="{{ route('showDetailsTenders', $tender->id) }}"> {{ $tender->title }}</a></h3>
+                                        <h3 class="feature-four__title" style="height: 0px; margin-bottom: 15px"><a
+                                                href="{{ route('showDetailsTenders', $tender->id) }}">
+                                                {{ $tender->title }}</a></h3>
                                         <!-- Add Button under h3 -->
                                         <br>
-                                        <a href="{{ route('showDetailsTenders', $tender->id) }}"
-                                            class="btn btn-primary">المزيد</a>
+                                        <div class="contact-two__btn-box">
+                                            <a href="{{ route('showDetailsTenders', $tender->id) }}"><button type="submit"
+                                                    class="thm-btn contact-two__btn">المزيد</button></a>
+                                        </div>
+                                        {{-- <a href="{{ route('showDetailsTenders', $tender->id) }}"
+                                            class="btn btn-primary">المزيد</a> --}}
                                     </div>
                                 </div>
                             @endforeach
