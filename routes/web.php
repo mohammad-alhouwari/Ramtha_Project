@@ -8,18 +8,21 @@ use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\JobController as FrontendJobController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
+use App\Http\Controllers\TendersDetailesController;
 use App\Http\Controllers\Frontend\SuggestionController as FrontendSuggestionController;
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
 use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
 use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
 use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComplainController;
 use App\Http\Controllers\Frontend\ComplainController as FrontendComplainController;
 use App\Http\Controllers\Frontend\OwnershipTransferController as FrontendOwnershipTransferController;
 use App\Http\Controllers\Frontend\PollController as FrontendPollController;
 use App\Http\Controllers\Frontend\LandmarksController as FrontendLandmarksController;
 
-use Illuminate\Support\Facades\Route;
+
 
 /*-----------------------------Home Routes-----------------------------*/
 
@@ -71,6 +74,9 @@ Route::controller(FrontendNewsController::class)->group(function () {
 });
 /*------------------------------- News Routes End -------------------------------*/
 
+/*------------------------------ Complain Routes Start ------------------------------*/
+Route::resource('complains', ComplainController::class);
+/*------------------------------ Complain Routes End -------------------------------*/
 /*----------------------------- Complain Routes Start -----------------------------*/
 Route::resource('complains', FrontendComplainController::class);
 /*----------------------------- Complain Routes end -----------------------------*/
@@ -83,6 +89,8 @@ Route::controller(FrontendMediaController::class)->group(function () {
 /*----------------------------- Gallery Routes End -----------------------------*/
 
 /*----------------------------- Event Routes Start -----------------------------*/
+Route::get('events', [FrontendEventController::class, 'index']);
+Route::get('/eventdetail/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::get('events', [FrontendEventController::class, 'index'])->name('events');
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');

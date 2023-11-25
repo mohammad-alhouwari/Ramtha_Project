@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Poll;
 use App\Models\PollTopic;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PollController extends Controller
 {
@@ -48,7 +50,7 @@ class PollController extends Controller
         }
 
         if ($count) {
-            $AVG = (($R2 * 2.5 + $R3 * 5 + $R4 * 7.5 + $R5 * 10) / $count)*10;
+            $AVG = (($R2 * 2.5 + $R3 * 5 + $R4 * 7.5 + $R5 * 10) / $count) * 10;
             if ($AVG > 80) {
                 $AVGrsult = 'موافق بشدة';
                 $AVGcss = 'strongly-agree';
@@ -67,7 +69,7 @@ class PollController extends Controller
             }
         }
 
-        return view('Pages.Polls.poll-details', compact('PollTopic', 'currentDate','AVG', 'AVGrsult','AVGcss'));
+        return view('Pages.Polls.poll-details', compact('PollTopic', 'currentDate', 'AVG', 'AVGrsult', 'AVGcss'));
     }
 
     public function userPoll(Request $request, $pollTopicId)
@@ -90,6 +92,7 @@ class PollController extends Controller
             ]);
 
             $message = 'تم تحديث رأيك بنجاح';
+            Alert::success('تم بنجاح', 'تم تحديث رأيك بنجاح');
         } else {
             // If no existing poll found, create a new one
             Poll::create([
@@ -100,8 +103,13 @@ class PollController extends Controller
             ]);
 
             $message = 'شكراً لمشاركة رأيك';
+            Alert::success('تم بنجاح', 'شكراً لمشاركة رأيك');
         }
-
+        
         return redirect()->back()->with('status', $message);
 
+
     } }
+
+
+
