@@ -2,7 +2,7 @@
 @section('title', 'استطلاعات الرأي')
 @section('header_title', 'استطلاعات الرأي')
 @section('content')
-    @if ($projects->isEmpty())
+    @if ($PollTopics->isEmpty())
         <section class="department-page">
             <div class="container">
                 <div class="section-title text-center">
