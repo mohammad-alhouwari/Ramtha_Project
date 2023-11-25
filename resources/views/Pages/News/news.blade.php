@@ -1,28 +1,9 @@
 @extends('layout.master')
 @section('title', 'الأخبار')
+@section('header_title', 'الاخبار')
+
 @section('content')
-    <!--Page Header End-->
 
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
-
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/banner.jpeg );opacity:0.3">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>الأخبار</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li><a href="{{ route('showAllNews') }}">الأخبار</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
     <!--News Page Start-->
     @if ($news->isEmpty())
         <section class="department-page">
@@ -52,10 +33,10 @@
                     <h1>اكتشف أخبار بلديةالرمثا</h1>
                 </div>
                 <br>
-                <div class="row">
+                <div class="row rownews">
                     <!--News One Single Start-->
                     @foreach ($news as $new)
-                        <div class="col-xl-4 col-lg-4 news-div">
+                        <div class="col-xl-4 col-lg-4 news-div" style="margin-bottom: 20px">
                             <div class="news-one__single">
                                 <div class="news-one__img-box">
                                     <div class="news-one__img">
@@ -72,20 +53,38 @@
                                             {{ $new->title }}
                                         </a>
                                     </h3>
-                                    <div class="news-one__btn">
-                                        <a href="{{ route('showDetailsNews', $new->id) }}">اقرأ المزيد<i
-                                                class="icon-left-arrow"></i></a>
-                                    </div>
+                                    {{-- Check if the item's description exists --}}
+                                    @if ($new->description)
+                                        {{-- Split the description into words --}}
+                                        @php
+                                            $words = explode(' ', $new->description);
+                                            $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                        @endphp
+
+                                        {{-- Display the first 10 words and 'Read more' link --}}
+                                        <p>
+                                            {{ $limitedWords }}
+                                            @if (count($words) > 10)
+                                                ...
+                                            @endif
+                                            <a style="color: var(--govity-base)"
+                                                href="{{ route('showDetailsNews', $new->id) }}">اقرأ المزيد</a>
+                                        </p>
+                                    @endif
+
                                 </div>
                             </div>
                         </div>
+                       
                     @endforeach
-                    
-               
-
                 </div>
             </div>
         </section>
     @endif
+    <center>
+        <div style="padding-bottom: 10px; font-size: 14px; text-align: center; display: flex; justify-content: center;">
+            {{ $news->links() }}
+        </div>
+    </center>
     <!--News Page End-->
 @endsection

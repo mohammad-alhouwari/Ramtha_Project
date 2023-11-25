@@ -1,29 +1,7 @@
 @extends('layout.master')
 @section('title', 'تفاصيل الخبر')
+@section('header_title', 'تفاصيل الخبر')
 @section('content')
-
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
-
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg"
-            style="background-image: url({{ asset('assets/images/backgrounds/page-header-bg.jpg') }} );opacity:0.3">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>تفاصيل الخبر</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li>الأخبار</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
 
     <!--News Details Start-->
     <section class="news-details">
@@ -31,7 +9,11 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
                     <div class="news-details__left">
+                        <div class="news-details__content">
+                            <h3 class="news-details__title-1">{{ $news->title }}</h3>
+                        </div>
                         <div class="news-details__img-box">
+
                             <div class="news-details__img">
                                 <img src="{{ asset($news->preview_image) }}" alt="">
                             </div>
@@ -40,10 +22,46 @@
                             </div>
                         </div>
                         <div class="news-details__content">
-                            <h3 class="news-details__title-1">{{ $news->title }}</h3>
-                            <p class="news-details__text-1">{{ $news->description }}
+                            
+                            <p class="news-details__text-1">{{ $news->description }}</p>
                         </div>
                     </div>
+                    <br>
+                    <br>
+                    @if ($newsImages && count($newsImages) > 0)
+                        <h4 class="about-two__progress-title"> صور عن الخبر:</h4>
+                        <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel" lang="en"
+                            dir="ltr"
+                            data-owl-options='{
+                                    "items": 3,
+                                    "margin": 30,
+                                    "smartSpeed": 700,
+                                    "loop": true,
+                                    "autoplay": false,  <!-- Change this line to enable autoplay -->
+                                    "autoplayTimeout": 6000,  <!-- Set the autoplay timeout (in milliseconds) -->
+                                    "nav": false,
+                                    "dots": false,
+                                    "navText": ["<span class=\"fa fa-angle-left\"></span>", "<span class=\"fa fa-angle-right\"></span>"],
+                                    "responsive": {
+                                        "0": {
+                                            "items": 1
+                                        },
+                                        "768": {
+                                            "items": 3
+                                        },
+                                        
+                                    }
+                                }'>
+                            @foreach ($newsImages as $newsImage)
+                                <div class="brand-one__single">
+                                    <div class=" items">
+                                        <img src="{{ asset($newsImage->media) }}" alt="Image1"
+                                            />
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
                 </div>
                 <div class="col-xl-4 col-lg-5">
                     <div class="sidebar">

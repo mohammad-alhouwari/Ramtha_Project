@@ -12,6 +12,7 @@ class Tender extends Model
         'title',
         'description',
         'preview_image',
+        'preview_image2',
         'date',
         'value',
         'status',

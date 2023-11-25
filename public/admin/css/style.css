@@ -3619,7 +3619,7 @@ input[type="button"].btn-block {
     padding: 0.25rem 1.5rem;
     clear: both;
     font-weight: 400;
-    color: #2f2f2f;
+    color: hwb(0 18% 82%);
     text-align: inherit;
     white-space: nowrap;
     background-color: transparent;
@@ -18191,3 +18191,66 @@ html[dir="rtl"] .sidebar li > a .caret:before {
     font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */
+.poll-progress-bar {
+    background: rgb(255, 255, 255);
+    /* background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(0, 255, 0, 1) 100%); */
+    background: linear-gradient(90deg,
+                rgba(255, 0, 0, 1) 0%,
+                /* Red */
+                rgba(255, 165, 0, 1) 20%,
+                /* Orange */
+                rgba(255, 255, 0, 1) 40%,
+                /* Yellow */
+                rgba(173, 255, 47, 1) 60%,
+                /* Green-yellow */
+                rgba(0, 128, 0, 1) 100%
+                /* Green */
+            );
+        height: 100vh;
+        /* Set the height of the gradient background */
+}
+
+.strongly-agree {
+    color: green;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.agree {
+    color: greenyellow;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.neutral {
+    color: yellow;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.disagree {
+    color: orange;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.strongly-disagree {
+    color: red;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}

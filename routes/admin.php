@@ -11,8 +11,15 @@ use App\Http\Controllers\Backend\InvestmentController as BackendInvestmentContro
 use App\Http\Controllers\Backend\EventController as BackendEventController;
 use App\Http\Controllers\Backend\EventParticipantController as BackendEventParticipantController;
 use App\Http\Controllers\Backend\NewController as BackendNewController;
+use App\Http\Controllers\Backend\SuggestionController as BackendSuggestionController;
 use App\Http\Controllers\Backend\TenderController as BackendTenderController;
 use App\Http\Controllers\Backend\JobController as BackendJobController;
+use App\Http\Controllers\Backend\MembersController as BackendMembersController;
+use App\Http\Controllers\Backend\OwnershipTransferController as BackendOwnershipTransferController;
+use App\Http\Controllers\Backend\PollTopicController as BackendPollTopicController;
+use App\Http\Controllers\Backend\LandmarksController as BackendLandmarksController;
+use App\Http\Controllers\Backend\MunicipalityInfoController as BackendMunicipalityInfoController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('auth')->group(
@@ -33,6 +40,12 @@ Route::prefix('admin')->middleware('auth')->group(
         //** Complain Route
         Route::resource('complain-admin', BackendComplainController::class);
 
+        // Suggestion Route
+        Route::resource('suggestions-admin', BackendSuggestionController::class);
+
+        // Ownership_Transfer Route
+        Route::resource('ownership-transfer-admin', BackendOwnershipTransferController::class);
+
         //**jobs opportunities Route
         Route::resource('jobs-admin', BackendJobController::class);
 
@@ -41,6 +54,9 @@ Route::prefix('admin')->middleware('auth')->group(
 
         //**Event Route
         Route::resource('Events-admin', BackendEventController::class);
+
+        //polls Topics Route
+        Route::resource('pollTopics-admin', BackendPollTopicController::class);
 
         //** Event Participant
         Route::resource('EventParticipant-admin', BackendEventParticipantController::class)->parameters([
@@ -62,13 +78,23 @@ Route::prefix('admin')->middleware('auth')->group(
         //**Presidents Route
         Route::resource('presidents-admin', BackendPresidentsController::class);
 
+        //**Members Route
+        Route::resource('members-admin', BackendMembersController::class);
+
+        //**Landmarks Route
+        Route::resource('landmarks-admin', BackendLandmarksController::class);
+
         //** All Medias Route 
         Route::get('medias', [BackendMediaController::class, 'showAllMedia']);
+
+        //**Municipality Info Route
+        Route::resource('municipality-info-admin', BackendMunicipalityInfoController::class);
 
         //****All Media
         Route::get('medias-admin/create/project/{project_id}', [BackendMediaController::class, 'createProject'])->name('medias-admin.create.project');
         Route::get('medias-admin/create/news/{news_id}', [BackendMediaController::class, 'createNews'])->name('medias-admin.create.news');
         Route::get('medias-admin/create/event/{event_id}', [BackendMediaController::class, 'createEvent'])->name('medias-admin.create.event');
+        Route::get('medias-admin/create/landmark/{landmark_id}', [BackendMediaController::class, 'createLandmark'])->name('medias-admin.create.landmark');
 
         //** Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');
