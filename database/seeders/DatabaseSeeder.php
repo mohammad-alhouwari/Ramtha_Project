@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
                 $this->call(MunicipalityInfoSeeder::class);
                 $this->call(EventsTableSeeder::class);
                 $this->call(PollTopicSeeder::class);
+                $this->call(President::class);
         }
 
     }
