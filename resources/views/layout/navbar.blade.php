@@ -63,243 +63,182 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <style>
+        /* Color of the links BEFORE scroll */
+        .navbar-scroll .nav-link,
+        .navbar-scroll .fa-bars,
+        .navbar-scroll .navar-brand {
+            color: #4f4f4f;
+        }
 
+        .navbar-scroll .nav-link:hover {
+            color: #1266f1;
+        }
+
+        /* Color of the links AFTER scroll */
+        .navbar-scrolled .nav-link,
+        .navbar-scrolled .fa-bars,
+        .navbar-scrolled .navar-brand {
+            color: #4f4f4f;
+        }
+
+        /* Color of the navbar AFTER scroll */
+        .navbar-scroll,
+        .navbar-scrolled {
+            background-color: #fff;
+        }
+
+        /* An optional height of the navbar AFTER scroll */
+        .navbar.navbar-scroll.navbar-scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
 
 </head>
 
 <body class="custom-cursor">
 
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
-
-
-
-
-
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
     <!-- /.preloader -->
-
-
-    <div class="page-wrapper">
-        <header class="main-header">
-            <nav class="main-menu">
-                <div class="main-menu__wrapper">
-                    <div class="main-menu__wrapper-inner">
-                        <div class="main-menu__logo">
-                            <a href="index.html"><img src="{{ asset('assets/images/ramtha-logo-rbg.png') }}"
-                                    alt="" width="100px"></a>
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-headercontent"></div><!-- /.sticky-headercontent -->
+    </div><!-- /.stricky-header -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+        <div class="container">
+            @if (isset($municipalityInfo))
+                <img src="{{ asset($municipalityInfo->logo) }}" alt="" width="100px">
+            @endif
+            <button class="navbar-toggler ps-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon d-flex justify-content-start align-items-center">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">الرئيسية</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownNews" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            عن البلدية
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
+                            <a class="dropdown-item {{ request()->routeIs('about-municipality') ? 'about-municipality' : '' }}"
+                                href="/about-municipality">نبذة عن البلدية</a>
+                            <a class="dropdown-item" href="/president">كلمة الرئيس</a>
+                            <a class="dropdown-item" href="/organizational-chart">الهيكل
+                                التنظيمي</a>
+                            <a class="dropdown-item" href="/about-municipality">الأعضاء</a>
+                            <!-- Add more categories as needed -->
                         </div>
-                        <div class="main-menu__top">
-                            <div class="main-menu__top-inner">
-                                <div class="main-menu__top-left">
-                                    <div class="main-menu__social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                                <div class="main-menu__top-right">
-                                    <ul class="list-unstyled main-menu__contact-list">
-                                        <li>
-                                            <div class="icon">
-                                                <i class="fas fa-envelope"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <i class="fas fa-clock"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Open hours: Mon - Fri 8.00 am - 6.00 pm</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="list-unstyled main-menu__top-menu">
-                                        <li><a href="about.html">Council</a></li>
-                                        <li><a href="about.html">Government</a></li>
-                                        <li><a href="contact.html">Complaints</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownNews" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            المركز الاعلامي
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
+                            <a class="dropdown-item" href="/news">الأخبار</a>
+                            <a class="dropdown-item" href="/events">الفعاليات</a>
+                            <a class="dropdown-item" href="/gallery">معرض الصور</a>
+
+                            <!-- Add more categories as needed -->
                         </div>
-                        <div class="main-menu__bottom">
-                            <div class="main-menu__bottom-inner">
-                                <div class="main-menu__main-menu-box">
-                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                    <ul class="main-menu__list one-page-scroll-menu">
-                                        <li class="dropdown current megamenu scrollToLink">
-                                            <a href="#home">Home </a>
-                                            <ul>
-                                                <li>
-                                                    <section class="home-showcase">
-                                                        <div class="container">
-                                                            <div class="home-showcase__inner">
-                                                                <div class="row">
-                                                                    <div class="col-lg-3">
-                                                                        <div class="home-showcase__item">
-                                                                            <div class="home-showcase__image">
-                                                                                <img src="assets/images/home-showcase/home-showcase-1-1.jpg"
-                                                                                    alt="">
-                                                                                <div class="home-showcase__buttons">
-                                                                                    <a href="index.html"
-                                                                                        class="thm-btn home-showcase__buttons__item">Multi
-                                                                                        Page</a>
-                                                                                    <a href="index-one-page.html"
-                                                                                        class="thm-btn home-showcase__buttons__item">One
-                                                                                        Page</a>
-                                                                                </div>
-                                                                                <!-- /.home-showcase__buttons -->
-                                                                            </div><!-- /.home-showcase__image -->
-                                                                            <h3 class="home-showcase__title">Home
-                                                                                Page
-                                                                                01</h3>
-                                                                            <!-- /.home-showcase__title -->
-                                                                        </div><!-- /.home-showcase__item -->
-                                                                    </div><!-- /.col-lg-3 -->
-                                                                    <div class="col-lg-3">
-                                                                        <div class="home-showcase__item">
-                                                                            <div class="home-showcase__image">
-                                                                                <img src="assets/images/home-showcase/home-showcase-1-2.jpg"
-                                                                                    alt="">
-                                                                                <div class="home-showcase__buttons">
-                                                                                    <a href="index2.html"
-                                                                                        class="thm-btn home-showcase__buttons__item">Multi
-                                                                                        Page</a>
-                                                                                    <a href="index2-one-page.html"
-                                                                                        class="thm-btn home-showcase__buttons__item">One
-                                                                                        Page</a>
-                                                                                </div>
-                                                                                <!-- /.home-showcase__buttons -->
-                                                                            </div><!-- /.home-showcase__image -->
-                                                                            <h3 class="home-showcase__title">Home
-                                                                                Page
-                                                                                02
-                                                                            </h3><!-- /.home-showcase__title -->
-                                                                        </div><!-- /.home-showcase__item -->
-                                                                    </div><!-- /.col-lg-3 -->
-                                                                    <div class="col-lg-3">
-                                                                        <div class="home-showcase__item">
-                                                                            <div class="home-showcase__image">
-                                                                                <img src="assets/images/home-showcase/home-showcase-1-3.jpg"
-                                                                                    alt="">
-                                                                                <div class="home-showcase__buttons">
-                                                                                    <a href="index3.html"
-                                                                                        class="thm-btn home-showcase__buttons__item">Multi
-                                                                                        Page</a>
-                                                                                    <a href="index3-one-page.html"
-                                                                                        class="thm-btn home-showcase__buttons__item">One
-                                                                                        Page</a>
-                                                                                </div>
-                                                                                <!-- /.home-showcase__buttons -->
-                                                                            </div><!-- /.home-showcase__image -->
-                                                                            <h3 class="home-showcase__title">Home
-                                                                                Page
-                                                                                03
-                                                                            </h3><!-- /.home-showcase__title -->
-                                                                        </div><!-- /.home-showcase__item -->
-                                                                    </div><!-- /.col-lg-3 -->
-                                                                    <div class="col-lg-3">
-                                                                        <div class="home-showcase__item">
-                                                                            <div class="home-showcase__image">
-                                                                                <img src="assets/images/home-showcase/home-showcase-1-4.jpg"
-                                                                                    alt="">
-                                                                                <div class="home-showcase__buttons">
-                                                                                    <a href="index-dark.html"
-                                                                                        class="thm-btn home-showcase__buttons__item">View
-                                                                                        Page</a>
-                                                                                </div>
-                                                                                <!-- /.home-showcase__buttons -->
-                                                                            </div><!-- /.home-showcase__image -->
-                                                                            <h3 class="home-showcase__title">Home
-                                                                                Page
-                                                                                04
-                                                                            </h3><!-- /.home-showcase__title -->
-                                                                        </div><!-- /.home-showcase__item -->
-                                                                    </div><!-- /.col-lg-3 -->
-                                                                </div><!-- /.row -->
-                                                            </div><!-- /.home-showcase__inner -->
-
-                                                        </div><!-- /.container -->
-                                                    </section>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="scrollToLink">
-                                            <a href="#about">About</a>
-                                        </li>
-                                        <li class="scrollToLink">
-                                            <a href="#services">Services</a>
-                                        </li>
-                                        <li class="scrollToLink">
-                                            <a href="#team">Team</a>
-                                        </li>
-                                        <li class="scrollToLink">
-                                            <a href="#events">Events</a>
-                                        </li>
-                                        <li class="scrollToLink">
-                                            <a href="#news">News</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="main-menu__right">
-                                    <div class="main-menu__call">
-                                        <div class="main-menu__call-icon">
-                                            <span class="icon-telephone"></span>
-                                        </div>
-                                        <div class="main-menu__call-content">
-                                            <p class="main-menu__call-sub-title">Call Anytime</p>
-                                            <h5 class="main-menu__call-number"><a href="tel:9212340800">+92 (1234)
-                                                    0800</a></h5>
-                                        </div>
-                                    </div>
-                                    <div class="main-menu__search-box">
-                                        <a href="#"
-                                            class="main-menu__search search-toggler icon-magnifying-glass"></a>
-                                    </div>
-
-
-                                </div>
-                                {{-- <div class="">
-                                    <img style="width: 100px" src="assets/images/backgrounds/logoload.png"
-                                        alt="">
-                                </div> --}}
-                            </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            المشاريع والعطاءات
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
+                            <a class="dropdown-item" href="/projects">المشاريع</a>
+                            <a class="dropdown-item" href="/tenders">العطاءات</a>
+                            <a class="dropdown-item" href="/investments">الفرص
+                                الاستثمارية</a>
+                            <a class="dropdown-item" href="/jobs">فرص العمل</a>
+                            <!-- Add more categories as needed -->
                         </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            رأيكم يهمنا
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
+                            <a class="dropdown-item" href="/complains">شكاوي واقتراحات</a>
+                            <a class="dropdown-item" href="/suggestions">افكار و مبادرات</a>
+                            <a class="dropdown-item" href="/polls">استطلاعات الرأي</a>
 
+                            <!-- Add more categories as needed -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/landmarks">اهم المعالم</a>
+                    </li>
 
-        @if (!request()->is('/'))
-            <!--Page Header Start-->
-            <section class="page-header">
-                <div class="page-header-bg"
-                    style="background-image: url({{ asset('assets/images/HeroSection.png') }})">
+                </ul>
+
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link px-2" href="https://www.facebook.com/ramtha.municipality/?locale=ar_AR7">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2" href="https://twitter.com/RamthaMunic?t=ghT4dCI8RjTwi_OZ1tgrUg&s=09">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="https://youtube.com/@RamthaMunic?si=TQJjj1Upu3KRic6X">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    @if (isset($municipalityInfo))
+                        <li class="nav-item">
+
+                            <a class="nav-link ps-2" href="tel:{{ $municipalityInfo->phone }}">
+                                <i class="fas fa-phone"></i>
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" href="mailto:{{ $municipalityInfo->email }}">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </li>
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @if (!request()->is('/'))
+        <!--Page Header Start-->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url({{ asset('assets/images/HeroSection.png') }})">
+            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h2>@yield('header_title')</h2>
+                    <ul class="thm-breadcrumb list-unstyled " style="padding-inline-start:0px">
+                        <li><a href="{{ url('/') }}">الرئيسية</a></li>
+                        <li><span>/</span></li>
+                        <li class="header-size">@yield('header_title')</li>
+                    </ul>
                 </div>
-                <div class="container">
-                    <div class="page-header__inner">
-                        <h2>@yield('header_title')</h2>
-                        <ul class="thm-breadcrumb list-unstyled" style="padding-inline-start:0px">
-                            <li><a href="{{ url('/') }}">الرئيسية</a></li>
-                            <li><span>/</span></li>
-                            <li>@yield('header_title')</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <br>
-            <br>
-            <br>
-            <br>
-            <!--Page Header End-->
-        @endif
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--Page Header End-->
+    @endif

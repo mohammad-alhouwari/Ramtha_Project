@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class MediaSeeder extends Seeder
 {
@@ -125,7 +126,8 @@ class MediaSeeder extends Seeder
             [
                 'media' => 'http://127.0.0.1:8000/assets/images/News/media_655fc32747f6c.jpg',
                 'media_type' => 'image',
-                'news_id' => 1
+                'news_id' => 1,
+
             ],
 
             [
@@ -200,5 +202,185 @@ class MediaSeeder extends Seeder
                 'news_id' => 3
             ],
         ]);
+        //Landmarks
+        DB::table('media')->insert(
+            [
+                [
+                    'media' => 'assets\images\landmark\m1-2 (1).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '1',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m1-2 (2).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '1',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m1-2 (3).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '1',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m1-2 (4).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '1',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m1-2 (5).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '1',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m1-2 (6).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '1',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m1-2 (7).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '1',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m2-2 (1).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '2',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m2-2 (2).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '2',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m2-2 (3).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '2',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m2-2 (4).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '2',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m2-2 (5).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '2',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m2-2 (6).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '2',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m2-2 (7).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '2',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m2-2 (8).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '2',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m3-2 (1).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '3',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m3-2 (2).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '3',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m3-2 (3).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '3',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m3-2 (4).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '3',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m3-2 (5).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '3',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m3-2 (6).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '3',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m3-2 (7).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '3',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m4-2 (1).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '4',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m4-2 (2).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '4',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m4-2 (4).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '4',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m4-2 (4).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '4',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m4-2 (5).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '4',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m4-2 (6).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '4',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m4-2 (7).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '4',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m4-2 (8).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '4',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m5-2 (1).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '5',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m5-2 (2).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '5',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m5-2 (3).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '5',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m5-2 (4).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '5',
+                ],
+                [
+                    'media' => 'assets\images\landmark\m5-2 (5).jpg',
+                    'media_type' => 'image',
+                    'landmark_id' => '5',
+                ],
+            ]
+        );
     }
 }

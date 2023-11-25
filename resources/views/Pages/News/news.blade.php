@@ -33,10 +33,10 @@
                     <h1>اكتشف أخبار بلديةالرمثا</h1>
                 </div>
                 <br>
-                <div class="row">
+                <div class="row rownews">
                     <!--News One Single Start-->
                     @foreach ($news as $new)
-                        <div class="col-xl-4 col-lg-4 news-div">
+                        <div class="col-xl-4 col-lg-4 news-div" style="margin-bottom: 20px">
                             <div class="news-one__single">
                                 <div class="news-one__img-box">
                                     <div class="news-one__img">
@@ -75,13 +75,16 @@
                                 </div>
                             </div>
                         </div>
+                       
                     @endforeach
-
-
-
                 </div>
             </div>
         </section>
     @endif
+    <center>
+        <div style="padding-bottom: 10px; font-size: 14px; text-align: center; display: flex; justify-content: center;">
+            {{ $news->links() }}
+        </div>
+    </center>
     <!--News Page End-->
 @endsection

@@ -3,7 +3,7 @@
 @section('header_title', 'معرض الصور')
 @section('content')
 
-    @if ($uniqueGallery->isEmpty())
+    @if ($paginatedGallery->isEmpty())
         <section class="department-page">
             <div class="container">
                 <div class="section-title text-center">
@@ -31,7 +31,7 @@
                 <br>
             </div>
             <div class="portfolio-page-items">
-                @foreach ($uniqueGallery as $item)
+                @foreach ($paginatedGallery as $item)
                     <a class="album-items"
                         href="{{ route('single_gallery', [
                             'id' => $item->project ? $item->project->id : ($item->news ? $item->news->id : $item->event->id),
@@ -75,6 +75,13 @@
 
 
         </section>
+        <center>
+            <div style="padding-bottom: 10px; font-size: 14px; text-align: center; display: flex; justify-content: center;">
+                {{ $paginatedGallery->links() }}
+            </div>
+        </center>
+        <br>
+
     @endif
 
 @endsection

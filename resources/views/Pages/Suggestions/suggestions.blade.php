@@ -4,8 +4,9 @@
 @section('content')
     <!-- Ideas Submission Page Start -->
     @include('sweetalert::alert')
-
+    <br><br>
     <section class="contact-two" dir="rtl">
+    
         <div class="contact-two__bg">
         </div>
         <div class="container" dir="rtl">
@@ -103,7 +104,7 @@
                                 الحقل
                             </p>
                             <div class="contact-two__btn-box">
-                                <button type="submit" class="thm-btn contact-two__btn">ارسل</button>
+                                <button type="submit" class="thm-btn contact-two__btn">أرسل</button>
                             </div>
                         </div>
                     </div>

@@ -16,6 +16,9 @@ class MediaDataTable extends DataTable
 {
 
     protected $projectId;
+    protected $newsId;
+    protected $eventId;
+    protected $landmarkId;
 
     public function setProjectId($projectId)
     {
@@ -35,13 +38,20 @@ class MediaDataTable extends DataTable
 
         return $this;
     }
+    public function setLandmarkId($landmarkId)
+    {
+        $this->landmarkId = $landmarkId;
+
+        return $this;
+    }
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
+        if (!is_null($this->landmarkId)) {
+            $query->where('landmark_id', $this->landmarkId);
+        }
         if (!is_null($this->projectId)) {
             $query->where('project_id', $this->projectId);
         }
-    
-
         if (!is_null($this->newsId)) {
             $query->where('news_id', $this->newsId);
         }
@@ -61,7 +71,6 @@ class MediaDataTable extends DataTable
 
             ->rawColumns(['action', 'media'])
             ->setRowId('id');
-            
     }
 
 

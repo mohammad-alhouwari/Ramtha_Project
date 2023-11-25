@@ -9,7 +9,11 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
                     <div class="news-details__left">
+                        <div class="news-details__content">
+                            <h3 class="news-details__title-1">{{ $news->title }}</h3>
+                        </div>
                         <div class="news-details__img-box">
+
                             <div class="news-details__img">
                                 <img src="{{ asset($news->preview_image) }}" alt="">
                             </div>
@@ -18,8 +22,8 @@
                             </div>
                         </div>
                         <div class="news-details__content">
-                            <h3 class="news-details__title-1">{{ $news->title }}</h3>
-                            <p class="news-details__text-1">{{ $news->description }}
+                            
+                            <p class="news-details__text-1">{{ $news->description }}</p>
                         </div>
                     </div>
                     <br>
@@ -31,7 +35,7 @@
                             data-owl-options='{
                                     "items": 3,
                                     "margin": 30,
-                                    "smartSpeed": 3000,
+                                    "smartSpeed": 700,
                                     "loop": true,
                                     "autoplay": false,  <!-- Change this line to enable autoplay -->
                                     "autoplayTimeout": 6000,  <!-- Set the autoplay timeout (in milliseconds) -->
@@ -51,8 +55,8 @@
                             @foreach ($newsImages as $newsImage)
                                 <div class="brand-one__single">
                                     <div class=" items">
-                                        <img src="{{ asset($newsImage->media) }}" alt="Image1" style="margin: 10px"
-                                            width="200px" />
+                                        <img src="{{ asset($newsImage->media) }}" alt="Image1"
+                                            />
                                     </div>
                                 </div>
                             @endforeach

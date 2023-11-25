@@ -27,6 +27,13 @@
     @else
         <section class="portfolio-page">
             <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__icon">
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="section-title__tagline">فرصُنا الإستثمارية</span>
+                    <h2 class="section-title__title">اكتشف الفرص الاستثمارية في بلدية <br>الرمثا</h2>
+                </div>
                 <div class="row">
                     @foreach ($investments as $investment)
                         <!--Portfolio Page Single Start-->
