@@ -3,30 +3,75 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\MunicipalityInfo;
 use App\Models\Poll;
 use App\Models\PollTopic;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PollController extends Controller
 {
     public function showAllPolls()
     {
-        $municipalityInfo=MunicipalityInfo::latest()->first();
         $PollTopics = PollTopic::where('status', 'on')->get();
-        return view('Pages.Polls.poll-topic', compact('PollTopics','municipalityInfo'));
+        return view('Pages.Polls.poll-topic', compact('PollTopics'));
     }
 
 
 
     public function showPoll($id)
     {
+
         $currentDate = now()->toDateString();
         $PollTopic = PollTopic::findOrFail($id);
-        $municipalityInfo=MunicipalityInfo::latest()->first();
-        return view('Pages.Polls.poll-details', compact('PollTopic','currentDate','municipalityInfo'));
+        $polls = Poll::get()->where('poll_topic_id', $PollTopic->id);
+        $R1 = 0;
+        $R2 = 0;
+        $R3 = 0;
+        $R4 = 0;
+        $R5 = 0;
+        $count = 0;
+        $AVG = 0;
+        $AVGrsult = '';
+        $AVGcss = '';
+        foreach ($polls as $poll) {
+            $count++;
+            if ($poll->rating == 5) {
+                $R5++;
+            } elseif ($poll->rating == 4) {
+                $R4++;
+            } elseif ($poll->rating == 3) {
+                $R3++;
+            } elseif ($poll->rating == 2) {
+                $R2++;
+            } elseif ($poll->rating == 1) {
+                $R1++;
+            }
+        }
+
+        if ($count) {
+            $AVG = (($R2 * 2.5 + $R3 * 5 + $R4 * 7.5 + $R5 * 10) / $count) * 10;
+            if ($AVG > 80) {
+                $AVGrsult = 'موافق بشدة';
+                $AVGcss = 'strongly-agree';
+            } elseif ($AVG > 60) {
+                $AVGrsult = 'موافق';
+                $AVGcss = 'agree';
+            } elseif ($AVG > 40) {
+                $AVGrsult = 'محايد';
+                $AVGcss = 'neutral';
+            } elseif ($AVG > 20) {
+                $AVGrsult = 'معارض';
+                $AVGcss = 'disagree';
+            } else {
+                $AVGrsult = 'معارض بشدة';
+                $AVGcss = 'strongly-disagree';
+            }
+        }
+
+        return view('Pages.Polls.poll-details', compact('PollTopic', 'currentDate', 'AVG', 'AVGrsult', 'AVGcss'));
     }
-   
+
     public function userPoll(Request $request, $pollTopicId)
     {
         $request->validate([
@@ -47,6 +92,7 @@ class PollController extends Controller
             ]);
 
             $message = 'تم تحديث رأيك بنجاح';
+            Alert::success('تم بنجاح', 'تم تحديث رأيك بنجاح');
         } else {
             // If no existing poll found, create a new one
             Poll::create([
@@ -57,10 +103,10 @@ class PollController extends Controller
             ]);
 
             $message = 'شكراً لمشاركة رأيك';
+            Alert::success('تم بنجاح', 'شكراً لمشاركة رأيك');
         }
-        $municipalityInfo=MunicipalityInfo::latest()->first();
-        return redirect()->back()->with(['status' => $message, 'municipalityInfo' => $municipalityInfo]);
+        
+        return redirect()->back()->with('status', $message);
 
     }
-
 }

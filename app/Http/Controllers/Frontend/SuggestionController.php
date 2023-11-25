@@ -75,7 +75,6 @@ class SuggestionController extends Controller
         ]);
 
         Alert::success('تم بنجاح', 'تقديم فكرة مُبادرتك!');
-        $municipalityInfo=MunicipalityInfo::latest()->first();
         return redirect()->route('suggestions.index');
     }
 

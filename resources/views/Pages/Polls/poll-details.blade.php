@@ -2,8 +2,7 @@
 @section('title', 'استطلاعات الرأي')
 @section('header_title', 'استطلاعات الرأي')
 @section('content')
-
-    <!--Event Details Start-->
+    @include('sweetalert::alert')
     <section class="event-details pt-5">
         <div class="container">
             <div class="row">
@@ -15,13 +14,21 @@
                         <h3 class="event-details__title-1">{{ $PollTopic->title }}</h3>
                         <p class="event-details__text-1">{{ $PollTopic->description }}</p>
                     </div>
+                    
                 </div>
-
             </div>
         </div>
     </section>
 
     <section dir="rtl" class="contact-one">
+        <div class="text-center m-3 row">
+                        @if ($AVG != 0)
+                        <h2 class="mb-1 {{ $AVGcss }}">{{ $AVG }}%</h2><span class="h6"> الأغلبية العظمى
+                            للإستطلاع هي - <b>{{ $AVGrsult }}</b></span>
+                        @else
+                           <span class="mt-3">كن أول من يشارك بالإستطلاع</span> 
+                        @endif
+                    </div>
         <div class="contact-one__bg" style="background-image: url(assets/images/backgrounds/contact-one-bg.png);">
         </div>
         <div class="container">
@@ -31,25 +38,26 @@
                 </div>
                 <span class="section-title__tagline">
                     <h2 class="section-title__title">
-                        @if (($currentDate < $PollTopic->end_date))
-                            للمشاركة في إستطلاعات الرأي
+                        @if ($currentDate < $PollTopic->end_date)
+                            للمشاركة في الإستبيان
                         @else
-                            شكراً لمن شارك في إستبيان
+                            شكراً لمن شارك في الإستبيان
                         @endif
-                        
+
                     </h2>
                 </span>
 
             </div>
             <div class="contact-one__form-box ">
                 @if ($currentDate < $PollTopic->end_date)
-
-
                     <form action="{{ route('userPoll', $PollTopic->id) }}" method="POST">
                         @csrf
                         <div class="row">
                             @if (session('status'))
                                 <h6 class='alert alert-success text-center'>{{ session('status') }}</h6>
+                                <script>
+
+                                </script>
                             @endif
                             <div class="col-xl-12">
                                 <div class="contact-one__input-box">
@@ -77,9 +85,8 @@
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
-                                <div class="contact-one__btn-box">
-                                    <button style="color:white;background-color: rgb(26,115,232);border-radius: 7px;"
-                                        type="submit" class="thm-btn contact-one__btn">شارك رأيك</button>
+                                <div class="contact-two__btn-box">
+                                    <button type="submit" class="thm-btn contact-two__btn">شارك رأيك</button>
                                 </div>
                             </div>
                         </div>

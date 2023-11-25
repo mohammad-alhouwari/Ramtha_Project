@@ -93,7 +93,6 @@
             padding-top: 5px;
             padding-bottom: 5px;
         }
-
     </style>
 
 </head>
@@ -154,8 +153,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews"
-                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             المشاريع والعطاءات
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
@@ -168,8 +167,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews"
-                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             رأيكم يهمنا
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
@@ -180,22 +179,20 @@
                             <!-- Add more categories as needed -->
                         </div>
                     </li>
-                    <li class="nav-item" >
+                    <li class="nav-item">
                         <a class="nav-link" href="/landmarks">اهم المعالم</a>
                     </li>
-                    
+
                 </ul>
 
                 <ul class="navbar-nav flex-row">
                     <li class="nav-item">
-                        <a class="nav-link px-2"
-                            href="https://www.facebook.com/ramtha.municipality/?locale=ar_AR7">
+                        <a class="nav-link px-2" href="https://www.facebook.com/ramtha.municipality/?locale=ar_AR7">
                             <i class="fab fa-facebook-square"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-2"
-                            href="https://twitter.com/RamthaMunic?t=ghT4dCI8RjTwi_OZ1tgrUg&s=09">
+                        <a class="nav-link px-2" href="https://twitter.com/RamthaMunic?t=ghT4dCI8RjTwi_OZ1tgrUg&s=09">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
@@ -203,19 +200,20 @@
                         <a class="nav-link ps-2" href="https://youtube.com/@RamthaMunic?si=TQJjj1Upu3KRic6X">
                             <i class="fab fa-youtube"></i>
                         </a>
-                    </li>   @if (isset($municipalityInfo))
-                    <li class="nav-item">
-                     
+                    </li>
+                    @if (isset($municipalityInfo))
+                        <li class="nav-item">
+
                             <a class="nav-link ps-2" href="tel:{{ $municipalityInfo->phone }}">
                                 <i class="fas fa-phone"></i>
                             </a>
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ps-2" href="mailto:{{ $municipalityInfo->email }}">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" href="mailto:{{ $municipalityInfo->email }}">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </li>
                     @endif
                 </ul>
             </div>
@@ -225,15 +223,15 @@
     @if (!request()->is('/'))
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{ asset('assets/images/HeroSection.jpg') }})">
+            <div class="page-header-bg" style="background-image: url({{ asset('assets/images/HeroSection.png') }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                   
+                    <h2>@yield('header_title')</h2>
                     <ul class="thm-breadcrumb list-unstyled " style="padding-inline-start:0px">
                         <li><a href="{{ url('/') }}">الرئيسية</a></li>
                         <li><span>/</span></li>
-                        <li  class="header-size">@yield('header_title')</li>
+                        <li class="header-size">@yield('header_title')</li>
                     </ul>
                 </div>
             </div>
