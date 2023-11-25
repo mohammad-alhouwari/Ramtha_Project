@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\Frontend\MembersController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
@@ -34,14 +35,12 @@ Route::get('president', [FrontendPresidentController::class, 'index'])->name('pr
 /*----------------------------- President Routes End -----------------------------*/
 
 /*------------------------ Organizational Chart Routes Start ------------------------*/
-Route::get('organizational-chart', function () {
-    return view('Pages.Organizational-Chart');
-})->name('organizational-chart');
+
 /*------------------------ Organizational Chart Routes End ------------------------*/
 
 /*------------------------ About the Municipality Routes Start ------------------------*/
-Route::resource('about-municipality', ComplainController::class);
-Route::get('about-municipality', [FrontendMembersController::class, 'index'])->name('about-municipality');
+Route::get('about-municipality', [MembersController::class, 'index'])->name('about-municipality');
+Route::get('organizational-chart', [MembersController::class, 'organizationalChart'])->name('organizational-chart');
 /*------------------------ About the Municipality Routes End ------------------------*/
 
 /*----------------------------- Projects Routes Start -----------------------------*/
@@ -84,7 +83,7 @@ Route::controller(FrontendMediaController::class)->group(function () {
 /*----------------------------- Gallery Routes End -----------------------------*/
 
 /*----------------------------- Event Routes Start -----------------------------*/
-Route::get('events', [FrontendEventController::class, 'index']);
+Route::get('events', [FrontendEventController::class, 'index'])->name('events');
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
 /*----------------------------- Event Routes End -----------------------------*/

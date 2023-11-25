@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use App\Models\OwnershipTransfer;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -16,7 +17,8 @@ class OwnershipTransferController extends Controller
      */
     public function index()
     {
-        return view('Pages.Ownership_Transfer.ownership_transfer');
+        $municipalityInfo=MunicipalityInfo::latest()->first();
+        return view('Pages.Ownership_Transfer.ownership_transfer', ['municipalityInfo' => $municipalityInfo]);
     }
 
     /**
@@ -103,9 +105,9 @@ class OwnershipTransferController extends Controller
 
         // Alert Message
         Alert::success('تم بنجاح', 'تقديم معلوماتك لطلب نقل الملكية!');
-
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         // Redirection
-        return redirect()->route('ownership_transfer.index');
+        return redirect()->route('ownership_transfer.index')->with('municipalityInfo', $municipalityInfo);
     }
 
     /**

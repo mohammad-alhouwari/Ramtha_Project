@@ -35,7 +35,7 @@ class MunicipalityInfoDataTable extends DataTable
             ->addColumn('description_image', function ($query) {
                 return "<img width='100px' src='" . asset($query->description_image) . "'></img>";
             })
-            ->rawColumns(['logo', 'description', 'description_image', 'phone', 'email'])
+            ->rawColumns(['logo', 'description', 'description_image', 'phone', 'email', 'action'])
             ->setRowId('id');
     }
 
@@ -85,13 +85,15 @@ class MunicipalityInfoDataTable extends DataTable
             Column::make('logo'),
             Column::make('description'),
             Column::make('description_image'),
+            Column::make('vision'),
+            Column::make('mission'),
             Column::make('phone'),
             Column::make('email'),
             Column::computed('action')
-            ->exportable(false)
-            ->printable(false)
-            ->width(60)
-            ->addClass('text-center'),
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center'),
         ];
     }
 
