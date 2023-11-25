@@ -2,6 +2,7 @@
 @section('title', 'استطلاعات الرأي')
 @section('header_title', 'استطلاعات الرأي')
 @section('content')
+    @include('sweetalert::alert')
     <section class="event-details pt-5">
         <div class="container">
             <div class="row">
@@ -13,16 +14,21 @@
                         <h3 class="event-details__title-1">{{ $PollTopic->title }}</h3>
                         <p class="event-details__text-1">{{ $PollTopic->description }}</p>
                     </div>
-                    <div class="text-center mt-3 row">
-                        <h2 class="mb-1 {{ $AVGcss }}">{{ $AVG }}%</h2><span class="h6"> الأغلبية العظمى
-                            للإستطلاع هي - {{ $AVGrsult }}</span>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </section>
 
     <section dir="rtl" class="contact-one">
+        <div class="text-center m-3 row">
+                        @if ($AVG != 0)
+                        <h2 class="mb-1 {{ $AVGcss }}">{{ $AVG }}%</h2><span class="h6"> الأغلبية العظمى
+                            للإستطلاع هي - <b>{{ $AVGrsult }}</b></span>
+                        @else
+                           <span class="mt-3">كن أول من يشارك بالإستطلاع</span> 
+                        @endif
+                    </div>
         <div class="contact-one__bg" style="background-image: url(assets/images/backgrounds/contact-one-bg.png);">
         </div>
         <div class="container">
@@ -44,14 +50,14 @@
             </div>
             <div class="contact-one__form-box ">
                 @if ($currentDate < $PollTopic->end_date)
-
-
                     <form action="{{ route('userPoll', $PollTopic->id) }}" method="POST">
                         @csrf
                         <div class="row">
                             @if (session('status'))
                                 <h6 class='alert alert-success text-center'>{{ session('status') }}</h6>
-                                <script></script>
+                                <script>
+
+                                </script>
                             @endif
                             <div class="col-xl-12">
                                 <div class="contact-one__input-box">

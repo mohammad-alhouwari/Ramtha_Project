@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Poll;
 use App\Models\PollTopic;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PollController extends Controller
 {
@@ -90,6 +92,7 @@ class PollController extends Controller
             ]);
 
             $message = 'تم تحديث رأيك بنجاح';
+            Alert::success('تم بنجاح', 'تم تحديث رأيك بنجاح');
         } else {
             // If no existing poll found, create a new one
             Poll::create([
@@ -100,8 +103,9 @@ class PollController extends Controller
             ]);
 
             $message = 'شكراً لمشاركة رأيك';
+            Alert::success('تم بنجاح', 'شكراً لمشاركة رأيك');
         }
-
+        
         return redirect()->back()->with('status', $message);
 
     }

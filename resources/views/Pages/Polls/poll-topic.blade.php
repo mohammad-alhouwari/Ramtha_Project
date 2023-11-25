@@ -4,9 +4,9 @@
 @section('content')
 
     <!--Events Page Start-->
-    <section class="events-page p-0 mb-3">
+    <section class="events-page  mb-3">
         <div class="container">
-            <div class="row justify-content-around">
+            <div class="row justify-content-around ">
                 @foreach ($PollTopics as $PollTopic)
                     <!--Event Three Single Start-->
                     <div class="col-xl-4 col-lg-4">
