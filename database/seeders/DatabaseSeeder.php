@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
                 $this->call(MunicipalityInfoSeeder::class);
                 $this->call(EventsTableSeeder::class);
                 $this->call(PollTopicSeeder::class);
+                $this->call(JobSeeder::class);
         }
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
