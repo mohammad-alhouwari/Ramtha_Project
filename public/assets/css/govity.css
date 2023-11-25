@@ -240,6 +240,17 @@ ul {
     z-index: -1;
 }
 
+
+/* services*/
+.services-two_single:hover .department-three_icon span {
+    color: #fff !important ; 
+}
+.services-two_single:hover .contact-two_btn {
+    background-color: #fff;
+    color: black!important ;
+}
+
+
 .custom-cursor__innerhover {
     width: 25px;
     height: 25px;
@@ -2482,9 +2493,9 @@ ul {
 
 .main-slider-three__title {
     position: relative;
-    font-size: 90px;
+    font-size: 77px;
     color: var(--govity-white);
-    font-weight: 700;
+    font-weight: 650;
     line-height: 90px;
     opacity: 0;
     visibility: hidden;
@@ -2494,7 +2505,7 @@ ul {
 }
 
 .main-slider-three__sub-title {
-    font-size: 20px;
+    font-size: 27px;
     line-height: 30px;
     color: var(--govity-white);
     font-weight: 500;
@@ -2539,12 +2550,14 @@ ul {
 
 .main-slider-three__weather-box {
     position: absolute;
-    right: 0;
-    bottom: -172px;
+    left: 0px;
+    bottom: -100px;
     max-width: 415px;
     width: 100%;
     z-index: 1;
 }
+
+
 
 .main-slider-three__weather-list {
     position: relative;
@@ -2607,14 +2620,14 @@ ul {
 
 .main-slider-three .owl-theme .owl-nav {
     position: absolute;
-    top: 41%;
+    top: 60%;
     left: 50%;
     z-index: 100;
     transform: translateY(-50%) translateX(-50%);
     display: flex;
     align-items: flex-end;
-    flex-direction: column;
-    max-width: 1200px;
+    /* flex-direction: column;
+    max-width: 1200px; */
     width: 100%;
     padding: 0 15px;
     height: 0;
@@ -2625,9 +2638,8 @@ ul {
 .main-slider-three .owl-theme .owl-nav [class*="owl-"] {
     position: relative;
     top: auto;
-    left: 100px;
-    /* Adjust the left position as needed */
-    right: auto;
+   direction: ltr;
+    left:100px;
     bottom: auto;
     z-index: 100;
     width: 65px;
@@ -2641,7 +2653,6 @@ ul {
     border: none;
     border-radius: 50%;
     margin: 0;
-    /* margin-right: 1250px; */
     text-align: center;
     transition: all 500ms ease;
     padding: 23px 0 !important;
@@ -8216,6 +8227,10 @@ ul {
 
 .department-three__single:hover .department-three__icon span {
     transform: scale(0.9);
+  
+}
+.icon-bus:hover{
+    color: white !important;
 }
 
 .department-three__title {
@@ -9589,6 +9604,7 @@ ul {
     background-color: #000000;
     z-index: 1;
     height: 258px;
+    top:120px
 }
 
 .page-header-bg {
@@ -9597,14 +9613,17 @@ ul {
     bottom: 0;
     left: 0;
     right: 0;
-    /* opacity: 0.5; */
+    opacity: 0.4;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     z-index: -1;
-    height: 445px !important;
+    height: 258px !important;
 }
-
+.header-size{
+    font-size: 19px !important;
+    font-weight: 410 !important;
+}
 .page-header__inner {
     position: relative;
     display: block;
@@ -9624,6 +9643,7 @@ ul {
 .thm-breadcrumb {
     position: relative;
     display: block;
+    bottom: 100px;
 }
 
 .thm-breadcrumb li {
@@ -14618,6 +14638,7 @@ ul {
 .department-page {
     position: relative;
     display: block;
+    /* top:170px; */
     padding: 120px 0 60px;
 }
 

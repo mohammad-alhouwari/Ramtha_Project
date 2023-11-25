@@ -16,8 +16,15 @@ class MembersController extends Controller
 
         return view('Pages.about-municipality', compact('members', 'municipalityInfo'));
     }
-    public function organizationalChart(){
-        $municipalityInfo=MunicipalityInfo::latest()->first();
-        return view('Pages.Organizational-Chart',compact('municipalityInfo'));
+    public function organizationalChart()
+    {
+        $municipalityInfo = MunicipalityInfo::latest()->first();
+        return view('Pages.Organizational-Chart', compact('municipalityInfo'));
+    }
+
+    public function team()
+    {
+        $municipalityInfo = MunicipalityInfo::latest()->first();
+        return view('Pages.team', compact('municipalityInfo'));
     }
 }

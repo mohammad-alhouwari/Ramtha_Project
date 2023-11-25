@@ -22,8 +22,7 @@ return new class extends Migration
             $table->date('date');
             $table->time('time');
             $table->text('location');
-            $table->text('map_x')->nullable();
-            $table->text('map_y')->nullable();
+            $table->text('map')->nullable();
             $table->text('status');
             $table->timestamps();
         });

@@ -8,13 +8,16 @@
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>المبرمجين</h2>
                 <ul class="thm-breadcrumb list-unstyled">
+                    <h2>المبرمجين</h2>
                     <li><a href="">الرئيسية</a></li>
                 </ul>
             </div>
         </div>
     </section>
+    <br>
+    <br>
+    <br>
     <!--Page Header End-->
     <section class="team-one team-page">
         <div class="history-one__top">
@@ -94,11 +97,11 @@
                                 <h3 class="team-one__name"><a href="team-details.html">Lama Nazzal</a></h3>
                                 <p class="team-one__sub-title">Full Satck Web Developer</p>
                                 <div class="team-one__social">
-                                    <a href="https://github.com/MarahAbusaleh" target="blank"><i
+                                    <a href="https://github.com/LamaNazzal94" target="blank"><i
                                             class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/marah-abusaleh/" target="blank"><i
+                                    <a href="https://www.linkedin.com/in/lama-nazzal-6380b327a/" target="blank"><i
                                             class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:leenaalrababah@gmail.com" target="blank"><i
+                                    <a href="mailto:lama.nazzal23@gmail.com" target="blank"><i
                                             class="fas fa-envelope"></i></i></a>
                                 </div>
                             </div>

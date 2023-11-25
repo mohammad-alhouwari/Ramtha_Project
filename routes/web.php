@@ -91,8 +91,6 @@ Route::controller(FrontendMediaController::class)->group(function () {
 /*----------------------------- Event Routes Start -----------------------------*/
 Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetail/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
-Route::get('events', [FrontendEventController::class, 'index'])->name('events');
-Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
 /*----------------------------- Event Routes End -----------------------------*/
 
@@ -115,9 +113,6 @@ Route::controller(FrontendTendersController::class)->group(function () {
 Route::resource('suggestions', FrontendSuggestionController::class);
 /*--------------------------- Suggestions Routes End ---------------------------*/
 
-/*--------------------- Suggestions Routes End ----------------------*/
-
-
 /*--------------------- Ownership_Transfer Routes Start ---------------------*/
 
 Route::resource('ownership_transfer', FrontendOwnershipTransferController::class);
@@ -129,3 +124,6 @@ Route::controller(FrontendLandmarksController::class)->group(function () {
     Route::get('landmark/{id}', 'showLandmark')->name('showLandmark');
 });
 /*--------------------------- Landmarks Routes End ---------------------------*/
+
+//**Team 
+Route::get('team', [MembersController::class, 'team'])->name('team');

@@ -220,15 +220,15 @@
         </div>
     </nav>
 
-    @if (!request()->is('/'))
-        <!--Page Header Start-->
+    @if (!request()->is('/') && !request()->is('team'))
+        <!-- Page Header Start -->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{ asset('assets/images/HeroSection.png') }})">
+            <div class="page-header-bg" style="background-image: url({{ asset('assets/images/HeroSection.jpg') }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>@yield('header_title')</h2>
-                    <ul class="thm-breadcrumb list-unstyled " style="padding-inline-start:0px">
+                    <ul class="thm-breadcrumb list-unstyled" style="padding-inline-start:0px">
+                        <h2>@yield('header_title')</h2>
                         <li><a href="{{ url('/') }}">الرئيسية</a></li>
                         <li><span>/</span></li>
                         <li class="header-size">@yield('header_title')</li>
@@ -240,5 +240,5 @@
         <br>
         <br>
         <br>
-        <!--Page Header End-->
+        <!-- Page Header End -->
     @endif

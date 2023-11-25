@@ -104,9 +104,5 @@ Route::prefix('admin')->middleware('auth')->group(
 
 );
 
-//**Team 
-Route::get('team', function () {
-    return view('Pages.team');
-})->name('team');
 
 require __DIR__ . '/auth.php';
