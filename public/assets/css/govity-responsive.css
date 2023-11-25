@@ -421,6 +421,7 @@
         flex: 0 0 33.333333%;
         max-width: 100%;
     }
+   
     .events_wrap{
         height: min-content;
     }
@@ -892,6 +893,7 @@
 
 /* Mobile Layout: 320px. */
 @media only screen and (max-width: 767px) {
+ 
     .events_wrap{
         height: min-content;
     }

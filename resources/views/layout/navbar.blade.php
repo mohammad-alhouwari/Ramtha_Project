@@ -100,152 +100,140 @@
 
 <body class="custom-cursor">
 
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
-
-
-
-
-
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
     <!-- /.preloader -->
-
-    <header class="main-header">
-
-        <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
-            <div class="container">
-                @if (isset($municipalityInfo))
-                    <img src="{{ asset($municipalityInfo->logo) }}" alt="" width="100px">
-                @endif
-                <button class="navbar-toggler ps-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon d-flex justify-content-start align-items-center">
-                        <i class="fas fa-bars"></i>
-                    </span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarExample01">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/">الرئيسية</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownNews" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                عن البلدية
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item {{ request()->routeIs('about-municipality') ? 'about-municipality' : '' }}"
-                                    href="/about-municipality">نبذة عن البلدية</a>
-                                <a class="dropdown-item" href="/president">كلمة الرئيس</a>
-                                <a class="dropdown-item" href="/organizational-chart">الهيكل
-                                    التنظيمي</a>
-                                <a class="dropdown-item" href="/about-municipality">الأعضاء</a>
-                                <!-- Add more categories as needed -->
-                            </div>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownNews" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                المركز الاعلامي
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="/news">الأخبار</a>
-                                <a class="dropdown-item" href="/events">الفعاليات</a>
-                                <a class="dropdown-item" href="/gallery">معرض الصور</a>
-
-                                <!-- Add more categories as needed -->
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews"
-                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                المشاريع والعطاءات
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="/projects">المشاريع</a>
-                                <a class="dropdown-item" href="/tenders">العطاءات</a>
-                                <a class="dropdown-item" href="/investments">الفرص
-                                    الاستثمارية</a>
-                                <a class="dropdown-item" href="/jobs">فرص العمل</a>
-                                <!-- Add more categories as needed -->
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews"
-                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                رأيكم يهمنا
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="/complains">شكاوي واقتراحات</a>
-                                <a class="dropdown-item" href="/suggestions">افكار و مبادرات</a>
-                                <a class="dropdown-item" href="/polls">استطلاعات الرأي</a>
-
-                                <!-- Add more categories as needed -->
-                            </div>
-                        </li>
-                        <li class="nav-item" >
-                            <a class="nav-link" href="/landmarks">اهم المعالم</a>
-                        </li>
-                        
-                    </ul>
-
-                    <ul class="navbar-nav flex-row">
-                        <li class="nav-item">
-                            <a class="nav-link px-2"
-                                href="https://www.facebook.com/ramtha.municipality/?locale=ar_AR7">
-                                <i class="fab fa-facebook-square"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-2"
-                                href="https://twitter.com/RamthaMunic?t=ghT4dCI8RjTwi_OZ1tgrUg&s=09">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" href="https://youtube.com/@RamthaMunic?si=TQJjj1Upu3KRic6X">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </li>   @if (isset($municipalityInfo))
-                        <li class="nav-item">
-                         
-                                <a class="nav-link ps-2" href="tel:{{ $municipalityInfo->phone }}">
-                                    <i class="fas fa-phone"></i>
-                                </a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" href="mailto:{{ $municipalityInfo->email }}">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
     <div class="stricky-header stricked-menu main-menu">
         <div class="sticky-headercontent"></div><!-- /.sticky-headercontent -->
     </div><!-- /.stricky-header -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+        <div class="container">
+            @if (isset($municipalityInfo))
+                <img src="{{ asset($municipalityInfo->logo) }}" alt="" width="100px">
+            @endif
+            <button class="navbar-toggler ps-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon d-flex justify-content-start align-items-center">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">الرئيسية</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownNews" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            عن البلدية
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
+                            <a class="dropdown-item {{ request()->routeIs('about-municipality') ? 'about-municipality' : '' }}"
+                                href="/about-municipality">نبذة عن البلدية</a>
+                            <a class="dropdown-item" href="/president">كلمة الرئيس</a>
+                            <a class="dropdown-item" href="/organizational-chart">الهيكل
+                                التنظيمي</a>
+                            <a class="dropdown-item" href="/about-municipality">الأعضاء</a>
+                            <!-- Add more categories as needed -->
+                        </div>
+                    </li>
 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownNews" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            المركز الاعلامي
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
+                            <a class="dropdown-item" href="/news">الأخبار</a>
+                            <a class="dropdown-item" href="/events">الفعاليات</a>
+                            <a class="dropdown-item" href="/gallery">معرض الصور</a>
+
+                            <!-- Add more categories as needed -->
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            المشاريع والعطاءات
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
+                            <a class="dropdown-item" href="/projects">المشاريع</a>
+                            <a class="dropdown-item" href="/tenders">العطاءات</a>
+                            <a class="dropdown-item" href="/investments">الفرص
+                                الاستثمارية</a>
+                            <a class="dropdown-item" href="/jobs">فرص العمل</a>
+                            <!-- Add more categories as needed -->
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNews"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            رأيكم يهمنا
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
+                            <a class="dropdown-item" href="/complains">شكاوي واقتراحات</a>
+                            <a class="dropdown-item" href="/suggestions">افكار و مبادرات</a>
+                            <a class="dropdown-item" href="/polls">استطلاعات الرأي</a>
+
+                            <!-- Add more categories as needed -->
+                        </div>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="/landmarks">اهم المعالم</a>
+                    </li>
+                    
+                </ul>
+
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link px-2"
+                            href="https://www.facebook.com/ramtha.municipality/?locale=ar_AR7">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2"
+                            href="https://twitter.com/RamthaMunic?t=ghT4dCI8RjTwi_OZ1tgrUg&s=09">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="https://youtube.com/@RamthaMunic?si=TQJjj1Upu3KRic6X">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>   @if (isset($municipalityInfo))
+                    <li class="nav-item">
+                     
+                            <a class="nav-link ps-2" href="tel:{{ $municipalityInfo->phone }}">
+                                <i class="fas fa-phone"></i>
+                            </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="mailto:{{ $municipalityInfo->email }}">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     @if (!request()->is('/'))
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{ asset('assets/images/HeroSection.png') }})">
+            <div class="page-header-bg" style="background-image: url({{ asset('assets/images/HeroSection.jpg') }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>@yield('header_title')</h2>
-                    <ul class="thm-breadcrumb list-unstyled" style="padding-inline-start:0px">
+                   
+                    <ul class="thm-breadcrumb list-unstyled " style="padding-inline-start:0px">
                         <li><a href="{{ url('/') }}">الرئيسية</a></li>
                         <li><span>/</span></li>
-                        <li>@yield('header_title')</li>
+                        <li  class="header-size">@yield('header_title')</li>
                     </ul>
                 </div>
             </div>
