@@ -476,9 +476,9 @@ ul {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
-    padding-left: 315px;
+    padding-right: 315px;
     z-index: 1;
 }
 
@@ -553,10 +553,11 @@ ul {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    flex: 1;
+    /* flex: 1; */
     background-color: var(--govity-white);
     padding: 6px 30px 6px;
     padding-right: 60px;
+    
 }
 
 .main-menu__contact-list {
@@ -2663,7 +2664,7 @@ ul {
     border: none;
     border-radius: 50%;
     margin: 0;
-    margin-right: 1250px;
+    /* margin-right: 1250px; */
     text-align: center;
     transition: all 500ms ease;
     padding: 23px 0 !important;
@@ -5066,7 +5067,7 @@ height: 390px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
     padding: 10px 40px 20px;
-    height: 180px;
+    height: 200px;
 }
 
 .news-one__user-and-meta {

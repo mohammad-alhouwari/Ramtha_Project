@@ -55,7 +55,7 @@
                 <div class="row">
                     <!--News One Single Start-->
                     @foreach ($news as $new)
-                        <div class="col-xl-4 col-lg-4 news-div">
+                        <div class="col-xl-4 col-lg-4 news-div" style="margin-bottom: 20px">
                             <div class="news-one__single">
                                 <div class="news-one__img-box">
                                     <div class="news-one__img">
@@ -94,6 +94,7 @@
                                 </div>
                             </div>
                         </div>
+                       
                     @endforeach
 
 
