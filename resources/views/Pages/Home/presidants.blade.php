@@ -29,14 +29,15 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6" dir="rtl">
                                     <br>
-                                    <br>
-                                    <br>
+                                  
                                     <div class="history-one__content-right">
                                         <h4 class="history-one__content-title">{{ $president->name }}</h4>
                                         <p class="history-one__content-text">
-                                            {{ \Illuminate\Support\Str::limit($president->speech, 200) }}
+                                            {{ \Illuminate\Support\Str::limit($president->speech, 430) }}
                                         </p>
-                                        <a href="#" class="btn btn-primary">قراءة كلمة الرئيس</a>
+                                        <div class="contact-two__btn-box">
+                                            <a href="/president"> <button type="submit" class="thm-btn contact-two__btn" > قراءة كلمة الرئيس </button> </a>
+                                            </div>
                                     </div>
                                 </div>
                             </div>

@@ -10,7 +10,7 @@
                 <div class="section-title__icon">
                     <span class="fa fa-star"></span>
                 </div>
-                <span class="section-title__tagline">كلمة الرئيس</span>
+                
                 <h2 class="section-title__title">كلمة الرئيس</h2>
             </div>
             <div class="row">

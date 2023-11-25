@@ -11,6 +11,7 @@ use App\Models\Event;
 use App\Models\News;
 use App\Models\Project;
 use App\Models\Partner;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -24,12 +25,10 @@ class HomeController extends Controller
         $partners = Partner::get();
         $eventsCount = $events->count();
         $projectsCount = $projects->count();
+ $municipalityInfo=MunicipalityInfo::latest()->first();
 
+            return view('index', compact('presidents', 'events', 'latestNews', 'partners','municipalityInfo','eventsCount','projectsCount'));
         
-         
-        $municipalityInfo=MunicipalityInfo::latest()->first();
-
-        return view('index', compact('presidents', 'events', 'latestNews', 'partners','municipalityInfo','eventsCount','projectsCount'));
     }
 
 
