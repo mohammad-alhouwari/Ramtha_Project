@@ -48,7 +48,7 @@ class PollController extends Controller
         }
 
         if ($count) {
-            $AVG = (($R2 * 2.5 + $R3 * 5 + $R4 * 7.5 + $R5 * 10) / $count)*10;
+            $AVG = (($R2 * 2.5 + $R3 * 5 + $R4 * 7.5 + $R5 * 10) / $count) * 10;
             if ($AVG > 80) {
                 $AVGrsult = 'موافق بشدة';
                 $AVGcss = 'strongly-agree';
@@ -67,7 +67,7 @@ class PollController extends Controller
             }
         }
 
-        return view('Pages.Polls.poll-details', compact('PollTopic', 'currentDate','AVG', 'AVGrsult','AVGcss'));
+        return view('Pages.Polls.poll-details', compact('PollTopic', 'currentDate', 'AVG', 'AVGrsult', 'AVGcss'));
     }
 
     public function userPoll(Request $request, $pollTopicId)
@@ -103,5 +103,6 @@ class PollController extends Controller
         }
 
         return redirect()->back()->with('status', $message);
-;
 
+    }
+}
