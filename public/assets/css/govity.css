@@ -8224,12 +8224,13 @@ ul {
     transition: all 500ms linear;
     transition-delay: 0.1s;
 }
-.department-three__icon span :hover{
-    color: white;
-}
+
 .department-three__single:hover .department-three__icon span {
     transform: scale(0.9);
- 
+  
+}
+.icon-bus:hover{
+    color: white !important;
 }
 
 .department-three__title {

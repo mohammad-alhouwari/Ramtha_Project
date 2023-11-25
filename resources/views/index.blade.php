@@ -25,7 +25,7 @@
                             تحسين  جودة الحياة وتقديم الخدمات بفعالية .                                                       
                             </p>
                         <div class="main-slider-three__btn-box">
-                            <a href="about.html" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
+                            <a href="/about-municipality" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
                         </div>
                         <div class="main-slider-three__weather-box">
                             <ul class="main-slider-three__weather-list list-unstyled">
@@ -34,7 +34,7 @@
                                         <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
                                     </div>
                                     <div class="text" >
-                                        <p>32 0C / 65 0F</p>
+                                        <p>{{$temperature}}C</p>
                                     </div>
                                 </li>
                                 <li>
@@ -64,7 +64,7 @@
                         <p class="main-slider-three__sub-title">يوفر نظام الخدمات الالكترونية جميع الخدمات التي يحتاجها المواطنين  في مدينة <br>الرمثا الذي يوفر الوقت والجهد والمعاملات الورقية التقليدية،
                             </p>
                         <div class="main-slider-three__btn-box">
-                            <a href="about.html" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
+                            <a href="#services" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
                         </div>
                         <div class="main-slider-three__weather-box">
                             <ul class="main-slider-three__weather-list list-unstyled">
@@ -73,7 +73,7 @@
                                         <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
                                     </div>
                                     <div class="text" >
-                                        <p>32 0C / 65 0F</p>
+                                        <p>{{$temperature}}C</p>
                                     </div>
                                 </li>
                                 <li>
@@ -105,7 +105,7 @@
                             أحدث التطورات والأحداث في المجتمع.
                             </p>
                         <div class="main-slider-three__btn-box">
-                            <a href="about.html" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
+                            <a href="/news" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
                         </div>
                         <div class="main-slider-three__weather-box">
                             <ul class="main-slider-three__weather-list list-unstyled">
@@ -114,7 +114,7 @@
                                         <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
                                     </div>
                                     <div class="text" >
-                                        <p>32 0C / 65 0F</p>
+                                        <p>{{$temperature}}C</p>
                                     </div>
                                 </li>
                                 <li>
@@ -137,9 +137,9 @@
     <br>
     <br>
 
-  <!-- services start -->
+<!-- services start -->
 <section class="services-two">
-    <div class="services-two__inner">
+    <div class="services-two__inner" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -242,8 +242,8 @@
     <br>
     <br>
 
-   <!--statistics-->
-   <div class="history-one__top">
+<!--statistics-->
+<div class="history-one__top">
     <div class="container" dir="rtl">
         <div class="section-title text-center">
             <div class="section-title__icon">

@@ -74,7 +74,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© حقوق النشر 2023 <a href="https://yo.orange.jo/orange-coding-academy" style="color: orange;">أكاديمية البرمجة بواسطة أورانج-اربد</a></p>
+                        <p class="site-footer__bottom-text">© حقوق النشر 2023 <a href="/team" style="color: orange;">أكاديمية البرمجة بواسطة أورانج-اربد</a></p>
                     </div>
                 </div>
             </div>

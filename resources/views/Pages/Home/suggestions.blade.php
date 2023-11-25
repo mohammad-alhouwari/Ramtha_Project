@@ -17,7 +17,7 @@
                     <h3 class="feature-four__title"><a href="our-services.html">استطلاعات الرأي</a></h3>
                     <!-- Add Button under h3 -->
                     <div class="contact-two__btn-box">
-                    <button type="submit" class="thm-btn contact-two__btn" onclick="window.location.href='https://www.ammancity.gov.jo/ar/eservices/login.aspx';">انتقل الى الخدمة</button>
+                   <a href="/polls"> <button type="submit" class="thm-btn contact-two__btn" ">انتقل الى الخدمة</button></a>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     <h3 class="feature-four__title"><a href="our-services.html">افكار و مبادرات</a></h3>
                     <!-- Add Button under h3 -->
                     <div class="contact-two__btn-box">
-                    <button type="submit" class="thm-btn contact-two__btn" onclick="window.location.href='https://www.ammancity.gov.jo/ar/eservices/login.aspx';">انتقل الى الخدمة</button>
+                   <a href="/suggestions"> <button type="submit" class="thm-btn contact-two__btn" >انتقل الى الخدمة</button> </a>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     <h3 class="feature-four__title"><a href="our-services.html">شكاوي و اقتراحات</a></h3>
                     <!-- Add Button under h3 -->
                     <div class="contact-two__btn-box">
-                    <button type="submit" class="thm-btn contact-two__btn" onclick="window.location.href='https://www.ammancity.gov.jo/ar/eservices/login.aspx';">انتقل الى الخدمة</button>
+                    <a href="/complains"> <button type="submit" class="thm-btn contact-two__btn" >انتقل الى الخدمة</button> </a>
                     </div>
                 </div>
             </div>
