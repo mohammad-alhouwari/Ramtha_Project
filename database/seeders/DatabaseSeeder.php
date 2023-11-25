@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
                 $this->call(PollTopicSeeder::class);
                 $this->call(President::class);
                 $this->call(JobSeeder::class);
+                $this->call(MembersSeeder::class);
         }
 
     }
