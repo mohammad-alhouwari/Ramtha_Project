@@ -64,10 +64,13 @@
                                                         <div class="history-one__content-left">
                                                             {{-- title --}}
                                                             <h4 class="history-one__content-title font-event">{{ $event->title }}</h4>
-                                                            <p class="history-one__content-text mobile-description ">{{ \Illuminate\Support\Str::limit($event->description, 100) }}</p>
+                                                            <p class="history-one__content-text mobile-description ">{{ \Illuminate\Support\Str::limit($event->description, 300) }}</p>
                                                             {{-- Add other event details as needed --}}
+                                                        </div><div class="contact-two__btn-box">
+                                                        <a href="{{ route('eventdetail', $event->id) }}"> <button type="submit" class="thm-btn contact-two__btn" >انتقل الى الفعالية</button> </a>
                                                         </div>
                                                     </div>
+                                                    
                                                    
                                                 </div>
                                             </div>

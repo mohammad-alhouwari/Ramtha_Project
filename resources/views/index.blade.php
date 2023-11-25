@@ -4,57 +4,84 @@
 
     <!-- Main Slider Three Start -->
     <section class="main-slider-three" lang="en" dir="ltr">
-        <div class="main-slider-three__carousel owl-carousel owl-theme thm-owl__carousel" lang="en" dir="ltr"
+        <div class="main-slider-three__carousel owl-carousel owl-theme thm-owl__carousel" style="top:100px" lang="en"
+            dir="ltr"
             data-owl-options='{"loop": false, "items": 1, "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>" ], "margin": 0, "dots": false, "nav": true, "animateOut": "slideOutDown", "animateIn": "fadeIn", "active": true, "smartSpeed": 3000, "autoplay": true, "autoplayTimeout": 7000, "autoplayHoverPause": false}'>
-
-            {{-- <div class="item main-slider-three__slide-1">
-                <div class="main-slider-three__bg" style="background: url(assets/images/backgrounds/Just1.jpg); width: 100%">
-                </div><!-- /.slider-one__bg -->
-                <div class="container" dir="rtl">
-                    <div class="main-slider-three__content">
-                        <h2 class="main-slider-three__title">بلدية
-                            <br> مدينة الرمثا
-                        </h2>
-                        <p class="main-slider-three__sub-title">يمكنك العثور على الوظائف والأقسام والأحداث واستكشافها وغير
-                            ذلك الكثير.</p>
-                        <div class="main-slider-three__btn-box">
-                            <a href="about.html" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
-                        </div>
-                    </div>
+            <div class="item main-slider-three__slide-1">
+                <div class="main-slider-three__bg"
+                    style="background: url(assets/images/backgrounds/ramtha.jpg) center / cover no-repeat;">
                 </div>
-            </div> --}}
-
-            <div class="item main-slider-three__slide-2">
-                <div class="main-slider-three__bg" style="background: url(assets/images/backgrounds/stad.png) no-repeat;">
-                </div><!-- /.slider-one__bg -->
+                <!-- /.slider-one__bg -->
                 <div class="container" dir="rtl">
                     <div class="main-slider-three__content">
-                        <h2 class="main-slider-three__title">بلدية
-                            <br> مدينة الرمثا
+                        <h2 class="main-slider-three__title">مرحبًا بك في بلدية الرمثا!
+
                         </h2>
-                        <p class="main-slider-three__sub-title">يمكنك العثور على الوظائف والأقسام والأحداث واستكشافها
-                            وغير ذلك الكثير.</p>
+                        <br>
+
+                        <p class="main-slider-three__sub-title"> 
+                            نفخر بتقديم خدماتنا لسكاننا الكرام. بلدية الرمثا قلب المجتمع، حيث نعمل بجد على
+                            <br>
+                            تحسين  جودة الحياة وتقديم الخدمات بفعالية .                                                       
+                            </p>
                         <div class="main-slider-three__btn-box">
-                            <a href="about.html" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
+                            <a href="/about-municipality" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
                         </div>
                         <div class="main-slider-three__weather-box">
                             <ul class="main-slider-three__weather-list list-unstyled">
                                 <li>
-                                    <div class="icon">
-                                        <span class="icon-sun-day-weather-symbol"></span>
+                                    <div class="icon" >
+                                        <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
                                     </div>
-                                    <div class="text">
-                                        <span>درجة</span>
-                                        <p>32 0C / 65 0F</p>
+                                    <div class="text" >
+                                        <p>18C</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="icon">
-                                        <span class="icon-clock"></span>
+                                        <span class="icon-clock" style="padding-bottom: 5px ; font-size:20px"> الوقت</span>
                                     </div>
-                                    <div class="text">
-                                        <span>الوقت</span>
-                                        <p id="current-time"></p>
+                                    <div class="text" s>
+                                        <p id="current-time-1"></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item main-slider-three__slide-2">
+                <div class="main-slider-three__bg"
+                    style="background: url(assets/images/backgrounds/Just1.jpg); no-repeat width: 100%">
+                </div><!-- /.slider-one__bg -->
+                <div class="container" dir="rtl">
+                    <div class="main-slider-three__content">
+                        <h2 class="main-slider-three__title">تفاعل مع أفضل الخدمات!
+
+                        </h2>
+                        <br>
+
+                        <p class="main-slider-three__sub-title">يوفر نظام الخدمات الالكترونية جميع الخدمات التي يحتاجها المواطنين  في مدينة <br>الرمثا الذي يوفر الوقت والجهد والمعاملات الورقية التقليدية،
+                            </p>
+                        <div class="main-slider-three__btn-box">
+                            <a href="#services" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
+                        </div>
+                        <div class="main-slider-three__weather-box">
+                            <ul class="main-slider-three__weather-list list-unstyled">
+                                <li>
+                                    <div class="icon" >
+                                        <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
+                                    </div>
+                                    <div class="text" >
+                                        <p>18C</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-clock" style="padding-bottom: 5px ; font-size:20px"> الوقت</span>
+                                    </div>
+                                    <div class="text" s>
+                                        <p id="current-time-2"></p>
                                     </div>
                                 </li>
                             </ul>
@@ -64,37 +91,38 @@
             </div>
 
             <div class="item main-slider-three__slide-3">
-                <div class="main-slider-three__bg"
-                    style="background: url(assets/images/backgrounds/dowar.jpg) contain; width: 100%">
+                <div class="main-slider-three__bg" style="background: url(assets/images/backgrounds/stad.png) no-repeat;">
                 </div><!-- /.slider-one__bg -->
                 <div class="container" dir="rtl">
                     <div class="main-slider-three__content">
-                        <h2 class="main-slider-three__title">بلدية
-                            <br> مدينة الرمثا
+                        <h2 class="main-slider-three__title"> ابقى على اطلاع دائم!
+
                         </h2>
-                        <p class="main-slider-three__sub-title">يمكنك العثور على الوظائف والأقسام والأحداث واستكشافها
-                            وغير ذلك الكثير.</p>
+                        <br>
+                        <p class="main-slider-three__sub-title">
+                            تابع أحدث الأخبار والفعاليات في بلدية الرمثا. نحن دائما في حركة، ونشارك 
+                            <br>
+                            أحدث التطورات والأحداث في المجتمع.
+                            </p>
                         <div class="main-slider-three__btn-box">
-                            <a href="about.html" class="main-slider-three__btn thm-btn" dir="rtl">اكتشف المزيد</a>
+                            <a href="/news" class="main-slider-three__btn thm-btn">اكتشف المزيد</a>
                         </div>
                         <div class="main-slider-three__weather-box">
                             <ul class="main-slider-three__weather-list list-unstyled">
                                 <li>
-                                    <div class="icon">
-                                        <span class="icon-sun-day-weather-symbol"></span>
+                                    <div class="icon" >
+                                        <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
                                     </div>
-                                    <div class="text">
-                                        <span>درجة الحرارة</span>
-                                        <p>32 0C / 65 0F</p>
+                                    <div class="text" >
+                                        <p>18C</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="icon">
-                                        <span class="icon-clock"></span>
+                                        <span class="icon-clock" style="padding-bottom: 5px ; font-size:20px"> الوقت</span>
                                     </div>
-                                    <div class="text">
-                                        <span>الوقت</span>
-                                        <p>09:28 pm</p>
+                                    <div class="text" s>
+                                        <p id="current-time-3"></p>
                                     </div>
                                 </li>
                             </ul>
@@ -102,7 +130,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <!-- Main Slider Three Start -->
@@ -110,79 +137,100 @@
     <br>
     <br>
 
-    <section class="services-two">
-        <div class="services-two__inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <div class="section-title">
-                            <div class="section-title__icon">
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <span class="section-title__tagline">الخدمات الالكترونيه</span>
-                            <h2 class="section-title__title">اكتشف الخدمات الالكترونية المقدمة
-                                <br> من بلدية مدينة الرمثا
-                            </h2>
+<!-- services start -->
+<section class="services-two">
+    <div class="services-two__inner" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="section-title">
+                        <div class="section-title__icon">
+                            <span class="fa fa-star"></span>
                         </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <!-- Services Two Single Start -->
-                    <div class="col-md-4" style="height: 100%;">
-                        <div class="services-two__single text-center" style="height: 100%;">
-                            <div class="services-content"
-                                style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
-                                <h3 class="services-two__title"><a href="building-permission.html">ضريبة الابنية و الاراضي
-                                        <br> "المسقفات" </a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
-                            </div>
-                            <!-- Button below h3 -->
-                            <a href="link-to-page-1.html" class="btn btn-primary mt-2">المزيد</a>
-                        </div>
-                    </div>
-                    <!-- Services Two Single End -->
+                        <span class="section-title__tagline">الخدمات الالكترونيه</span>
+                        <h3 class="section-title__title" style="font-size: 33px!important; ">اكتشف الخدمات الالكترونية المقدمة
+                        من بلدية مدينة الرمثا
+                        </h3>
+                        <br>
+                        <p style="color:rgb(75, 75, 75)!important">يوفر نظام الخدمات الالكترونية جميع الخدمات التي يحتاجها المواطنين في مدينة الرمثا الذي يوفر الوقت والجهد والمعاملات الورقية التقليدية،<br> ما عليك سوى اختيار الخدمة المطلوبة من بوابة الخدمات الالكترونية واكمال الاجراءات بكل سهولة ويسر</p>
+                        <br>
+                        <div class="row" style="justify-content: center">
 
-                    <!-- Services Two Single Start -->
-                    <div class="col-md-4" style="height: 100%;">
-                        <div class="services-two__single text-center" style="height: 100%;">
-                            <div class="services-content"
-                                style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
-                                <h3 class="services-two__title"><a href="driving-license.html">طلب نقل ملكية
-                                        <br> </a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
-                            </div>
-                            <!-- Button below h3 -->
-                            <a href="link-to-page-2.html" class="btn btn-primary mt-2">المزيد</a>
-                        </div>
-                    </div>
-                    <!-- Services Two Single End -->
 
-                    <!-- Services Two Single Start -->
-                    <div class="col-md-4" style="height: 100%;">
-                        <div class="services-two__single text-center" style="height: 100%;">
-                            <div class="services-content"
-                                style="height: 70%; display: flex; flex-direction: column; justify-content: space-between;">
-                                <h3 class="services-two__title"><a href="report-pollution.html">مخالفات السير
-                                        <br> </a></h3>
-                                <div class="services-two__icon">
-                                    <span class="icon-accept"></span>
-                                </div>
+                <!-- Single Service Start -->
+                <div class="col-xl-3 col-lg-4 col-md-5" >
+                    <div class="services-two__single text-center" style="height: 100%;">
+                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="department-three__icon">
+                            <span class="icon-bus"></span>
                             </div>
                             <br>
-                            <!-- Button below h3 -->
-                            <a href="link-to-page-3.html" class="btn btn-primary mt-2">المزيد</a>
+                            <h2 class="services-two__title">
+                            <a href="driving-license.html"> مخالفات السير  
+                            <br> 
+                            </a>
+                            </h2>
+                            <br>
+                            <div class="contact-two__btn-box">
+                            <button type="submit" class="thm-btn contact-two__btn" onclick="window.location.href='https://www.ammancity.gov.jo/ar/eservices/login.aspx';">انتقل الى الخدمة</button>
+                            </div>
                         </div>
                     </div>
-                    <!-- Services Two Single End -->
                 </div>
-            </div>
-        </div>
-    </section>
+                <!-- Single Service  End -->
 
+                <!-- Services Single Start -->
+                <div class="col-xl-3 col-lg-4 col-md-5" >
+                    <div class="services-two__single text-center" style="height: 100%;">
+                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="department-three__icon">
+                            <span class="icon-parthenon"></span>
+                            </div>
+                            <br>
+                            <h2 class="services-two__title">
+                            <a href="department-details.html"> طلب نقل ملكية   
+                            <br> 
+                            </a>
+                            </h2>
+                            <br>
+                            <div class="contact-two__btn-box">
+                            <button type="submit" class="thm-btn contact-two__btn" >انتقل الى الخدمة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Services Single End -->
+
+                <!-- Single Service Start -->
+                <div class="col-xl-3 col-lg-4 col-md-5" >
+                    <div class="services-two__single text-center" style="height: 100%;">
+                        <div class="services-content" style="height: 70%; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="department-three__icon">
+                            <span class="icon-tuscany"></span>
+                            </div>
+                            <br>
+                            <h2 class="services-two__title">
+                            <a href="department-details.html"> ضريبة الابنية و الاراضي   
+                            <br> 
+                            </a>
+                            </h2>
+                            <br>
+                            <div class="contact-two__btn-box">
+                            <button type="submit" class="thm-btn contact-two__btn" onclick="window.location.href='https://ptp.mof.gov.jo/index3.aspx';">انتقل الى الخدمة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Service  End -->
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</section>
+<!-- services end -->
 
 
 
@@ -194,8 +242,8 @@
     <br>
     <br>
 
-   <!--statistics-->
-   <div class="history-one__top">
+<!--statistics-->
+<div class="history-one__top">
     <div class="container" dir="rtl">
         <div class="section-title text-center">
             <div class="section-title__icon">
@@ -268,21 +316,34 @@
     <!--Feature Three End-->
 
     <script>
-        function updateCurrentTime() {
+        function updateCurrentTime(sliderNumber) {
             var currentTime = new Date();
             var hours = currentTime.getHours();
             var minutes = currentTime.getMinutes();
             var ampm = hours >= 12 ? 'pm' : 'am';
 
-
             hours = hours % 12;
-            hours = hours ? hours : 12; 
+            hours = hours ? hours : 12;
 
             minutes = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById('current-time').innerText = hours + ':' + minutes + ' ' + ampm;
+            document.getElementById('current-time-' + sliderNumber).innerText = hours + ':' + minutes + ' ' + ampm;
         }
-
-        updateCurrentTime();
-        setInterval(updateCurrentTime, 1000);
+        updateCurrentTime(1);
+        setInterval(function() {
+            updateCurrentTime(1);
+        }, 1000);
+        updateCurrentTime(2);
+        setInterval(function() {
+            updateCurrentTime(1);
+        }, 1000);
+        updateCurrentTime(3);
+        setInterval(function() {
+            updateCurrentTime(3);
+        }, 1000);
+        updateCurrentTime(4);
+        setInterval(function() {
+            updateCurrentTime(4);
+        }, 1000);
     </script>
+
 @endsection

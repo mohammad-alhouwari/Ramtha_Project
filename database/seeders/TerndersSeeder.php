@@ -12,8 +12,8 @@ class TerndersSeeder extends Seeder
     {
         // Your seeding logic here
         Tender::create([
-            'preview_image'=>'\assets\images\tenders\tender1 .jpeg',
-            'preview_image2'=>'\assets\images\tenders\tender1-2.png',            'title'=>'إعلان مناقصة شراء مواد للعمال',
+            'preview_image'=>'\assets\images\tenders\tender1-2.png',
+            'preview_image2'=>'\assets\images\tenders\tender1 .jpeg',            'title'=>'إعلان مناقصة شراء مواد للعمال',
             'value'=>'غير محدد',
             'description'=>' إعلان مناقصة شراء مواد للعمال  وزارة الادارة المحلية الاردنية 
             بلدية_الرمثا_الكبرى',
