@@ -93,6 +93,7 @@
             padding-top: 5px;
             padding-bottom: 5px;
         }
+
     </style>
 
 </head>
@@ -137,11 +138,11 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
                                 <a class="dropdown-item {{ request()->routeIs('about-municipality') ? 'about-municipality' : '' }}"
-                                    href="{{ route('about-municipality') }}">نبذة عن البلدية</a>
-                                <a class="dropdown-item" href="{{ route('president') }}">كلمة الرئيس</a>
-                                <a class="dropdown-item" href="{{ route('organizational-chart') }}">الهيكل
+                                    href="/about-municipality">نبذة عن البلدية</a>
+                                <a class="dropdown-item" href="/president">كلمة الرئيس</a>
+                                <a class="dropdown-item" href="/organizational-chart">الهيكل
                                     التنظيمي</a>
-                                <a class="dropdown-item" href="{{ route('about-municipality') }}">الأعضاء</a>
+                                <a class="dropdown-item" href="/about-municipality">الأعضاء</a>
                                 <!-- Add more categories as needed -->
                             </div>
                         </li>
@@ -152,9 +153,9 @@
                                 المركز الاعلامي
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="{{ route('showAllNews') }}">الأخبار</a>
-                                <a class="dropdown-item" href="{{ route('events') }}">الفعاليات</a>
-                                <a class="dropdown-item" href="{{ route('showGallery') }}">معرض الصور</a>
+                                <a class="dropdown-item" href="/news">الأخبار</a>
+                                <a class="dropdown-item" href="/events">الفعاليات</a>
+                                <a class="dropdown-item" href="/gallery">معرض الصور</a>
 
                                 <!-- Add more categories as needed -->
                             </div>
@@ -165,11 +166,11 @@
                                 المشاريع والعطاءات
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="{{ route('showAllProjects') }}">المشاريع</a>
-                                <a class="dropdown-item" href="{{ route('showAllTenders') }}">العطاءات</a>
-                                <a class="dropdown-item" href="{{ route('showAllInvestments') }}">الفرص
+                                <a class="dropdown-item" href="/projects">المشاريع</a>
+                                <a class="dropdown-item" href="/tenders">العطاءات</a>
+                                <a class="dropdown-item" href="/investments">الفرص
                                     الاستثمارية</a>
-                                <a class="dropdown-item" href="{{ route('showAllJobs') }}">فرص العمل</a>
+                                <a class="dropdown-item" href="/jobs">فرص العمل</a>
                                 <!-- Add more categories as needed -->
                             </div>
                         </li>
@@ -179,17 +180,17 @@
                                 رأيكم يهمنا
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="{{ route('complains.index') }}">شكاوي واقتراحات</a>
-                                <a class="dropdown-item" href="{{ route('suggestions.index') }}">افكار و مبادرات</a>
-                                <a class="dropdown-item" href="{{ route('showAllPolls') }}">استطلاعات الرأي</a>
+                                <a class="dropdown-item" href="/complains">شكاوي واقتراحات</a>
+                                <a class="dropdown-item" href="/suggestions">افكار و مبادرات</a>
+                                <a class="dropdown-item" href="/polls">استطلاعات الرأي</a>
 
                                 <!-- Add more categories as needed -->
                             </div>
                         </li>
-                        <li class="nav-item {{ request()->routeIs('showAllLandmarks') ? 'showAllLandmarks' : '' }}">
-                            <a class="nav-link" aria-current="page" href="{{ route('showAllLandmarks') }}">اهم
-                                المعالم</a>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="/landmarks">اهم المعالم</a>
                         </li>
+                        
                     </ul>
 
                     <ul class="navbar-nav flex-row">
