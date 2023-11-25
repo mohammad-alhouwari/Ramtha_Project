@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
                 $this->call(TerndersSeeder::class);
                 $this->call(MunicipalityInfoSeeder::class);
                 $this->call(EventsTableSeeder::class);
+                $this->call(PollTopicSeeder::class);
         }
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
