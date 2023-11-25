@@ -8,16 +8,25 @@ use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 use App\Http\Controllers\Frontend\InvestmentController as FrontendInvestmentsController;
 use App\Http\Controllers\Frontend\JobController as FrontendJobController;
 use App\Http\Controllers\Frontend\NewController as FrontendNewsController;
+<<<<<<< HEAD
+use App\Http\Controllers\TendersDetailesController;
+=======
 use App\Http\Controllers\Frontend\SuggestionController as FrontendSuggestionController;
+>>>>>>> 1b803fbd13a892c3a685f015c6e184174fd3f2b9
 use App\Http\Controllers\Frontend\EventController as FrontendEventController;
 use App\Http\Controllers\Frontend\EventDetailController as FrontendEventDetailController;
 use App\Http\Controllers\Frontend\PresidentController as FrontendPresidentController;
 use App\Http\Controllers\Frontend\TenderController as FrontendTendersController;
 use App\Http\Controllers\Frontend\MembersController as FrontendMembersController;
+<<<<<<< HEAD
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComplainController;
+=======
 use App\Http\Controllers\Frontend\ComplainController as FrontendComplainController;
 use App\Http\Controllers\Frontend\OwnershipTransferController as FrontendOwnershipTransferController;
 use App\Http\Controllers\Frontend\PollController as FrontendPollController;
 use App\Http\Controllers\Frontend\LandmarksController as FrontendLandmarksController;
+>>>>>>> 1b803fbd13a892c3a685f015c6e184174fd3f2b9
 
 use Illuminate\Support\Facades\Route;
 
@@ -71,9 +80,15 @@ Route::controller(FrontendNewsController::class)->group(function () {
 });
 /*------------------------------- News Routes End -------------------------------*/
 
+<<<<<<< HEAD
+/*------------------------------ Complain Routes Start ------------------------------*/
+Route::resource('complains', ComplainController::class);
+/*------------------------------ Complain Routes End -------------------------------*/
+=======
 /*----------------------------- Complain Routes Start -----------------------------*/
 Route::resource('complains', FrontendComplainController::class);
 /*----------------------------- Complain Routes end -----------------------------*/
+>>>>>>> 1b803fbd13a892c3a685f015c6e184174fd3f2b9
 
 /*----------------------------- Gallery Routes Start -----------------------------*/
 Route::controller(FrontendMediaController::class)->group(function () {
@@ -83,8 +98,13 @@ Route::controller(FrontendMediaController::class)->group(function () {
 /*----------------------------- Gallery Routes End -----------------------------*/
 
 /*----------------------------- Event Routes Start -----------------------------*/
+<<<<<<< HEAD
+Route::get('events', [FrontendEventController::class, 'index']);
+Route::get('/eventdetail/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
+=======
 Route::get('events', [FrontendEventController::class, 'index'])->name('events');
 Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
+>>>>>>> 1b803fbd13a892c3a685f015c6e184174fd3f2b9
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
 /*----------------------------- Event Routes End -----------------------------*/
 
@@ -102,6 +122,8 @@ Route::controller(FrontendTendersController::class)->group(function () {
     Route::get('tender-details/{id}', 'showDetailsTenders')->name('showDetailsTenders');
 });
 /*------------------------------ Tenders Routes End ------------------------------*/
+<<<<<<< HEAD
+=======
 
 /*--------------------------- Suggestions Routes Start --------------------------*/
 Route::resource('suggestions', FrontendSuggestionController::class);
@@ -121,3 +143,4 @@ Route::controller(FrontendLandmarksController::class)->group(function () {
     Route::get('landmark/{id}', 'showLandmark')->name('showLandmark');
 });
 /*--------------------------- Landmarks Routes End ---------------------------*/
+>>>>>>> 1b803fbd13a892c3a685f015c6e184174fd3f2b9
