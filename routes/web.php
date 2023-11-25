@@ -91,8 +91,6 @@ Route::controller(FrontendMediaController::class)->group(function () {
 /*----------------------------- Event Routes Start -----------------------------*/
 Route::get('events', [FrontendEventController::class, 'index']);
 Route::get('/eventdetail/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
-Route::get('events', [FrontendEventController::class, 'index'])->name('events');
-Route::get('/eventdetails/{id}', [FrontendEventDetailController::class, 'eventdetal'])->name('eventdetail');
 Route::post('/eventdetails/{id}', [FrontendEventDetailController::class, 'store'])->name('eventdetailform');
 /*----------------------------- Event Routes End -----------------------------*/
 
