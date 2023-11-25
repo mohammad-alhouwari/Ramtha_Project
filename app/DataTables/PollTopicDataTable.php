@@ -94,6 +94,7 @@ class PollTopicDataTable extends DataTable
             Column::make('image'),
             Column::make('title'),
             Column::make('description'),
+            Column::make('end_date'),
             Column::make('status'),
             Column::computed('action')
                 ->exportable(false)

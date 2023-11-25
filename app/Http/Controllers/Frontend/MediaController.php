@@ -11,6 +11,10 @@ use App\Models\News;
 use App\Models\Project;
 use App\Models\Event;
 use App\Models\Landmark;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
+
 
 
 class MediaController extends Controller
@@ -38,8 +42,18 @@ class MediaController extends Controller
                 $uniqueGallery->push($item);
             }
         }
+    
+        // Paginate the uniqueGallery collection with 2 items per page
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $perPage = 9;
+        $currentPageItems = $uniqueGallery->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        $paginatedGallery = new LengthAwarePaginator($currentPageItems, $uniqueGallery->count(), $perPage);
+    
+        // Set path for paginator if needed
+        $paginatedGallery->setPath('gallery');
+    
 
-        return view('Pages.Gallery.gallery', compact('uniqueGallery','municipalityInfo'));
+        return view('Pages.Gallery.gallery', compact('paginatedGallery','municipalityInfo'));
     }
 
 

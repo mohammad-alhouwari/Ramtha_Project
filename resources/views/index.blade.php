@@ -242,54 +242,61 @@
     <br>
     <br>
 
-    <!--statistics-->
-    <div class="history-one__top">
-        <div class="container" dir="rtl">
-            <div class="section-title text-center">
-                <div class="section-title__icon">
-                    <span class="fa fa-star"></span>
+   <!--statistics-->
+   <div class="history-one__top">
+    <div class="container" dir="rtl">
+        <div class="section-title text-center">
+            <div class="section-title__icon">
+                <span class="fa fa-star"></span>
+            </div>
+            <span class="section-title__tagline">احصائيات</span>
+            <h2 class="section-title__title">احصائيات بلدية الرمثا الكبرى</h2>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<section class="counter-one" style="background-color: #ffffff!important">
+    <div class="container">
+        <div class="counter-one__inner" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;">
+            <div style="background-color: #0063ae; border-radius: 8px; padding: 20px;">
+                <div class="counter-one__count">
+                    <h3 class="odometer" data-count="32">00</h3>
                 </div>
-                <span class="section-title__tagline">احصائيات</span>
-                <h2 class="section-title__title">احصائيات بلدية الرمثا الكبرى</h2>
+                <p class="counter-one__text" style="margin-top: 10px; font-size: 18px;">عدد الزوار</p>
+            </div>
+            <div style="background-color: #0063ae; border-radius: 8px; padding: 20px;">
+                <div class="counter-one__count">
+                    <h3 class="odometer" data-count="{{ $eventsCount }}">00</h3>
+                </div>
+                <p class="counter-one__text" style="margin-top: 10px; font-size: 18px;">عدد الفعاليات</p>
+            </div>
+            <div style="background-color: #0063ae; border-radius: 8px; padding: 20px;">
+                <div class="counter-one__count">
+                    <h3 class="odometer" data-count="45">00</h3>
+                </div>
+                <p class="counter-one__text" style="margin-top: 10px; font-size: 18px;">عدد الخدمات الالكترونية</p>
+            </div>
+            <div style="background-color: #0063ae; border-radius: 8px; padding: 20px;">
+                <div class="counter-one__count">
+                    <h3 class="odometer" data-count="{{ $projectsCount }}">00</h3>
+                </div>
+                <p class="counter-one__text" style="margin-top: 10px; font-size: 18px;">عدد المشاريع</p>
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <section class="counter-one">
-        <div class="counter-one__bg">
-        </div>
-        <div class="container">
-            <div class="counter-one__inner">
-                <ul class="counter-one__list list-unstyled">
-                    <li>
-                        <div class="counter-one__count">
-                            <h3 class="odometer" data-count="32">00</h3>
-                            <span class="">k</span>
-                        </div>
-                        <p class="counter-one__text">عدد الزوار
 
-                    <li>
-                        <div class="counter-one__count">
-                            <h3 class="odometer" data-count="20">00</h3>
-                            <span class=""></span>
-                        </div>
-                        <p class="counter-one__text">عدد الفعاليات
-                        </p>
-                    </li>
-                    <li>
-                        <div class="counter-one__count">
-                            <h3 class="odometer" data-count="45">00</h3>
-                            <span class=""></span>
-                        </div>
-                        <p class="counter-one__text">عدد الخدمات الالكترونية
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--statistics End-->
+    <style>
+        @media (max-width: 767px) {
+            .counter-one__inner {
+                grid-template-columns: 1fr!important; /* Display each counter in a single column */
+            }
+            .counter-one__inner > div {
+                margin-bottom: 20px!important; /* Add margin between each counter */
+            }
+        }
+    </style>
+</section>
 
     @include('Pages.Home.events')
     <!-- Events End -->
