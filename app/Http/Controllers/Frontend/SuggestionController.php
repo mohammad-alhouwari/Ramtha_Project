@@ -13,7 +13,7 @@ class SuggestionController extends Controller
 
     public function index()
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return view('Pages.Suggestions.suggestions',compact('municipalityInfo'));
     }
 
@@ -75,7 +75,7 @@ class SuggestionController extends Controller
         ]);
 
         Alert::success('تم بنجاح', 'تقديم فكرة مُبادرتك!');
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return redirect()->route('suggestions.index');
     }
 

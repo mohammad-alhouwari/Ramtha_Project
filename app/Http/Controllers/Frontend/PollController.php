@@ -12,7 +12,7 @@ class PollController extends Controller
 {
     public function showAllPolls()
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $PollTopics = PollTopic::where('status', 'on')->get();
         return view('Pages.Polls.poll-topic', compact('PollTopics','municipalityInfo'));
     }
@@ -23,7 +23,7 @@ class PollController extends Controller
     {
         $currentDate = now()->toDateString();
         $PollTopic = PollTopic::findOrFail($id);
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return view('Pages.Polls.poll-details', compact('PollTopic','currentDate','municipalityInfo'));
     }
    
@@ -58,7 +58,7 @@ class PollController extends Controller
 
             $message = 'شكراً لمشاركة رأيك';
         }
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return redirect()->back()->with(['status' => $message, 'municipalityInfo' => $municipalityInfo]);
 
     }

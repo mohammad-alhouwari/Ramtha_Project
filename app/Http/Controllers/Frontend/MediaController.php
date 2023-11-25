@@ -17,7 +17,7 @@ class MediaController extends Controller
 {
     public function showGallery()
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $gallery = Media::with('project', 'event', 'news')->get();
 
         // Filter out duplicate media based on event_id, news_id, or project_id
@@ -85,7 +85,7 @@ class MediaController extends Controller
                 $gallery = Media::where('news_id', $id)->get();
             }
         }
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return view('Pages.Gallery.single_gallery', compact('gallery', 'name','municipalityInfo'));
     }
 }

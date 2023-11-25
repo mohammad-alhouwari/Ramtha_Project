@@ -9,7 +9,11 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
                     <div class="news-details__left">
+                        <div class="news-details__content">
+                            <h3 class="news-details__title-1">{{ $news->title }}</h3>
+                        </div>
                         <div class="news-details__img-box">
+
                             <div class="news-details__img">
                                 <img src="{{ asset($news->preview_image) }}" alt="">
                             </div>
@@ -18,8 +22,8 @@
                             </div>
                         </div>
                         <div class="news-details__content">
-                            <h3 class="news-details__title-1">{{ $news->title }}</h3>
-                            <p class="news-details__text-1">{{ $news->description }}
+                            
+                            <p class="news-details__text-1">{{ $news->description }}</p>
                         </div>
                     </div>
                     <br>

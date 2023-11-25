@@ -20,7 +20,7 @@ class HomeController extends Controller
         $events = Event::latest()->get();
         $latestNews = News::latest()->take(3)->get();
         $partners = Partner::get();
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
 
         return view('index', compact('presidents', 'events', 'latestNews', 'partners','municipalityInfo'));
     }

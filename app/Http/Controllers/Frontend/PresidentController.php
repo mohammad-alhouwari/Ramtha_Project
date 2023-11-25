@@ -12,7 +12,7 @@ class PresidentController extends Controller
     public function index()
     {
         $president = President::get()->first();
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return view('Pages.President', compact('president','municipalityInfo'));
     }
 }

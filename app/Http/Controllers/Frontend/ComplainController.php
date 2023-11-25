@@ -15,7 +15,7 @@ class ComplainController extends Controller
 
     public function index()
     {
-        $municipalityInfo = MunicipalityInfo::first();
+        $municipalityInfo = MunicipalityInfo::latest()->first();
         return view('pages.Complains.complains', ['municipalityInfo' => $municipalityInfo]);
     }
 
@@ -97,7 +97,7 @@ class ComplainController extends Controller
 
         // Redirect to a success page or return a response as needed
         Alert::success('نجاح!', 'تم تقديم الشكوى بنجاح!');
-        $municipalityInfo = MunicipalityInfo::first();
+        $municipalityInfo = MunicipalityInfo::latest()->first();
         return redirect()->route('complains.index')->with(['municipalityInfo' => $municipalityInfo]);
         
     }

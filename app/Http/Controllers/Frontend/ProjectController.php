@@ -13,7 +13,7 @@ class ProjectController extends Controller
 {
     public function showAllProjects(Project $project)
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $projects = Project::where('status', 'on')->paginate(6);
         return view('Pages.Projects.projects', compact('projects','municipalityInfo'));
     }
@@ -21,7 +21,7 @@ class ProjectController extends Controller
 
     public function showProject(Project $project, $id)
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $project = Project::findOrFail($id);
         $projectImages = Media::where('project_id', $id)->where('status', 'on')->where('media_type', 'image')->get();
         $latestProjects = Project::where('status', 'on')->where('id', '!=', $id)

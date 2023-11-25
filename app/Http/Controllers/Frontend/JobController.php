@@ -12,14 +12,14 @@ class JobController extends Controller
 
     public function showAllJobs()
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $jobs = Job::where('status', 'on')->get();
         return view('Pages.jobs.jobs', compact('jobs','municipalityInfo'));
     }
 
     public function showJob(Job $job, $id)
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $latestJobs = Job::where('created_at', '>', Carbon::now()->subDays(3))
         ->where('status', 'on')->where('id', '!=', $id)
         ->take(3)

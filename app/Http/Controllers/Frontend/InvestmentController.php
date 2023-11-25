@@ -12,14 +12,14 @@ class InvestmentController extends Controller
     public function showAllInvestments(Investment $investments)
     {
         $investments = Investment::get();
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return view('Pages.Investments.investments', compact('investments','municipalityInfo'));
     }
 
 
     public function showInvestment(Investment $investment, $id)
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $investment = Investment::findOrFail($id);
         return view('Pages.Investments.investment-opportunity', compact('investment','municipalityInfo'));
     }

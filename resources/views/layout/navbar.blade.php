@@ -112,10 +112,12 @@
     <!-- /.preloader -->
 
     <header class="main-header">
-    
+
         <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
             <div class="container">
-                <img src="{{ asset($municipalityInfo->logo) }}" alt="" width="100px">
+                @if (isset($municipalityInfo))
+                    <img src="{{ asset($municipalityInfo->logo) }}" alt="" width="100px">
+                @endif
                 <button class="navbar-toggler ps-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -129,28 +131,30 @@
                             <a class="nav-link" aria-current="page" href="/">الرئيسية</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  id="navbarDropdownNews"
-                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownNews" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 عن البلدية
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="{{route('about-municipality')}}">نبذة عن البلدية</a>
-                                <a class="dropdown-item" href="{{route('president')}}">كلمة الرئيس</a>
-                                <a class="dropdown-item" href="{{route('organizational-chart')}}">الهيكل التنظيمي</a>
-                                <a class="dropdown-item" href="{{route('about-municipality')}}">الأعضاء</a>
+                                <a class="dropdown-item {{ request()->routeIs('about-municipality') ? 'about-municipality' : '' }}"
+                                    href="{{ route('about-municipality') }}">نبذة عن البلدية</a>
+                                <a class="dropdown-item" href="{{ route('president') }}">كلمة الرئيس</a>
+                                <a class="dropdown-item" href="{{ route('organizational-chart') }}">الهيكل
+                                    التنظيمي</a>
+                                <a class="dropdown-item" href="{{ route('about-municipality') }}">الأعضاء</a>
                                 <!-- Add more categories as needed -->
                             </div>
                         </li>
-                       
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  id="navbarDropdownNews"
-                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownNews" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 المركز الاعلامي
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="{{route('showAllNews')}}">الأخبار</a>
-                                <a class="dropdown-item" href="{{route('events')}}">الفعاليات</a>
-                                <a class="dropdown-item" href="{{route('showGallery')}}">معرض الصور</a>
+                                <a class="dropdown-item" href="{{ route('showAllNews') }}">الأخبار</a>
+                                <a class="dropdown-item" href="{{ route('events') }}">الفعاليات</a>
+                                <a class="dropdown-item" href="{{ route('showGallery') }}">معرض الصور</a>
 
                                 <!-- Add more categories as needed -->
                             </div>
@@ -161,10 +165,11 @@
                                 المشاريع والعطاءات
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="{{route('showAllProjects')}}">المشاريع</a>
-                                <a class="dropdown-item" href="{{route('showAllTenders')}}">العطاءات</a>
-                                <a class="dropdown-item" href="{{route('showAllInvestments')}}">الفرص الاستثمارية</a>
-                                <a class="dropdown-item" href="{{route('showAllJobs')}}">فرص العمل</a>
+                                <a class="dropdown-item" href="{{ route('showAllProjects') }}">المشاريع</a>
+                                <a class="dropdown-item" href="{{ route('showAllTenders') }}">العطاءات</a>
+                                <a class="dropdown-item" href="{{ route('showAllInvestments') }}">الفرص
+                                    الاستثمارية</a>
+                                <a class="dropdown-item" href="{{ route('showAllJobs') }}">فرص العمل</a>
                                 <!-- Add more categories as needed -->
                             </div>
                         </li>
@@ -174,26 +179,29 @@
                                 رأيكم يهمنا
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownNews">
-                                <a class="dropdown-item" href="{{route('complains.index')}}">شكاوي واقتراحات</a>
-                                <a class="dropdown-item" href="{{route('suggestions.index')}}">افكار و مبادرات</a>
-                                <a class="dropdown-item" href="{{route('showAllPolls')}}">استطلاعات الرأي</a>
+                                <a class="dropdown-item" href="{{ route('complains.index') }}">شكاوي واقتراحات</a>
+                                <a class="dropdown-item" href="{{ route('suggestions.index') }}">افكار و مبادرات</a>
+                                <a class="dropdown-item" href="{{ route('showAllPolls') }}">استطلاعات الرأي</a>
 
                                 <!-- Add more categories as needed -->
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{route('showAllLandmarks')}}">اهم المعالم</a>
+                        <li class="nav-item {{ request()->routeIs('showAllLandmarks') ? 'showAllLandmarks' : '' }}">
+                            <a class="nav-link" aria-current="page" href="{{ route('showAllLandmarks') }}">اهم
+                                المعالم</a>
                         </li>
                     </ul>
 
                     <ul class="navbar-nav flex-row">
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="https://www.facebook.com/ramtha.municipality/?locale=ar_AR7">
+                            <a class="nav-link px-2"
+                                href="https://www.facebook.com/ramtha.municipality/?locale=ar_AR7">
                                 <i class="fab fa-facebook-square"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="https://twitter.com/RamthaMunic?t=ghT4dCI8RjTwi_OZ1tgrUg&s=09">
+                            <a class="nav-link px-2"
+                                href="https://twitter.com/RamthaMunic?t=ghT4dCI8RjTwi_OZ1tgrUg&s=09">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
@@ -201,17 +209,20 @@
                             <a class="nav-link ps-2" href="https://youtube.com/@RamthaMunic?si=TQJjj1Upu3KRic6X">
                                 <i class="fab fa-youtube"></i>
                             </a>
+                        </li>   @if (isset($municipalityInfo))
+                        <li class="nav-item">
+                         
+                                <a class="nav-link ps-2" href="tel:{{ $municipalityInfo->phone }}">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ps-2"  href="tel:{{ $municipalityInfo->phone}}">
-                                <i class="fas fa-phone"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2" href="mailto:{{ $municipalityInfo->email}}">
+                            <a class="nav-link ps-2" href="mailto:{{ $municipalityInfo->email }}">
                                 <i class="fas fa-envelope"></i>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </div>

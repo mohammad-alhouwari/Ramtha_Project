@@ -21,7 +21,7 @@ class EventDetailController extends Controller
         $eventdetails = Event::where('status', 'on')->find($id);
         // $category = Category::find($product->category_id);
 
-        $municipalityInfo = MunicipalityInfo::first();
+        $municipalityInfo = MunicipalityInfo::latest()->first();
         return view('Pages.Events.event_detail', compact('eventdetails', 'municipalityInfo'));
 
     }
@@ -64,7 +64,7 @@ class EventDetailController extends Controller
 
         $event->save();
 
-        $municipalityInfo = MunicipalityInfo::first();
+        $municipalityInfo = MunicipalityInfo::latest()->first();
         return redirect()->back()->with([
             'status' => 'تم التسجيل بنجاح',
             'municipalityInfo' => $municipalityInfo

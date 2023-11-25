@@ -12,7 +12,7 @@ class LandmarksController extends Controller
 {
     public function showAllLandmarks(Landmark $landmark)
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $landmarks = Landmark::where('status', 'on')->paginate(6);
         return view('Pages.Landmarks.landmarks', compact('landmarks','municipalityInfo'));
     }
@@ -20,7 +20,7 @@ class LandmarksController extends Controller
 
     public function showLandmark(Landmark $Landmark, $id)
     {
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         $landmark = Landmark::findOrFail($id);
         $landmarkImages = Media::where('landmark_id', $id)->where('status', 'on')->where('media_type', 'image')->get();
         return view('Pages.Landmarks.single-landmark', compact('landmark', 'landmarkImages','municipalityInfo'));

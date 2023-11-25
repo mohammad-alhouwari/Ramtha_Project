@@ -16,7 +16,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $municipalityInfo = MunicipalityInfo::first();
+        $municipalityInfo = MunicipalityInfo::latest()->first();
         $events= Event::where('status', 'on')->get();
         return view('Pages.Events.event',compact('events','municipalityInfo'));
 

@@ -12,12 +12,12 @@ class MembersController extends Controller
     public function index()
     {
         $members = Member::all();
-        $municipalityInfo = MunicipalityInfo::first();
+        $municipalityInfo = MunicipalityInfo::latest()->first();
 
         return view('Pages.about-municipality', compact('members', 'municipalityInfo'));
     }
     public function organizationalChart(){
-        $municipalityInfo=MunicipalityInfo::first();
+        $municipalityInfo=MunicipalityInfo::latest()->first();
         return view('Pages.Organizational-Chart',compact('municipalityInfo'));
     }
 }

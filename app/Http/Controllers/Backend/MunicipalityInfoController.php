@@ -25,7 +25,7 @@ class MunicipalityInfoController extends Controller
     public function store(Request $request)
     {
 
-        $existingRecord = MunicipalityInfo::first();
+        $existingRecord = MunicipalityInfo::latest()->first();
 
         if ($existingRecord) {
             $notification = [
