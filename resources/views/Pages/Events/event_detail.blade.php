@@ -213,15 +213,9 @@
                                     <button disabled type="button" class="thm-btn contact-one__btn">انتهاء التسجيل</button>
 
                                 </div>
-                                {{-- <input type="hidden" name="capacity" value="0" min="1"
-                                        max="{{ $eventdetails->capacity }}"> --}}
-                                {{-- <button type="submit" disabled><i class="fas fa-shopping-cart"></i>التسجيل مغلق</button> --}}
+                 
                             @endif
-                            {{-- <div class="contact-one__btn-box">
-                                        <button style="color:white;background-color: rgb(26,115,232);border-radius: 7px;"
-                                            type="submit" class="thm-btn contact-one__btn">انتهاء التسجيل</button>
-
-                                    </div> --}}
+                        
                         </div>
                     </div>
                 </form>
