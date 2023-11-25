@@ -2,28 +2,6 @@
 @section('title', 'استطلاعات الرأي')
 @section('header_title', 'استطلاعات الرأي')
 @section('content')
-    <!--Event Details Start-->
-    <style>
-        /* .strongly-agree {
-            color: green;
-        }
-
-        .agree {
-            color: greenyellow;
-        }
-
-        .neutral {
-            color: yellow;
-        }
-
-        .disagree {
-            color: orange;
-        }
-
-        .strongly-disagree {
-            color: red;
-        } */
-    </style>
     <section class="event-details pt-5">
         <div class="container">
             <div class="row">
@@ -101,9 +79,8 @@
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
-                                <div class="contact-one__btn-box">
-                                    <button style="color:white;background-color: rgb(26,115,232);border-radius: 7px;"
-                                        type="submit" class="thm-btn contact-one__btn">شارك رأيك</button>
+                                <div class="contact-two__btn-box">
+                                    <button type="submit" class="thm-btn contact-two__btn">شارك رأيك</button>
                                 </div>
                             </div>
                         </div>
