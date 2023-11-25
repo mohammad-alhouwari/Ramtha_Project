@@ -26,23 +26,9 @@ class HomeController extends Controller
         $eventsCount = $events->count();
         $projectsCount = $projects->count();
  $municipalityInfo=MunicipalityInfo::latest()->first();
-        $response = Http::withHeaders([
-            'X-RapidAPI-Key' => '68716cd396mshae84f6fe8f41adep1125e5jsn56668aaf9e14',
-            'X-RapidAPI-Host' => 'open-weather13.p.rapidapi.com'
-        ])->get('https://open-weather13.p.rapidapi.com/city/irbid');
-    
-        if ($response->successful()) {
-            $weatherData = $response->json(); // Retrieve JSON response
-            $tempFahrenheit = $weatherData['main']['temp'];
-            // Convert Fahrenheit to Celsius
-            $tempCelsius = ($tempFahrenheit - 32) * 5 / 9;
-            // Convert temperature to an integer
-            $temperature = intval($tempCelsius);
-        return view('index', compact('presidents', 'events', 'latestNews', 'partners','municipalityInfo','eventsCount','projectsCount','temperature'));
-        } else {
-            // Handle the error if the request was not successful
+
             return view('index', compact('presidents', 'events', 'latestNews', 'partners','municipalityInfo','eventsCount','projectsCount'));
-        }
+        
     }
 
 

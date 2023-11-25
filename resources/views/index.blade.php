@@ -34,7 +34,7 @@
                                         <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
                                     </div>
                                     <div class="text" >
-                                        <p>{{$temperature}}C</p>
+                                        <p>18C</p>
                                     </div>
                                 </li>
                                 <li>
@@ -73,7 +73,7 @@
                                         <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
                                     </div>
                                     <div class="text" >
-                                        <p>{{$temperature}}C</p>
+                                        <p>18C</p>
                                     </div>
                                 </li>
                                 <li>
@@ -114,7 +114,7 @@
                                         <span class="icon-sun-day-weather-symbol" style="padding-bottom: 5px ; font-size:20px"> الحرارة</span>
                                     </div>
                                     <div class="text" >
-                                        <p>{{$temperature}}C</p>
+                                        <p>18C</p>
                                     </div>
                                 </li>
                                 <li>
