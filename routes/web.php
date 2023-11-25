@@ -113,9 +113,6 @@ Route::controller(FrontendTendersController::class)->group(function () {
 Route::resource('suggestions', FrontendSuggestionController::class);
 /*--------------------------- Suggestions Routes End ---------------------------*/
 
-/*--------------------- Suggestions Routes End ----------------------*/
-
-
 /*--------------------- Ownership_Transfer Routes Start ---------------------*/
 
 Route::resource('ownership_transfer', FrontendOwnershipTransferController::class);
@@ -127,3 +124,6 @@ Route::controller(FrontendLandmarksController::class)->group(function () {
     Route::get('landmark/{id}', 'showLandmark')->name('showLandmark');
 });
 /*--------------------------- Landmarks Routes End ---------------------------*/
+
+//**Team 
+Route::get('team', [MembersController::class, 'team'])->name('team');

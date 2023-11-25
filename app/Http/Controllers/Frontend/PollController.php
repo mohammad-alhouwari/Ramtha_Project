@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use App\Models\Poll;
 use App\Models\PollTopic;
 use Illuminate\Http\Request;
@@ -14,7 +15,8 @@ class PollController extends Controller
     public function showAllPolls()
     {
         $PollTopics = PollTopic::where('status', 'on')->get();
-        return view('Pages.Polls.poll-topic', compact('PollTopics'));
+        $municipalityInfo = MunicipalityInfo::latest()->first();
+        return view('Pages.Polls.poll-topic', compact('PollTopics', 'municipalityInfo'));
     }
 
 
@@ -105,11 +107,7 @@ class PollController extends Controller
             $message = 'شكراً لمشاركة رأيك';
             Alert::success('تم بنجاح', 'شكراً لمشاركة رأيك');
         }
-        
+
         return redirect()->back()->with('status', $message);
-
-
-    } }
-
-
-
+    }
+}

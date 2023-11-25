@@ -6,7 +6,8 @@
 
                 <!-- Logo Section Start -->
                 <div class="col-xl-3 col-lg-3 col-md-12 d-flex align-items-center justify-content-center wow fadeInUp">
-                        <img src="{{ asset('assets/images/backgrounds/logo.jpg') }}" alt="ramtha Logo" style="width: 170px; height: auto;">
+                    <img src="{{ asset('assets/images/backgrounds/logo.jpg') }}" alt="ramtha Logo"
+                        style="width: 170px; height: auto;">
                 </div>
                 <!-- Logo Section End -->
 
@@ -51,12 +52,13 @@
                                     <li>
                                         <div class="text">
                                             <div class="icon">
-                                            <p><a href="mailto:needhelp@company.com" dir="ltr">needhelp@company.com</a></p>
-                                        </div>
+                                                <p><a href="mailto:needhelp@company.com"
+                                                        dir="ltr">needhelp@company.com</a></p>
+                                            </div>
                                     </li>
                                     <li>
                                         <div class="text">
-                                        <p><a href="tel:+962 7 8608 8830" dir="ltr" >+962 7 8608 8830</a></p>
+                                            <p><a href="tel:+962 7 8608 8830" dir="ltr">+962 7 8608 8830</a></p>
                                         </div>
                                     </li>
                                 </ul>
@@ -74,7 +76,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© حقوق النشر 2023 <a href="/team" style="color: orange;">أكاديمية البرمجة بواسطة أورانج-اربد</a></p>
+                        <p class="site-footer__bottom-text"><a href="/team" style="color: orange;">أكاديمية البرمجة
+                                بواسطة أورانج-اربد</a>© حقوق النشر 2023 </p>
                     </div>
                 </div>
             </div>
@@ -118,11 +121,12 @@
 <script src="{{ asset('assets/js/govity.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-<script src="{{ asset('navbar/js/jquery-3.3.1.min.js')}}"></script>
-<script src="{{ asset('navbar/js/popper.min.js')}}"></script>
-<script src="{{ asset('navbar/js/bootstrap.min.js')}}"></script>
-<script src="{{ asset('navbar/js/jquery.sticky.js')}}"></script>
-<script src="{{ asset('navbar/js/main.js')}}"></script>
+<script src="{{ asset('navbar/js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('navbar/js/popper.min.js') }}"></script>
+<script src="{{ asset('navbar/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('navbar/js/jquery.sticky.js') }}"></script>
+<script src="{{ asset('navbar/js/main.js') }}"></script>
 </body>
 <!-- Mirrored from layerdrops.com/govity/main-html/index-one-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Nov 2023 09:16:05 GMT -->
+
 </html>
