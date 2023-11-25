@@ -30,17 +30,14 @@ class DatabaseSeeder extends Seeder
                 $this->call(InvestmentsTableSeeder::class);
                 $this->call(TerndersSeeder::class);
                 $this->call(MunicipalityInfoSeeder::class);
+                $this->call(EventsTableSeeder::class);
         }
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-<<<<<<< HEAD
-        $this->call(AdminSeeder::class);
-        // $this->call(EventsTableSeeder::class);
+      
     }
-=======
 
 
->>>>>>> 1b803fbd13a892c3a685f015c6e184174fd3f2b9
-}
+
