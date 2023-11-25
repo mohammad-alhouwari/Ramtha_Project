@@ -1,30 +1,9 @@
 @extends('layout.master')
 @section('title', 'فرصة عمل')
+
+@section('header_title', 'فرصة عمل')
+
 @section('content')
-
-    <div class="stricky-header stricked-menu main-menu">
-        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-    </div><!-- /.stricky-header -->
-
-
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg"
-            style="background-image: url({{ asset('assets/images/backgrounds/page-header-bg.jpg') }} );opacity:0.3">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>تفاصيل الفرصة</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><span>/</span></li>
-                    <li>فرصة عمل</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
-    {{-- {{dd($job)}} --}}
 
     <!--News Details Start-->
     <section class="news-details">
