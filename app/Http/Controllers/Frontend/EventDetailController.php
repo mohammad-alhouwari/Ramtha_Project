@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\EventParticipant;
+
 class EventDetailController extends Controller
 {
     /**
@@ -16,11 +18,11 @@ class EventDetailController extends Controller
     public function eventdetal($id)
     {
         // $eventdetails=Event::all();
-        $eventdetails= Event::where('status', 'on')->find($id);
+        $eventdetails = Event::where('status', 'on')->find($id);
         // $category = Category::find($product->category_id);
 
-
-        return view('Pages.Events.event_detail',compact('eventdetails'));
+        $municipalityInfo = MunicipalityInfo::first();
+        return view('Pages.Events.event_detail', compact('eventdetails', 'municipalityInfo'));
 
     }
 
@@ -61,9 +63,12 @@ class EventDetailController extends Controller
         $event->capacity--;
 
         $event->save();
-       
 
-        return redirect()->back()->with('status','تم التسجيل بنجاح');
+        $municipalityInfo = MunicipalityInfo::first();
+        return redirect()->back()->with([
+            'status' => 'تم التسجيل بنجاح',
+            'municipalityInfo' => $municipalityInfo
+        ]);
     }
 
     /**

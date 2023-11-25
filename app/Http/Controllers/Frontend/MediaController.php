@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use Illuminate\Support\Facades\DB;
 use App\Models\Media;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class MediaController extends Controller
 {
     public function showGallery()
     {
+        $municipalityInfo=MunicipalityInfo::first();
         $gallery = Media::with('project', 'event', 'news')->get();
 
         // Filter out duplicate media based on event_id, news_id, or project_id
@@ -37,7 +39,7 @@ class MediaController extends Controller
             }
         }
 
-        return view('Pages.Gallery.gallery', compact('uniqueGallery'));
+        return view('Pages.Gallery.gallery', compact('uniqueGallery','municipalityInfo'));
     }
 
 
@@ -83,6 +85,7 @@ class MediaController extends Controller
                 $gallery = Media::where('news_id', $id)->get();
             }
         }
-        return view('Pages.Gallery.single_gallery', compact('gallery', 'name'));
+        $municipalityInfo=MunicipalityInfo::first();
+        return view('Pages.Gallery.single_gallery', compact('gallery', 'name','municipalityInfo'));
     }
 }

@@ -3,20 +3,18 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use App\Models\Suggestion;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class SuggestionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('Pages.Suggestions.suggestions');
+        $municipalityInfo=MunicipalityInfo::first();
+        return view('Pages.Suggestions.suggestions',compact('municipalityInfo'));
     }
 
     /**
@@ -77,7 +75,7 @@ class SuggestionController extends Controller
         ]);
 
         Alert::success('تم بنجاح', 'تقديم فكرة مُبادرتك!');
-
+        $municipalityInfo=MunicipalityInfo::first();
         return redirect()->route('suggestions.index');
     }
 

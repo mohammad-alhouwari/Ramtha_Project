@@ -38,7 +38,7 @@ class MunicipalityInfoController extends Controller
 
         // Data Validate
         $request->validate([
-            'description' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string'],
             'vision' => ['required', 'string', 'max:255'],
             'mission' => ['required', 'string', 'max:255'],
             'description_image' => ['required'],
@@ -78,7 +78,7 @@ class MunicipalityInfoController extends Controller
     {
         // Data Validate
         $request->validate([
-            'description' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string'],
             'mission' => ['required', 'string', 'max:255'],
             'vision' => ['required', 'string', 'max:255'],
             'phone' => ['required'],

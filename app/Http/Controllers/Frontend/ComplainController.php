@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\Complain;
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -14,7 +15,8 @@ class ComplainController extends Controller
 
     public function index()
     {
-        return view('pages.Complains.complains');
+        $municipalityInfo = MunicipalityInfo::first();
+        return view('pages.Complains.complains', ['municipalityInfo' => $municipalityInfo]);
     }
 
 
@@ -95,8 +97,9 @@ class ComplainController extends Controller
 
         // Redirect to a success page or return a response as needed
         Alert::success('نجاح!', 'تم تقديم الشكوى بنجاح!');
-
-        return redirect()->route('complains.index');
+        $municipalityInfo = MunicipalityInfo::first();
+        return redirect()->route('complains.index')->with(['municipalityInfo' => $municipalityInfo]);
+        
     }
     /**
      * Display the specified resource.

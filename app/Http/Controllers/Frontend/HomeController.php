@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MunicipalityInfo;
 use Illuminate\Http\Request;
 
 use App\Models\President;
@@ -19,8 +20,9 @@ class HomeController extends Controller
         $events = Event::latest()->get();
         $latestNews = News::latest()->take(3)->get();
         $partners = Partner::get();
+        $municipalityInfo=MunicipalityInfo::first();
 
-        return view('index', compact('presidents', 'events', 'latestNews', 'partners'));
+        return view('index', compact('presidents', 'events', 'latestNews', 'partners','municipalityInfo'));
     }
 
 
