@@ -19,9 +19,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xl-10">
+                            <div class="col-xl-12">
                                 <div class="mb-5">
-                                    
+
                                     <div class="mb-5">
                                         <label class="text-dark font-weight-medium">Image</label>
                                         <div class="input-group mb-3">
@@ -53,7 +53,7 @@
                                     <label class="text-dark font-weight-medium">Ending Date</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text mdi mdi-message-text" id="mdi-account"></span>
+                                            <span class="input-group-text mdi mdi-timer" id="mdi-account"></span>
                                         </div>
                                         <input type="date" class="form-control" name="end_date"
                                             value="{{ old('end_date') }}">
@@ -67,11 +67,25 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text mdi mdi-clipboard-text" id="mdi-account"></span>
                                         </div>
-                                            <textarea  class="form-control" name="description" id="" rows="4" value="{{ old('description') }}"></textarea>
+                                        <textarea class="form-control" name="description" id="" rows="4" value="{{ old('description') }}"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="col-xl-12">
+                            <div class="mb-5">
+                                <label class="text-dark font-weight-medium">Poll Status</label>
+                                <div class="input-group mb-3">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="statusSwitch" name="status"
+                                            {{ old('status') ? 'Checked' : '' }} checked>
+                                        <label class="custom-control-label" for="statusSwitch"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="form-footer pt-5 border-top">
                                 <button type="submit" class="btn btn-primary btn-pill">Submit</button>

@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
     <!-- 404 Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl py-5 wow fadeInUp mt-5" data-wow-delay="0.1s">
         <div class="container text-center">
             <div class="row justify-content-center">
                 <div class="col-lg-6">

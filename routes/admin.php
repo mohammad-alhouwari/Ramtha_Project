@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\MembersController as BackendMembersController;
 use App\Http\Controllers\Backend\OwnershipTransferController as BackendOwnershipTransferController;
 use App\Http\Controllers\Backend\PollTopicController as BackendPollTopicController;
 use App\Http\Controllers\Backend\LandmarksController as BackendLandmarksController;
+use App\Http\Controllers\Backend\MunicipalityInfoController as BackendMunicipalityInfoController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -77,19 +78,23 @@ Route::prefix('admin')->middleware('auth')->group(
         //**Presidents Route
         Route::resource('presidents-admin', BackendPresidentsController::class);
 
-        //Members Route
+        //**Members Route
         Route::resource('members-admin', BackendMembersController::class);
 
-        //Landmarks Route
+        //**Landmarks Route
         Route::resource('landmarks-admin', BackendLandmarksController::class);
 
         //** All Medias Route 
         Route::get('medias', [BackendMediaController::class, 'showAllMedia']);
 
+        //**Municipality Info Route
+        Route::resource('municipality-info-admin', BackendMunicipalityInfoController::class);
+
         //****All Media
         Route::get('medias-admin/create/project/{project_id}', [BackendMediaController::class, 'createProject'])->name('medias-admin.create.project');
         Route::get('medias-admin/create/news/{news_id}', [BackendMediaController::class, 'createNews'])->name('medias-admin.create.news');
         Route::get('medias-admin/create/event/{event_id}', [BackendMediaController::class, 'createEvent'])->name('medias-admin.create.event');
+        Route::get('medias-admin/create/landmark/{landmark_id}', [BackendMediaController::class, 'createLandmark'])->name('medias-admin.create.landmark');
 
         //** Profile Routes
         Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profile');

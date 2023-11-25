@@ -3,16 +3,21 @@
 @section('header_title', 'معرض الصور')
 @section('content')
     <br>
-    <br>
-    <div class="section-title text-center">
-        <div class="section-title__icon">
-            <span class="fa fa-star"></span>
-        </div>
-        <span class="section-title__tagline">معرض الصور</span>
-        <br>
-        @if ($name)
-            <h3> ألبوم صور {{ $name->title }} </h3>
-        @endif
+    @if ($name)
+    <h3> ألبوم صور {{ $name->title }} </h3>
+    @endif
+</div>
+<br>
+<div class="gallery">
+    <div class="row-gallery">
+        @foreach ($gallery as $index => $item)
+            <div class="gallery-item">
+                <a href="{{ asset($item->media) }}" data-fancybox="gallery" data-caption="Image {{ $index + 1 }}" data-src="{{ asset($item->media) }}">
+                    <img src="{{ asset($item->media) }}" alt="Image {{ $index + 1 }}">
+                </a>
+            </div>
+
+        @endforeach
     </div>
     <br>
     <div class="gallery">

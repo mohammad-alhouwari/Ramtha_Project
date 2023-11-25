@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Edit Investment Opportunities')
+@section('title', 'Edit Job Opportunity')
 @section('content')
     <div class="content-wrapper">
         <div class="content">
@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="mb-5">
-                                    <label class="text-dark font-weight-medium">Investment opportunity Name</label>
+                                    <label class="text-dark font-weight-medium">Job opportunity Name</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text mdi mdi-message-text" id="mdi-account"></span>

@@ -33,9 +33,11 @@
                         <div class="col-xl-4 col-lg-4">
                             <div class="feature-four__single">
                                 <div class="feature-four__img-box">
-                                    <div class="feature-four__img">
-                                        <img src="{{ $job->image }}" alt="">
-                                    </div>
+                                    <a href="{{ route('showJob', $job->id) }}">
+                                        <div class="feature-four__img">                                       
+                                            <img src="{{ asset('assets/images/job-opening.jpg') }}" alt="">
+                                        </div>
+                                    </a>
                                     <div class="feature-four__icon">
                                         <i class=" fs-3 text-white fas fa-briefcase"></i>
                                     </div>
